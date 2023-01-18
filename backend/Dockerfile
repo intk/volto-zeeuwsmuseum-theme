@@ -3,8 +3,8 @@ ARG PLONE_VERSION=6.0.0
 FROM plone/plone-backend:${PLONE_VERSION}
 
 LABEL maintainer="INTK <cihan@itsnotthatkind.org>" \
-      org.label-schema.name="zeeuwsmuseumwebsite-backend" \
-      org.label-schema.description="zeeuwsmuseumwebsite backend image." \
+      org.label-schema.name="zeeuwsmuseumproject-backend" \
+      org.label-schema.description="ZeeuwsMuseumProject backend image." \
       org.label-schema.vendor="INTK"
 
 # Add local code
