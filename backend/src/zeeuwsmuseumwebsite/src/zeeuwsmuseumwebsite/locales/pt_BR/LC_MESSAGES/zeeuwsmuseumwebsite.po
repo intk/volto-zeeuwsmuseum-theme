@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-05-25 17:12+0000\n"
+"POT-Creation-Date: 2023-01-18 11:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,3 +13,39 @@ msgstr ""
 "Language-Name: Portugu&es do Brasil\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
+
+#: zeeuwsmuseumwebsite/vocabularies/__init__.py:11
+msgid "Education"
+msgstr ""
+
+#: zeeuwsmuseumwebsite/vocabularies/__init__.py:9
+msgid "Government"
+msgstr ""
+
+#: zeeuwsmuseumwebsite/profiles.zcml:22
+msgid "Initial content for our website."
+msgstr ""
+
+#: zeeuwsmuseumwebsite/vocabularies/__init__.py:10
+msgid "NGO"
+msgstr ""
+
+#: zeeuwsmuseumwebsite/profiles.zcml:13
+msgid "Policy package to install our site"
+msgstr ""
+
+#: zeeuwsmuseumwebsite/profiles.zcml:30
+msgid "Uninstall zeeuwsmuseumwebsite setup."
+msgstr ""
+
+#: zeeuwsmuseumwebsite/profiles.zcml:22
+msgid "zeeuwsmuseumwebsite: Initial content"
+msgstr ""
+
+#: zeeuwsmuseumwebsite/profiles.zcml:13
+msgid "zeeuwsmuseumwebsite: Install"
+msgstr ""
+
+#: zeeuwsmuseumwebsite/profiles.zcml:30
+msgid "zeeuwsmuseumwebsite: Uninstall"
+msgstr ""
