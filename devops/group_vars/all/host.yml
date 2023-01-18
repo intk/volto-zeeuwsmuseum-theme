@@ -1,0 +1,3 @@
+---
+hostname: 'zeeuwsmuseumwebsite'
+fqdn: '{{ hostname }}.localhost'

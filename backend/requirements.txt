@@ -1,0 +1,8 @@
+-c constraints.txt
+-e src/zeeuwsmuseumwebsite[test]
+
+zope.testrunner
+
+# Add required add-ons
+# (Ideally add them in setup.py for zeeuwsmuseumwebsite)
+# collective.easyform

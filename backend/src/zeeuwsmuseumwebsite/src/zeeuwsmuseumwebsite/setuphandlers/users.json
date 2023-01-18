@@ -1,0 +1,19 @@
+{
+  "portal": [
+    {
+      "email": "cihan@itsnotthatkind.org",
+      "properties": {
+        "fullname": "zeeuwsmuseumwebsite",
+        "location": "World"
+      },
+      "groups": [
+      ],
+      "roles": [
+        "Member"
+      ],
+      "username": "zeeuwsmuseumwebsite"
+    }
+  ],
+    "team": [
+  ]
+}
