@@ -1,3 +1,6 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-unused-vars */
 /**
  * Breadcrumbs components.
  * @module components/theme/Breadcrumbs/Breadcrumbs
@@ -211,7 +214,7 @@ export class BreadcrumbsComponent extends Component {
                         for (let item2 of item1.items) {
                           if (item2.title == parentTitle) {
                             menuArray = item2.items;
-                            console.log(menuArray);
+                            // console.log(menuArray);
 
                             for (let item of menuArray) {
                               if (
@@ -229,7 +232,7 @@ export class BreadcrumbsComponent extends Component {
                           for (let item3 of item2.items) {
                             if (item3.title == parentTitle) {
                               menuArray = item3.items;
-                              console.log(menuArray);
+                              // console.log(menuArray);
                               for (let item of menuArray) {
                                 if (
                                   item.title == 'IMAGES' ||

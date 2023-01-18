@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * Footer component.
  * @module components/theme/Footer/Footer
@@ -73,22 +74,32 @@ const Footer = ({ intl }) => {
             >
               Contact
             </a>
-            <a href="https://twitter.com/Zeeuwsmuseum" target="_blank">
+            <a
+              href="https://twitter.com/Zeeuwsmuseum"
+              target="_blank"
+              rel="noreferrer"
+            >
               <IoLogoTwitter className="social" />
             </a>
-            <a href="https://www.facebook.com/ZeeuwsMuseum" target="_blank">
+            <a
+              href="https://www.facebook.com/ZeeuwsMuseum"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaFacebookF className="social" />
             </a>
-            <a href="https://www.instagram.com/zeeuws_museum" target="_blank">
+            <a
+              href="https://www.instagram.com/zeeuws_museum"
+              target="_blank"
+              rel="noreferrer"
+            >
               <ImInstagram className="social" />
             </a>
           </div>
 
           <div id="footermail" className="footerInfoBox">
             <div className="titleWrapper">
-              <a id="footerTitle3" href="">
-                NIEUWSBRIEF
-              </a>
+              <p id="footerTitle3">NIEUWSBRIEF</p>
             </div>
             <p> Schrijf je in voor onze nieuwsbrief en blijf op de hoogte. </p>
 

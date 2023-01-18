@@ -1,3 +1,5 @@
+/* eslint-disable no-sequences */
+/* eslint-disable no-unused-expressions */
 /**
  * Add your config changes here.
  * @module config
@@ -14,8 +16,6 @@
  */
 
 import {
-  SocialTopViewBlock,
-  SocialTopEditBlock,
   EmptylineEditBlock,
   EmptylineViewBlock,
   SocialBottomViewBlock,
@@ -27,7 +27,6 @@ import {
   StoryBlockViewBlock,
   StoryBlockEditBlock,
 } from '@package/components';
-import sliderSVG from '@plone/volto/icons/slider.svg';
 import dotsSVG from '@plone/volto/icons/dots.svg';
 import showSVG from '@plone/volto/icons/show.svg';
 import presentationSVG from '@plone/volto/icons/presentation.svg';

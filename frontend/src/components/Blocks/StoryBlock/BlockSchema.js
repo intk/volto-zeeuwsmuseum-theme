@@ -4,7 +4,7 @@ export default () => ({
     {
       id: 'default',
       title: 'Default',
-      fields: ['title', 'story','image'],
+      fields: ['title', 'story', 'image'],
     },
   ],
   properties: {

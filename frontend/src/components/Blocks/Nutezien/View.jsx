@@ -1,18 +1,17 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import Slider from 'react-slick';
 import { FaChevronRight } from 'react-icons/fa';
 import satin from './satin.jpeg';
 import diepte from './diepte.jpeg';
 import zee from './zee.jpeg';
-
 
 const View = (props) => {
   return (
     <div className="nutezien">
       <a href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/nu-in-het-museum/tentoonstellingen/actueel-en-verwacht/aggregator">
         <h1>Nu te zien</h1>
-        <FaChevronRight 
-        />
+        <FaChevronRight />
       </a>
       <div className="nutezienContainer">
         <div className="nutezienItem">

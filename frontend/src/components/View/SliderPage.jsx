@@ -10,8 +10,6 @@ import {
 import config from '@plone/volto/registry';
 import PropTypes from 'prop-types';
 
-
-
 const messages = defineMessages({
   unknownBlock: {
     id: 'Unknown Block',
@@ -62,7 +60,6 @@ const SliderPage = (props) => {
     ''
   );
 };
-
 
 /**
  * Property types.

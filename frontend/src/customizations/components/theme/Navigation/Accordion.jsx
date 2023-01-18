@@ -1,7 +1,7 @@
+/* eslint-disable no-undef */
 import React, { Component } from 'react';
-import { Accordion, Form, Menu } from 'semantic-ui-react';
+import { Accordion, Menu } from 'semantic-ui-react';
 import { FaChevronDown } from 'react-icons/fa';
-
 
 export default class AccordionMenu extends Component {
   state = { activeIndex: 0 };

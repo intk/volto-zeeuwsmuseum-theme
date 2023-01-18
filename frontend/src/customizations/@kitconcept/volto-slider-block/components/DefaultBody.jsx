@@ -2,7 +2,7 @@ import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { getTeaserImageURL } from '../../../../../node_modules/@kitconcept/volto-slider-block/src/helpers';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import { Icon, MaybeWrap, UniversalLink } from '@plone/volto/components';
+import { Icon, MaybeWrap } from '@plone/volto/components';
 import { Input, Button, Message } from 'semantic-ui-react';
 import cx from 'classnames';
 import navTreeSVG from '@plone/volto/icons/nav.svg';

@@ -8,7 +8,7 @@ const Edit = (props) => {
       <View {...props} />
       <Sidebar {...props} />
     </>
-  )
+  );
 };
 
 export default Edit;

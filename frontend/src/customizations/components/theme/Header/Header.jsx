@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable eqeqeq */
+
 /**
  * Header component.
  * @module components/theme/Header/Header
@@ -27,20 +30,23 @@ function useScrollDirection() {
 
     const updateScrollDirection = () => {
       const scrollY = window.pageYOffset;
-      const direction = scrollY > lastScrollY ? "down" : "up";
-      if (direction !== scrollDirection && (scrollY - lastScrollY > 30 || scrollY - lastScrollY < -10)) {
+      const direction = scrollY > lastScrollY ? 'down' : 'up';
+      if (
+        direction !== scrollDirection &&
+        (scrollY - lastScrollY > 30 || scrollY - lastScrollY < -10)
+      ) {
         setScrollDirection(direction);
       }
       lastScrollY = scrollY > 0 ? scrollY : 0;
     };
-    window.addEventListener("scroll", updateScrollDirection); // add event listener
+    window.addEventListener('scroll', updateScrollDirection); // add event listener
     return () => {
-      window.removeEventListener("scroll", updateScrollDirection); // clean up
-    }
+      window.removeEventListener('scroll', updateScrollDirection); // clean up
+    };
   }, [scrollDirection]);
 
   return scrollDirection;
-};
+}
 
 /**
  * Header component class.
@@ -90,7 +96,6 @@ const Header = (props) => {
         </div>
       </Container>
 
-
       {props.content != undefined ? (
         props.content['@type'] == 'Document' ||
         props.content['@type'] == 'slideshow' ? (
@@ -103,8 +108,7 @@ const Header = (props) => {
       )}
     </Segment>
   );
-
-}
+};
 
 export default compose(
   injectIntl,
@@ -116,7 +120,6 @@ export default compose(
     content: state.content.data,
   })),
 )(Header);
-
 
 // details.propTypes = {
 //      * Property types.

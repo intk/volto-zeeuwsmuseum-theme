@@ -1,3 +1,6 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable no-lone-blocks */
+/* eslint-disable no-unused-vars */
 /**
  * App container.
  * @module components/theme/App/App
@@ -120,7 +123,6 @@ class App extends Component {
 
     // For header and breadcrumb
     const menuItems = this.props.content;
-
 
     const language =
       this.props.content?.language?.token ?? this.props.intl?.locale;
@@ -253,7 +255,6 @@ class App extends Component {
   }
 }
 // end of the trick
-
 
 export const __test__ = connect(
   (state, props) => ({

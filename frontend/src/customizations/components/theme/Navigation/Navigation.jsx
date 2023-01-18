@@ -8,13 +8,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { defineMessages, injectIntl } from 'react-intl';
-import { Dropdown, Menu, Accordion, Form } from 'semantic-ui-react';
+import { Dropdown, Menu, Accordion } from 'semantic-ui-react';
 import cx from 'classnames';
 import { BodyClass, getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 import { getNavigation } from '@plone/volto/actions';
 import { CSSTransition } from 'react-transition-group';
-import NavItems from '@plone/volto/components/theme/Navigation/NavItems';
 import { FaChevronDown } from 'react-icons/fa';
 
 const messages = defineMessages({
@@ -124,10 +123,8 @@ class Navigation extends Component {
    * @returns {string} Markup for the component.
    */
 
-
-
   render() {
-    const { activeIndex } = this.state;
+    // const { activeIndex } = this.state;
 
     const PlanContent = (
       <div>
