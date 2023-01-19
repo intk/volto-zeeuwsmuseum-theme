@@ -85,8 +85,9 @@ services:
     image: intkbv/zeeuwsmuseumwebsite-backend:latest
     environment:
       SITE: Plone
-    volumes:
-      - site-data:/data
+      RELSTORAGE_DSN: "dbname='plone' user='plone' host='db' password='plone'"
+    depends_on:
+      - db
     networks:
     - traefik-public
     - backend
@@ -121,17 +122,16 @@ services:
         - "traefik.http.middlewares.backend-classic.replacepathregex.replacement=/VirtualHostBase/https/${FQDN?Unset}/Plone/VirtualHostRoot/_vh_ClassicUI/$$1"
         - traefik.http.routers.backend-classic.middlewares=gzip,backend-auth,backend-classic
 
-
-  # db:
-  #   image: postgres:14.2
-  #   environment:
-  #     POSTGRES_USER: plone
-  #     POSTGRES_PASSWORD: plone
-  #     POSTGRES_DB: plone
-  #   volumes:
-  #   - site-data:/var/lib/postgresql/data
-  #   networks:
-  #   - backend
+  db:
+    image: postgres:14.2
+    environment:
+      POSTGRES_USER: plone
+      POSTGRES_PASSWORD: plone
+      POSTGRES_DB: plone
+    volumes:
+    - site-data:/var/lib/postgresql/data
+    networks:
+    - backend
 
 volumes:
   traefik-public-certificates:

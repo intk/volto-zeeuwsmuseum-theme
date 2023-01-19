@@ -9,3 +9,5 @@ host_vars/intkbv-prod.yml
 lib
 lib64
 pyvenv.cfg
+.zeeuwsmuseum-new.pem
+.intk-cihan-key.pem
