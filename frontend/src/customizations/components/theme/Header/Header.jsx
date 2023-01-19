@@ -22,6 +22,8 @@ import {
   NavItems,
 } from '@plone/volto/components';
 
+// This function determines the direction of the page scrolling
+// We then pass the result to the Segments className
 function useScrollDirection() {
   const [scrollDirection, setScrollDirection] = useState(null);
 
@@ -81,8 +83,6 @@ const Header = (props) => {
                 ZEEUWS MUSEUM
               </a>
             </div>
-
-            {/* This section is for the rest of the menu */}
             <Navigation pathname={props.pathname} />
           </div>
           <div className="tools-search-wrapper">
@@ -92,10 +92,14 @@ const Header = (props) => {
                 <Anontools />
               </div>
             )}
+            <div className="search">
+              <SearchWidget />
+            </div>
           </div>
         </div>
       </Container>
 
+      {/* This section is to render Breadcrumbs conditionally */}
       {props.content != undefined ? (
         props.content['@type'] == 'Document' ||
         props.content['@type'] == 'slideshow' ? (
