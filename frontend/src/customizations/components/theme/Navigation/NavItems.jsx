@@ -18,6 +18,7 @@ import NavItem from '@plone/volto/components/theme/Navigation/NavItem';
 import { Dropdown } from 'semantic-ui-react';
 
 const NavItems = ({ items, lang }) => {
+  console.log(items);
   return (
     <>
       {items.map((item) =>
@@ -34,6 +35,8 @@ const NavItems = ({ items, lang }) => {
               ))}
             </Dropdown.Menu>
           </Dropdown>
+        ) : item.title === 'Home' ? (
+          ''
         ) : (
           <NavItem item={item} lang={lang} key={item.url} />
         ),
