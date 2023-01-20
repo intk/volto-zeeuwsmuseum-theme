@@ -35,9 +35,6 @@ a.logo-written {
 .tools-search-wrapper{
   max-width: 350px;
   align-self: center;
-  .search{
-    // width: 20px;
-  }
 }
 .navigation-language-wrapper{
   display: flex;
@@ -126,12 +123,7 @@ nav#navigation.navigation {
 div#inhoudDropdown {
   padding: 6px 35px !important;
 }
-.ui.pointing.secondary > * {
-  /* height: 58px;
-  padding-top: 10px !important;
-  padding-bottom: 0px !important;
-  border-bottom: 0px !important; */
-}
+
 .item.simple {
   width: auto;
   outline-offset: -2px;
@@ -287,8 +279,6 @@ i.dropdown.icon::before {
   transition: transform 0.5s cubic-bezier(0.09, 0.11, 0.24, 0.91);
 }
 
-.mobile-menu-enter-done {
-}
 
 .mobile-menu-exit {
   transform: translate(0%, 0%);
