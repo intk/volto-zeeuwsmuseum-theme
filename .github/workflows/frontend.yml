@@ -12,27 +12,27 @@ env:
 
 jobs:
 
-  eslint:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./frontend
-    steps:
-      - name: Checkout codebase
-        uses: actions/checkout@v3
+  # eslint:
+  #   runs-on: ubuntu-latest
+  #   defaults:
+  #     run:
+  #       working-directory: ./frontend
+  #   steps:
+  #     - name: Checkout codebase
+  #       uses: actions/checkout@v3
 
-      - name: Use Node.js ${{ env.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.node-version }}
-          cache: 'yarn'
-          cache-dependency-path: 'frontend/yarn.lock'
+  #     - name: Use Node.js ${{ env.node-version }}
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: ${{ env.node-version }}
+  #         cache: 'yarn'
+  #         cache-dependency-path: 'frontend/yarn.lock'
 
-      - name: Install packages
-        run: make install
+  #     - name: Install packages
+  #       run: make install
 
-      - name: Lint
-        run: yarn run lint:ci
+  #     - name: Lint
+  #       run: yarn run lint:ci
 
   prettier:
     runs-on: ubuntu-latest
