@@ -13,6 +13,10 @@ a.logo-written {
   line-height: 20px;
   height: 57px;
   -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+}
+#writtenlogo{
+  padding-left: 0px;
 }
 
 .ui.basic.segment .header .logo-nav-wrapper, .tools-search-wrapper {
@@ -32,7 +36,7 @@ a.logo-written {
   max-width: 350px;
   align-self: center;
   .search{
-    width: 20px;
+    // width: 20px;
   }
 }
 .navigation-language-wrapper{
@@ -45,6 +49,7 @@ a.logo-written {
 .ui.pointing.secondary{
   align-content: space-around;
 }
+
 
 div.ui.basic.segment.header-wrapper {
   margin-bottom: 0px;
@@ -97,7 +102,6 @@ div.menu.transition {
   left: auto !important;
   padding: 22px 0px 18px !important;
   min-width: 238px !important;
-
 
   div.item {
     padding-bottom: 0% !important;

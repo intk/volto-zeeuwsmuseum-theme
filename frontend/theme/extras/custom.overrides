@@ -2,10 +2,18 @@
   #header-wrapper {
     position: static !important;
     display: block !important;
-    z-index: 0 !important;
   }
   .ui.basic.segment.content-area {
     margin-top: 0px !important;
+  }
+}
+
+//A solution for the sidebar that is coming for the right side
+//we might put it on the top of the header
+//Or we can srink is
+.has-sidebar, .view-addview.has-sidebar{
+  #header-wrapper {
+    z-index: 0 !important;
   }
 }
 

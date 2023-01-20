@@ -2,3 +2,11 @@
         User Overrides
 *******************************/
 
+#navigation .menu.transition.language-selector_dropdown{
+  display: flex !important;
+  max-width: 50px !important;
+  a{
+    width: 60px;
+  }
+  left: 0px !important;
+}
