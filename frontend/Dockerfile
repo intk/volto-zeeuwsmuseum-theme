@@ -22,9 +22,9 @@ EOF
 FROM base
 
 LABEL maintainer="INTK <cihan@itsnotthatkind.org>" \
-      org.label-schema.name="zeeuwsmuseumproject-frontend" \
-      org.label-schema.description="ZeeuwsMuseumProject frontend image." \
-      org.label-schema.vendor="INTK"
+    org.label-schema.name="zeeuwsmuseumproject-frontend" \
+    org.label-schema.description="ZeeuwsMuseumProject frontend image." \
+    org.label-schema.vendor="INTK"
 
 RUN <<EOF
     apt-get update
