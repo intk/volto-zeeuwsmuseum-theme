@@ -21,6 +21,7 @@ import {
   Breadcrumbs,
   NavItems,
 } from '@plone/volto/components';
+import HeaderItem from '/Users/cihanandac/Documents/ZeeuwsMuseumSite/zeeuwsmuseumwebsite/frontend/src/components/theme/HeaderItem.jsx';
 
 // This function determines the direction of the page scrolling
 // We then pass the result to the Segments className
@@ -79,9 +80,11 @@ const Header = (props) => {
         <div className="header">
           <div className="logo-nav-wrapper">
             <div className="logo">
-              <a className="logo-written" id="writtenlogo" href="/">
-                ZEEUWS MUSEUM
-              </a>
+              <HeaderItem
+                item={props.itemsN[0]}
+                lang={props.lang}
+                key={props.itemsN[0].url}
+              />
             </div>
             <Navigation pathname={props.pathname} />
           </div>
@@ -111,6 +114,8 @@ export default compose(
     root: state.breadcrumbs.root,
     token: state.userSession.token,
     content: state.content.data,
+    itemsN: state.navigation.items,
+    lang: state.intl.locale,
   })),
 )(Header);
 
