@@ -1,0 +1,4 @@
+
+.ui.secondary.pointing.menu .item {
+  border-bottom: 4px !important;
+}

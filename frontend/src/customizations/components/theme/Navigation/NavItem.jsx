@@ -1,20 +1,26 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { isInternalURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 
-const NavItem = ({ item, lang }) => {
+const NavItem = ({ item, lang, id }) => {
   const { settings } = config;
   // The item.url in the root is ''
   // TODO: make more consistent it everywhere (eg. reducers to return '/' instead of '')
   if (isInternalURL(item.url) || item.url === '') {
     return (
-      <NavItem>
+      <NavLink
         to={item.url === '' ? '/' : item.url}
         key={item.url}
-        className="item" activeClassName="active" exact=
-        {settings.isMultilingual ? item.url === `/${lang}` : item.url === ''}
+        className="item simple"
+        id={id}
+        activeClassName="active"
+        exact={
+          settings.isMultilingual ? item.url === `/${lang}` : item.url === ''
+        }
+      >
         {item.title}
-      </NavItem>
+      </NavLink>
     );
   } else {
     return (
@@ -23,6 +29,7 @@ const NavItem = ({ item, lang }) => {
         key={item.url}
         className="item"
         rel="noopener noreferrer"
+        id={id}
       >
         {item.title}
       </a>

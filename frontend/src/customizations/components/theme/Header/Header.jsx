@@ -85,17 +85,6 @@ const Header = (props) => {
             </div>
             <Navigation pathname={props.pathname} />
           </div>
-          <div className="tools-search-wrapper">
-            <LanguageSelector />
-            {!props.token && (
-              <div className="tools">
-                <Anontools />
-              </div>
-            )}
-            <div className="search">
-              <SearchWidget />
-            </div>
-          </div>
         </div>
       </Container>
 

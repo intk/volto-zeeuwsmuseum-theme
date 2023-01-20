@@ -2,19 +2,20 @@
  * Navigation components.
  * @module components/theme/Navigation/Navigation
  */
-// import { BsChevronDown } from 'react-icons/bs';
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { defineMessages, injectIntl } from 'react-intl';
-import { Dropdown, Menu, Accordion } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 import cx from 'classnames';
 import { BodyClass, getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 import { getNavigation } from '@plone/volto/actions';
 import { CSSTransition } from 'react-transition-group';
-import { FaChevronDown } from 'react-icons/fa';
+import NavItems from '@plone/volto/components/theme/Navigation/NavItems';
+import { LanguageSelector, SearchWidget } from '@plone/volto/components';
 
 const messages = defineMessages({
   closeMobileMenu: {
@@ -48,6 +49,10 @@ class Navigation extends Component {
       }),
     ).isRequired,
     lang: PropTypes.string.isRequired,
+  };
+
+  static defaultProps = {
+    token: null,
   };
 
   /**
@@ -122,138 +127,7 @@ class Navigation extends Component {
    * @method render
    * @returns {string} Markup for the component.
    */
-
   render() {
-    // const { activeIndex } = this.state;
-
-    const PlanContent = (
-      <div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/praktische-info">
-            Praktische informatie
-          </a>
-        </div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/nu-in-het-museum">
-            Zien en doen
-          </a>
-        </div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/kinderen-klas-of-groep">
-            Families, groupen en scholen
-          </a>
-        </div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/leukdagjeuit">
-            Dagje uit Middelburg
-          </a>
-        </div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/boek-je-bezoek">
-            Boek je bezoek
-          </a>
-        </div>
-      </div>
-    );
-
-    const OntdekContent = (
-      <div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/videotheek">Videotheek</a>
-        </div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/collectie/mode-en-streekdracht">
-            Mode en streekdracht
-          </a>
-        </div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/collectie/wandtapijten">
-            Wandtapijten
-          </a>
-        </div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/collectie/geschiedenis-en-archeologie">
-            Geschiedenis en archeologie
-          </a>
-        </div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/collectie/kunst">Kunst</a>
-        </div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/collectie/kunstnijverheid">
-            Kunstnijverheid
-          </a>
-        </div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/collectie/natuurhistorie">
-            Natuurhistorie
-          </a>
-        </div>
-      </div>
-    );
-    const OverContent = (
-      <div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/over-het-museum/steun-het-museum">
-            Steun het museum
-          </a>
-        </div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/over-het-museum/pers">Pers</a>
-        </div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/over-het-museum/organisatie">
-            Organisatie
-          </a>
-          <div>
-            <a href="https://www.zeeuwsmuseum.nl/nl/over-het-museum/publicaties">
-              Publicaties
-            </a>
-          </div>
-        </div>
-        <div>
-          <a href="https://www.zeeuwsmuseum.nl/nl/over-het-museum/voorwaarden">
-            Voorwaarden
-          </a>
-        </div>
-      </div>
-    );
-
-    const rootPanels = [
-      {
-        key: 'panel-1',
-        title: (
-          <Accordion.Title>
-            <p>
-              PLAN JE BEZOEK <FaChevronDown color="#808080" />
-            </p>
-          </Accordion.Title>
-        ),
-        content: { content: PlanContent },
-      },
-      {
-        key: 'panel-2',
-        title: (
-          <Accordion.Title>
-            <p>
-              ONTDEK <FaChevronDown color="#808080" />
-            </p>
-          </Accordion.Title>
-        ),
-        content: { content: OntdekContent },
-      },
-      {
-        key: 'panel-2',
-        title: (
-          <Accordion.Title>
-            <p>
-              OVER HET MUSEUM <FaChevronDown color="#808080" />
-            </p>
-          </Accordion.Title>
-        ),
-        content: { content: OverContent },
-      },
-    ];
     return (
       <nav className="navigation" id="navigation" aria-label="navigation">
         <div className="hamburger-wrapper mobile tablet only">
@@ -287,7 +161,6 @@ class Navigation extends Component {
             </span>
           </button>
         </div>
-
         <Menu
           stackable
           pointing
@@ -295,137 +168,19 @@ class Navigation extends Component {
           className="computer large screen widescreen only"
           onClick={this.closeMobileMenu}
         >
-          {/* <Menu.Item
-            className="simple"
-            name="editorials"
-            onClick={this.handleItemClick}
-            href="http://volto.cihanandac.net"
-          >
-            JAARVERSLAG
-          </Menu.Item> */}
-
-          <Dropdown
-            item
-            icon={<FaChevronDown color="#808080" />}
-            simple
-            text="PLAN JE BEZOEK"
-          >
-            <Dropdown.Menu>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/praktische-info">
-                  Praktische informatie
-                </a>
-              </Dropdown.Item>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/nu-in-het-museum">
-                  Zien en doen
-                </a>
-              </Dropdown.Item>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/kinderen-klas-of-groep">
-                  Families, groupen en scholen
-                </a>
-              </Dropdown.Item>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/leukdagjeuit">
-                  Dagje uit Middelburg
-                </a>
-              </Dropdown.Item>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/boek-je-bezoek">
-                  Boek je bezoek
-                </a>
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-          <Dropdown
-            item
-            icon={<FaChevronDown color="#808080" />}
-            simple
-            text="ONTDEK"
-          >
-            <Dropdown.Menu>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/videotheek">
-                  Videotheek
-                </a>
-              </Dropdown.Item>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/collectie/mode-en-streekdracht">
-                  Mode en streekdracht
-                </a>
-              </Dropdown.Item>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/collectie/wandtapijten">
-                  Wandtapijten
-                </a>
-              </Dropdown.Item>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/collectie/geschiedenis-en-archeologie">
-                  Geschiedenis en archeologie
-                </a>
-              </Dropdown.Item>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/collectie/kunst">
-                  Kunst
-                </a>
-              </Dropdown.Item>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/collectie/kunstnijverheid">
-                  Kunstnijverheid
-                </a>
-              </Dropdown.Item>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/collectie/natuurhistorie">
-                  Natuurhistorie
-                </a>
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-
-          <Dropdown
-            item
-            icon={<FaChevronDown color="#808080" />}
-            simple
-            text="OVER HET MUSEUM"
-          >
-            <Dropdown.Menu>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/over-het-museum/steun-het-museum">
-                  Steun het museum
-                </a>
-              </Dropdown.Item>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/over-het-museum/pers">
-                  Pers
-                </a>
-              </Dropdown.Item>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/over-het-museum/organisatie">
-                  Organisatie
-                </a>
-              </Dropdown.Item>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/over-het-museum/publicaties">
-                  Publicaties
-                </a>
-              </Dropdown.Item>
-              <Dropdown.Item id="dropdownItemA">
-                <a href="https://www.zeeuwsmuseum.nl/nl/over-het-museum/voorwaarden">
-                  Voorwaarden
-                </a>
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-
-          <Menu.Item
-            className="simple"
-            name="editorials"
-            onClick={this.handleItemClick}
-            href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/boek-je-bezoek"
-          >
-            TICKETS
-          </Menu.Item>
+          <NavItems items={this.props.items} lang={this.props.lang} />
+          <div className="tools-search-wrapper">
+            <LanguageSelector />
+            {/* login button below */}
+            {/* {!props.token && (
+                  <div className="tools">
+                    <Anontools />
+                  </div>
+                )} */}
+            <div className="search">
+              <SearchWidget />
+            </div>
+          </div>
         </Menu>
         <CSSTransition
           in={this.state.isMobileMenuOpen}
@@ -436,31 +191,21 @@ class Navigation extends Component {
           <div key="mobile-menu-key" className="mobile-menu">
             <BodyClass className="has-mobile-menu-open" />
             <div className="mobile-menu-nav">
-              <div>
-                {/* <Menu.Item
-                  name="editorials"
-                  onClick={this.handleItemClick}
-                  href="http://volto.cihanandac.net"
-                >
-                  JAARVERSLAG
-                </Menu.Item> */}
-              </div>
-              <div>
-                <Accordion
-                  className="accordion"
-                  panels={rootPanels}
-                ></Accordion>
-              </div>
-              <div>
-                <Menu.Item
-                  className="simple"
-                  name="editorials"
-                  onClick={this.handleItemClick}
-                  href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/boek-je-bezoek"
-                >
-                  TICKETS
-                </Menu.Item>
-              </div>
+              <Menu stackable pointing secondary onClick={this.closeMobileMenu}>
+                <NavItems items={this.props.items} lang={this.props.lang} />
+                <div className="tools-search-wrapper">
+                  <LanguageSelector />
+                  {/* login button below */}
+                  {/* {!props.token && (
+                  <div className="tools">
+                    <Anontools />
+                  </div>
+                )} */}
+                  <div className="search">
+                    <SearchWidget />
+                  </div>
+                </div>
+              </Menu>
             </div>
           </div>
         </CSSTransition>
