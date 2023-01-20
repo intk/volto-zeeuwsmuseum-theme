@@ -2,23 +2,25 @@
 /* // ********BREADCRUMB*********** */
 
 .ui.secondary.vertical {
-  background-color: #ffffff;
   border: 0px;
+  background-color: #ffffff;
 }
 
 #crumbcontainer {
+  position: relative;
+  display: flex;
+  width: 100% !important;
+  width: 100%;
+  height: 60px;
   /* display: flex !important; */
   flex-direction: row;
-  width: 100% !important;
-  position: relative;
-  height: 60px;
-  width: 100%;
-  display: flex;
   /* border-bottom: 1px solid #c3c3c3; */
 }
+
 #dropdowncontainer {
   width: 283px !important;
 }
+
 #inhoud {
   position: absolute;
   top: 0px;
@@ -46,8 +48,8 @@
 #dropdowncontainer {
   .divider.text {
     padding-right: 9px;
-    font-size: 16px !important;
     color: #808080;
+    font-size: 16px !important;
   }
 }
 
@@ -56,43 +58,47 @@
 }
 
 .ui.secondary.vertical.segment.breadcrumbs {
-  padding: 0%;
-  height: 60px;
-  width: 100%;
-  border-bottom: 1px solid #c3c3c3;
   display: none;
+  width: 100%;
+  height: 60px;
+  padding: 0%;
+  border-bottom: 1px solid #c3c3c3;
 }
 
 div.ui.breadcrumb {
-  font-family: 'UniversLightCn', 'Helvetica Neue', Helvetica, sans-serif;
+  height: 54px;
+  padding-top: 20px;
+  padding-bottom: 0%;
   color: #808080 !important;
+  font-family: 'UniversLightCn', 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 17px;
   /* padding-left: 300px; */
   letter-spacing: 0.1em;
-  padding-top: 20px;
-  padding-bottom: 0%;
-  height: 54px;
 
   .parenttitle:hover {
     color: #7bb0e7 !important;
   }
+
   .divider {
     font-size: 15px;
     font-weight: 100;
   }
+
   svg path {
-    color: #808080;
-    height: 30px !important;
     width: 20px;
+    height: 30px !important;
+    color: #808080;
   }
 }
+
 .ui.breadcrumb .section.active {
   color: #808080 !important;
 }
+
 .ui.breadcrumb .section {
+  margin-bottom: 10px;
   color: #000000 !important;
   text-align: center;
-  margin-bottom: 10px;
 }
 
 .view-viewview.contenttype-jaarverslag,
@@ -102,48 +108,53 @@ div.ui.breadcrumb {
   .ui.secondary.vertical.segment.breadcrumbs {
     display: block !important;
   }
+
   #inhoud {
     flex-grow: 0;
   }
+
   div.ui.breadcrumb {
+    max-width: 1600px !important;
     flex-grow: 1;
     justify-content: center;
-    max-width: 1600px !important;
-    padding-left: 15px;
     padding-right: 15px;
+    padding-left: 15px;
     /* width: 100% !important; */
   }
 }
+
 .ui.segment.content-area {
   padding-top: 0%;
   margin-top: 0%;
 }
 
 div#InhoudDropdown {
-  margin-bottom: 0px !important;
-  margin-top: 0px !important;
-  margin-right: 0px !important;
   /* min-width: 288px !important; */
   padding: 6px 29px !important;
-  letter-spacing: 1.7px !important;
-  font-size: 17px !important;
   border: none;
-  color: #000000;
+  margin-top: 0px !important;
+  margin-right: 0px !important;
+  margin-bottom: 0px !important;
   background-color: #ffffff !important;
+  color: #000000;
+  font-size: 17px !important;
+  letter-spacing: 1.7px !important;
 
   a {
-    line-height: 20px !important;
     color: #000000;
+    line-height: 20px !important;
   }
+
   a:hover {
-    color: #7bb0e7;
     background-color: #ffffff !important;
+    color: #7bb0e7;
   }
 }
 
 .dropdownContentPage {
   /* height: 320px !important; */
   box-sizing: content-box;
+
   a {
     padding: 6px 4px;
   }
@@ -151,16 +162,17 @@ div#InhoudDropdown {
 
 #folderMap a,
 #folderMap div {
-  font-size: 16px;
   font-family: 'UniversCn';
+  font-size: 16px;
   text-transform: uppercase !important;
 
   svg {
-    height: 30px !important;
     width: 30px !important;
+    height: 30px !important;
+
     path {
-      height: 30px !important;
       width: 1px !important;
+      height: 30px !important;
       fill: #c3c3c3 !important;
     }
   }
@@ -169,22 +181,24 @@ div#InhoudDropdown {
 .breadtitle,
 .parenttitle {
   display: flex;
-  align-items: center;
-  padding-left: 10px !important;
-  padding-right: 15px !important;
   height: 30px !important;
+  align-items: center;
+  padding-right: 15px !important;
+  padding-left: 10px !important;
 }
+
 .breaddivider {
+  height: 30px !important;
   padding-right: 9px;
   padding-left: 5px;
-  height: 30px !important;
 }
 
 .crumbcontainer {
   display: flex !important;
-  a{
-    text-decoration: none !important;
+
+  a {
     color: #000000 !important;
+    text-decoration: none !important;
   }
 }
 
@@ -194,21 +208,27 @@ div#InhoudDropdown {
   .ui.secondary.vertical.segment.breadcrumbs {
     height: 56px !important;
   }
+
   div.ui.basic.segment.header-wrapper {
     /* height: 59px !important !important; */
   }
+
   .ui.container.header-container {
     height: 59px !important;
   }
+
   #crumbcontainer {
     height: 58px !important;
   }
+
   #inhoud .ui.item.simple.dropdown {
     height: 54px !important;
   }
+
   #inhoud {
-    height: 55px !important;
     left: 0px !important;
+    height: 55px !important;
+
     .menu {
       right: auto !important;
       left: 0px !important;
@@ -225,18 +245,21 @@ div#InhoudDropdown {
 
   #dropdownContentPage {
     width: 100% !important;
-    border-top: white !important;
     padding-top: 0px !important;
     padding-bottom: 0px !important;
+    border-top: white !important;
+
     a {
       padding-left: 47px !important;
     }
   }
+
   .menu.transition.dropdownContentPage {
     width: 100vw !important;
-    border-top: white !important;
     padding-top: 10px !important;
     padding-bottom: 0px !important;
+    border-top: white !important;
+
     a {
       padding-left: 47px !important;
     }
