@@ -89,7 +89,7 @@ storybook: ## Generate Storybook
 
 .PHONY: build-image
 build-image:  ## Build Docker Image
-	@docker build . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile
+	@docker build --load --platform=linux/amd64 . -t $(IMAGE_NAME):$(IMAGE_TAG) -f Dockerfile
 
 # Acceptance tests
 
