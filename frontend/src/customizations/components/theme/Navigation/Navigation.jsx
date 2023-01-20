@@ -17,7 +17,6 @@ import { CSSTransition } from 'react-transition-group';
 import NavItems from '@plone/volto/components/theme/Navigation/NavItems';
 import { LanguageSelector, SearchWidget } from '@plone/volto/components';
 
-
 const messages = defineMessages({
   closeMobileMenu: {
     id: 'Close menu',
