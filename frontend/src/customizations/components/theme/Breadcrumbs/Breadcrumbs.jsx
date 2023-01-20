@@ -10,21 +10,13 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { Link } from 'react-router-dom';
 import { Breadcrumb, Container, Segment } from 'semantic-ui-react';
 import { defineMessages, injectIntl } from 'react-intl';
-
-import { Icon } from '@plone/volto/components';
 import { getBreadcrumbs } from '@plone/volto/actions';
 import { getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
 import { BsChevronCompactRight } from 'react-icons/bs';
-import NavItems from '@plone/volto/components/theme/Navigation/NavItems';
-import { getNavigation } from '@plone/volto/actions';
 import { Dropdown, Menu, Accordion, Form } from 'semantic-ui-react';
 import { FaChevronDown } from 'react-icons/fa';
-import { Navigation } from '@plone/volto/components';
-
-import homeSVG from '@plone/volto/icons/home.svg';
 
 const messages = defineMessages({
   home: {
@@ -103,26 +95,6 @@ export class BreadcrumbsComponent extends Component {
       >
         <Container id="crumbcontainer">
           <Breadcrumb id="folderMap">
-            {/* <Link
-              to={this.props.root || '/'}
-              className="section"
-              title={this.props.intl.formatMessage(messages.home)}
-            >
-              <Icon name={homeSVG} size="18px" />
-            </Link>
-            {this.props.items.map((item, index, items) => [
-              <Breadcrumb.Divider key={`divider-${item.url}`} />,
-              index < items.length - 1 ? (
-                <Link key={item.url} to={item.url} className="section">
-                  {item.title}
-                </Link>
-              ) : (
-                <Breadcrumb.Section key={item.url} active>
-                  {item.title}
-                </Breadcrumb.Section>
-              ),
-            ])} */}
-
             {this.props.menuItems['@type'] == 'Document' ? (
               <Breadcrumb.Section
                 className="crumbcontainer"

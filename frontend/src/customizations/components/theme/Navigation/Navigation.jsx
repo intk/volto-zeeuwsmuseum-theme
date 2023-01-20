@@ -171,12 +171,6 @@ class Navigation extends Component {
           <NavItems items={this.props.items} lang={this.props.lang} />
           <div className="tools-search-wrapper">
             <LanguageSelector />
-            {/* login button below */}
-            {/* {!props.token && (
-                  <div className="tools">
-                    <Anontools />
-                  </div>
-                )} */}
             <div className="search">
               <SearchWidget />
             </div>
@@ -195,12 +189,6 @@ class Navigation extends Component {
                 <NavItems items={this.props.items} lang={this.props.lang} />
                 <div className="tools-search-wrapper">
                   <LanguageSelector />
-                  {/* login button below */}
-                  {/* {!props.token && (
-                  <div className="tools">
-                    <Anontools />
-                  </div>
-                )} */}
                   <div className="search">
                     <SearchWidget />
                   </div>

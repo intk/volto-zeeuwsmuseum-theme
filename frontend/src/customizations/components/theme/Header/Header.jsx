@@ -8,19 +8,10 @@
 
 import React, { Component, useState, useEffect } from 'react';
 import { Container, Segment } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { defineMessages, injectIntl } from 'react-intl';
-import {
-  Anontools,
-  LanguageSelector,
-  Logo,
-  Navigation,
-  SearchWidget,
-  Breadcrumbs,
-  NavItems,
-} from '@plone/volto/components';
+import { Navigation, Breadcrumbs } from '@plone/volto/components';
 import HeaderItem from '/Users/cihanandac/Documents/ZeeuwsMuseumSite/zeeuwsmuseumwebsite/frontend/src/components/theme/HeaderItem.jsx';
 
 // This function determines the direction of the page scrolling
