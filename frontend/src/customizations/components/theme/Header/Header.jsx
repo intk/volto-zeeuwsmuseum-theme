@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable no-unused-vars */
 /* eslint-disable eqeqeq */
 
@@ -12,7 +13,6 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Navigation, Breadcrumbs } from '@plone/volto/components';
-import NavItem from '../Navigation/NavItem';
 import { HeaderItem } from 'components';
 
 // This function determines the direction of the page scrolling
