@@ -12,7 +12,8 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Navigation, Breadcrumbs } from '@plone/volto/components';
-import HeaderItem from '/Users/cihanandac/Documents/ZeeuwsMuseumSite/zeeuwsmuseumwebsite/frontend/src/components/theme/HeaderItem.jsx';
+import NavItem from '../Navigation/NavItem';
+import { HeaderItem } from 'components';
 
 // This function determines the direction of the page scrolling
 // We then pass the result to the Segments className
