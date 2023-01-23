@@ -438,10 +438,6 @@ div#view {
             /* flex: 1 1 700px; */
           }
 
-          span.input-group-btn {
-            /* width: 15%; */
-          }
-
           button.submit-button {
             width: 59px;
             height: 55px;
@@ -567,10 +563,6 @@ div#view {
 
   .ui.secondary.vertical.segment.breadcrumbs {
     border-bottom: none;
-  }
-
-  h1.documentFirstHeading {
-    /* display: none !important; */
   }
 }
 /*----------END OF JAARVERSLAG TYPE ----------*/
@@ -751,12 +743,6 @@ p.block.image.align.full {
   }
 }
 
-p.block.image.align.left {
-}
-
-p.block.image.align.right {
-}
-
 .view-viewview #page-document p.block.image.align.center,
 .view-viewview #page-document div.block.video.align.center,
 .view-viewview #page-document table.ui.celled {
@@ -776,7 +762,14 @@ p.block.image.align.center {
   margin-bottom: 22px !important;
   /* width: 930px !important; */
   float: none;
-  vertical-align: middle;
+}
+
+div.language-selector {
+  a:not(:last-child):after {
+    content: '';
+    margin: 0%;
+  }
+
 }
 
 .teaser-item.top {
@@ -1006,10 +999,6 @@ body.view-viewview.contenttype-plone-site.siteroot {
     margin: 0% !important; */
     padding-bottom: 55px !important;
     margin-right: 60px;
-  }
-
-  span.input-group-btn {
-    /* width: 50px !important; */
   }
 
   div.input-group {

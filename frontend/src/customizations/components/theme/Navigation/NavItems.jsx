@@ -16,13 +16,19 @@
 import React from 'react';
 import NavItem from '@plone/volto/components/theme/Navigation/NavItem';
 import { Dropdown } from 'semantic-ui-react';
+import { FaChevronDown } from 'react-icons/fa';
 
 const NavItems = ({ items, lang }) => {
   return (
     <>
       {items.map((item) =>
         item && item.items && item.items.length > 0 ? (
-          <Dropdown text={item.title} className="item simple" key={item.url}>
+          <Dropdown
+            text={item.title}
+            className="item simple"
+            key={item.url}
+            icon={<FaChevronDown color="#808080" />}
+          >
             <Dropdown.Menu key={item.url}>
               {item.items.map((dropdownitem) => (
                 <NavItem

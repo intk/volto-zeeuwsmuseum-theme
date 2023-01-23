@@ -17,6 +17,7 @@ import config from '@plone/volto/registry';
 
 import { defineMessages, useIntl } from 'react-intl';
 import { Dropdown } from 'semantic-ui-react';
+import { FaChevronDown } from 'react-icons/fa';
 
 const messages = defineMessages({
   switchLanguageTo: {
@@ -35,13 +36,18 @@ const LanguageSelector = (props) => {
   const { settings } = config;
 
   return settings.isMultilingual ? (
-    <div className="language-selector">
+    <div className="language-selector-wrapper">
       <Dropdown
         text={currentLang}
         className="item simple language-selector"
         key={''}
+        icon={<FaChevronDown color="#808080" />}
       >
-        <Dropdown.Menu key={''} className="language-selector_dropdown">
+        <Dropdown.Menu
+          key={''}
+          className="language-selector_dropdown"
+          id="language-selector_dropdown"
+        >
           {map(settings.supportedLanguages, (lang) => {
             if (lang !== currentLang) {
               const translation = find(translations, { language: lang });
