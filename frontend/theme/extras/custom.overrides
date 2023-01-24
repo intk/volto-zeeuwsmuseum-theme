@@ -800,10 +800,6 @@ div.language-selector {
   overflow-wrap: break-word;
   text-overflow: ellipsis;
   white-space: nowrap;
-
-  .title {
-    /* padding-top: 25px; */
-  }
 }
 
 .block.slider {

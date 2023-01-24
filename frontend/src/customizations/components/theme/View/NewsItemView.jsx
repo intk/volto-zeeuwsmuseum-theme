@@ -13,7 +13,6 @@ import {
 } from '@plone/volto/helpers';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
-
 /**
  * NewsItemView view component class.
  * @function NewsItemView

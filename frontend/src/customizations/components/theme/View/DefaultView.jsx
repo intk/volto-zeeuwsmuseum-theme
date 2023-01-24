@@ -7,11 +7,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, injectIntl } from 'react-intl';
 
-import { Container, Image } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import { map } from 'lodash';
 import config from '@plone/volto/registry';
-import { FormattedDate } from '@plone/volto/components';
-import moment from 'moment';
 
 import {
   getBlocksFieldname,
@@ -90,7 +88,6 @@ const DefaultView = ({ content, intl, location }) => {
     </Container>
   );
 };
-
 
 /**
  * Property types.

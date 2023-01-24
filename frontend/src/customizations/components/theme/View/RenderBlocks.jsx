@@ -8,7 +8,6 @@ import {
   hasBlocksData,
 } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
-import { shouldForwardProp } from '@mui/styled-engine';
 
 const messages = defineMessages({
   unknownBlock: {
@@ -23,7 +22,6 @@ const RenderBlocks = (props) => {
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
   const blocksConfig = props.blocksConfig || config.blocks.blocksConfig;
   const CustomTag = `${props.as || 'div'}`;
-
 
   return hasBlocksData(content) ? (
     <CustomTag>

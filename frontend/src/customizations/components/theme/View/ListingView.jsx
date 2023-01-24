@@ -5,10 +5,10 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Segment, Container } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import { UniversalLink, PreviewImage } from '@plone/volto/components';
 import { compose } from 'redux';
-import { defineMessages, injectIntl } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 
 /**
@@ -18,7 +18,6 @@ import { connect } from 'react-redux';
  * @returns {string} Markup of the component.
  */
 
-
 const ListingView = ({ content }) => (
   <Container id="page-home">
     <div id="list-title">
@@ -27,7 +26,6 @@ const ListingView = ({ content }) => (
     <section id="content-core">
       {content.items.map((item) => (
         <div key={item.url} className="listing-items">
-
           {/* {(() => {
             let blocks = content.blocks;
             for (let block in blocks) {
@@ -52,9 +50,7 @@ const ListingView = ({ content }) => (
           )}
           <div id="jaarverslag-title">
             <h2>
-              <UniversalLink item={item}>
-                {item.title}
-              </UniversalLink>
+              <UniversalLink item={item}>{item.title}</UniversalLink>
             </h2>
             {item.description && <p>{item.description}</p>}
           </div>
@@ -88,9 +84,7 @@ ListingView.propTypes = {
 
 export default compose(
   injectIntl,
-  connect(
-    (state) => ({
-      navItems: state.navigation.items,
-    }),
-  ),
-) (ListingView);
+  connect((state) => ({
+    navItems: state.navigation.items,
+  })),
+)(ListingView);
