@@ -112,6 +112,9 @@ div.menu.transition {
     margin-bottom: 0% !important;
   }
 }
+div.menu.transition.dropdownContentPage, div.menu.transition.item.simple.language-selector_dropdown{
+  left: auto !important;
+}
 
 div.menu.transition {
   border-top: 1px solid #7bb0e7 !important;

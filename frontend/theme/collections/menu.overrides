@@ -8,3 +8,7 @@
 .ui.menu .ui.dropdown .menu>.item:hover, .ui.menu .dropdown-popup .ui.popup .menu>.item:hover{
   color: #7bb0e7 !important;
 }
+
+.ui.secondary.pointing.menu .item {
+  border-bottom: 1px;
+}
