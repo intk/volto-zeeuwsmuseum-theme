@@ -28,7 +28,6 @@ const NavItems = ({ items, lang }) => {
             className="item simple"
             key={item.url}
             icon={<FaChevronDown color="#808080" />}
-            activeClassName="selected"
           >
             <Dropdown.Menu key={item.url}>
               {item.items.map((dropdownitem) => (
