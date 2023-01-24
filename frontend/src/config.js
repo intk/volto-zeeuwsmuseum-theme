@@ -119,10 +119,10 @@ export default function applyConfig(config) {
 
   config.widgets.id.cookie_consent_configuration = MultilingualWidget();
 
-  const DEFAULT_LANG = 'en';
+  const DEFAULT_LANG = 'nl';
 
   config.settings.isMultilingual = true;
-  config.settings.supportedLanguages = ['en', 'nl', 'de'];
+  config.settings.supportedLanguages = ['nl', 'de', 'en'];
   config.settings.defaultLanguage = DEFAULT_LANG;
   config.settings = {
     ...config.settings,
