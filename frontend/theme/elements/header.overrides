@@ -142,16 +142,20 @@ div#inhoudDropdown {
   margin-bottom: auto !important;
   // width: auto;
   padding-top: 22px !important;
-  padding-bottom: 20px !important;
+  padding-bottom: 18px !important;
   cursor: pointer;
   letter-spacing: 1.7px;
   outline-offset: -2px;
   text-transform: uppercase;
+  margin-right: 0% !important;
+  padding-left: 22px !important;
+  padding-right: 22px !important;
+
 }
 .item.simple.language-selector{
-  padding-top: 0px;
-  padding-bottom: 15px;
   margin-right: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
 .divider.text {
