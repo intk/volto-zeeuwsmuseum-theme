@@ -22,6 +22,8 @@ import StoryBlockViewBlock from './Blocks/StoryBlock/View';
 import StoryBlockEditBlock from './Blocks/StoryBlock/Edit';
 import SliderPage from './View/SliderPage';
 import HeaderItem from './theme/HeaderItem';
+import AccordionItems from './theme/AccordionItems';
+import AccordionLanguageSelector from './theme/AccordionLanguageSelector';
 
 export {
   EmptylineViewBlock,
@@ -36,4 +38,6 @@ export {
   StoryBlockEditBlock,
   SliderPage,
   HeaderItem,
+  AccordionItems,
+  AccordionLanguageSelector,
 };

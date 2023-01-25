@@ -122,11 +122,11 @@ export default function applyConfig(config) {
   const DEFAULT_LANG = 'nl';
 
   config.settings.isMultilingual = true;
-  config.settings.supportedLanguages = ['nl', 'de', 'en'];
+  config.settings.supportedLanguages = ['en', 'nl', 'de'];
   config.settings.defaultLanguage = DEFAULT_LANG;
   config.settings = {
     ...config.settings,
-    navDepth: 5,
+    navDepth: 6,
   };
 
   return config;

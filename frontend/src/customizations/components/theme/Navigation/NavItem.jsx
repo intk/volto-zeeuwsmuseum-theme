@@ -12,7 +12,7 @@ const NavItem = ({ item, lang, id }) => {
       <NavLink
         to={item.url === '' ? '/' : item.url}
         key={item.url}
-        className="item simple"
+        className="accordion item simple"
         id={id}
         activeClassName="active"
         exact={

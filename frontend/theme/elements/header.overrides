@@ -46,7 +46,7 @@ a.logo-written {
   display: flex;
   flex-wrap: nowrap;
   // flex: 1 1 auto;
-  justify-content: flex-end;
+  // justify-content: flex-end;
 }
 
 .ui.pointing.secondary {
@@ -97,6 +97,52 @@ div.ui.pointing.secondary.stackable {
   font-family: 'UniversCn', Arial, sans-serif;
   font-size: 17px;
   letter-spacing: 0.1em;
+}
+
+.mobile-menu-nav, .mobile-menu.mobile-menu-enter-done {
+  padding-top: 0px !important;
+}
+.mobile-menu-nav > .ui.pointing.secondary.stackable.menu{
+  flex-direction: column;
+  text-align: left !important;
+  width: 100%;
+  align-items: flex-end !important;
+
+  .item.simple, .tools-search-wrapper{
+    align-self: flex-start;
+    justify-content: flex-start !important;
+    // width: 100%;
+  }
+  .search-tool{
+    width: 100%;
+    border-bottom: 0.5px solid #c3c3c3 !important;
+    display: flex;
+    order: -1;
+    // flex-direction: column-reverse;
+    justify-content: flex-start;
+    padding-bottom: 0px;
+  }
+  .tools-search-wrapper{
+    width: 100%;
+    padding-bottom: 0px;
+    // align-self: flex-start;
+    .search{
+      align-self: flex-start;
+      padding-bottom: 0px;
+    }
+    .language-selector-wrapper, .ui.form{
+      border-left: none;
+      align-self: flex-start;
+    }
+    .ui.form{
+      .field.searchbox > button{
+        margin-left: 0px;
+        svg{
+          padding-bottom: 0% !important;
+        }
+      }
+    }
+  }
 }
 
 div.menu.transition {
@@ -150,7 +196,10 @@ div#inhoudDropdown {
   margin-right: 0% !important;
   padding-left: 22px !important;
   padding-right: 22px !important;
-
+}
+a.item.simple{
+  padding-left: 38px !important;
+  padding-right: 15px !important;
 }
 .item.simple.language-selector{
   margin-right: 0px !important;
@@ -209,19 +258,42 @@ a#dropdownItemA {
   flex-direction: column !important;
   align-items: flex-start !important;
   justify-content: flex-start !important;
-  padding-top: 20px !important;
+  // padding-top: 20px !important;
   padding-bottom: 15px;
-  padding-left: 22px !important;
+  // padding-left: 22px !important;
   font-family: 'UniversCn', Arial, sans-serif !important;
   letter-spacing: 0.1em;
+  height: 250px;
+
+    a.item.simple {
+        padding-top: 5px !important;
+      }
+
+  .MuiPaper.languageselector{
+    align-self: flex-start;
+    border: 0px !important;
+    // width: 100%;
+    padding-top: 22px;
+    padding-bottom: 17px;
+    .MuiPaper-root{
+      border: 0px !important;
+      box-shadow: none ;
+      text-transform: uppercase;
+      padding-left: 22px;
+
+      .MuiAccordionDetails-root{
+        padding-left: 48px;
+        font-family: 'UniversLight';
+      }
+    }
+    .MuiAccordionSummary-content{
+      color: #808080 !important;
+    }
+  }
 
   div {
     padding-bottom: 5px;
     font-size: 17px !important;
-
-    a.item.simple {
-      padding-left: 0% !important;
-    }
 
     .title {
       font-family: 'UniversCn', Arial, sans-serif !important;
@@ -232,6 +304,46 @@ a#dropdownItemA {
       padding-bottom: 0px !important;
       margin-left: 31px;
       font-family: 'UniversLight', Arial, sans-serif !important;
+    }
+  }
+  .MuiPaper-root{
+    padding-top: 0% !important;
+    padding-bottom: 0% !important;
+    flex-direction: column;
+    // width: 100%;
+  }
+  .MuiCollapse-root, .MuiCollapse-wrapper, .MuiCollapse-wrapperInner, .MuiAccordion-region{
+    padding-bottom: 0%;
+  }
+  .MuiButtonBase-root{
+    min-height: 10px !important;
+    align-self: flex-start;
+    padding-top: 5px;
+  }
+  .MuiCollapse-root{
+    align-self: flex-start;
+  }
+  .MuiAccordionSummary-content{
+    margin: 0% !important;
+    padding-right: 10px;
+  }
+  .MuiAccordionSummary-expandIconWrapper>svg {
+    width: 12px;
+    height: 12px;
+    padding: 0% !important;
+  }
+  .MuiAccordionDetails-root{
+    display: flex;
+    flex-direction: column;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    #dropdownItemA.accordion.item.simple{
+      padding-left: 32px !important;
+      justify-content: flex-start !important;
+      text-transform: none !important;
+      font-family: 'UniversLight';
+      padding-top: 6px !important;
+      padding-bottom: 6px !important;
     }
   }
 

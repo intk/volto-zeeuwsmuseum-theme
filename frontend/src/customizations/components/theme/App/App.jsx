@@ -135,7 +135,6 @@ class App extends Component {
           </Helmet>
         )}
         <BodyClass className={`view-${action}view`} />
-
         {/* Body class depending on content type */}
         {this.props.content && this.props.content['@type'] && (
           <BodyClass
@@ -144,7 +143,6 @@ class App extends Component {
               .toLowerCase()}`}
           />
         )}
-
         {/* Body class depending on sections */}
         <BodyClass
           className={cx({
@@ -157,7 +155,6 @@ class App extends Component {
             'public-ui': !isCmsUI,
           })}
         />
-
         {/* section is a customization
         it given a class name to the body tag when
         the content type is slideshow */}
@@ -171,15 +168,12 @@ class App extends Component {
           }
         />
         {/* End of the customization */}
-
         <SkipLinks />
-
         <Header pathname={path} menuItems={menuItems} />
-        {/* {console.log(menuItems)} */}
+
         {/* Breadcrumb is moved inside the Header component
         Delete the comment below to make it visible here*/}
         {/* <Breadcrumbs pathname={path} /> */}
-
         <MultilingualRedirector
           pathname={this.props.pathname}
           contentLanguage={this.props.content?.language?.token}
@@ -206,7 +200,6 @@ class App extends Component {
             </main>
           </Segment>
         </MultilingualRedirector>
-
         {/* This section is a condition for the Footer
         it is rendered if the content type is not slideshow
         To return back to the original state, delete the conditional
@@ -221,7 +214,6 @@ class App extends Component {
           <Footer />
         )}
         {/* End of conditional */}
-
         <LockingToastsFactory
           content={this.props.content}
           user={this.props.userId}
