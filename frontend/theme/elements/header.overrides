@@ -3,7 +3,6 @@ div.logo {
   height: 100%;
   align-items: center;
   align-items: center;
-  margin-right: 25px;
 }
 
 a.logo-written {
@@ -81,6 +80,7 @@ div.ui.basic.segment.header-wrapper {
 
   .logo {
     height: 25px !important;
+    margin-right: 0px;
   }
 }
 
@@ -451,5 +451,11 @@ body.has-toolbar .mobile-menu {
 @media only screen and (max-width: 767px) {
   #writtenlogo {
     padding: 22px 15px 35px 6px !important;
+  }
+}
+
+@media only screen and (max-width: 1224px) {
+  nav#navigation.navigation {
+    margin-top: auto;
   }
 }
