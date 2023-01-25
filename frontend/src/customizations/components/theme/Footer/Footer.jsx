@@ -43,10 +43,10 @@ const Footer = ({ intl }) => {
           <div className="footerInfoBox">
             <div className="titleWrapper">
               <a href="https://www.zeeuwsmuseum.nl/nl/zeeuws-museum-v4/#">
-                {intl.formatMessage({
-                  id: 'BEZOEKADRES',
-                  defaultMessage: 'ADDRESS',
-                })}
+                <FormattedMessage
+                  id="BEZOEKADRES"
+                  defaultMessage="BEZOEKADRES"
+                />
               </a>
             </div>
             <p>Abdij (Plein)</p>
