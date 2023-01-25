@@ -43,7 +43,10 @@ const Footer = ({ intl }) => {
           <div className="footerInfoBox">
             <div className="titleWrapper">
               <a href="https://www.zeeuwsmuseum.nl/nl/zeeuws-museum-v4/#">
-                <FormattedMessage id="Bezokades" defaultMessage="BEZOKADES" />
+                <FormattedMessage
+                  id="BEZOEKADRES"
+                  defaultMessage="BEZOEKADRES"
+                />
               </a>
             </div>
             <p>Abdij (Plein)</p>
@@ -53,8 +56,8 @@ const Footer = ({ intl }) => {
               className="text-button"
             >
               <FormattedMessage
-                id="Plan een bezoek"
-                defaultMessage="Plan een bezoek"
+                id="PLAN EEN BEZOEK"
+                defaultMessage="PLAN EEN BEZOEK"
               />
             </a>
           </div>
@@ -62,7 +65,10 @@ const Footer = ({ intl }) => {
           <div className="footerInfoBox">
             <div className="titleWrapper">
               <a href="https://www.zeeuwsmuseum.nl/nl/contact">
-                <FormattedMessage id="CONTACT" defaultMessage="CONTACT" />
+                <FormattedMessage
+                  id="CONTACT ALGEMEEN"
+                  defaultMessage="CONTACT ALGEMEEN"
+                />
               </a>
             </div>
             <p id="phoneNumber">+31 (0) 118 653000</p>
