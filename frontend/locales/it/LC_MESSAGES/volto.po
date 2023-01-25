@@ -11,6 +11,11 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
+#: components/AccordionMenu/AccordionLanguageSelector
+# defaultMessage: Switch to
+msgid "Switch to"
+msgstr ""
+
 #: components/View/SliderPage
 # defaultMessage: Unknown Block {block}
 msgid "Unknown Block"

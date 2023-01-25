@@ -16,6 +16,11 @@ msgstr ""
 "Language-Name: eu\n"
 "Preferred-Encodings: utf-8 latin1\n"
 
+#: components/AccordionMenu/AccordionLanguageSelector
+# defaultMessage: Switch to
+msgid "Switch to"
+msgstr ""
+
 #: components/View/SliderPage
 # defaultMessage: Unknown Block {block}
 msgid "Unknown Block"

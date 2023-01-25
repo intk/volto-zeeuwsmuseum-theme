@@ -18,6 +18,11 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "X-Is-Fallback-For: ja-jp\n"
 
+#: components/AccordionMenu/AccordionLanguageSelector
+# defaultMessage: Switch to
+msgid "Switch to"
+msgstr ""
+
 #: components/View/SliderPage
 # defaultMessage: Unknown Block {block}
 msgid "Unknown Block"
