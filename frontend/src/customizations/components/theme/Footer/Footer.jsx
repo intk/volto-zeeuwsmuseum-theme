@@ -44,7 +44,7 @@ const Footer = ({ intl }) => {
             <div className="titleWrapper">
               <a href="https://www.zeeuwsmuseum.nl/nl/zeeuws-museum-v4/#">
                 {intl.formatMessage({
-                  description: 'BEZOEKADRES',
+                  id: 'BEZOEKADRES',
                   defaultMessage: 'ADDRESS',
                 })}
               </a>
