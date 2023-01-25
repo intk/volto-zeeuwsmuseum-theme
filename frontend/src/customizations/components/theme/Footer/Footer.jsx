@@ -43,7 +43,7 @@ const Footer = ({ intl }) => {
           <div className="footerInfoBox">
             <div className="titleWrapper">
               <a href="https://www.zeeuwsmuseum.nl/nl/zeeuws-museum-v4/#">
-                BEZOKADRES
+                <FormattedMessage id="Bezokades" defaultMessage="BEZOKADES" />
               </a>
             </div>
             <p>Abdij (Plein)</p>
@@ -62,7 +62,7 @@ const Footer = ({ intl }) => {
           <div className="footerInfoBox">
             <div className="titleWrapper">
               <a href="https://www.zeeuwsmuseum.nl/nl/contact">
-                CONTACT ALGEMEEN
+                <FormattedMessage id="CONTACT" defaultMessage="CONTACT" />
               </a>
             </div>
             <p id="phoneNumber">+31 (0) 118 653000</p>
@@ -81,7 +81,7 @@ const Footer = ({ intl }) => {
               href="https://www.zeeuwsmuseum.nl/nl/contact"
               className="text-button"
             >
-              Contact
+              <FormattedMessage id="CONTACT" defaultMessage="CONTACT" />
             </a>
             <a
               href="https://twitter.com/Zeeuwsmuseum"
@@ -108,9 +108,20 @@ const Footer = ({ intl }) => {
 
           <div id="footermail" className="footerInfoBox">
             <div className="titleWrapper">
-              <p id="footerTitle3">NIEUWSBRIEF</p>
+              <p id="footerTitle3">
+                <FormattedMessage
+                  id="NIEUWSBRIEF"
+                  defaultMessage="NIEUWSBRIEF"
+                />
+              </p>
             </div>
-            <p> Schrijf je in voor onze nieuwsbrief en blijf op de hoogte. </p>
+            <p>
+              {' '}
+              <FormattedMessage
+                id="Schrijf je in voor onze nieuwsbrief en blijf op de hoogte."
+                defaultMessage="Schrijf je in voor onze nieuwsbrief en blijf op de hoogte."
+              />{' '}
+            </p>
 
             <dd className="portletItem odd">
               <form
