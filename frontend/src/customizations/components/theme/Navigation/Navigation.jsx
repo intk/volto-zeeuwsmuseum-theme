@@ -16,8 +16,8 @@ import { getNavigation } from '@plone/volto/actions';
 import { CSSTransition } from 'react-transition-group';
 import NavItems from '@plone/volto/components/theme/Navigation/NavItems';
 import { LanguageSelector, SearchWidget } from '@plone/volto/components';
+// eslint-disable-next-line import/no-unresolved
 import { AccordionItems } from 'components';
-import { Divider } from 'semantic-ui-react';
 
 const messages = defineMessages({
   closeMobileMenu: {

@@ -10,7 +10,7 @@ import React from 'react';
 import { Container, List, Segment } from 'semantic-ui-react';
 import { Logo } from '@plone/volto/components';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
-import { useSelector } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 
@@ -29,7 +29,13 @@ const messages = defineMessages({
  */
 const Footer = ({ intl }) => {
   const { settings } = config;
-  const lang = useSelector((state) => state.intl.locale);
+  const { lang, siteActions = [] } = useSelector(
+    (state) => ({
+      lang: state.intl.locale,
+      siteActions: state.actions?.actions?.site_actions,
+    }),
+    shallowEqual,
+  );
   return (
     <container id="footer">
       <div id="top-footer">
@@ -46,7 +52,10 @@ const Footer = ({ intl }) => {
               href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/praktische-info"
               className="text-button"
             >
-              Plan een bezoek
+              <FormattedMessage
+                id="Plan een bezoek"
+                defaultMessage="Plan een bezoek"
+              />
             </a>
           </div>
 

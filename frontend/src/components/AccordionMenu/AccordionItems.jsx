@@ -4,7 +4,7 @@ import { FaChevronDown } from 'react-icons/fa';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import { AccordionLanguageSelector } from 'components';
+import AccordionLanguageSelector from './AccordionLanguageSelector';
 
 const AccordionItems = ({ items, lang }) => {
   const [expanded, setExpanded] = React.useState(false);
