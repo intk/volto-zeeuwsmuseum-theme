@@ -7,11 +7,9 @@ import { FaChevronRight, FaFacebookF } from 'react-icons/fa';
 import { IoLogoTwitter } from 'react-icons/io';
 import { ImInstagram } from 'react-icons/im';
 import React from 'react';
-import { Container, List, Segment } from 'semantic-ui-react';
 import { Logo } from '@plone/volto/components';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import { useSelector, shallowEqual } from 'react-redux';
-import { UniversalLink } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
