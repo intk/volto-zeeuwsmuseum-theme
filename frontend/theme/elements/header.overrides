@@ -456,6 +456,6 @@ body.has-toolbar .mobile-menu {
 
 @media only screen and (max-width: 1224px) {
   nav#navigation.navigation {
-    margin-top: auto;
+    // margin-top: auto;
   }
 }
