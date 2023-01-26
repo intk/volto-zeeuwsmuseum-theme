@@ -27,7 +27,7 @@ const NavItem = ({ item, lang, id }) => {
       <a
         href={item.url}
         key={item.url}
-        className="accordion item simple"
+        className="item simple"
         rel="noopener noreferrer"
         id={id}
       >

@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { defineMessages, injectIntl } from 'react-intl';
-import { Menu } from 'semantic-ui-react';
+import { Menu, Accordion } from 'semantic-ui-react';
 import cx from 'classnames';
 import { BodyClass, getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
@@ -17,7 +17,10 @@ import { CSSTransition } from 'react-transition-group';
 import NavItems from '@plone/volto/components/theme/Navigation/NavItems';
 import { LanguageSelector, SearchWidget } from '@plone/volto/components';
 // eslint-disable-next-line import/no-unresolved
-import { AccordionItems } from 'components';
+import { FaChevronDown } from 'react-icons/fa';
+import NavItem from '@plone/volto/components/theme/Navigation/NavItem';
+// eslint-disable-next-line import/no-unresolved
+import { AccordionLanguageSelector } from 'components';
 
 const messages = defineMessages({
   closeMobileMenu: {
@@ -36,6 +39,16 @@ const messages = defineMessages({
  * @extends Component
  */
 class Navigation extends Component {
+  state = { activeIndex: 0 };
+
+  handleClick = (e, titleProps) => {
+    const { index } = titleProps;
+    const { activeIndex } = this.state;
+    const newIndex = activeIndex === index ? -1 : index;
+
+    this.setState({ activeIndex: newIndex });
+  };
+
   /**
    * Property types.
    * @property {Object} propTypes Property types.
@@ -124,12 +137,23 @@ class Navigation extends Component {
     this.setState({ isMobileMenuOpen: false });
   }
 
+  // handleChange() {
+  //   if (this.expanded === true) {
+  //     this.expanded = false;
+  //   } else {
+  //     this.expanded = true;
+  //   }
+  // }
+
   /**
    * Render method.
    * @method render
    * @returns {string} Markup for the component.
    */
+
   render() {
+    const { activeIndex } = this.state;
+
     return (
       <nav className="navigation" id="navigation" aria-label="navigation">
         <div className="hamburger-wrapper mobile tablet only">
@@ -188,10 +212,37 @@ class Navigation extends Component {
             <BodyClass className="has-mobile-menu-open" />
             <div className="mobile-menu-nav">
               <Menu stackable pointing secondary>
-                <AccordionItems
-                  items={this.props.items}
-                  lang={this.props.lang}
-                />
+                <AccordionLanguageSelector />
+                {this.props.items.map((item) =>
+                  item && item.items && item.items.length > 0 ? (
+                    <Accordion className="item simple">
+                      <Accordion.Title
+                        active={activeIndex === item.title}
+                        index={item.title}
+                        onClick={this.handleClick}
+                      >
+                        {item.title} <FaChevronDown />
+                      </Accordion.Title>
+                      <Accordion.Content
+                        active={activeIndex === item.title}
+                        onClick={this.closeMobileMenu}
+                      >
+                        {item.items.map((dropdownitem) => (
+                          <NavItem
+                            item={dropdownitem}
+                            lang={this.lang}
+                            key={dropdownitem.url}
+                            id="dropdownItemA"
+                          />
+                        ))}
+                      </Accordion.Content>
+                    </Accordion>
+                  ) : item.title === 'Home' ? (
+                    ''
+                  ) : (
+                    <NavItem item={item} lang={this.lang} key={item.url} />
+                  ),
+                )}
                 <div className="search-tool">
                   <div className="tools-search-wrapper">
                     <div className="search">

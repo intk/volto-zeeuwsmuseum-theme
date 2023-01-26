@@ -99,7 +99,7 @@ div.ui.pointing.secondary.stackable {
   letter-spacing: 0.1em;
 }
 
-.mobile-menu-nav, .mobile-menu.mobile-menu-enter-done {
+.mobile-menu-nav, .mobile-menu.mobile-menu-enter-done, .mobile-menu.mobile-menu-enter-active {
   padding-top: 0px !important;
 }
 .mobile-menu-nav > .ui.pointing.secondary.stackable.menu{
@@ -187,7 +187,7 @@ div#inhoudDropdown {
   margin-top: auto !important;
   margin-bottom: auto !important;
   // width: auto;
-  padding-top: 22px !important;
+  padding-top: 10px !important;
   padding-bottom: 18px !important;
   cursor: pointer;
   letter-spacing: 1.7px;
@@ -197,8 +197,12 @@ div#inhoudDropdown {
   padding-left: 22px !important;
   padding-right: 22px !important;
 }
-a.item.simple{
+.mobile-menu-nav a.item.simple{
   padding-left: 38px !important;
+  padding-right: 15px !important;
+}
+a.item.simple{
+  padding-left: 15px !important;
   padding-right: 15px !important;
 }
 .item.simple.language-selector{
@@ -353,6 +357,7 @@ a#dropdownItemA {
 
   div.active.title {
     color: #7bb0e7 !important;
+    padding-bottom: 10px;
   }
 
   div.ui.secondary.vertical.menu {
@@ -406,13 +411,26 @@ span.hamburger-box {
   // letter-spacing: 0.1em;
   // line-height: 1.5em;
   // text-align: left;
-  align-self: flex-start;
+  align-self: flex-start !important;
 }
+.ui.menu:not(.vertical) .item{
+  align-items: flex-start !important;
+}
+
 .accordion.ui.item.simple{
   flex-direction: column;
   align-content: flex-start;
   .active.title, .active.content{
     align-self: flex-start;
+
+  }
+  .title{
+    padding-left: 16px;
+    padding-top: 0px !important;
+    padding-bottom: 0px;
+  }
+  .active.title{
+    padding-bottom: 10px !important;
   }
 }
 
@@ -424,6 +442,15 @@ i.dropdown.icon::before {
 #dropdownItemA.active {
   color: #7bb0e7 !important;
   background-color: #ffffff !important;
+}
+
+#dropdownItemA.accordion.item.simple {
+  padding-left: 18px !important;
+  justify-content: flex-start !important;
+  text-transform: none !important;
+  font-family: 'UniversLight';
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
 }
 
 #header-wrapper .mobile-menu-enter.mobile-menu-enter-active, #header-wrapper .mobile-menu-exit.mobile-menu-exit-active,
