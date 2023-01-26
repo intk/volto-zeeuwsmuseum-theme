@@ -843,6 +843,16 @@ body.view-viewview.contenttype-plone-site.siteroot {
 
 /* ----------END OF HOME PAGE------------ */
 
+/*-----------LiINK TYPE--------------*/
+.contenttype-link{
+  .ui.basic.segment.content-area{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 3%;
+  }
+}
+
+
 /* ***********************************************************
 **********LIST VIEW***********
 ************************************************************/
