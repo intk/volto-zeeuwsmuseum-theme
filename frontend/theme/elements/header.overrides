@@ -211,6 +211,13 @@ a.item.simple{
   padding-right: 0px !important;
 }
 
+.ui.pointing.secondary.large > .item.simple, .language-selector-wrapper > .ui.dropdown.item.simple{
+  padding-bottom: 22px !important;
+  padding-top: 16px !important;
+  margin-top: 0% !important;
+  margin-bottom: 0% !important;
+}
+
 .divider.text {
   padding-right: 9px;
 }
