@@ -1,5 +1,6 @@
 .tools-search-wrapper{
   height: 60px;
+  align-self: auto !important;
 }
 .language-selector-wrapper{
   border-left: 1px solid #c3c3c3;
