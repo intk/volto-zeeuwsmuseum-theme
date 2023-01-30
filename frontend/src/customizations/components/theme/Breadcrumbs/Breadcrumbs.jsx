@@ -152,11 +152,7 @@ export class BreadcrumbsComponent extends Component {
                 open={this.state.open}
                 onFocus={this.closeMobileMenu}
                 onBlur={this.closeMobileMenu}
-                text={
-                  this.props.items.length > 4
-                    ? this.props.items[2].title
-                    : 'INHOUD'
-                }
+                text={'INHOUD'}
                 icon={<FaChevronDown color="#808080" />}
               >
                 <Dropdown.Menu className="dropdownContentPage">
