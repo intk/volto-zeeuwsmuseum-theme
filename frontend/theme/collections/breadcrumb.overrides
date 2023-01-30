@@ -277,7 +277,7 @@ div#InhoudDropdown {
 }
 .ui.secondary.vertical.segment.secondNav {
   z-index: -2 !important;
-  position: absolute !important;
+  position: relative !important;
   width: 100% !important;
   display: flex;
   align-self: flex-start;
