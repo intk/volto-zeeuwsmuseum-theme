@@ -1280,6 +1280,7 @@ body.view-viewview.contenttype-plone-site.siteroot {
 ***END OF RESPONSIVE AREA ACCORDING TO PAGE WIDTH*********** */
 
 
-#main {
-  display: block;
+//To make sure that the flex stays same in the small widths
+body.view-viewview{
+  flex-direction: row !important;
 }
