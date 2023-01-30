@@ -14,7 +14,6 @@ const NavItems = ({ items, lang }) => {
 
   const closeMobileMenu = () => {
     setOpen(false);
-    // setFocus(false);
   };
 
   return (
