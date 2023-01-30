@@ -22,7 +22,7 @@ import StoryBlockViewBlock from './Blocks/StoryBlock/View';
 import StoryBlockEditBlock from './Blocks/StoryBlock/Edit';
 import SliderPage from './View/SliderPage';
 import HeaderItem from './HeaderItem/HeaderItem';
-import AccordionItems from './AccordionMenu/AccordionItems';
+import AccordionBreadcrumb from './AccordionMenu/AccordionBreadcrumb';
 import AccordionLanguageSelector from './AccordionMenu/AccordionLanguageSelector';
 
 export {
@@ -38,6 +38,6 @@ export {
   StoryBlockEditBlock,
   SliderPage,
   HeaderItem,
-  AccordionItems,
+  AccordionBreadcrumb,
   AccordionLanguageSelector,
 };
