@@ -4,7 +4,7 @@
 .ui.secondary.vertical {
   border: 0px;
   background-color: #ffffff;
-  border-bottom: 1px solid #e7e7e7 !important;
+  border-bottom: 1px solid #c3c3c3 !important;
 }
 
 #crumbcontainer {
