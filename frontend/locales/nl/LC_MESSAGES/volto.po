@@ -30,6 +30,16 @@ msgstr ""
 "Language-Name: Nederlands\n"
 "Preferred-Encodings: utf-8\n"
 
+#: components/AccordionMenu/AccordionBreadcrumb
+# defaultMessage: Breadcrumbs
+msgid "Breadcrumbs"
+msgstr ""
+
+#: components/AccordionMenu/AccordionBreadcrumb
+# defaultMessage: Home
+msgid "Home"
+msgstr ""
+
 #: components/AccordionMenu/AccordionLanguageSelector
 # defaultMessage: Switch to
 msgid "Switch to"

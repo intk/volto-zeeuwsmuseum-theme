@@ -17,6 +17,16 @@ msgstr ""
 "Language-Name: Romanian\n"
 "Preferred-Encodings: utf-8 latin1\n"
 
+#: components/AccordionMenu/AccordionBreadcrumb
+# defaultMessage: Breadcrumbs
+msgid "Breadcrumbs"
+msgstr ""
+
+#: components/AccordionMenu/AccordionBreadcrumb
+# defaultMessage: Home
+msgid "Home"
+msgstr ""
+
 #: components/AccordionMenu/AccordionLanguageSelector
 # defaultMessage: Switch to
 msgid "Switch to"
