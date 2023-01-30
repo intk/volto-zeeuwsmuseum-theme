@@ -127,6 +127,7 @@ class Navigation extends Component {
    */
   toggleMobileMenu() {
     this.setState({ isMobileMenuOpen: !this.state.isMobileMenuOpen });
+    this.setState({ activeIndex: -1 });
   }
 
   /**
@@ -212,11 +213,13 @@ class Navigation extends Component {
                 <AccordionLanguageSelector />
                 {this.props.items.map((item) =>
                   item && item.items && item.items.length > 0 ? (
-                    <Accordion className="item simple">
+                    <Accordion active className="item simple">
                       <Accordion.Title
                         active={activeIndex === item.title}
                         index={item.title}
                         onClick={this.handleClick}
+                        activeClassName="active"
+                        className={this.activeClassName ? 'active' : ''}
                       >
                         {item.title} <FaChevronDown />
                       </Accordion.Title>
