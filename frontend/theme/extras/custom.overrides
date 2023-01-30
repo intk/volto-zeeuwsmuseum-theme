@@ -534,7 +534,7 @@ div#view {
   #header-wrapper {
     position: relative !important;
     display: block !important;
-    /* height: 120px !important; */
+    height: 110px !important;
   }
 
   .block.slider,
@@ -1046,7 +1046,6 @@ body.view-viewview.contenttype-plone-site.siteroot {
 }
 
 @media only screen and (max-width: 768px) {
-  .view-viewview.contenttype-document.section-terugblik,
   .view-viewview.contenttype-document,
   .view-viewview.contenttype-folder,
   .view-viewview.contenttype-plone-site {
@@ -1279,3 +1278,8 @@ body.view-viewview.contenttype-plone-site.siteroot {
 }
 /* ********************************************************
 ***END OF RESPONSIVE AREA ACCORDING TO PAGE WIDTH*********** */
+
+
+#main {
+  display: block;
+}
