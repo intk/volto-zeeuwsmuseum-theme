@@ -74,7 +74,7 @@ div.ui.basic.segment.header-wrapper {
     padding-right: 0px;
     padding-bottom: 14px;
     padding-left: 9px;
-    border-bottom: 1px solid #c3c3c3;
+    border-bottom: 1px solid #e7e7e7;
     margin: 0% !important;
     background-color: #ffffff;
   }
@@ -116,7 +116,7 @@ div.ui.pointing.secondary.stackable {
   }
   .search-tool{
     width: 100%;
-    border-bottom: 0.5px solid #c3c3c3 !important;
+    border-bottom: 0.5px solid #e7e7e7 !important;
     display: flex;
     order: -1;
     // flex-direction: column-reverse;
@@ -172,10 +172,10 @@ nav#navigation.navigation {
 
   div,
   a {
-    color: #000000;
+    color: #000000 !important;
 
     :hover {
-      color: #7bb0e7;
+      color: #7bb0e7 !important;
     }
   }
 }
@@ -199,7 +199,7 @@ div#inhoudDropdown {
   padding-right: 22px !important;
 }
 .mobile-menu-nav a.item.simple{
-  padding-left: 38px !important;
+  padding-left: 22px !important;
   padding-right: 15px !important;
 }
 a.item.simple{
@@ -264,6 +264,22 @@ a#dropdownItemA {
   height: auto !important;
 }
 
+#navigation .MuiPaper {
+  .MuiAccordionSummary-content {
+    color: #808080 !important;
+  }
+  .MuiAccordionDetails-root{
+    a{
+      padding-top: 15px;
+    }
+  }
+  .MuiAccordionSummary-content svg {
+    padding-top: 3px !important;
+    padding-right: 2px !important;
+    padding-left: 6px !important;
+  }
+}
+
 .mobile-menu-nav {
   display: flex !important;
   width: 100% !important;
@@ -277,13 +293,13 @@ a#dropdownItemA {
   letter-spacing: 0.1em;
   // height: 350px !important;
 
-    a.item.simple {
-        padding-top: 5px !important;
-      }
+  .item.simple {
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+    }
   .MuiPaper.languageselector{
     align-self: flex-start;
     border: 0px !important;
-    // width: 100%;
     padding-top: 22px;
     padding-bottom: 17px;
     .MuiPaper-root{
@@ -293,13 +309,12 @@ a#dropdownItemA {
       padding-left: 22px;
 
       .MuiAccordionDetails-root{
-        padding-left: 48px;
+        padding-left: 35px;
         font-family: 'UniversLight';
+
       }
     }
-    .MuiAccordionSummary-content{
-      color: #808080 !important;
-    }
+
   }
 
   div {
@@ -310,10 +325,11 @@ a#dropdownItemA {
       font-family: 'UniversCn', Arial, sans-serif !important;
     }
 
+
     .content {
       padding-top: 0px !important;
       padding-bottom: 0px !important;
-      margin-left: 31px;
+      margin-left: 15px;
       font-family: 'UniversLight', Arial, sans-serif !important;
     }
   }
@@ -330,13 +346,14 @@ a#dropdownItemA {
     min-height: 10px !important;
     align-self: flex-start;
     padding-top: 5px;
+    padding-left: 0%;
   }
   .MuiCollapse-root{
     align-self: flex-start;
   }
   .MuiAccordionSummary-content{
     margin: 0% !important;
-    padding-right: 10px;
+
   }
   .MuiAccordionSummary-expandIconWrapper>svg {
     width: 12px;
@@ -430,10 +447,9 @@ span.hamburger-box {
   border: none;
   .active.title, .active.content{
     align-self: flex-start;
-
   }
   .title{
-    padding-left: 16px;
+    // padding-left: 16px;
     padding-top: 0px !important;
     padding-bottom: 0px;
   }
@@ -442,7 +458,13 @@ span.hamburger-box {
   }
 }
 
-.mobile-menu-nav .ui.pointing.secondary{
+#navigation .mobile-menu-nav .ui.pointing.secondary{
+  .accordion.ui.item.simple{
+    // padding-bottom: 0% !important;
+  }
+  .active.title {
+    color: #7bb0e7 !important;
+  }
   .ui.segment{
     width: 100%;
     border: none;
@@ -451,10 +473,13 @@ span.hamburger-box {
     padding: 0%;
     margin: 0%;
     border-top: 0.5px solid #c3c3c3;
-    padding-top: 10px;
-
+    // padding-top: 10px;
+    .ui.pointing.secondary{
+      padding: 0% !important;
+    }
     .accordionbreadcrumblist{
       padding-left: 0%;
+      width: auto !important;
 
       a.accordion.item.simple{
         padding-left: 18px !important;
@@ -462,13 +487,14 @@ span.hamburger-box {
     }
     ul {
       list-style-type: none;
+      margin: 0% !important;
     }
     li a{
       font-family: "UniversLight" !important;
       font-size: 17px !important;
       text-transform: none;
-      padding-top: 6px !important;
-      padding-bottom: 6px !important;
+      padding-top: 5px !important;
+      padding-bottom: 5px !important;
     }
     .title{
       color: #808080 !important;
