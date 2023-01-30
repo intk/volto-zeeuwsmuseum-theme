@@ -553,7 +553,7 @@ div#view {
   .ui.basic.segment.content-area {
     height: calc(100vh - 120px) !important;
     padding-bottom: 0px;
-    margin-top: 55px !important;
+    margin-top: 5px !important;
     margin-bottom: 0px;
   }
 

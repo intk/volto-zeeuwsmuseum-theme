@@ -24,7 +24,7 @@
 }
 .ui.form .searchbox.field{
   border-left: 0px !important;
-  padding-left: 18px;
+  padding-left: 6px;
   padding-right: 18px;
   width: 90px;
   button{

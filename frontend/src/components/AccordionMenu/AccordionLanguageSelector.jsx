@@ -40,8 +40,9 @@ const AccordionLanguageSelector = (props) => {
   return settings.isMultilingual ? (
     <div className="MuiPaper languageselector">
       <Accordion>
-        <AccordionSummary expandIcon={<FaChevronDown color="#808080" />}>
+        <AccordionSummary>
           {currentLang}
+          <FaChevronDown color="#808080" />
         </AccordionSummary>
         <AccordionDetails>
           {map(settings.supportedLanguages, (lang) => {
