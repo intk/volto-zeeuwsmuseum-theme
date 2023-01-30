@@ -209,10 +209,6 @@ div#InhoudDropdown {
     height: 56px !important;
   }
 
-  div.ui.basic.segment.header-wrapper {
-    /* height: 59px !important !important; */
-  }
-
   .ui.container.header-container {
     height: 59px !important;
   }
@@ -271,3 +267,21 @@ div#InhoudDropdown {
     padding: 18px 22px 15px 22px !important;
   }
 }
+
+
+.ui.secondary.vertical.segment.breadcrumbs{
+  // z-index: -2;
+  // lookback here for the problem
+  // position: absolute !important;
+}
+.ui.secondary.vertical.segment.secondNav {
+  z-index: -2 !important;
+  position: absolute !important;
+  width: 100% !important;
+  display: flex;
+  align-self: flex-start;
+  // width: auto !important;
+  padding: 0%;
+  height: auto !important;
+}
+

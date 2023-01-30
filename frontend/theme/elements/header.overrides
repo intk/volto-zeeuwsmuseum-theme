@@ -5,7 +5,7 @@ div.logo {
   align-items: center;
 }
 
-a.logo-written {
+p.logo-written {
   height: 57px;
   padding: 22px 15px 42px;
   color: #7bb0e7 !important;
@@ -270,16 +270,15 @@ a#dropdownItemA {
   align-items: flex-start !important;
   justify-content: flex-start !important;
   // padding-top: 20px !important;
-  padding-bottom: 15px;
+  // padding-bottom: 15px;
   // padding-left: 22px !important;
   font-family: 'UniversCn', Arial, sans-serif !important;
   letter-spacing: 0.1em;
-  height: 250px;
+  // height: 350px !important;
 
     a.item.simple {
         padding-top: 5px !important;
       }
-
   .MuiPaper.languageselector{
     align-self: flex-start;
     border: 0px !important;
@@ -427,6 +426,7 @@ span.hamburger-box {
 .accordion.ui.item.simple{
   flex-direction: column;
   align-content: flex-start;
+  border: none;
   .active.title, .active.content{
     align-self: flex-start;
 
@@ -438,6 +438,40 @@ span.hamburger-box {
   }
   .active.title{
     padding-bottom: 10px !important;
+  }
+}
+
+.mobile-menu-nav .ui.pointing.secondary{
+  .ui.segment{
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    align-self: flex-start;
+    padding: 0%;
+    margin: 0%;
+    border-top: 0.5px solid #c3c3c3;
+    padding-top: 10px;
+
+    .accordionbreadcrumblist{
+      padding-left: 0%;
+
+      a.accordion.item.simple{
+        padding-left: 18px !important;
+      }
+    }
+    ul {
+      list-style-type: none;
+    }
+    li a{
+      font-family: "UniversLight" !important;
+      font-size: 17px !important;
+      text-transform: none;
+      padding-top: 6px !important;
+      padding-bottom: 6px !important;
+    }
+    .title{
+      color: #808080 !important;
+    }
   }
 }
 
