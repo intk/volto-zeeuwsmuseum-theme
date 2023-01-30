@@ -286,6 +286,7 @@ a#dropdownItemA {
   flex-direction: column !important;
   align-items: flex-start !important;
   justify-content: flex-start !important;
+  border: 1px solid #e7e7e7;
   // padding-top: 20px !important;
   // padding-bottom: 15px;
   // padding-left: 22px !important;
@@ -472,7 +473,7 @@ span.hamburger-box {
     align-self: flex-start;
     padding: 0%;
     margin: 0%;
-    border-top: 0.5px solid #c3c3c3;
+    border-top: 1px solid #e7e7e7;
     // padding-top: 10px;
     .ui.pointing.secondary{
       padding: 0% !important;
