@@ -17,6 +17,9 @@ import { getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
 import { BsChevronCompactRight } from 'react-icons/bs';
 import { Dropdown, Menu, Accordion, Form } from 'semantic-ui-react';
 import { FaChevronDown } from 'react-icons/fa';
+import { BodyClass } from '@plone/volto/helpers';
+import NavItem from '@plone/volto/components/theme/Navigation/NavItem';
+import { NavLink } from 'react-router-dom';
 
 const messages = defineMessages({
   home: {
@@ -36,6 +39,15 @@ let menuArray = [];
  * Breadcrumbs container class.
  */
 export class BreadcrumbsComponent extends Component {
+  state = {
+    open: false,
+    focus: false,
+  };
+
+  closeMobileMenu = () => {
+    this.setState({ open: false, focus: false });
+  };
+
   /**
    * Property types.
    * @property {Object} propTypes Property types.
@@ -89,24 +101,26 @@ export class BreadcrumbsComponent extends Component {
       <Segment
         role="navigation"
         aria-label={this.props.intl.formatMessage(messages.breadcrumbs)}
-        className="breadcrumbs"
+        className={this.props.name === 'firstNav' ? 'breadcrumbs' : 'secondNav'}
         secondary
         vertical
       >
         <Container id="crumbcontainer">
           <Breadcrumb id="folderMap">
-            {this.props.menuItems['@type'] == 'Document' ? (
+            {this.props.menuItems['@type'] == 'Document' &&
+            this.props.items.length > 2 ? (
               <Breadcrumb.Section
                 className="crumbcontainer"
-                key={this.props.menuItems.parent['@url']}
+                key="crumbcontainer"
                 active
               >
-                <a
-                  href={this.props.menuItems.parent['@id']}
+                <NavLink
+                  to={this.props.items[this.props.items.length - 2].url}
+                  key="goToParent"
                   className="parenttitle"
                 >
-                  {this.props.menuItems.parent.title}
-                </a>
+                  {this.props.items[this.props.items.length - 2].title}
+                </NavLink>
                 <Breadcrumb.Divider className="breaddivider">
                   <BsChevronCompactRight
                     stroke="white"
@@ -135,6 +149,9 @@ export class BreadcrumbsComponent extends Component {
               <Dropdown
                 item
                 simple
+                open={this.state.open}
+                onFocus={this.closeMobileMenu}
+                onBlur={this.closeMobileMenu}
                 text={
                   this.props.items.length > 4
                     ? this.props.items[2].title
@@ -144,8 +161,8 @@ export class BreadcrumbsComponent extends Component {
               >
                 <Dropdown.Menu className="dropdownContentPage">
                   <Dropdown.Item id="InhoudDropdown">
-                    <a
-                      href={
+                    <NavLink
+                      to={
                         this.props.items.length != undefined &&
                         this.props.items.length > 2
                           ? this.props.menuItems['@type'] == 'Document'
@@ -153,13 +170,21 @@ export class BreadcrumbsComponent extends Component {
                             : this.props.items[this.props.items.length - 1].url
                           : ''
                       }
+                      key={
+                        this.props.items.length != undefined &&
+                        this.props.items.length > 2
+                          ? this.props.menuItems['@type'] == 'Document'
+                            ? this.props.items[this.props.items.length - 2].url
+                            : this.props.items[this.props.items.length - 1].url
+                          : ''
+                      }
+                      activeClassName="active"
                     >
                       Beeldimpressie
-                    </a>
+                    </NavLink>
                   </Dropdown.Item>
 
                   {(() => {
-                    // console.log(this.props)
                     if (this.props.menuItems['@type'] === 'Document') {
                       let steps = this.props.items;
                       let nav = this.props.navItems;
@@ -257,7 +282,9 @@ export class BreadcrumbsComponent extends Component {
 
                   {[...menuArray].map((x, i) => (
                     <Dropdown.Item key={i} id="InhoudDropdown">
-                      <a href={x.url}>{x.title}</a>
+                      <NavLink to={x.url} key={x.url} id="InhoudDropdown">
+                        {x.title}
+                      </NavLink>
                     </Dropdown.Item>
                   ))}
                 </Dropdown.Menu>

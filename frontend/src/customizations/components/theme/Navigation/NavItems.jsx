@@ -1,24 +1,22 @@
-// import React from 'react';
-// import NavItem from './NavItem';
-
-// const NavItems = ({ items, lang }) => {
-//   return (
-//     <>
-//       {items.map((item) => (
-//         <NavItem item={item} lang={lang} key={item.url} />
-//       ))}
-//     </>
-//   );
-// };
-
-// export default NavItems;
-
-import React from 'react';
+import React, { useState } from 'react';
 import NavItem from '@plone/volto/components/theme/Navigation/NavItem';
 import { Dropdown } from 'semantic-ui-react';
 import { FaChevronDown } from 'react-icons/fa';
 
+// state = {
+//   open: false,
+//   focus: false,
+// };
+
 const NavItems = ({ items, lang }) => {
+  const [open, setOpen] = useState(false);
+  // const [focus, setFocus] = useState(false);
+
+  const closeMobileMenu = () => {
+    setOpen(false);
+    // setFocus(false);
+  };
+
   return (
     <>
       {items.map((item) =>
@@ -26,6 +24,9 @@ const NavItems = ({ items, lang }) => {
           <Dropdown
             text={item.title}
             className="item simple"
+            open={open}
+            onFocus={closeMobileMenu}
+            onBlur={closeMobileMenu}
             key={item.url}
             icon={<FaChevronDown color="#808080" />}
           >

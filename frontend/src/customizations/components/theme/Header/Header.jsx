@@ -12,8 +12,15 @@ import { Container, Segment } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { defineMessages, injectIntl } from 'react-intl';
-import { Navigation, Breadcrumbs } from '@plone/volto/components';
+import {
+  Navigation,
+  Breadcrumbs,
+  Logo,
+  UniversalLink,
+} from '@plone/volto/components';
 import { HeaderItem } from 'components';
+import config from '@plone/volto/registry';
+import { NavLink } from 'react-router-dom';
 
 // This function determines the direction of the page scrolling
 // We then pass the result to the Segments className
@@ -58,6 +65,18 @@ const Header = (props) => {
 
   const scrollDirection = useScrollDirection();
   const menuItems = props.menuItems;
+  const { settings } = config;
+
+  const messages = defineMessages({
+    site: {
+      id: 'Site',
+      defaultMessage: 'Site',
+    },
+    plonesite: {
+      id: 'Plone Site',
+      defaultMessage: 'Plone Site',
+    },
+  });
 
   return (
     <Segment
@@ -72,17 +91,33 @@ const Header = (props) => {
         <div className="header">
           <div className="logo-nav-wrapper">
             <div className="logo">
-              <HeaderItem
-                item={props.itemsN[0]}
-                lang={props.lang}
-                key={props.itemsN[0].url}
-              />
+              {/* <NavLink
+                to={props.navItems[0].url === '' ? '/' : props.navItems[0].url}
+                key={props.navItems[0].url}
+                className="logo-written"
+                id="logo-written"
+                exact={
+                  settings.isMultilingual
+                    ? props.navItems[0].url === `/${props.lang}`
+                    : props.navItems[0].url === ''
+                }
+              >
+                Zeeuws Museum
+              </NavLink> */}
+              <UniversalLink
+                href={settings.isMultilingual ? `/${props.lang}` : '/'}
+                title={props.intl.formatMessage(messages.site)}
+                key="homelinklogo"
+              >
+                <p className="logo-written" id="logo-written">
+                  ZEEUWS MUSEUM
+                </p>
+              </UniversalLink>
             </div>
-            <Navigation pathname={props.pathname} />
+            <Navigation pathname={props.pathname} menuItems={props.menuItems} />
           </div>
         </div>
       </Container>
-
       {/* This section is to render Breadcrumbs conditionally */}
       {props.content != undefined ? (
         props.content['@type'] == 'Document' ||
