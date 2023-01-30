@@ -210,7 +210,7 @@ div#InhoudDropdown {
   }
 
   .ui.container.header-container {
-    height: 59px !important;
+    // height: 59px !important;
   }
 
   #crumbcontainer {
