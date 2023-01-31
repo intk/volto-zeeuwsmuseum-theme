@@ -13,11 +13,44 @@ import { useSelector, shallowEqual } from 'react-redux';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
-  bezoekadres: {
-    id: 'BEZOEKADRES',
-    defaultMessage: 'BEZOEKADRES',
+  copyright: {
+    id: 'Copyright',
+    defaultMessage: 'Copyright',
   },
 });
+
+const footertranslations = {
+  bezoekadres: {
+    en: 'ADDRESS',
+    nl: 'BEZOEKADRES',
+    de: 'ADRESSE',
+  },
+  plan_en_bezoek: {
+    en: 'PLAN YOUR VISIT',
+    nl: 'PLAN EEN BEZOEK',
+    de: 'PLANEN SIE IHREN BESUCH',
+  },
+  contact_algemeen: {
+    en: 'CONTACT',
+    nl: 'CONTACT ALGEMEEN',
+    de: 'KONTAKT',
+  },
+  contract: {
+    en: 'CONTACT',
+    nl: 'CONTACT',
+    de: 'KONTAKT',
+  },
+  nieuwsbrief: {
+    en: 'NEWSLETTER',
+    nl: 'NIEUWSBRIEF',
+    de: 'NEWSLETTER',
+  },
+  schrijf: {
+    en: 'Subscribe to our newsletter.',
+    nl: 'Schrijf je in voor onze nieuwsbrief en blijf op de hoogte.',
+    de: 'Abonnieren Sie unseren Newsletter.',
+  },
+};
 
 /**
  * Component to display the footer.
@@ -41,7 +74,7 @@ const Footer = ({ intl }) => {
           <div className="footerInfoBox">
             <div className="titleWrapper">
               <a href="https://www.zeeuwsmuseum.nl/nl/zeeuws-museum-v4/#">
-                {this.props.intl.FormattedMessage(messages.bezoekadres)}
+                {footertranslations['bezoekadres'][lang]}
               </a>
             </div>
             <p>Abdij (Plein)</p>
@@ -50,20 +83,14 @@ const Footer = ({ intl }) => {
               href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/praktische-info"
               className="text-button"
             >
-              <FormattedMessage
-                id="PLAN EEN BEZOEK"
-                defaultMessage="PLAN EEN BEZOEK"
-              />
+              {footertranslations['plan_en_bezoek'][lang]}
             </a>
           </div>
 
           <div className="footerInfoBox">
             <div className="titleWrapper">
               <a href="https://www.zeeuwsmuseum.nl/nl/contact">
-                <FormattedMessage
-                  id="CONTACT ALGEMEEN"
-                  defaultMessage="CONTACT ALGEMEEN"
-                />
+                {footertranslations['contact_algemeen'][lang]}
               </a>
             </div>
             <p id="phoneNumber">+31 (0) 118 653000</p>
@@ -82,7 +109,7 @@ const Footer = ({ intl }) => {
               href="https://www.zeeuwsmuseum.nl/nl/contact"
               className="text-button"
             >
-              <FormattedMessage id="CONTACT" defaultMessage="CONTACT" />
+              {footertranslations['contract'][lang]}
             </a>
             <a
               href="https://twitter.com/Zeeuwsmuseum"
@@ -109,20 +136,9 @@ const Footer = ({ intl }) => {
 
           <div id="footermail" className="footerInfoBox">
             <div className="titleWrapper">
-              <p id="footerTitle3">
-                <FormattedMessage
-                  id="NIEUWSBRIEF"
-                  defaultMessage="NIEUWSBRIEF"
-                />
-              </p>
+              <p id="footerTitle3">{footertranslations['nieuwsbrief'][lang]}</p>
             </div>
-            <p>
-              {' '}
-              <FormattedMessage
-                id="Schrijf je in voor onze nieuwsbrief en blijf op de hoogte."
-                defaultMessage="Schrijf je in voor onze nieuwsbrief en blijf op de hoogte."
-              />{' '}
-            </p>
+            <p>{footertranslations['schrijf'][lang]}</p>
 
             <dd className="portletItem odd">
               <form
