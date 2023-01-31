@@ -13,9 +13,9 @@ import { useSelector, shallowEqual } from 'react-redux';
 import config from '@plone/volto/registry';
 
 const messages = defineMessages({
-  copyright: {
-    id: 'Copyright',
-    defaultMessage: 'Copyright',
+  bezoekadres: {
+    id: 'BEZOEKADRES',
+    defaultMessage: 'BEZOEKADRES',
   },
 });
 
@@ -41,10 +41,7 @@ const Footer = ({ intl }) => {
           <div className="footerInfoBox">
             <div className="titleWrapper">
               <a href="https://www.zeeuwsmuseum.nl/nl/zeeuws-museum-v4/#">
-                <FormattedMessage
-                  id="BEZOEKADRES"
-                  defaultMessage="BEZOEKADRES"
-                />
+                {this.props.intl.FormattedMessage(messages.bezoekadres)}
               </a>
             </div>
             <p>Abdij (Plein)</p>
