@@ -819,7 +819,7 @@ div.language-selector {
 .accordion-title span, .accordion-title svg{
   color: #000000 !important;
 }
-.ui.table td,.ui.table th {
+#view .ui.table td, #view .ui.table th {
   padding: 1rem !important;
 }
 
