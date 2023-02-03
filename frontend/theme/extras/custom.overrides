@@ -591,7 +591,7 @@ div#view {
   .block-editor-video,
   .accordion-block,
   .custom-style-ebebeb,
-  .celled.fixed.table {
+  .celled.table {
     width: 730px !important;
     margin-right: auto !important;
     margin-left: auto !important;
@@ -1075,6 +1075,7 @@ body.view-viewview.contenttype-plone-site.siteroot {
       h3,
       h4,
       p:not(.column p, .table p),
+      .celled.table,
       .grid,
       .accordion-block,
       .block-editor-video,
@@ -1083,7 +1084,18 @@ body.view-viewview.contenttype-plone-site.siteroot {
         padding: 0px 25px !important;
         word-wrap: break-word;
       }
-
+      th, td {
+        display: table-cell !important;
+      }
+      tr{
+        display: table-row !important;
+      }
+      thead{
+        display: table-header-group !important;
+      }
+      tbody{
+        display: table-row-group !important;
+      }
       p {
         margin-top: 5px !important;
         font-size: 16px !important;
