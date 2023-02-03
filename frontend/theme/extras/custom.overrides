@@ -289,7 +289,7 @@ div#view {
       font-size: 22px;
       letter-spacing: 1.65px;
       line-height: 35px;
-      text-transform: uppercase;
+      // text-transform: uppercase;
     }
     /* li,
     ol {
@@ -583,9 +583,11 @@ div#view {
   h2,
   h3,
   h4,
-  p,
+  p:not(.column p, .table p),
   ul,
+  ol,
   blockquote,
+  .grid,
   .block-editor-video,
   .accordion-block,
   .custom-style-ebebeb,
@@ -814,6 +816,13 @@ div.language-selector {
     object-position: inherit !important;
   }
 }
+.accordion-title span, .accordion-title svg{
+  color: #000000 !important;
+}
+.ui.table td,.ui.table th {
+  padding: 1rem !important;
+}
+
 /* END OF JAARVERSLAG SINGLE CONTENT PAGE */
 
 /* HOME PAGE */
@@ -1065,7 +1074,9 @@ body.view-viewview.contenttype-plone-site.siteroot {
       h2,
       h3,
       h4,
-      p,
+      p:not(.column p, .table p),
+      .grid,
+      .accordion-block,
       .block-editor-video,
       .block.vide.align.center {
         width: 100% !important;
@@ -1118,7 +1129,7 @@ body.view-viewview.contenttype-plone-site.siteroot {
         /* font-size: 22.4px !important; */
         letter-spacing: 1.68px;
         line-height: 35px;
-        text-transform: uppercase;
+        // text-transform: uppercase;
       }
 
       p.block.image.align.full {
