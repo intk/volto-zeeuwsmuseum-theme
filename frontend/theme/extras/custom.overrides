@@ -1069,20 +1069,52 @@ body.view-viewview.contenttype-plone-site.siteroot {
       font-size: 32px !important;
     }
 
+    #view .ui.grid{
+      width: 100% !important;
+    }
+
+    //This is written in order to keep the grid on the same rwow
+
+    // #view .ui.grid{
+    //   flex-wrap: nowrap;
+    //   width: 100% !important;
+    //   justify-content:space-around;
+    //   .column{
+    //     width: 100% !important;
+    //     flex: 1 1 0 !important;
+    //     p.block.image{
+    //       flex: 1 1 0 !important;
+    //       width: 100% !important;
+    //       img {
+    //           width: auto !important;
+    //         }
+    //     }
+    //   }
+    // }
+
+
+    .ui.stackable.grid>.column:not(.row){
+      width: auto;
+    }
+
     #page-document {
+      padding: 0% 15px;
       h1,
       h2,
       h3,
       h4,
       p:not(.column p, .table p),
       .celled.table,
-      .grid,
-      .accordion-block,
+      .grid
       .block-editor-video,
-      .block.vide.align.center {
+      .block.vide.align.center,
+      .accordion-block {
         width: 100% !important;
         padding: 0px 25px !important;
         word-wrap: break-word;
+      }
+      .accordion-block{
+        padding: 0% !important;
       }
       th, td {
         display: table-cell !important;
@@ -1096,9 +1128,12 @@ body.view-viewview.contenttype-plone-site.siteroot {
       tbody{
         display: table-row-group !important;
       }
-      p {
+      p, li, ol {
         margin-top: 5px !important;
         font-size: 16px !important;
+      }
+      ul {
+        padding-left: 45px !important;
       }
 
       h1 {
