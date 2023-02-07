@@ -14,15 +14,10 @@ import EmptylineViewBlock from './Blocks/Emptyline/View';
 import EmptylineEditBlock from './Blocks/Emptyline/Edit';
 import SocialBottomViewBlock from './Blocks/SocialBottom/View';
 import SocialBottomEditBlock from './Blocks/SocialBottom/Edit';
-import NutezienViewBlock from './Blocks/Nutezien/View';
-import NutezienEditBlock from './Blocks/Nutezien/Edit';
 import PhotoDescriptionViewBlock from './Blocks/PhotoDescription/View';
 import PhotoDescriptionEditBlock from './Blocks/PhotoDescription/Edit';
-import StoryBlockViewBlock from './Blocks/StoryBlock/View';
-import StoryBlockEditBlock from './Blocks/StoryBlock/Edit';
 import SliderPage from './View/SliderPage';
 import HeaderItem from './HeaderItem/HeaderItem';
-// import AccordionBreadcrumb from './AccordionMenu/AccordionBreadcrumb';
 import AccordionLanguageSelector from './AccordionMenu/AccordionLanguageSelector';
 
 export {
@@ -30,14 +25,9 @@ export {
   EmptylineEditBlock,
   SocialBottomViewBlock,
   SocialBottomEditBlock,
-  NutezienViewBlock,
-  NutezienEditBlock,
   PhotoDescriptionViewBlock,
   PhotoDescriptionEditBlock,
-  StoryBlockViewBlock,
-  StoryBlockEditBlock,
   SliderPage,
   HeaderItem,
-  // AccordionBreadcrumb,
   AccordionLanguageSelector,
 };

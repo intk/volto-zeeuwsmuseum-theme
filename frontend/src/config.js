@@ -20,12 +20,8 @@ import {
   EmptylineViewBlock,
   SocialBottomViewBlock,
   SocialBottomEditBlock,
-  NutezienViewBlock,
-  NutezienEditBlock,
   PhotoDescriptionViewBlock,
   PhotoDescriptionEditBlock,
-  StoryBlockViewBlock,
-  StoryBlockEditBlock,
 } from '@package/components';
 import dotsSVG from '@plone/volto/icons/dots.svg';
 import showSVG from '@plone/volto/icons/show.svg';
@@ -67,20 +63,6 @@ export default function applyConfig(config) {
         view: [],
       },
     }),
-    (config.blocks.blocksConfig.nutezien = {
-      id: 'nutezien',
-      title: 'Nutezien',
-      icon: presentationSVG,
-      group: 'common',
-      view: NutezienViewBlock,
-      edit: NutezienEditBlock,
-      restricted: false,
-      mostUsed: false,
-      security: {
-        addPermission: [],
-        view: [],
-      },
-    }),
     (config.blocks.blocksConfig.photodescription = {
       id: 'photodescription',
       title: 'Photo Info',
@@ -95,29 +77,14 @@ export default function applyConfig(config) {
         view: [],
       },
     }),
-    (config.blocks.blocksConfig.storyblock = {
-      id: 'storyblock',
-      title: 'Story Block',
-      icon: editingSVG,
-      group: 'media',
-      view: StoryBlockViewBlock,
-      edit: StoryBlockEditBlock,
-      restricted: false,
-      mostUsed: false,
-      security: {
-        addPermission: [],
-        view: [],
-      },
-    });
+    // config.settings = {
+    //   ...config.settings,
+    //   isMultilingual: true,
+    //   supportedLanguages: ['en', 'nl', 'de'],
+    //   defaultLanguage: 'en',
+    // };
 
-  // config.settings = {
-  //   ...config.settings,
-  //   isMultilingual: true,
-  //   supportedLanguages: ['en', 'nl', 'de'],
-  //   defaultLanguage: 'en',
-  // };
-
-  config.widgets.id.cookie_consent_configuration = MultilingualWidget();
+    (config.widgets.id.cookie_consent_configuration = MultilingualWidget());
 
   const DEFAULT_LANG = 'nl';
 
