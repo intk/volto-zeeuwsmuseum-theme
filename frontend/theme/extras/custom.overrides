@@ -1319,14 +1319,14 @@ body.view-viewview.contenttype-plone-site.siteroot {
 }
 
 @media only screen and (max-width: 991px) {
-  /* #content-core .listing-items {
+  #content-core .listing-items {
     width: 50% !important;
-  } */
+  }
 }
 @media only screen and (max-width: 767px) {
-  /* #content-core .listing-items {
+  #content-core .listing-items {
     width: 100% !important;
-  } */
+  }
 }
 /* ********************************************************
 ***END OF RESPONSIVE AREA ACCORDING TO PAGE WIDTH*********** */
