@@ -7,7 +7,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, injectIntl } from 'react-intl';
 
-import { Container } from 'semantic-ui-react';
+import { Container, Image } from 'semantic-ui-react';
 import { map } from 'lodash';
 import config from '@plone/volto/registry';
 
