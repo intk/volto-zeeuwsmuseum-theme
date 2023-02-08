@@ -61,7 +61,7 @@ const DefaultView = ({ content, intl, location }) => {
     </div>
   ) : (
     <Container id="page-document">
-      <h1 className="documentFirstHeading">{content.title}</h1>
+      {/* <h1 className="documentFirstHeading">{content.title}</h1> */}
       {content.description && (
         <p className="documentDescription">{content.description}</p>
       )}

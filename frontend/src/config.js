@@ -25,7 +25,6 @@ import {
 } from '@package/components';
 import dotsSVG from '@plone/volto/icons/dots.svg';
 import showSVG from '@plone/volto/icons/show.svg';
-import presentationSVG from '@plone/volto/icons/presentation.svg';
 import editingSVG from '@plone/volto/icons/editing.svg';
 import { MultilingualWidget } from 'volto-multilingual-widget';
 
