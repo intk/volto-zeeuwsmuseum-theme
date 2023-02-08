@@ -1099,7 +1099,8 @@ body.view-viewview.contenttype-plone-site.siteroot {
       h4,
       p:not(.column p, .table p),
       .celled.table,
-      .grid
+      .grid,
+      .callout,
       .block-editor-video,
       .block.video.align,
       .accordion-block {
