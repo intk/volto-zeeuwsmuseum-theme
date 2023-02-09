@@ -19,7 +19,10 @@ import PhotoDescriptionEditBlock from './Blocks/PhotoDescription/Edit';
 import SliderPage from './View/SliderPage';
 import HeaderItem from './HeaderItem/HeaderItem';
 import AccordionLanguageSelector from './AccordionMenu/AccordionLanguageSelector';
-
+// import installSiteDataViewBlock from './Blocks/SiteData/SiteDataView';
+// import installSiteDataEditBlock from './Blocks/SiteData/SiteDataEdit';
+import installBlocks from './Blocks';
+import SocialLinks from './theme/SocialLinks/SocialLinks';
 export {
   EmptylineViewBlock,
   EmptylineEditBlock,
@@ -30,4 +33,8 @@ export {
   SliderPage,
   HeaderItem,
   AccordionLanguageSelector,
+  installBlocks,
+  SocialLinks,
+  // installSiteDataViewBlock,
+  // installSiteDataEditBlock,
 };

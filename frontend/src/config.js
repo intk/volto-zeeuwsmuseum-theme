@@ -27,6 +27,10 @@ import dotsSVG from '@plone/volto/icons/dots.svg';
 import showSVG from '@plone/volto/icons/show.svg';
 import editingSVG from '@plone/volto/icons/editing.svg';
 import { MultilingualWidget } from 'volto-multilingual-widget';
+import installBlocks from './components/Blocks';
+import installFooter from './footer';
+import installExpressMiddleware from './express-middleware';
+import { getContent } from '@plone/volto/actions';
 
 // All your imports required for the config here BEFORE this line
 import '@plone/volto/config';
@@ -93,7 +97,49 @@ export default function applyConfig(config) {
   config.settings = {
     ...config.settings,
     navDepth: 6,
+    siteDataPageId: 'site-data',
+    // actionBlockIds: [
+    //   ['footerLinks', 'Footer Links'],
+    //   ['siteActions', 'Site Actions'],
+    // ],
   };
 
-  return config;
+  config.settings.asyncPropsExtenders = [
+    ...config.settings.asyncPropsExtenders,
+    {
+      path: '/',
+      key: 'site-data',
+      extend: (dispatchActions) => {
+        const action = {
+          key: 'site-data',
+          promise: ({ location, store }) => {
+            // const currentLang = state.intl.locale;
+            const bits = location.pathname.split('/');
+            const currentLang =
+              bits.length >= 2 ? bits[1] || DEFAULT_LANG : DEFAULT_LANG;
+
+            const state = store.getState();
+            if (state.content.subrequests?.[`site-data-${currentLang}`]?.data) {
+              return;
+            }
+
+            const siteDataPageId = config.settings.siteDataPageId;
+            const url = `/${currentLang}/${siteDataPageId}`;
+            const action = getContent(url, null, `site-data-${currentLang}`);
+            return store.dispatch(action).catch((e) => {
+              // eslint-disable-next-line
+              console.log(
+                `Footer links folder not found: ${url}. Please create as page
+                named ${siteDataPageId} in the root of your current language and
+                fill it with the appropriate action blocks`,
+              );
+            });
+          },
+        };
+        return [...dispatchActions, action];
+      },
+    },
+  ];
+
+  return installExpressMiddleware(installFooter(installBlocks(config)));
 }
