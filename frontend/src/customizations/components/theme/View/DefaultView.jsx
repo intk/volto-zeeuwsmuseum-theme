@@ -35,6 +35,11 @@ const DefaultView = ({ content, intl, location }) => {
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
+  // if the visitor is at the main page, then redirect
+  if (content['@type'] === 'LRF') {
+    window.location.href = 'https://google.com/contact';
+  }
+
   return hasBlocksData(content) ? (
     <div id="page-document" className="ui container">
       {map(content[blocksLayoutFieldname].items, (block) => {
