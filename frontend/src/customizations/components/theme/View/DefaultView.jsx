@@ -36,9 +36,9 @@ const DefaultView = ({ content, intl, location }) => {
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
   // if the visitor is at the main page, then redirect
-  if (content['@type'] === 'LRF') {
-    window.location.href = `https://www.zeeuwsmuseum.nl`;
-  }
+  // if (content['@type'] === 'LRF') {
+  //   window.location.href = `https://www.zeeuwsmuseum.nl`;
+  // }
   // console.log(content.language.token);
 
   return hasBlocksData(content) ? (
