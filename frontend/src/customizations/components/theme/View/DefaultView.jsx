@@ -37,8 +37,9 @@ const DefaultView = ({ content, intl, location }) => {
 
   // if the visitor is at the main page, then redirect
   if (content['@type'] === 'LRF') {
-    window.location.href = 'https://google.com/contact';
+    window.location.href = `https://www.zeeuwsmuseum.nl`;
   }
+  // console.log(content.language.token);
 
   return hasBlocksData(content) ? (
     <div id="page-document" className="ui container">
