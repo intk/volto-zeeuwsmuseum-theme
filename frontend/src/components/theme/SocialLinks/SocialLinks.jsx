@@ -1,4 +1,3 @@
-import { List } from 'semantic-ui-react';
 import { useSiteDataContent } from '@package/helpers';
 
 import defaultIcon from '@package/icons/link.svg';
@@ -81,6 +80,7 @@ const SocialLinks = (props) => {
   );
 
   const siteData = blocks[siteDataId] || {};
+  // eslint-disable-next-line no-unused-vars
   const { socialLinks, socialLinksTitle } = siteData;
 
   return (

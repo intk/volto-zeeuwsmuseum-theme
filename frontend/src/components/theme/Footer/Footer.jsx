@@ -1,10 +1,10 @@
 import React from 'react';
 import { FaChevronRight } from 'react-icons/fa';
-import { FormattedMessage, injectIntl } from 'react-intl';
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { Container, List } from 'semantic-ui-react';
-import { RenderBlocks } from '@plone/volto/components';
+import { injectIntl } from 'react-intl';
+// import { Link } from 'react-router-dom';
+// import { useSelector } from 'react-redux';
+// import { Container, List } from 'semantic-ui-react';
+// import { RenderBlocks } from '@plone/volto/components';
 import { SocialLinks } from '@package/components';
 import { useSiteDataContent } from '@package/helpers';
 
