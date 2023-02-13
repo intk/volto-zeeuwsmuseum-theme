@@ -26,9 +26,39 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
 
+#: components/Blocks/SiteData/schema
+# defaultMessage: Address 1. line
+msgid "Address"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
+# defaultMessage: Address 2. line
+msgid "AddressSecond"
+msgstr ""
+
 #: components/AccordionMenu/AccordionBreadcrumb
 # defaultMessage: Breadcrumbs
 msgid "Breadcrumbs"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
+# defaultMessage: Button call to action
+msgid "Button call to action"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
+# defaultMessage: Button title
+msgid "Button title"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
+# defaultMessage: Contact
+msgid "Contact"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
+# defaultMessage: E-mail
+msgid "E-mail"
 msgstr ""
 
 #: components/AccordionMenu/AccordionBreadcrumb
@@ -36,9 +66,45 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
+#: components/Blocks/SiteData/schema
+# defaultMessage: Opening hours
+msgid "Opening hours"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
+# defaultMessage: Opening hours are displayed in the header
+msgid "Opening hours are displayed in the header"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
+# defaultMessage: Phone
+msgid "Phone"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
+# defaultMessage: Section title
+msgid "Section title"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
+# defaultMessage: Global site settings
+msgid "SiteData"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
+#: components/Blocks/SiteData/SiteDataView
+# defaultMessage: Social links
+msgid "Social links"
+msgstr ""
+
 #: components/AccordionMenu/AccordionLanguageSelector
 # defaultMessage: Switch to
 msgid "Switch to"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
+# defaultMessage: Tickets button. Displayed in the header
+msgid "Tickets button. Displayed in the header"
 msgstr ""
 
 #: components/View/SliderPage

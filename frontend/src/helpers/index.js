@@ -4,3 +4,4 @@
  * @example
  * export { Api } from './Api/Api';
  */
+export useSiteDataContent from './useSiteDataContent';

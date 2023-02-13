@@ -371,7 +371,7 @@ div#view {
         margin-bottom: 8px;
 
         p#address {
-          padding-bottom: 2px;
+          padding-bottom: 17px;
         }
 
         p#phoneNumber {
@@ -392,6 +392,11 @@ div#view {
         // flex: 1 4 auto;
         border-left: 0.3px solid #c3c3c3;
         margin-right: 0px;
+        margin-top: 15px !important;
+
+        .titleWrapper{
+          margin-bottom: 8px !important;
+        }
 
         p {
           width: 100% !important;
@@ -400,7 +405,7 @@ div#view {
 
         dd.portletItem.odd {
           display: flex;
-          padding-top: 32px;
+          padding-top: 32px !important;
           margin-left: 0;
           justify-items: center;
 
@@ -993,7 +998,7 @@ body.view-viewview.contenttype-plone-site.siteroot {
       padding-bottom: 65px;
       padding-left: 0% !important;
       border: none !important;
-    }
+     }
   }
 
   #top-footer {
