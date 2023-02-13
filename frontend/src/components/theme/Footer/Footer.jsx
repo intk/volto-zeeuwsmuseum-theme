@@ -75,15 +75,17 @@ export const Contact = ({
       <a href="https://www.zeeuwsmuseum.nl/nl/contact">{contactTitle}</a>
     </div>
     {!!phone && <p id="phoneNumber">{phone}</p>}
-    <a
-      id="mailadress"
-      data-linktype="email"
-      href={`mailto:${email}`}
-      data-val="info@zeeuwsmuseum.nl"
-      data-subject="Contact via Zeeuws Museum website"
-    >
-      {email}
-    </a>
+    {!!email && (
+      <a
+        id="mailadress"
+        data-linktype="email"
+        href={`mailto:${email}`}
+        data-val="info@zeeuwsmuseum.nl"
+        data-subject="Contact via Zeeuws Museum website"
+      >
+        {email}
+      </a>
+    )}
 
     <a href="https://www.zeeuwsmuseum.nl/nl/contact" className="text-button">
       {footertranslations['contract']['en']}
