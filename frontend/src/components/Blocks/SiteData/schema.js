@@ -24,7 +24,7 @@ export const SocialLink = (props) => ({
 const messages = defineMessages({
   sectionTitle: {
     id: 'Section title',
-    defaultMessage: 'Section title',
+    defaultMessage: 'Address Section Title',
   },
   address: {
     id: 'Address',
@@ -33,6 +33,10 @@ const messages = defineMessages({
   addressSecond: {
     id: 'AddressSecond',
     defaultMessage: 'Address 2. line',
+  },
+  contactSectionTitle: {
+    id: 'Contact title',
+    defaultMessage: 'Contact Section Title',
   },
   phone: {
     id: 'Phone',
@@ -92,7 +96,14 @@ const SiteDataSchema = ({ intl }) => ({
     {
       id: 'contact',
       title: intl.formatMessage(messages.contact),
-      fields: ['contactTitle', 'address', 'addressSecond', 'phone', 'email'],
+      fields: [
+        'addressTitle',
+        'address',
+        'addressSecond',
+        'contactTitle',
+        'phone',
+        'email',
+      ],
     },
     {
       id: 'socialLinks',
@@ -102,7 +113,7 @@ const SiteDataSchema = ({ intl }) => ({
   ],
 
   properties: {
-    contactTitle: {
+    addressTitle: {
       title: intl.formatMessage(messages.sectionTitle),
     },
     address: {
@@ -110,6 +121,9 @@ const SiteDataSchema = ({ intl }) => ({
     },
     addressSecond: {
       title: intl.formatMessage(messages.addressSecond),
+    },
+    contactTitle: {
+      title: intl.formatMessage(messages.contactSectionTitle),
     },
     phone: {
       title: intl.formatMessage(messages.phone),

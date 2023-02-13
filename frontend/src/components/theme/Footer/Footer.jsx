@@ -42,14 +42,15 @@ const footertranslations = {
 };
 
 export const Address = ({
-  contactTitle,
+  addressTitle,
   address,
   addressSecond,
+  contactTitle,
   phone,
   email,
 }) => (
   <div className="footerInfoBox">
-    <div className="titleWrapper">{contactTitle}</div>
+    <div className="titleWrapper">{addressTitle}</div>
     <div>{!!address && <p id="address">{address}</p>}</div>
     <div>{!!addressSecond && <p id="address">{addressSecond}</p>}</div>
     <a
@@ -62,17 +63,16 @@ export const Address = ({
 );
 
 export const Contact = ({
-  contactTitle,
+  addressTitle,
   address,
   addressSecond,
+  contactTitle,
   phone,
   email,
 }) => (
   <div className="footerInfoBox">
     <div className="titleWrapper">
-      <a href="https://www.zeeuwsmuseum.nl/nl/contact">
-        {footertranslations['contact_algemeen']['en']}
-      </a>
+      <a href="https://www.zeeuwsmuseum.nl/nl/contact">{contactTitle}</a>
     </div>
     {!!phone && <p id="phoneNumber">{phone}</p>}
     <a
