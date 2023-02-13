@@ -61,6 +61,11 @@ msgid "Contact"
 msgstr ""
 
 #: components/Blocks/SiteData/schema
+# defaultMessage: Contact Section Title
+msgid "Contact title"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
 # defaultMessage: E-mail
 msgid "E-mail"
 msgstr ""
@@ -86,7 +91,7 @@ msgid "Phone"
 msgstr ""
 
 #: components/Blocks/SiteData/schema
-# defaultMessage: Section title
+# defaultMessage: Address Section Title
 msgid "Section title"
 msgstr ""
 
