@@ -35,6 +35,10 @@ const DefaultView = ({ content, intl, location }) => {
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
+  if (content['@type'] === 'LRF' && window !== undefined) {
+    window.location.href = 'https://www.zeeuwsmuseum.nl';
+  }
+
   return hasBlocksData(content) ? (
     <div id="page-document" className="ui container">
       {map(content[blocksLayoutFieldname].items, (block) => {
@@ -62,14 +66,7 @@ const DefaultView = ({ content, intl, location }) => {
   ) : (
     <Container id="page-document">
       {/* if the visitor is at the main page, then redirect */}
-      <div className="redirection" style={{ textAlign: 'center' }}>
-        <span>Je wordt doorverwezen naar </span>
-        <span>
-          {content['@type'] === 'LRF' && window !== undefined
-            ? (window.location.href = 'https://www.zeeuwsmuseum.nl')
-            : ''}
-        </span>
-      </div>
+      <div className="redirection" style={{ textAlign: 'center' }}></div>
       {/* redirection ends here */}
       {/* <h1 className="documentFirstHeading">{content.title}</h1> */}
       {content.description && (
