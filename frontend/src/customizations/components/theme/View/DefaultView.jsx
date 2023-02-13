@@ -47,7 +47,6 @@ const DefaultView = ({ content, intl, location }) => {
     redirection();
   }, [content]);
 
-
   return hasBlocksData(content) ? (
     <div id="page-document" className="ui container">
       {map(content[blocksLayoutFieldname].items, (block) => {
