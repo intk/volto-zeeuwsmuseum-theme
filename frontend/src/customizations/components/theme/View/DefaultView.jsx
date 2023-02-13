@@ -35,7 +35,7 @@ const DefaultView = ({ content, intl, location }) => {
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
-  if (content['@type'] === 'LRF' && window !== undefined) {
+  if (content['@type'] === 'LRF' && typeof window !== undefined) {
     window.location.href = 'https://www.zeeuwsmuseum.nl';
   }
 
