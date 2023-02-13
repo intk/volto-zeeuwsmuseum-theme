@@ -28,7 +28,11 @@ const messages = defineMessages({
   },
   address: {
     id: 'Address',
-    defaultMessage: 'Address',
+    defaultMessage: 'Address 1. line',
+  },
+  addressSecond: {
+    id: 'AddressSecond',
+    defaultMessage: 'Address 2. line',
   },
   phone: {
     id: 'Phone',
@@ -79,16 +83,16 @@ const SiteDataSchema = ({ intl }) => ({
       id: 'default',
       title: 'Default',
       fields: [
-        'openingHours',
-        'openingHoursTitle',
-        'buttonTitle',
-        'buttonHref',
+        // 'openingHours',
+        // 'openingHoursTitle',
+        // 'buttonTitle',
+        // 'buttonHref',
       ],
     },
     {
       id: 'contact',
       title: intl.formatMessage(messages.contact),
-      fields: ['contactTitle', 'address', 'phone', 'email'],
+      fields: ['contactTitle', 'address', 'addressSecond', 'phone', 'email'],
     },
     {
       id: 'socialLinks',
@@ -103,6 +107,9 @@ const SiteDataSchema = ({ intl }) => ({
     },
     address: {
       title: intl.formatMessage(messages.address),
+    },
+    addressSecond: {
+      title: intl.formatMessage(messages.addressSecond),
     },
     phone: {
       title: intl.formatMessage(messages.phone),

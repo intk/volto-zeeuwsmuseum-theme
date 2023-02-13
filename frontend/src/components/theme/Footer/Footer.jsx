@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaChevronRight } from 'react-icons/fa';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -7,83 +8,105 @@ import { RenderBlocks } from '@plone/volto/components';
 import { SocialLinks } from '@package/components';
 import { useSiteDataContent } from '@package/helpers';
 
-import config from '@plone/volto/registry';
-
-const Login = () => {
-  const { settings } = config;
-  const token = useSelector((state) => state.userSession?.token);
-  const content = useSelector((state) => state.content?.data || {});
-
-  return token ? (
-    <Link id="login" aria-label="login" to="/logout">
-      <FormattedMessage id="Logout" defaultMessage="Logout" />
-    </Link>
-  ) : (
-    <Link
-      aria-label="login"
-      id="login"
-      to={`/login${
-        content
-          ? `?return_url=${(content['@id'] || '').replace(
-              settings.apiPath,
-              '',
-            )}`
-          : ''
-      }`}
-    >
-      <FormattedMessage id="Log in" defaultMessage="Log in" />
-    </Link>
-  );
+const footertranslations = {
+  bezoekadres: {
+    en: 'ADDRESS',
+    nl: 'BEZOEKADRES',
+    de: 'ADRESSE',
+  },
+  plan_en_bezoek: {
+    en: 'PLAN YOUR VISIT',
+    nl: 'PLAN EEN BEZOEK',
+    de: 'PLANEN SIE IHREN BESUCH',
+  },
+  contact_algemeen: {
+    en: 'CONTACT',
+    nl: 'CONTACT ALGEMEEN',
+    de: 'KONTAKT',
+  },
+  contract: {
+    en: 'CONTACT',
+    nl: 'CONTACT',
+    de: 'KONTAKT',
+  },
+  nieuwsbrief: {
+    en: 'NEWSLETTER',
+    nl: 'NIEUWSBRIEF',
+    de: 'NEWSLETTER',
+  },
+  schrijf: {
+    en: 'Subscribe to our newsletter.',
+    nl: 'Schrijf je in voor onze nieuwsbrief en blijf op de hoogte.',
+    de: 'Abonnieren Sie unseren Newsletter.',
+  },
 };
 
-export const Address = ({ contactTitle, address, phone, email }) => (
-  <div>
-    <div className="section-title">{contactTitle}</div>
-    <List className="footer-contact">
-      <List.Item>
-        <List.Content>{!!address && <p>{address}</p>}</List.Content>
-      </List.Item>
-
-      <List.Item>
-        <List.Content>
-          {!!phone && (
-            <p>
-              <a href={`tel:${phone}`}>{phone}</a>
-            </p>
-          )}
-        </List.Content>
-      </List.Item>
-
-      <List.Item>
-        <List.Content>
-          {!!email && (
-            <p>
-              <a className="email" href={`mailto:${email}`}>
-                {email}
-              </a>
-            </p>
-          )}
-        </List.Content>
-      </List.Item>
-    </List>
+export const Address = ({
+  contactTitle,
+  address,
+  addressSecond,
+  phone,
+  email,
+}) => (
+  <div className="footerInfoBox">
+    <div className="titleWrapper">{contactTitle}</div>
+    <div>{!!address && <p id="address">{address}</p>}</div>
+    <div>{!!addressSecond && <p id="address">{addressSecond}</p>}</div>
+    <a
+      href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/praktische-info"
+      className="text-button"
+    >
+      {footertranslations['plan_en_bezoek']['en']}
+    </a>
   </div>
 );
 
-const FooterBlocks = ({ includeTypes }) => {
-  const siteDataContent = useSiteDataContent();
-  const { blocks = {}, blocks_layout } = siteDataContent;
-  const filtered = blocks_layout?.items?.filter((id) =>
-    includeTypes.includes(blocks[id]?.['@type']),
-  );
-  const properties = {
-    blocks,
-    blocks_layout: {
-      ...blocks_layout,
-      items: filtered,
-    },
-  };
-  return <RenderBlocks content={properties} />;
-};
+export const Contact = ({
+  contactTitle,
+  address,
+  addressSecond,
+  phone,
+  email,
+}) => (
+  <div className="footerInfoBox">
+    <div className="titleWrapper">
+      <a href="https://www.zeeuwsmuseum.nl/nl/contact">
+        {footertranslations['contact_algemeen']['en']}
+      </a>
+    </div>
+    {!!phone && <p id="phoneNumber">{phone}</p>}
+    <a
+      id="mailadress"
+      data-linktype="email"
+      href={`mailto:${email}`}
+      data-val="info@zeeuwsmuseum.nl"
+      data-subject="Contact via Zeeuws Museum website"
+    >
+      {email}
+    </a>
+
+    <a href="https://www.zeeuwsmuseum.nl/nl/contact" className="text-button">
+      {footertranslations['contract']['en']}
+    </a>
+    <SocialLinks />
+  </div>
+);
+
+// const FooterBlocks = ({ includeTypes }) => {
+//   const siteDataContent = useSiteDataContent();
+//   const { blocks = {}, blocks_layout } = siteDataContent;
+//   const filtered = blocks_layout?.items?.filter((id) =>
+//     includeTypes.includes(blocks[id]?.['@type']),
+//   );
+//   const properties = {
+//     blocks,
+//     blocks_layout: {
+//       ...blocks_layout,
+//       items: filtered,
+//     },
+//   };
+//   return <RenderBlocks content={properties} />;
+// };
 
 export function Footer(props) {
   const siteDataContent = useSiteDataContent();
@@ -95,16 +118,65 @@ export function Footer(props) {
   const siteData = blocks[siteDataId] || {};
 
   return (
-    <div className="footer">
-      <Container>
-        <div className="footer-wrapper offset-2-right">
-          <SocialLinks {...siteData} />
+    <container id="footer">
+      <div id="top-footer">
+        <div className="top-wrapper" id="top-wrap">
           <Address {...siteData} />
-          <FooterBlocks includeTypes={['actionLinks']} />
+          <Contact {...siteData} />
+          <div id="footermail" className="footerInfoBox">
+            <div className="titleWrapper">
+              <p id="footerTitle3">{footertranslations['nieuwsbrief']['en']}</p>
+            </div>
+            <p>{footertranslations['schrijf']['en']}</p>
+
+            <dd className="portletItem odd">
+              <form
+                id="newsletter-subscriber-form"
+                method="get"
+                action="https://zeeuwsmuseum.us13.list-manage.com/subscribe/post-json?c=?"
+              >
+                <div className="input-group">
+                  <input
+                    type="text"
+                    className="text-widget required form-control input-lg textline-field"
+                    placeholder="Email"
+                    id="form-widgets-email"
+                    name="EMAIL"
+                    aria-label="mailchimp-email"
+                  />
+                  <input
+                    type="hidden"
+                    value="88e39abc49bff280b2ff566d0"
+                    name="u"
+                  />
+                  <input type="hidden" value="5978f9fd67" name="id" />
+
+                  <span className="input-group-btn">
+                    <button
+                      className="submit-button"
+                      name="form.buttons.subscribe"
+                      type="submit"
+                      aria-label="mailchimp-submit"
+                    >
+                      <FaChevronRight />
+                    </button>
+                  </span>
+                </div>
+                {/* <div id="subscribe-result" >
+                <p className="error-msg" >Aanmelden op nieuwsbrief mislukt.</p>
+                <p className="success-msg">Bedankt voor uw aanmelding. U ontvangt een e-mail waarin uw inschrijving wordt bevestigd.</p>
+              </div> */}
+              </form>
+            </dd>
+          </div>
         </div>
-        <Login />
-      </Container>
-    </div>
+        {/* <div className="footerInfoBox">
+          <div className="titleWrapper">
+            <FooterBlocks includeTypes={['actionLinks']} />
+          </div>
+        </div> */}
+      </div>
+    </container>
   );
 }
 
