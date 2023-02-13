@@ -66,7 +66,7 @@ const DefaultView = ({ content, intl, location }) => {
         <span>Je wordt doorverwezen naar </span>
         <span>
           {/* {console.log(window == null ? 'null' : 'not null')} */}
-          {content['@type'] === 'LRF' && window
+          {content['@type'] === 'LRF' && window !== undefined
             ? (window.location.href = 'https://www.zeeuwsmuseum.nl')
             : ''}
         </span>
