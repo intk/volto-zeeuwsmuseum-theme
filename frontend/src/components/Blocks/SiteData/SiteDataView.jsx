@@ -14,7 +14,7 @@ const SiteDataView = (props) => {
             <b>Address Information</b>
           </h3>
           <p>{props.data.address}</p>
-          <p>{props.data.addressSecond}i</p>
+          <p>{props.data.addressSecond}</p>
         </div>
         <div>
           <h3>
