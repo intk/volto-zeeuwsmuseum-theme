@@ -65,9 +65,10 @@ const DefaultView = ({ content, intl, location }) => {
       <div className="redirection" style={{ textAlign: 'center' }}>
         <span>Je wordt doorverwezen naar </span>
         <span>
-          {/* {content['@type'] === 'LRF'
+          {/* {console.log(window == null ? 'null' : 'not null')} */}
+          {content['@type'] === 'LRF' && window
             ? (window.location.href = 'https://www.zeeuwsmuseum.nl')
-            : ''} */}
+            : ''}
         </span>
       </div>
       {/* redirection ends here */}
