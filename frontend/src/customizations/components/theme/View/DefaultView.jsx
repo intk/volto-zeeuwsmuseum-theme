@@ -6,7 +6,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, injectIntl } from 'react-intl';
-
+import { useEffect } from 'react';
 import { Container, Image } from 'semantic-ui-react';
 import { map } from 'lodash';
 import config from '@plone/volto/registry';
@@ -35,9 +35,18 @@ const DefaultView = ({ content, intl, location }) => {
   const blocksFieldname = getBlocksFieldname(content);
   const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
-  if (content['@type'] === 'LRF' && typeof window !== undefined) {
-    window.location.href = 'https://www.zeeuwsmuseum.nl';
-  }
+  // if (content['@type'] === 'LRF' && typeof window !== undefined) {
+  //   window.location.href = 'https://www.zeeuwsmuseum.nl';
+  // }
+  useEffect(() => {
+    const redirection = (event) => {
+      if (content['@type'] === 'LRF') {
+        window.location.href = 'https://www.zeeuwsmuseum.nl';
+      }
+    };
+    redirection();
+  }, [content]);
+
 
   return hasBlocksData(content) ? (
     <div id="page-document" className="ui container">
