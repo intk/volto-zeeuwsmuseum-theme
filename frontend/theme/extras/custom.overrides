@@ -9,6 +9,11 @@
   }
 }
 
+// To prevent icons to turn white on hover
+#main svg.icon:hover, #toolbar svg.icon:hover{
+  fill: #7bb0e7 !important;
+}
+
 //A solution for the sidebar that is coming for the right side
 //we might put it on the top of the header
 //Or we can srink is
