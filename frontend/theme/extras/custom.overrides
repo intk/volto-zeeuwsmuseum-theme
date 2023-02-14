@@ -405,7 +405,7 @@ div#view {
 
         dd.portletItem.odd {
           display: flex;
-          padding-top: 32px !important;
+          padding-top: 10px !important;
           margin-left: 0;
           justify-items: center;
 
