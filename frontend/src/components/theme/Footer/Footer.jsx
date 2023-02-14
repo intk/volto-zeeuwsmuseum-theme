@@ -118,7 +118,7 @@ export function Footer(props) {
   );
 
   const siteData = blocks[siteDataId] || {};
-
+  const localeLanguage = props.intl.locale;
   return (
     <container id="footer">
       <div id="top-footer">
@@ -127,9 +127,11 @@ export function Footer(props) {
           <Contact {...siteData} />
           <div id="footermail" className="footerInfoBox">
             <div className="titleWrapper">
-              <p id="footerTitle3">{footertranslations['nieuwsbrief']['en']}</p>
+              <p id="footerTitle3">
+                {footertranslations['nieuwsbrief'][`${localeLanguage}`]}
+              </p>
             </div>
-            <p>{footertranslations['schrijf']['en']}</p>
+            <p>{footertranslations['schrijf'][`${localeLanguage}`]}</p>
 
             <dd className="portletItem odd">
               <form
