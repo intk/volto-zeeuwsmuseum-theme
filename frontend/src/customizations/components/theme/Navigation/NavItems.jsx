@@ -40,7 +40,9 @@ const NavItems = ({ items, lang }) => {
               ))}
             </Dropdown.Menu>
           </Dropdown>
-        ) : item.title === 'Home' ? (
+        ) : item.title === 'Home' ||
+          item.title === 'Site Data' ||
+          item.title === 'SITE DATA' ? (
           ''
         ) : (
           <NavItem item={item} lang={lang} key={item.url} />
