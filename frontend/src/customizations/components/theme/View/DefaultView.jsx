@@ -6,6 +6,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { defineMessages, injectIntl } from 'react-intl';
+// eslint-disable-next-line no-unused-vars
 import { useEffect } from 'react';
 import { Container, Image } from 'semantic-ui-react';
 import { map } from 'lodash';
@@ -38,17 +39,17 @@ const DefaultView = ({ content, intl, location }) => {
   // if (content['@type'] === 'LRF' && typeof window !== undefined) {
   //   window.location.href = 'https://www.zeeuwsmuseum.nl';
   // }
-  useEffect(() => {
-    const redirection = (event) => {
-      const languageToken = content.language.token
-        ? content.language.token
-        : '';
-      if (content['@type'] === 'LRF') {
-        window.location.href = `https://www.zeeuwsmuseum.nl/${languageToken}`;
-      }
-    };
-    redirection();
-  }, [content]);
+  // useEffect(() => {
+  //   const redirection = (event) => {
+  //     const languageToken = content.language.token
+  //       ? content.language.token
+  //       : '';
+  //     if (content['@type'] === 'LRF') {
+  //       window.location.href = `https://www.zeeuwsmuseum.nl/${languageToken}`;
+  //     }
+  //   };
+  //   redirection();
+  // }, [content]);
 
   return hasBlocksData(content) ? (
     <div id="page-document" className="ui container">
