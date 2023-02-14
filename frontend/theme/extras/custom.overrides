@@ -812,7 +812,7 @@ div.language-selector {
   padding-bottom: 0% !important;
 }
 
-.highlight-image-wrapper.gradient {
+.view-viewview .highlight-image-wrapper.gradient {
   img {
     width: 100% !important;
     height: 56.26vw !important;
@@ -1274,7 +1274,7 @@ body.view-viewview.contenttype-plone-site.siteroot {
   .has-toolbar .view-wrapper,
   .has-toolbar #navigation .mobile-menu {
     box-sizing: border-box;
-    padding-left: 80px !important;
+    padding-left: 70px !important;
   }
 
   .has-toolbar-collapsed #view,
