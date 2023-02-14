@@ -40,8 +40,11 @@ const DefaultView = ({ content, intl, location }) => {
   // }
   useEffect(() => {
     const redirection = (event) => {
+      const languageToken = content.language.token
+        ? content.language.token
+        : '';
       if (content['@type'] === 'LRF') {
-        window.location.href = 'https://www.zeeuwsmuseum.nl';
+        window.location.href = `https://www.zeeuwsmuseum.nl/${languageToken}`;
       }
     };
     redirection();
