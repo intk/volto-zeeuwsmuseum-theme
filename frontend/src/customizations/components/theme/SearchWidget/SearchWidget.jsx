@@ -74,17 +74,20 @@ class SearchWidget extends Component {
    * @returns {undefined}
    */
   onSubmit(event) {
-    const path =
-      this.props.pathname?.length > 0
-        ? `&path=${encodeURIComponent(this.props.pathname)}`
-        : '';
-    this.props.history.push(
-      `/search?SearchableText=${encodeURIComponent(this.state.text)}${path}`,
-    );
+    // const path =
+    //   this.props.pathname?.length > 0
+    //     ? `&path=${encodeURIComponent(this.props.pathname)}`
+    //     : '';
+    // this.props.history.push(
+    //   `/search?SearchableText=${encodeURIComponent(this.state.text)}${path}`,
+    // );
     // reset input value
-    this.setState({
-      text: '',
-    });
+    // this.setState({
+    //   text: '',
+    // });
+    const languageToken = this.props.intl.locale ? this.props.intl.locale : '';
+    window.location.href = `https://www.zeeuwsmuseum.nl/${languageToken}/search`;
+
     event.preventDefault();
   }
 
