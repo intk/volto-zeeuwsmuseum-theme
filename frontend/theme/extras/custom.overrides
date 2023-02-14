@@ -14,6 +14,17 @@
   fill: #7bb0e7 !important;
 }
 
+.view-contentsview #page-content{
+  width: 100% !important;
+}
+
+.expire-align{
+  flex-wrap: wrap !important;
+  span{
+    max-width: 100px !important;
+  }
+}
+
 //A solution for the sidebar that is coming for the right side
 //we might put it on the top of the header
 //Or we can srink is
