@@ -29,6 +29,10 @@ div.logo {
   // padding-bottom: 20px;
 }
 
+#header-wrapper .logo-nav-wrapper{
+  align-items: center !important;
+}
+
 #header-wrapper {
   width: 100%;
 }
@@ -406,6 +410,10 @@ a#dropdownItemA {
   width: 23px !important;
   height: 2px !important;
   background-color: #808080 !important;
+}
+.hamburger-wrapper.mobile{
+  height: 100%;
+  padding-top: 10px;
 }
 
 span.hamburger-box {
