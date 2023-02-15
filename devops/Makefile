@@ -134,6 +134,6 @@ all: ## Create new box, run ansible, deploy stack
 	$(MAKE) run-playbook
 	$(MAKE) deploy
 
-.PHONY: update-backend
-update-backend:
-	${DOCKER_CONTEXT} service update plone_backend
+.PHONY: remove-backend
+remove-backend:
+	${DOCKER_CONTEXT} service rm plone_backend
