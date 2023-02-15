@@ -41,7 +41,7 @@ const DefaultView = ({ content, intl, location }) => {
   // }
   useEffect(() => {
     const redirection = (event) => {
-      const languageToken = content.language.token
+      const languageToken = content.language?.token
         ? content.language.token
         : '';
       if (content['@type'] === 'LRF') {
