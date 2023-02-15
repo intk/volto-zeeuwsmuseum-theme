@@ -133,3 +133,7 @@ all: ## Create new box, run ansible, deploy stack
 	fi
 	$(MAKE) run-playbook
 	$(MAKE) deploy
+
+.PHONY: update-backend
+update-backend:
+	${DOCKER_CONTEXT} service update plone_backend
