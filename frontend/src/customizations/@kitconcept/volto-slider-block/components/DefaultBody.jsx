@@ -2,10 +2,10 @@ import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
 import { getTeaserImageURL } from '../helpers';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import { Icon, MaybeWrap } from '@plone/volto/components';
-import { Input, Button, Message } from 'semantic-ui-react';
+import { MaybeWrap } from '@plone/volto/components';
+import { Message } from 'semantic-ui-react';
 import cx from 'classnames';
-import navTreeSVG from '@plone/volto/icons/nav.svg';
+// import navTreeSVG from '@plone/volto/icons/nav.svg';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
 
 const messages = defineMessages({
@@ -37,26 +37,26 @@ const SliderBody = ({
   const href = data.href?.[0];
   const image = data.preview_image?.[0];
 
-  const handleClick = () => {
-    openObjectBrowser({
-      onSelectItem: (url, document) => {
-        dataBlock.slides[index].title = document.Title;
-        dataBlock.slides[index].description = document.Description;
-        dataBlock.slides[index].href = [
-          {
-            '@id': document['@id'],
-            Title: document.Title,
-            Description: document.Description,
-            title: document.Title,
-            image_field: document.image_field,
-            hasPreviewImage: document.hasPreviewImage,
-          },
-        ];
-        onChangeBlock(block, dataBlock);
-      },
-      mode: 'link',
-    });
-  };
+  // const handleClick = () => {
+  //   openObjectBrowser({
+  //     onSelectItem: (url, document) => {
+  //       dataBlock.slides[index].title = document.Title;
+  //       dataBlock.slides[index].description = document.Description;
+  //       dataBlock.slides[index].href = [
+  //         {
+  //           '@id': document['@id'],
+  //           Title: document.Title,
+  //           Description: document.Description,
+  //           title: document.Title,
+  //           image_field: document.image_field,
+  //           hasPreviewImage: document.hasPreviewImage,
+  //         },
+  //       ];
+  //       onChangeBlock(block, dataBlock);
+  //     },
+  //     mode: 'link',
+  //   });
+  // };
 
   return (
     <div
