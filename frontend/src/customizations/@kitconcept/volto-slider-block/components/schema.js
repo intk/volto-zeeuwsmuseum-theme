@@ -21,8 +21,8 @@ const messages = defineMessages({
     defaultMessage: 'Description',
   },
   imageOverride: {
-    id: 'Image override',
-    defaultMessage: 'Image override',
+    id: 'Upload Image',
+    defaultMessage: 'Upload Image',
   },
   item: {
     id: 'Item',
@@ -52,10 +52,10 @@ export const itemSchema = (props) =>
           id: 'default',
           title: 'Default',
           fields: [
-            'href',
-            'head_title',
+            // 'href',
+            // 'head_title',
             'title',
-            'description',
+            // 'description',
             'preview_image',
           ],
         },

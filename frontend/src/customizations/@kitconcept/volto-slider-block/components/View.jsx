@@ -73,7 +73,7 @@ const SliderView = (props) => {
       {data.slides?.length > 0 && (
         <Slider
           ref={sliderRef}
-          dots
+          // dots
           infinite
           speed={500}
           slidesToShow={1}

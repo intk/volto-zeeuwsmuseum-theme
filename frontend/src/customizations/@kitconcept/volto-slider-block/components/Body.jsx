@@ -1,4 +1,4 @@
-import DefaultSliderBody from './DefaultBody';
+import DefaultSliderBody from '../components/DefaultBody';
 
 const SliderBody = (props) => {
   const { variation } = props;

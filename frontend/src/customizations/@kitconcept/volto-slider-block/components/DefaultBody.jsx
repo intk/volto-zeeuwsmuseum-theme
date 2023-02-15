@@ -1,6 +1,6 @@
 import React from 'react';
 import { useIntl, defineMessages } from 'react-intl';
-import { getTeaserImageURL } from '../../../../../node_modules/@kitconcept/volto-slider-block/src/helpers';
+import { getTeaserImageURL } from '../helpers';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { Icon, MaybeWrap } from '@plone/volto/components';
 import { Input, Button, Message } from 'semantic-ui-react';
@@ -69,7 +69,7 @@ const SliderBody = ({
           <div className="grid-teaser-item default">
             <img src={imageBlockSVG} alt="" />
             <p>{intl.formatMessage(messages.PleaseChooseContent)}</p>
-            <div className="toolbar-inner">
+            {/* <div className="toolbar-inner">
               <Button.Group>
                 <Button onClick={handleClick} icon basic>
                   <Icon name={navTreeSVG} size="24px" />
@@ -80,7 +80,7 @@ const SliderBody = ({
                 onClick={handleClick}
                 onFocus={(e) => e.target.blur()}
               />
-            </div>
+            </div> */}
           </div>
         </Message>
       )}
