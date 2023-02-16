@@ -1,0 +1,7 @@
+/*******************************
+        User Overrides
+*******************************/
+
+#navigation .menu.transition.language-selector_dropdown {
+  display: flex !important;
+}

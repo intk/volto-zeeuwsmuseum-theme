@@ -20,48 +20,10 @@
 }
 
 @font-face {
-  font-family: 'univers67_bold_condensed';
-  src: url('../assets/fonts/univers-condensedbold-webfont.woff2')
-      format('woff2'),
-    url('../assets/fonts/univers-condensedbold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'UniversUltraCondensed';
-  src: url('../assets/fonts/univers-ultracondensed-webfont.woff2')
-      format('woff2'),
-    url('../assets/fonts/univers-ultracondensed-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'UniversLightCn';
   src: url('../assets/fonts/univers-condensedlight-webfont.woff2')
       format('woff2'),
     url('../assets/fonts/univers-condensedlight-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'univers49LtultraCn';
-  src: url('../assets/fonts/univers-lightultracondensed-webfont.woff2')
-      format('woff2'),
-    url('../assets/fonts/univers-lightultracondensed-webfont.woff')
-      format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'univers39ThultraCn';
-  src: url('../assets/fonts/univers-thinultracondensed-webfont.woff2')
-      format('woff2'),
-    url('../assets/fonts/univers-thinultracondensed-webfont.woff')
-      format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -74,58 +36,5 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'univers45_light_oblique';
-  src: url('../assets/fonts/univers-lightoblique-webfont.woff2') format('woff2'),
-    url('../assets/fonts/univers-lightoblique-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: 'univers55_roman';
-  src: url('../assets/fonts/univers-webfont.woff2') format('woff2'),
-    url('../assets/fonts/univers-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'univers65_bold';
-  src: url('../assets/fonts/univers-bold-webfont.woff2') format('woff2'),
-    url('../assets/fonts/univers-bold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'univers65_bold_oblique';
-  src: url('../assets/fonts/univers-boldoblique-webfont.woff2') format('woff2'),
-    url('../assets/fonts/univers-boldoblique-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'univers67BdCnOb';
-  src: url('../assets/fonts/univers-condensedbdoblique-webfont.woff2') format('woff2'),
-    url('../assets/fonts/univers-condensedbdoblique-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-} 
-
-@font-face {
-  font-family: 'univers57_condensed_oblique';
-  src: url('../assets/fonts/univers-condensedoblique-webfont.woff2') format('woff2'),
-    url('../assets/fonts/univers-condensedoblique-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'univers47LtCnOb';
-  src: url('../assets/fonts/univers-condensedltoblique-webfont.woff2') format('woff2'),
-    url('../assets/fonts/univers-condensedltoblique-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 /* END OF FONTS */
