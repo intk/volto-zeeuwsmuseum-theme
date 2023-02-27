@@ -87,23 +87,10 @@ const Header = (props) => {
       id="header-wrapper"
       role="banner"
     >
-      <Container className="header-container">
+      <container className="header-container">
         <div className="header">
           <div className="logo-nav-wrapper">
             <div className="logo">
-              {/* <NavLink
-                to={props.navItems[0].url === '' ? '/' : props.navItems[0].url}
-                key={props.navItems[0].url}
-                className="logo-written"
-                id="logo-written"
-                exact={
-                  settings.isMultilingual
-                    ? props.navItems[0].url === `/${props.lang}`
-                    : props.navItems[0].url === ''
-                }
-              >
-                Zeeuws Museum
-              </NavLink> */}
               <UniversalLink
                 href={settings.isMultilingual ? `/${props.lang}` : '/'}
                 title={props.intl.formatMessage(messages.site)}
@@ -117,7 +104,7 @@ const Header = (props) => {
             <Navigation pathname={props.pathname} menuItems={props.menuItems} />
           </div>
         </div>
-      </Container>
+      </container>
       {/* This section is to render Breadcrumbs conditionally */}
       {props.content != undefined ? (
         props.content['@type'] == 'Document' ||
