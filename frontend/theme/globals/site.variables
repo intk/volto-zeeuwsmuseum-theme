@@ -8,7 +8,13 @@
 @largeMonitorBreakpoint      : 1200px;
 @widescreenMonitorBreakpoint : 1920px;
 
-
+@grey-darkest : #808080;
+@grey-dark : #929292;
+@grey : #c3c3c3;
+@grey-light : #ececec;
+@blue : #7bb0e7;
+@white : #ffffff;
+@black : #000000;
 
 /* FONTS*/
 @font-face {
@@ -38,3 +44,14 @@
 
 
 /* END OF FONTS */
+
+
+body{
+  font-family: 'UniversCn', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  a {
+      text-decoration: none !important;
+    }
+}
