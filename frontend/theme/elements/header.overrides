@@ -1,0 +1,16 @@
+#header-wrapper{
+  border-bottom: 1px solid @grey;
+}
+
+.logo-nav-wrapper{
+  max-height: 32px ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center !important;
+}
+
+#logo-written {
+  font-size: 30px;
+  // line-height: 1.25rem;
+}
+
