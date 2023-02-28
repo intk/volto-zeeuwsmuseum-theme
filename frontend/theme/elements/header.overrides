@@ -1,16 +1,40 @@
 #header-wrapper{
   border-bottom: 1px solid @grey;
+  padding: 0% 14px;
 }
 
 .logo-nav-wrapper{
-  max-height: 32px ;
+  // max-height: 32px ;
   display: flex;
   justify-content: space-between;
-  align-items: center !important;
+  flex-wrap: nowrap;
 }
 
 #logo-written {
   font-size: 30px;
-  // line-height: 1.25rem;
+  padding: 11px 0 6px;
 }
 
+#navigation .ui.secondary.pointing.menu{
+padding: 0;
+}
+// Here is for the hiding action
+.is-anonymous .ui.basic.segment.header-wrapper {
+  position: fixed !important;
+  width: 100%;
+  z-index: 998 !important;
+  top: 0;
+  background-color: #ffffff;
+  transition-duration: 300ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  .ui.container.header-container {
+    z-index: 99999 !important;
+    background-color: #ffffff;
+  }
+}
+.is-anonymous .ui.basic.segment.header-wrapper.hide {
+  top: -560px;
+}
+// End of hiding action
