@@ -12,6 +12,14 @@
   }
 }
 
+#navigation .ui.pointing.secondary.stackable a.item{
+  margin-left: 15px;
+  margin-right: 15px;
+  :hover {
+    color: @blue !important;
+  }
+}
+
 div.ui.pointing.secondary.stackable {
   font-size: 17px;
   letter-spacing: 0.1em;
@@ -30,6 +38,12 @@ div.ui.pointing.secondary.stackable {
   :hover {
     color: @blue !important;
     background: @white !important;
+  }
+ }
+
+ .ui.pointing.secondary.stackable.computer.large.screen.widescreen.only.menu{
+  .menu.transition{
+    display: inline-table;
   }
  }
 
@@ -106,3 +120,247 @@ span.hamburger-box {
   padding-top: 0;
 }
 //end of styling of the Hamburger Menu icon
+
+
+
+// MOBILE MENU STYLING
+
+// Adjusting the width according to the toolbar
+@media only screen and (min-width: 767px) {
+.has-toolbar #navigation .mobile-menu {
+  padding-left: 70px !important;
+}
+
+.has-toolbar-collapsed #navigation .mobile-menu {
+  padding-left: 20px !important;
+}
+}
+//****************************************8
+
+#navigation .mobile-menu{
+  z-index: -1 !important;
+  height: auto !important;
+  position: absolute !important;
+}
+.mobile-menu.mobile-menu-enter-done,
+.mobile-menu.mobile-menu-enter-active {
+  top: 60px;
+  padding-top: 0px !important;
+  display: table;
+}
+
+#navigation .mobile-menu-nav{
+  height: auto !important;
+  position: relative !important;
+}
+
+
+.mobile-menu-nav .ui.pointing.secondary.stackable.menu {
+  flex-direction: column;
+  text-align: left !important;
+  width: 100%;
+  align-items: flex-end !important;
+  height: auto !important;
+  position: relative !important;
+  display: inline-table;
+
+  .item.simple,
+  .tools-search-wrapper,
+  .language-selector {
+    align-self: flex-start;
+    justify-content: flex-start !important;
+    background-color: @white !important;
+  }
+
+  .search-tool {
+    width: 100%;
+    border-bottom: 0.5px solid #c3c3c3 !important;
+    display: flex;
+    order: -5;
+    justify-content: flex-start;
+    padding-bottom: 0px;
+  }
+
+  .tools-search-wrapper {
+    width: 100%;
+    padding-bottom: 0px;
+
+    .search {
+      align-self: flex-start;
+      padding-bottom: 0px;
+    }
+
+    .language-selector-wrapper,
+    .ui.form {
+      border-left: none;
+      align-self: flex-start;
+    }
+
+    .ui.form {
+      .field.searchbox>button {
+        margin-left: 0px;
+
+        svg {
+          padding-bottom: 0% !important;
+        }
+      }
+    }
+  }
+}
+.mobile-menu-nav a.item.simple {
+  padding-left: 22px !important;
+  padding-right: 15px !important;
+}
+.mobile-menu-nav {
+  display: flex !important;
+  width: 100% !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  border: 1px solid #c3c3c3;
+  font-family: 'UniversCn', Arial, sans-serif !important;
+  letter-spacing: 0.1em;
+
+  .item.simple {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  div {
+    padding-bottom: 5px;
+    font-size: 17px !important;
+
+    .title {
+      font-family: 'UniversCn', Arial, sans-serif !important;
+    }
+
+
+    .content {
+      padding-top: 0px !important;
+      padding-bottom: 0px !important;
+      margin-left: 15px;
+      font-family: 'UniversLight', Arial, sans-serif !important;
+    }
+  }
+}
+
+// ***************
+// Accordion items at the mobile menu
+.accordion.ui.item.simple {
+  flex-direction: column;
+  align-content: flex-start !important;
+  border: none;
+  padding-left: 22px !important;
+  align-items: flex-start !important;
+
+  .active.title,
+  .active.content {
+    align-self: flex-start;
+  }
+
+  .title {
+    padding-top: 0px !important;
+    padding-bottom: 0px;
+  }
+
+  .active.title {
+    padding-bottom: 10px !important;
+  }
+}
+
+.mobile-menu-nav .item.simple {
+  margin-left: 0 !important;
+}
+
+#navigation .mobile-menu-nav .ui.pointing.secondary {
+  .active.title {
+    color: #7bb0e7 !important;
+  }
+
+  .ui.segment {
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    align-self: flex-start;
+    padding: 0%;
+    margin: 0%;
+    border-top: 1px solid #c3c3c3;
+
+    .ui.pointing.secondary {
+      padding: 0% !important;
+    }
+
+    .accordionbreadcrumblist {
+      padding-left: 0%;
+      width: auto !important;
+
+      a.accordion.item.simple {
+        padding-left: 18px !important;
+      }
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0% !important;
+    }
+
+    li a {
+      font-family: "UniversLight" !important;
+      font-size: 17px !important;
+      text-transform: none;
+      padding-top: 5px !important;
+      padding-bottom: 5px !important;
+    }
+
+    .title {
+      color: #808080 !important;
+    }
+  }
+}
+
+//language selector at the mobile menu
+.MuiPaper.languageselector {
+  align-self: flex-start;
+  border: 0px !important;
+  padding-top: 22px;
+  padding-bottom: 17px;
+
+  .MuiPaper-root {
+    border: 0px !important;
+    box-shadow: none;
+    text-transform: uppercase;
+    padding-left: 22px;
+
+    .MuiAccordionDetails-root {
+      padding-left: 35px;
+      font-family: 'UniversLight';
+
+    }
+  }
+}
+.MuiAccordionDetails-root {
+  display: flex;
+  flex-direction: column;
+}
+.MuiButtonBase-root {
+  min-height: 10px !important;
+  align-self: flex-start;
+  padding-top: 5px;
+  padding-left: 0% !important;
+}
+.MuiAccordionSummary-content {
+  margin: 0% !important;
+}
+.MuiCollapse-root,
+.MuiCollapse-wrapper,
+.MuiCollapse-wrapperInner,
+.MuiAccordion-region {
+  padding-bottom: 0% !important;
+}
+//End of Accordion items at the mobile menu
+
+
+@media only screen and (min-width: 1145px) {
+  .mobile-menu{
+    display: none !important;
+  }
+}

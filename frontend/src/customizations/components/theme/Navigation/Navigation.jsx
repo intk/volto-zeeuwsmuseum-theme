@@ -210,6 +210,13 @@ class Navigation extends Component {
             <BodyClass className="has-mobile-menu-open" />
             <div className="mobile-menu-nav">
               <Menu stackable pointing secondary>
+                <div className="search-tool">
+                  <div className="tools-search-wrapper">
+                    <div className="search">
+                      <SearchWidget />
+                    </div>
+                  </div>
+                </div>
                 <AccordionLanguageSelector />
                 {this.props.items.map((item) =>
                   item && item.items && item.items.length > 0 ? (
@@ -430,14 +437,6 @@ class Navigation extends Component {
                 ) : (
                   ''
                 )}
-
-                <div className="search-tool">
-                  <div className="tools-search-wrapper">
-                    <div className="search">
-                      <SearchWidget />
-                    </div>
-                  </div>
-                </div>
               </Menu>
             </div>
           </div>
