@@ -15,9 +15,6 @@
 #navigation .ui.pointing.secondary.stackable a.item{
   margin-left: 15px;
   margin-right: 15px;
-  :hover {
-    color: @blue !important;
-  }
 }
 
 div.ui.pointing.secondary.stackable {
@@ -39,15 +36,15 @@ div.ui.pointing.secondary.stackable {
     color: @blue !important;
     background: @white !important;
   }
- }
+}
 
  .ui.pointing.secondary.stackable.computer.large.screen.widescreen.only.menu{
   .menu.transition{
     display: inline-table;
   }
- }
+}
 
-.ui.menu{
+.header-wrapper .ui.menu{
   font-family: 'UniversCn', Arial, sans-serif;
   margin-top: 0;
   #dropdownItemA {
@@ -61,7 +58,6 @@ div.ui.pointing.secondary.stackable {
 .ui.menu .ui.dropdown .menu>.active.item {
   background: @white !important;
   font-weight: normal !important;
-  color: @dropdownActiveItemColor !important;
   border: none;
 }
 .ui.secondary.menu .dropdown.item>.menu{
@@ -85,7 +81,7 @@ div.ui.pointing.secondary.stackable {
 .hamburger-inner::after {
   width: 23px !important;
   height: 2px !important;
-  background-color: #808080 !important;
+  background-color: @grey-darkest !important;
 }
 
 .hamburger-wrapper.mobile {
@@ -124,19 +120,6 @@ span.hamburger-box {
 
 
 // MOBILE MENU STYLING
-
-// Adjusting the width according to the toolbar
-@media only screen and (min-width: 767px) {
-.has-toolbar #navigation .mobile-menu {
-  padding-left: 70px !important;
-}
-
-.has-toolbar-collapsed #navigation .mobile-menu {
-  padding-left: 20px !important;
-}
-}
-//****************************************8
-
 #navigation .mobile-menu{
   z-index: -1 !important;
   height: auto !important;
@@ -163,10 +146,11 @@ span.hamburger-box {
   height: auto !important;
   position: relative !important;
   display: inline-table;
+  overflow: visible;
 
   .item.simple,
   .tools-search-wrapper,
-  .language-selector {
+  .languageselector {
     align-self: flex-start;
     justify-content: flex-start !important;
     background-color: @white !important;
@@ -174,7 +158,7 @@ span.hamburger-box {
 
   .search-tool {
     width: 100%;
-    border-bottom: 0.5px solid #c3c3c3 !important;
+    border-bottom: 0.5px solid @grey !important;
     display: flex;
     order: -5;
     justify-content: flex-start;
@@ -217,7 +201,7 @@ span.hamburger-box {
   flex-direction: column !important;
   align-items: flex-start !important;
   justify-content: flex-start !important;
-  border: 1px solid #c3c3c3;
+  border: 1px solid @grey;
   font-family: 'UniversCn', Arial, sans-serif !important;
   letter-spacing: 0.1em;
 
@@ -242,6 +226,7 @@ span.hamburger-box {
     }
   }
 }
+
 
 // ***************
 // Accordion items at the mobile menu
@@ -273,7 +258,7 @@ span.hamburger-box {
 
 #navigation .mobile-menu-nav .ui.pointing.secondary {
   .active.title {
-    color: #7bb0e7 !important;
+    color: @blue !important;
   }
 
   .ui.segment {
@@ -283,7 +268,7 @@ span.hamburger-box {
     align-self: flex-start;
     padding: 0%;
     margin: 0%;
-    border-top: 1px solid #c3c3c3;
+    border-top: 1px solid @grey;
 
     .ui.pointing.secondary {
       padding: 0% !important;
@@ -312,10 +297,11 @@ span.hamburger-box {
     }
 
     .title {
-      color: #808080 !important;
+      color: @grey-darkest !important;
     }
   }
 }
+
 
 //language selector at the mobile menu
 .MuiPaper.languageselector {
@@ -323,6 +309,7 @@ span.hamburger-box {
   border: 0px !important;
   padding-top: 22px;
   padding-bottom: 17px;
+
 
   .MuiPaper-root {
     border: 0px !important;
@@ -333,7 +320,10 @@ span.hamburger-box {
     .MuiAccordionDetails-root {
       padding-left: 35px;
       font-family: 'UniversLight';
-
+      a{
+        color: @black !important;
+        padding-top: 15px;
+      }
     }
   }
 }
@@ -349,6 +339,7 @@ span.hamburger-box {
 }
 .MuiAccordionSummary-content {
   margin: 0% !important;
+  color: @grey-darkest;
 }
 .MuiCollapse-root,
 .MuiCollapse-wrapper,
@@ -359,8 +350,23 @@ span.hamburger-box {
 //End of Accordion items at the mobile menu
 
 
+
+// The mobile menu disappears when the screen is wide
 @media only screen and (min-width: 1145px) {
   .mobile-menu{
     display: none !important;
   }
 }
+
+// Adjusting the width according to the toolbar
+@media only screen and (min-width: 767px) {
+  .has-toolbar #navigation .mobile-menu {
+    padding-left: 70px !important;
+  }
+
+  .has-toolbar-collapsed #navigation .mobile-menu {
+    padding-left: 20px !important;
+  }
+}
+
+//****************************************

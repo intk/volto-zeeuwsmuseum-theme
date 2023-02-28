@@ -1,6 +1,7 @@
 /* SECONDARY HEADER */
 /* // ********BREADCRUMB*********** */
 
+.header-wrapper{
 .ui.secondary.vertical {
   border: 0px;
   background-color: @white;
@@ -18,6 +19,11 @@
 
 #dropdowncontainer {
   width: 283px !important;
+}
+#crumbcontainer #dropdowncontainer{
+  // max-width: 0px !important;
+  flex-grow: 0;
+  margin: 0% !important;
 }
 
 #inhoud {
@@ -98,26 +104,23 @@ div.ui.breadcrumb {
   text-align: center;
 }
 
-.view-viewview.contenttype-jaarverslag,
-.view-viewview.contenttype-document,
-.view-viewview.contenttype-folder,
-.view-viewview.contenttype-slideshow {
-  .ui.secondary.vertical.segment.breadcrumbs {
-    display: block !important;
-  }
 
-  #inhoud {
-    flex-grow: 0;
-  }
-
-  div.ui.breadcrumb {
-    max-width: 1600px !important;
-    flex-grow: 1;
-    justify-content: center;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
+.ui.secondary.vertical.segment.breadcrumbs {
+  display: block !important;
 }
+
+#inhoud {
+  flex-grow: 0;
+}
+
+div.ui.breadcrumb {
+  max-width: 1600px !important;
+  flex-grow: 1;
+  justify-content: center;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 
 .ui.segment.content-area {
   padding-top: 0%;
@@ -125,7 +128,6 @@ div.ui.breadcrumb {
 }
 
 div#InhoudDropdown {
-  /* min-width: 288px !important; */
   padding: 6px 29px !important;
   border: none;
   margin-top: 0px !important;
@@ -304,4 +306,5 @@ div.menu.transition {
 
 .item.simple.active{
   border: unset !important;
+}
 }
