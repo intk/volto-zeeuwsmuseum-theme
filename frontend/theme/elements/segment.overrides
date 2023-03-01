@@ -1,0 +1,5 @@
+.ui.segment{
+  margin-top: 60px;
+}
+// Add another margin rule for when the breadcrumb is on
+
