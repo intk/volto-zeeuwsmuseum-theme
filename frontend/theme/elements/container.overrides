@@ -1,0 +1,19 @@
+@media only screen and (min-width: 1200px){
+  body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed) .ui.container {
+    width: 730px !important;
+
+  }
+}
+
+@media only screen and (min-width: 1145px) and (max-width: 1199px) {
+  body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed) .ui.container {
+    width: 730px !important;
+  }
+}
+
+@media only screen and (max-width: 767px){
+  body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed) .ui.container {
+    margin-left: 2em !important;
+    margin-right: 2em !important;
+  }
+}
