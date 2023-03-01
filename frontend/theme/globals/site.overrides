@@ -55,6 +55,15 @@
     margin-top: 1.25rem;
     margin-bottom: 2.1875rem;
   }
+  a{
+    color: @black;
+    text-decoration: underline !important;
+    text-decoration-color: @blue !important;
+  }
+  a:hover{
+    color: @blue !important;
+    text-decoration: none !important;
+  }
 
   // Table stylings
   table.ui.celled {
