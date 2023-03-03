@@ -61,7 +61,7 @@ const SliderView = (props) => {
   }
 
   return (
-    <div id='block-slider' className={cx('block slider full-width', className)}>
+    <div id="block-slider" className={cx('block slider', className)}>
       {(data.slides?.length === 0 || !data.slides) && isEditMode && (
         <Message>
           <div className="teaser-item default">

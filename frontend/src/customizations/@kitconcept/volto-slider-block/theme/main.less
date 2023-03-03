@@ -69,8 +69,10 @@
 }
 
 .addContentWidthStyling(@offset) {
+
   #page-add,
   #page-edit {
+
     // The slider does not behave well, and pushes the container out,
     // It's required to constrain it from the inside :(
     .block.slider .slick-slider {
@@ -114,17 +116,18 @@ body.has-toolbar-collapsed.has-sidebar-collapsed {
 // Customized Styling Section
 // **************************
 
-#block-slider{
+.view-viewview #block-slider {
 
   /* ------Slider arrow appearance --------*/
+  // ***********************************************
   .slick-next {
-    z-index: 990;
+    z-index: 1;
     top: 44% !important;
     right: 0;
   }
 
   .slick-prev {
-    z-index: 990;
+    z-index: 1;
     top: 44% !important;
     left: 0;
   }
@@ -152,7 +155,10 @@ body.has-toolbar-collapsed.has-sidebar-collapsed {
       }
     }
   }
+
+  // ***********************************************
   /* ------ End of Slider arrow appearance --------*/
+
 
   .teaser-item.top {
     position: relative;
@@ -165,7 +171,8 @@ body.has-toolbar-collapsed.has-sidebar-collapsed {
       pointer-events: none;
     }
   }
-  .teaser-item-title{
+
+  .teaser-item-title {
     position: absolute;
     bottom: 0px;
     width: 100%;
@@ -175,7 +182,7 @@ body.has-toolbar-collapsed.has-sidebar-collapsed {
     background-color: #00000099;
     word-wrap: break-word;
 
-    h2{
+    h2 {
       color: #ffffff99;
       font-family: 'UniversCn', Arial, sans-serif;
       font-size: 19.008px;
@@ -190,21 +197,22 @@ body.has-toolbar-collapsed.has-sidebar-collapsed {
   .block.slider {
     padding-bottom: 0% !important;
   }
+}
 
-  .highlight-image-wrapper.gradient {
-    img {
-      width: 100% !important;
-      height: 56.26vw !important;
-      object-fit: cover !important;
-      object-position: inherit !important;
-    }
+.view-viewview .highlight-image-wrapper.gradient {
+  img {
+    width: 100% !important;
+    height: 56.26vw !important;
+    object-fit: cover !important;
+    object-position: inherit !important;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .teaser-item-title{
+  .view-viewview .teaser-item-title {
     padding-left: 20px !important;
-    h2{
+
+    h2 {
       margin-top: 30px !important;
       font-size: 1rem !important;
       letter-spacing: 0.05em !important;
@@ -212,8 +220,9 @@ body.has-toolbar-collapsed.has-sidebar-collapsed {
     }
   }
 }
+
 @media only screen and (max-width: 400px) {
-  .teaser-item-title {
+  .view-viewview .teaser-item-title {
     padding-left: 15px !important;
 
     h2 {
@@ -227,44 +236,77 @@ body.has-toolbar-collapsed.has-sidebar-collapsed {
 
 
 
+// Slideshow Content Types View
+// ***********************************************
+.view-viewview.invisible {
+  #main {
+    height: 100% !important;
+  }
 
- .view-viewview.invisible {
-   #main {
-     height: 100% !important;
-   }
+  #block-slider {
+    width: 100vw;
+  }
 
-   #header-wrapper {
-     position: relative !important;
-     display: block !important;
-     height: 110px !important;
-   }
+  #header-wrapper {
+    position: relative !important;
+    display: block !important;
+    height: 110px !important;
+  }
 
-   .block.slider,
-   .slick-slider,
-   .slick-list,
-   .slick-track {
-     height: calc(100vh - 115px) !important;
-     padding-bottom: 0px !important;
-     margin-bottom: 0px !important;
+  .block.slider,
+  .slick-slider,
+  .slick-list,
+  .slick-track {
+    height: calc(100vh - 115px) !important;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
 
-     img {
-       height: calc(100vh - 115px) !important;
-     }
-   }
+    img {
+      height: calc(100vh - 115px) !important;
+    }
+  }
 
-   .ui.basic.segment.content-area {
-     height: calc(100vh - 120px) !important;
-     padding-bottom: 0px;
-     margin-top: 5px !important;
-     margin-bottom: 0px;
-   }
+  .ui.basic.segment.content-area {
+    height: calc(100vh - 120px) !important;
+    padding-bottom: 0px;
+    margin-top: 5px !important;
+    margin-bottom: 0px;
+  }
 
-   .teaser-item-title {
-     bottom: 0px;
-   }
+  .teaser-item-title {
+    bottom: 0px;
+  }
 
-   .ui.secondary.vertical.segment.breadcrumbs {
-     border-bottom: none;
-   }
- }
+  .ui.secondary.vertical.segment.breadcrumbs {
+    border-bottom: none;
+  }
+}
 
+// ***********************************************
+
+
+/* Hack for escape the blocks container in blocks full width */
+// ***********************************************
+.view-viewview #block-slider {
+  position: relative;
+  width: calc(100vw - var(--scrollbarWidth));
+  right: 50%;
+  left: 50%;
+  margin-right: -50vw !important;
+  margin-left: -50vw !important;
+}
+
+// The solution for the Broken Edit Page
+#page-add,
+#page-edit {
+
+  #block-slider,
+  .grid-teaser-item {
+    max-width: 400px !important;
+    overflow: hidden !important;
+    display: block !important;
+    position: static !important;
+  }
+}
+
+// ***********************************************
