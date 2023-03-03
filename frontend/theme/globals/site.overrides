@@ -1,20 +1,30 @@
 /*******************************
         Global Overrides
 *******************************/
-.public-ui .content-area{
-  .documentFirstHeading{
+
+// STYLING OF THE BLOCK TYPE
+// ***********************************************
+.view-viewview .content-area,
+.view-addview .content-area,
+.view-editview .content-area {
+  .documentFirstHeading {
     border: none !important;
   }
-  .documentFirstHeading::before{
+
+  .documentFirstHeading::before {
     position: unset !important;
   }
 
   box-sizing: border-box;
-  h1,h2,h3,h4{
+
+  h1,
+  h2,
+  h3,
+  h4 {
     text-transform: uppercase;
   }
 
-  h1{
+  h1 {
     font-family: 'UniversCn', Arial, sans-serif;
     font-size: 3.75rem;
     font-weight: 400;
@@ -23,7 +33,8 @@
     margin-top: 1.25rem;
     line-height: 4.125rem;
   }
-  h2{
+
+  h2 {
     font-family: 'UniversLightCn', Arial, sans-serif;
     font-size: 2rem;
     letter-spacing: 0.15rem;
@@ -31,7 +42,8 @@
     margin-top: 2.5rem;
     margin-bottom: 0.625rem;
   }
-  h3{
+
+  h3 {
     font-family: 'UniversLightCn', Arial, sans-serif;
     font-size: 1.4rem;
     letter-spacing: 0.105rem;
@@ -39,15 +51,17 @@
     margin-top: 2.813rem;
     margin-bottom: 0.625rem;
   }
-  h4{
+
+  h4 {
     font-family: 'UniversLightCn', Arial, sans-serif;
     font-size: 1.375rem;
-    letter-spacing: 0,1031rem;
+    letter-spacing: 0, 1031rem;
     line-height: 2.1875rem;
     margin-top: 2.8125rem;
     margin-bottom: 0.625rem;
   }
-  p{
+
+  p {
     font-family: 'UniversLight', Arial, sans-serif;
     font-size: 1.188em;
     letter-spacing: 0.05em;
@@ -55,12 +69,14 @@
     margin-top: 1.25rem;
     margin-bottom: 2.1875rem;
   }
-  a{
+
+  a {
     color: @black;
     text-decoration: underline !important;
     text-decoration-color: @blue !important;
   }
-  a:hover{
+
+  a:hover {
     color: @blue !important;
     text-decoration: none !important;
   }
@@ -74,7 +90,8 @@
 
     thead {
       height: 4.375rem;
-      p{
+
+      p {
         font-size: 1rem;
       }
     }
@@ -87,6 +104,7 @@
 
   // Column block stylings
   #page-document .column-blocks-wrapper {
+
     ol,
     li,
     a {
@@ -122,29 +140,47 @@
   #page-document ul {
     padding-left: 1.188rem;
   }
+
+  #photo-credit {
+    display: block;
+    margin-top: -5px !important;
+    color: rgb(102, 102, 102);
+    font-size: 13px !important;
+    line-height: 23px !important;
+    text-align: center;
+  }
 }
 
+
+
 @media only screen and(max-width: 768px) {
-  .public-ui .content-area{
-    h1{
+
+  .view-viewview .content-area,
+  .view-addview .content-area,
+  .view-editview .content-area {
+    h1 {
       font-size: 2rem;
       line-height: 2.2rem;
       letter-spacing: 0.1875rem;
     }
-    h2{
+
+    h2 {
       font-size: 1.75rem;
       letter-spacing: 0.131rem;
     }
-    h4{
+
+    h4 {
       font-size: 1, 15rem;
       letter-spacing: 0, 0862rem;
     }
-    p{
+
+    p {
       font-size: 1rem;
       letter-spacing: 0.05rem;
     }
 
-    #page-document{
+    #page-document {
+
       th,
       td {
         display: table-cell;
@@ -163,13 +199,15 @@
       }
     }
 
-    #page-document li{
+    #page-document li {
       font-size: 1rem !important;
       word-wrap: break-word;
     }
-    #page-document .column-blocks-wrapper{
+
+    #page-document .column-blocks-wrapper {
       font-size: 1rem;
-      ul{
+
+      ul {
         padding-left: 2.813rem;
       }
     }
@@ -177,7 +215,10 @@
 }
 
 @media only screen and(max-width: 400px) {
-.public-ui .content-area {
+
+  .view-viewview .content-area,
+  .view-addview .content-area,
+  .view-editview .content-area {
     h1 {
       font-size: 1.6rem;
       line-height: 2.2rem;
@@ -199,6 +240,7 @@
       letter-spacing: 0.02rem !important;
       line-height: 1.15rem !important;
     }
+
     #page-document li {
       width: auto !important;
       font-size: 0.75rem !important;
@@ -215,3 +257,219 @@
     }
   }
 }
+
+// END OF STYLING FOR THE BLOCK TYPES
+
+
+
+// ************************
+// About the size of the Images and the Videos
+.view-viewview .block.align.center {
+  text-align: center;
+
+  iframe,
+  img:not(.placeholder) {
+    max-width: 130%;
+    margin-right: auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    &.medium {
+      max-width: 50%;
+    }
+
+    &.small {
+      max-width: 25%;
+    }
+  }
+
+  iframe {
+    width: 100%;
+  }
+
+  .video-inner {
+    width: 930px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.view-viewview .content-area,
+.view-addview .content-area,
+.view-editview .content-area {
+  .slate-table-block {
+    width: 930px !important;
+    margin-left: 50% !important;
+    transform: translateX(-50%);
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .view-viewview .block.align.center {
+
+    .video-inner,
+    iframe,
+    img {
+      max-width: 100% !important;
+      margin-right: auto;
+      margin-left: auto;
+      transform: unset;
+    }
+  }
+
+  .slate-table-block {
+    max-width: 100% !important;
+    margin-right: auto;
+    margin-left: auto !important;
+    transform: unset;
+  }
+}
+
+//********************8
+//End Images and Video Changed
+
+
+
+/* -------SOCIALBUTTON BLOCK---------- */
+// ***********************************************
+.SocialbuttonsBottom {
+  display: flex;
+  height: 50px;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  padding: 0px 15px;
+  padding-top: 80px !important;
+  padding-bottom: 65px;
+  list-style-type: none;
+  vertical-align: middle;
+
+  .rrssb-icon {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+}
+
+.rrssb-icon svg {
+  fill: #929292;
+}
+
+.rrssb-icon svg:hover {
+  fill: #7bb0e7 !important;
+}
+
+@media only screen and (min-width: 993px) {
+  .SocialbuttonsBottom {
+    position: absolute;
+    top: calc((100vw * 0.56) + 270px);
+    left: calc(100% - 55px);
+    width: 55px;
+    height: 136px !important;
+    flex-direction: column !important;
+    /* padding-bottom: 20px; */
+    align-self: none !important;
+    justify-content: space-between !important;
+    padding-top: 20px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    border: 0.5px solid #ececec;
+    list-style-type: none;
+
+    .rrssb-icon {
+      padding-right: 0px !important;
+      padding-left: 0px !important;
+    }
+
+    svg {
+      width: 17.85px;
+      height: 17.85px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+// ***********************************************
+/* -----------END OF SOCIAL BUTTONS----------- */
+
+
+
+// For the Folder Content Type
+// ********************************
+.contenttype-folder #page-home {
+  #list-title h1 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    margin-top: 0% !important;
+  }
+
+  a {
+    font-family: 'UniversLightCn';
+    font-size: 1.375rem;
+    letter-spacing: 0.075rem;
+    text-decoration: none !important;
+  }
+
+  #content-core {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    .listing-items {
+      width: 33.3% !important;
+
+      flex-direction: column;
+      flex-grow: 0 !important;
+      flex-shrink: 0 !important;
+      justify-content: flex-end;
+      padding-top: 0px !important;
+      padding-right: 15px !important;
+      padding-bottom: 80px !important;
+      padding-left: 15px !important;
+      border: none !important;
+      margin-top: 0%;
+      margin-bottom: 0%;
+      box-shadow: none;
+
+      img {
+        margin: 0% !important;
+      }
+
+      div {
+        padding-top: 30px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .listing-items {
+    a {
+      color: #000000;
+      font-family: 'UniversLightCn';
+      font-size: 22px;
+      text-decoration: none !important;
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    #content-core .listing-items {
+      width: 50% !important;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    #content-core .listing-items {
+      width: 100% !important;
+    }
+  }
+}
+
+// ********************************
+// For the Folder Content Type
