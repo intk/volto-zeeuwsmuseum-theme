@@ -1,6 +1,10 @@
 .is-anonymous .ui.segment.content-area{
   margin-top: 120px;
-  padding-top: 0;
+  padding-top: 0%;
+}
+.ui.segment.content-area{
+  padding-top: 0%;
+  margin-top: 0%;
 }
 // Add another margin rule for when the breadcrumb is on
 

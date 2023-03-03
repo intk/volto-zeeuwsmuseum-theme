@@ -294,9 +294,7 @@
   }
 }
 
-.view-viewview .content-area,
-.view-addview .content-area,
-.view-editview .content-area {
+.view-viewview .content-area{
   .slate-table-block {
     width: 930px !important;
     margin-left: 50% !important;
@@ -367,11 +365,10 @@
     width: 55px;
     height: 136px !important;
     flex-direction: column !important;
-    /* padding-bottom: 20px; */
     align-self: none !important;
     justify-content: space-between !important;
-    padding-top: 20px !important;
-    padding-right: 0px !important;
+    padding-top: 15px !important;
+    padding-right: 5px !important;
     padding-left: 0px !important;
     border: 0.5px solid #ececec;
     list-style-type: none;
@@ -385,6 +382,25 @@
       width: 17.85px;
       height: 17.85px;
       margin-bottom: 15px;
+    }
+  }
+  .view-editview #page-edit .SocialbuttonsBottom {
+    position: static;
+    width: auto;
+    height: 50px !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    align-self: center !important;
+    justify-content: center !important;
+    padding: 0px 15px !important;
+    padding-top: 80px !important;
+    padding-bottom: 65px !important;
+    list-style-type: none !important;
+    vertical-align: middle !important;
+
+    .rrssb-icon {
+      padding-right: 13px !important;
+      padding-left: 13px !important;
     }
   }
 }
