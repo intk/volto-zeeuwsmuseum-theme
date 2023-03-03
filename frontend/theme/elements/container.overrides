@@ -1,19 +1,34 @@
-@media only screen and (min-width: 1200px){
-  body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed) .ui.container {
-    width: 730px !important;
-
+@media only screen and (min-width: 1200px) {
+  body #main .content-area .ui.container {
+    max-width: 730px !important;
   }
 }
 
 @media only screen and (min-width: 1145px) and (max-width: 1199px) {
-  body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed) .ui.container {
-    width: 730px !important;
+  body #main .content-area .ui.container {
+    max-width: 730px !important;
+  }
+
+}
+
+@media only screen and (max-width: 847px){
+  body #main .content-area .ui.container {
+    max-width: 730px !important;
   }
 }
 
-@media only screen and (max-width: 767px){
-  body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed) .ui.container {
+@media only screen and (max-width: 767px) {
+  body #main .content-area .ui.container {
     margin-left: 2em !important;
     margin-right: 2em !important;
   }
+}
+
+// For the Folder Content Type
+body.contenttype-folder #main .content-area .ui.container {
+  width: 100% !important;
+  padding-right: 25px !important;
+  padding-left: 25px !important;
+  max-width: unset !important;
+  margin: 0% !important;
 }
