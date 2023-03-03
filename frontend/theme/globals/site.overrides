@@ -498,3 +498,293 @@
 
 // ********************************
 // For the Folder Content Type
+
+
+
+
+/* ***************************************
+*********FOOTER BEGINNING ***************
+*************************************** */
+#footer {
+  height: 400px;
+  align-items: center;
+  padding-top: 40px;
+  border-top: 0.3px solid #c3c3c3;
+  background-color: white;
+  font-family: 'UniversLight', 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  line-height: 40px;
+
+  p {
+    font-size: 16px;
+  }
+
+  a {
+    color: inherit;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  #top-footer {
+    height: auto;
+    padding-top: 70px;
+    padding-bottom: 70px;
+
+    .top-wrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: top;
+      justify-content: space-between;
+      padding: 0% 7%; //for sides
+
+      .footerInfoBox {
+        min-width: 260px;
+        flex: 1 1 0 !important;
+        padding-right: 45px;
+        margin-top: 8px;
+        margin-right: 2%;
+        margin-bottom: 8px;
+
+        p#address {
+          padding-bottom: 17px;
+        }
+
+        p#phoneNumber {
+          padding-bottom: 0%;
+          margin-bottom: 7px;
+        }
+
+        a#mailadress {
+          display: block;
+          margin-bottom: 9px;
+        }
+      }
+
+      #footermail {
+        min-width: 300px;
+        flex: 1.3 1.3 0;
+        padding-left: 50px;
+        // flex: 1 4 auto;
+        border-left: 0.3px solid #c3c3c3;
+        margin-right: 0px;
+        margin-top: 15px !important;
+
+        .titleWrapper {
+          margin-bottom: 8px !important;
+        }
+
+        p {
+          width: 100% !important;
+          word-break: break-word;
+        }
+
+        dd.portletItem.odd {
+          display: flex;
+          padding-top: 10px !important;
+          margin-left: 0;
+          justify-items: center;
+
+          form {
+            width: 100%;
+            padding-right: 0%;
+          }
+        }
+
+        #form-widgets-email {
+          height: 55px !important;
+          padding-top: 10px;
+          border: 0.5px solid #c3c3c3;
+          font-family: 'UniversLight', 'Helvetica Neue', Helvetica, sans-serif;
+          font-size: 17px;
+          font-weight: 300;
+          letter-spacing: 0.05em;
+          line-height: 40px;
+        }
+
+        svg {
+          padding-top: 5px;
+        }
+
+        div.input-group {
+          display: flex;
+          align-items: center;
+          padding-top: 10px;
+
+          input {
+            flex-grow: 1;
+            padding-left: 20px;
+            border: 1px solid;
+            /* width: 80%; */
+            /* flex: 1 1 700px; */
+          }
+
+          button.submit-button {
+            width: 59px;
+            height: 55px;
+            padding: 0% !important;
+            border: 0.5px solid #7bb0e7;
+            background-color: #ffffff;
+            color: #7bb0e7;
+          }
+        }
+      }
+    }
+  }
+
+  #bottom-footer {
+    display: flex;
+    width: 100%;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 125px;
+    padding-bottom: 125px;
+    border-top: 0.3px solid #c3c3c3;
+  }
+
+  a.text-button {
+    display: block;
+    width: auto;
+    height: 55px;
+    padding-top: 5px;
+    border: 0.5px solid #7bb0e7;
+    margin: 0 auto;
+    background-color: transparent;
+    border-radius: 0px;
+    color: #7bb0e7;
+    font-family: 'UniversCn', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-shadow: 0px 0px 0px #ffffff;
+    // text-transform: uppercase;
+  }
+
+  input,
+  button {
+    /* margin-top: 30px; */
+    height: 44px;
+  }
+
+  .social {
+    width: 40px;
+    height: 20px;
+    margin-top: 25px;
+    color: #7bb0e7;
+  }
+}
+
+#mailadress {
+  width: 190px;
+  height: 30px !important;
+  padding-bottom: 0% !important;
+  border-bottom: 1px solid #7bb0e7;
+  margin-bottom: 20px !important;
+}
+
+#mailadress:hover {
+  border-bottom: 1px solid #ffffff;
+  color: #7bb0e7 !important;
+}
+
+
+@media only screen and (max-width: 500px) {
+  div.footerInfoBox {
+    min-width: 100px !important;
+  }
+}
+
+@media only screen and (max-width: 993px) {
+  #bottom-footer {
+    height: 297.33px;
+    padding-top: 160px !important;
+    padding-bottom: 160px !important;
+
+    img.ui.image {
+      width: 300px !important;
+    }
+  }
+
+  div#view h1 {
+    font-size: 35px;
+  }
+
+  div#top-wrap.top-wrapper {
+    /* padding: 0px 50px !important; */
+
+    div#footermail {
+      /* min-width: 450px !important; */
+      width: 100% !important;
+      padding-top: 65px;
+      padding-right: 45px;
+      padding-bottom: 65px;
+      padding-left: 0% !important;
+      border: none !important;
+    }
+  }
+
+  #top-footer {
+    padding-top: 0% !important;
+  }
+
+  div.footerInfoBox {
+    width: 100% !important;
+    min-width: 334px !important;
+    padding-top: 55px !important;
+    /* padding: 0% !important;
+    margin: 0% !important; */
+    padding-bottom: 55px !important;
+    margin-right: 60px;
+  }
+
+  div.input-group {
+    width: 100% !important;
+    padding-top: 0% !important;
+  }
+}
+
+@media only screen and (max-width: 809px) {
+  .footerInfoBox {
+    p {
+      max-width: 100% !important;
+      margin-right: auto !important;
+      margin-left: auto !important;
+      text-align: center !important;
+      vertical-align: middle !important;
+    }
+
+    a {
+      max-width: 100% !important;
+      margin-right: auto !important;
+      margin-left: auto !important;
+      text-align: center !important;
+      vertical-align: middle !important;
+    }
+
+    .titleWrapper {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 764px) {
+  .footerInfoBox {
+    padding: 0% !important;
+    margin: 0% !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  div.footerInfoBox {
+    min-width: 200px !important;
+  }
+}
+
+/* ********END OF FOOTER SECTION***********
+-------------------------------------- */
