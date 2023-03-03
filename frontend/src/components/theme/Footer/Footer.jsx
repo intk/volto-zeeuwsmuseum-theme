@@ -7,6 +7,7 @@ import { injectIntl } from 'react-intl';
 // import { RenderBlocks } from '@plone/volto/components';
 import { SocialLinks } from '@package/components';
 import { useSiteDataContent } from '@package/helpers';
+import { Logo } from '@plone/volto/components';
 
 const footertranslations = {
   bezoekadres: {
@@ -179,6 +180,11 @@ export function Footer(props) {
             <FooterBlocks includeTypes={['actionLinks']} />
           </div>
         </div> */}
+      </div>
+      <div id="bottom-footer">
+        <div id="footerdown">
+          <Logo id="footerLogo" />
+        </div>
       </div>
     </container>
   );
