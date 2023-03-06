@@ -234,50 +234,50 @@
   }
 }
 
-@media only screen and(max-width: 400px) {
+// @media only screen and(max-width: 400px) {
 
-  .view-viewview .content-area,
-  .view-addview .content-area,
-  .view-addview .new-translation,
-  .view-editview .content-area {
-    h1 {
-      font-size: 1.6rem;
-      line-height: 2.2rem;
-      letter-spacing: 0.1875rem;
-    }
+//   .view-viewview .content-area,
+//   .view-addview .content-area,
+//   .view-addview .new-translation,
+//   .view-editview .content-area {
+//     h1 {
+//       font-size: 1.6rem;
+//       line-height: 2.2rem;
+//       letter-spacing: 0.1875rem;
+//     }
 
-    h2 {
-      font-size: 1.50rem;
-      letter-spacing: 0.131rem;
-    }
+//     h2 {
+//       font-size: 1.50rem;
+//       letter-spacing: 0.131rem;
+//     }
 
-    h4 {
-      font-size: 1rem;
-      letter-spacing: 0, 0862rem;
-    }
+//     h4 {
+//       font-size: 1rem;
+//       letter-spacing: 0, 0862rem;
+//     }
 
-    p {
-      font-size: 0.75rem;
-      letter-spacing: 0.02rem !important;
-      line-height: 1.15rem !important;
-    }
+//     p {
+//       font-size: 0.75rem;
+//       letter-spacing: 0.02rem !important;
+//       line-height: 1.15rem !important;
+//     }
 
-    #page-document li {
-      width: auto !important;
-      font-size: 0.75rem !important;
-      letter-spacing: 0.02rem !important;
-      line-height: 1.15rem !important;
-    }
+//     #page-document li {
+//       width: auto !important;
+//       font-size: 0.75rem !important;
+//       letter-spacing: 0.02rem !important;
+//       line-height: 1.15rem !important;
+//     }
 
-    #page-document .column-blocks-wrapper {
-      font-size: 0.75rem;
+//     #page-document .column-blocks-wrapper {
+//       font-size: 0.75rem;
 
-      ul {
-        padding-left: 0.5rem;
-      }
-    }
-  }
-}
+//       ul {
+//         padding-left: 0.5rem;
+//       }
+//     }
+//   }
+// }
 
 // END OF STYLING FOR THE BLOCK TYPES
 
