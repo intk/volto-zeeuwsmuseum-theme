@@ -78,6 +78,14 @@ const messages = defineMessages({
     id: 'Tickets button. Displayed in the header',
     defaultMessage: 'Tickets button. Displayed in the header',
   },
+  addressButton: {
+    id: 'Address Button',
+    defaultMessage: 'Address Button',
+  },
+  contactButton: {
+    id: 'Contact Button',
+    defaultMessage: 'Contact Button',
+  },
 });
 
 const SiteDataSchema = ({ intl }) => ({
@@ -100,9 +108,11 @@ const SiteDataSchema = ({ intl }) => ({
         'addressTitle',
         'address',
         'addressSecond',
+        'addressButton',
         'contactTitle',
         'phone',
         'email',
+        'contactButton',
       ],
     },
     {
