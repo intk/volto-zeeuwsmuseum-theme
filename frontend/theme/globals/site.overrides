@@ -6,6 +6,7 @@
 // ***********************************************
 .view-viewview .content-area,
 .view-addview .content-area,
+.view-addview .new-translation,
 .view-editview .content-area {
   .documentFirstHeading {
     border: none !important;
@@ -158,6 +159,7 @@
 
   .view-viewview .content-area,
   .view-addview .content-area,
+  .view-addview .new-translation,
   .view-editview .content-area {
     h1 {
       font-size: 2rem;
@@ -227,6 +229,7 @@
 
   .view-viewview .content-area,
   .view-addview .content-area,
+  .view-addview .new-translation,
   .view-editview .content-area {
     h1 {
       font-size: 1.6rem;

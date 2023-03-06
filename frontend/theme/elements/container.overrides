@@ -2,18 +2,26 @@
   body #main .content-area .ui.container {
     max-width: 730px !important;
   }
+  body #main #page-add-translation .ui.container {
+    max-width: 100% !important;
+  }
 }
 
 @media only screen and (min-width: 1145px) and (max-width: 1199px) {
   body #main .content-area .ui.container {
-    max-width: 730px !important;
+    max-width: 730px;
   }
-
+  body #main #page-add-translation .ui.container {
+    max-width: 100% !important;
+  }
 }
 
 @media only screen and (max-width: 847px){
   body #main .content-area .ui.container {
     max-width: 730px !important;
+  }
+  body #main #page-add-translation .ui.container {
+    max-width: 100% !important;
   }
 }
 
@@ -27,6 +35,14 @@
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  body #main #page-add-translation .ui.container {
+      max-width: 100% !important;
+    }
+}
+
+
+
 // For the Folder Content Types
 body.contenttype-folder #main .content-area .ui.container {
   width: 100% !important;
@@ -35,3 +51,11 @@ body.contenttype-folder #main .content-area .ui.container {
   max-width: unset !important;
   margin: 0% !important;
 }
+
+
+
+// body .view-addview #main #page-add-translation .ui.container {
+//   max-width: 100% !important;
+// }
+
+
