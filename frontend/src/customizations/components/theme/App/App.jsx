@@ -241,11 +241,12 @@ class App extends Component {
 // A javascript trick to give scrollbar-gutter width
 {
   if (typeof window !== 'undefined') {
-    const scrollbarWidth = (window.innerWidth - document.body.clientWidth) / 4;
-    if (scrollbarWidth > 5) {
+    const scrollbarWidth =
+      window.innerWidth - document.documentElement.clientWidth;
+    if (scrollbarWidth > 0) {
       document.body.style.setProperty(
         '--scrollbarWidth',
-        `${scrollbarWidth}px`,
+        `${scrollbarWidth}px / 2`,
       );
     } else {
       document.body.style.setProperty('--scrollbarWidth', `0px`);
