@@ -32,6 +32,11 @@ msgid "Address"
 msgstr ""
 
 #: components/Blocks/SiteData/schema
+# defaultMessage: Address Button
+msgid "Address Button"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
 # defaultMessage: Address 2. line
 msgid "AddressSecond"
 msgstr ""
@@ -54,6 +59,11 @@ msgstr ""
 #: components/Blocks/SiteData/schema
 # defaultMessage: Contact
 msgid "Contact"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
+# defaultMessage: Contact Button
+msgid "Contact Button"
 msgstr ""
 
 #: components/Blocks/SiteData/schema
