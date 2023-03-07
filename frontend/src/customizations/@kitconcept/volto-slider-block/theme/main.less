@@ -10,7 +10,8 @@
 
 .block.slider {
   &:not(.inner):not([role='presentation']) {
-    padding-bottom: 4em;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
   }
 
   .slick-dots {
@@ -68,47 +69,33 @@
   }
 }
 
-.addContentWidthStyling(@offset) {
+// body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed) {
+//   .addContentWidthStyling(0px);
+// }
 
-  #page-add,
-  #page-edit {
+// body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
+//   .addContentWidthStyling(@toolbarWidth);
+// }
 
-    // The slider does not behave well, and pushes the container out,
-    // It's required to constrain it from the inside :(
-    .block.slider .slick-slider {
-      width: calc(100vw - @offset - 200px) !important;
-      max-width: 1440px !important;
-    }
-  }
-}
+// body.has-toolbar.has-sidebar {
+//   .addContentWidthStyling(@toolbarWidth + @sidebarWidth);
+// }
 
-body:not(.has-toolbar):not(.has-sidebar):not(.has-toolbar-collapsed):not(.has-sidebar-collapsed) {
-  .addContentWidthStyling(0px);
-}
+// body.has-toolbar.has-sidebar-collapsed {
+//   .addContentWidthStyling(@toolbarWidth + @collapsedWidth);
+// }
 
-body.has-toolbar:not(.has-sidebar):not(.has-sidebar-collapsed) {
-  .addContentWidthStyling(@toolbarWidth);
-}
+// body.has-toolbar-collapsed:not(.has-sidebar):not(.has-sidebar-collapsed) {
+//   .addContentWidthStyling(@collapsedWidth);
+// }
 
-body.has-toolbar.has-sidebar {
-  .addContentWidthStyling(@toolbarWidth + @sidebarWidth);
-}
+// body.has-toolbar-collapsed.has-sidebar {
+//   .addContentWidthStyling(@collapsedWidth + @sidebarWidth);
+// }
 
-body.has-toolbar.has-sidebar-collapsed {
-  .addContentWidthStyling(@toolbarWidth + @collapsedWidth);
-}
-
-body.has-toolbar-collapsed:not(.has-sidebar):not(.has-sidebar-collapsed) {
-  .addContentWidthStyling(@collapsedWidth);
-}
-
-body.has-toolbar-collapsed.has-sidebar {
-  .addContentWidthStyling(@collapsedWidth + @sidebarWidth);
-}
-
-body.has-toolbar-collapsed.has-sidebar-collapsed {
-  .addContentWidthStyling(@collapsedWidth + @collapsedWidth);
-}
+// body.has-toolbar-collapsed.has-sidebar-collapsed {
+//   .addContentWidthStyling(@collapsedWidth + @collapsedWidth);
+// }
 
 
 
@@ -116,7 +103,7 @@ body.has-toolbar-collapsed.has-sidebar-collapsed {
 // Customized Styling Section
 // **************************
 
-.view-viewview #block-slider {
+#block-slider {
 
   /* ------Slider arrow appearance --------*/
   // ***********************************************
@@ -296,7 +283,7 @@ body.has-toolbar-collapsed.has-sidebar-collapsed {
 
 /* Hack for escape the blocks container in blocks full width */
 // ***********************************************
-.view-viewview #block-slider {
+#block-slider {
   position: relative;
   width: calc(100vw - var(--scrollbarWidth));
   right: 50%;
@@ -304,26 +291,46 @@ body.has-toolbar-collapsed.has-sidebar-collapsed {
   margin-right: -50vw !important;
   margin-left: -50vw !important;
 }
-
-@media only screen and (min-width: 767px){
-  .view-viewview.has-toolbar #block-slider {
-      width: calc(100vw - 40px - var(--scrollbarWidth));
-    }
+.has-toolbar #block-slider{
+  padding-left: 50px;
+}
+.has-toolbar-collapsed #block-slider {
+  width: calc(100vw - var(--scrollbarWidth) - 10px);
+  padding-left: 20px;
+}
+.view-editview.has-sidebar.has-toolbar #block-slider {
+  width: calc(100vw - var(--scrollbarWidth) - 220px);
+  padding-left: 230px;
+}
+.view-editview.has-sidebar.has-toolbar-collapsed #block-slider {
+  width: calc(100vw - var(--scrollbarWidth) - 200px);
+  padding-left: 200px;
+}
+.view-editview.has-sidebar-collapsed.has-toolbar #block-slider {
+  width: calc(100vw - var(--scrollbarWidth) - 50px);
+  padding-left: 55px;
+}
+.view-editview.has-sidebar-collapsed.has-toolbar-collapsed #block-slider {
+  width: calc(100vw - var(--scrollbarWidth) - 20px);
+  padding-left: 25px;
 }
 
 
+// @media only screen and (min-width: 767px){
+//   .view-viewview.has-toolbar #block-slider {
+//       width: calc(100vw - 40px - var(--scrollbarWidth));
+//     }
+// }
+
+
 // The solution for the Broken Edit Page
-#page-add,
-#page-edit,
 #page-add-translation {
 
   #block-slider,
   .grid-teaser-item {
-    max-width: 400px !important;
-    overflow: hidden !important;
-    display: block !important;
-    position: static !important;
+    display: none !important;
   }
 }
+
 
 // ***********************************************
