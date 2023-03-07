@@ -4,7 +4,7 @@ export default function useSiteDataContent() {
   const currentLang = useSelector((state) => state.intl.locale);
   const content = useSelector(
     (state) =>
-      state.content.subrequests?.[`site-data-${currentLang}`]?.data || {},
+      state.content.subrequests?.[`footer-${currentLang}`]?.data || {},
   );
 
   return content;

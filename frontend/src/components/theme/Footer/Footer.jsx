@@ -123,22 +123,22 @@ export function Footer(props) {
   const siteDataContent = useSiteDataContent();
   const { blocks = {} } = siteDataContent;
   const siteDataId = Object.keys(blocks).find(
-    (id) => blocks[id]?.['@type'] === 'siteData',
+    (id) => blocks[id]?.['@type'] === 'footerData',
   );
 
-  const siteData = blocks[siteDataId] || {};
+  const footerData = blocks[siteDataId] || {};
   const localeLanguage = props.intl.locale;
   return (
     <container id="footer">
       <div id="top-footer">
         <div className="top-wrapper" id="top-wrap">
-          <Address {...siteData} />
-          <Contact {...siteData} />
+          <Address {...footerData} />
+          <Contact {...footerData} />
           <div id="footermail" className="footerInfoBox">
             <div className="titleWrapper">
-              <p id="footerTitle3">{siteData.newsletterTitle}</p>
+              <p id="footerTitle3">{footerData.newsletterTitle}</p>
             </div>
-            <p>{siteData.newsletterText}</p>
+            <p>{footerData.newsletterText}</p>
 
             <dd className="portletItem odd">
               <form

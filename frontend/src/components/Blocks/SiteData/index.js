@@ -4,9 +4,9 @@ import SiteDataView from './SiteDataView';
 import SiteDataEdit from './SiteDataEdit';
 
 const installSiteDataBlock = (config) => {
-  config.blocks.blocksConfig.siteData = {
-    id: 'siteData',
-    title: 'Site Data',
+  config.blocks.blocksConfig.footerData = {
+    id: 'footerData',
+    title: 'Footer Data',
     icon: downloadSVG,
     group: 'site',
     view: SiteDataView,
