@@ -5,6 +5,14 @@
   body #main #page-add-translation .ui.container {
     max-width: 100% !important;
   }
+  body #main .content-area  #page-controlpanel-schema,
+  body #main .content-area .ui.container.controlpanel,
+  body #main .content-area .ui.container.folder-contents  {
+      max-width: 100% !important;
+      .ui.container{
+        max-width: 100% !important;
+      }
+    }
 }
 
 @media only screen and (min-width: 1145px) and (max-width: 1199px) {
@@ -57,5 +65,6 @@ body.contenttype-folder #main .content-area .ui.container {
 // body .view-addview #main #page-add-translation .ui.container {
 //   max-width: 100% !important;
 // }
+
 
 
