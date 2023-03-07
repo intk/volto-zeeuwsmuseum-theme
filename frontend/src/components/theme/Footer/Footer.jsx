@@ -46,9 +46,13 @@ export const Address = ({
   addressTitle,
   address,
   addressSecond,
+  addressButton,
   contactTitle,
   phone,
   email,
+  contactButton,
+  newsletterTitle,
+  newsletterText,
 }) => (
   <div className="footerInfoBox">
     <div className="titleWrapper">{addressTitle}</div>
@@ -58,7 +62,7 @@ export const Address = ({
       href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/praktische-info"
       className="text-button"
     >
-      {footertranslations['plan_en_bezoek']['en']}
+      {addressButton}
     </a>
   </div>
 );
@@ -67,9 +71,13 @@ export const Contact = ({
   addressTitle,
   address,
   addressSecond,
+  addressButton,
   contactTitle,
   phone,
   email,
+  contactButton,
+  newsletterTitle,
+  newsletterText,
 }) => (
   <div className="footerInfoBox">
     <div className="titleWrapper">
@@ -89,7 +97,7 @@ export const Contact = ({
     )}
 
     <a href="https://www.zeeuwsmuseum.nl/nl/contact" className="text-button">
-      {footertranslations['contract']['en']}
+      {contactButton}
     </a>
     <SocialLinks />
   </div>
@@ -128,11 +136,9 @@ export function Footer(props) {
           <Contact {...siteData} />
           <div id="footermail" className="footerInfoBox">
             <div className="titleWrapper">
-              <p id="footerTitle3">
-                {footertranslations['nieuwsbrief'][`${localeLanguage}`]}
-              </p>
+              <p id="footerTitle3">{siteData.newsletterTitle}</p>
             </div>
-            <p>{footertranslations['schrijf'][`${localeLanguage}`]}</p>
+            <p>{siteData.newsletterText}</p>
 
             <dd className="portletItem odd">
               <form

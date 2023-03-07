@@ -72,6 +72,16 @@ msgid "Home"
 msgstr ""
 
 #: components/Blocks/SiteData/schema
+# defaultMessage: Newsletter Text
+msgid "Newsletter Text"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
+# defaultMessage: Newsletter Title
+msgid "Newsletter Title"
+msgstr ""
+
+#: components/Blocks/SiteData/schema
 # defaultMessage: Opening hours
 msgid "Opening hours"
 msgstr ""

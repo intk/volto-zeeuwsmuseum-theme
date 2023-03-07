@@ -586,6 +586,9 @@
 
         .titleWrapper {
           margin-bottom: 8px !important;
+          p{
+            text-transform: uppercase;
+          }
         }
 
         p {
@@ -674,7 +677,7 @@
     letter-spacing: 0.05em;
     text-align: center;
     text-shadow: 0px 0px 0px #ffffff;
-    // text-transform: uppercase;
+    text-transform: uppercase;
   }
 
   input,

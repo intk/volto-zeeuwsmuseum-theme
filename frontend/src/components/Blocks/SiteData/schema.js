@@ -86,6 +86,14 @@ const messages = defineMessages({
     id: 'Contact Button',
     defaultMessage: 'Contact Button',
   },
+  newsletterTitle: {
+    id: 'Newsletter Title',
+    defaultMessage: 'Newsletter Title',
+  },
+  newsletterText: {
+    id: 'Newsletter Text',
+    defaultMessage: 'Newsletter Text',
+  },
 });
 
 const SiteDataSchema = ({ intl }) => ({
@@ -113,6 +121,8 @@ const SiteDataSchema = ({ intl }) => ({
         'phone',
         'email',
         'contactButton',
+        'newsletterTitle',
+        'newsletterText',
       ],
     },
     {
@@ -132,6 +142,9 @@ const SiteDataSchema = ({ intl }) => ({
     addressSecond: {
       title: intl.formatMessage(messages.addressSecond),
     },
+    addressButton: {
+      title: intl.formatMessage(messages.addressButton),
+    },
     contactTitle: {
       title: intl.formatMessage(messages.contactSectionTitle),
     },
@@ -140,6 +153,15 @@ const SiteDataSchema = ({ intl }) => ({
     },
     email: {
       title: intl.formatMessage(messages.email),
+    },
+    contactButton: {
+      title: intl.formatMessage(messages.contactButton),
+    },
+    newsletterTitle: {
+      title: intl.formatMessage(messages.newsletterTitle),
+    },
+    newsletterText: {
+      title: intl.formatMessage(messages.newsletterText),
     },
     openingHours: {
       title: intl.formatMessage(messages.openingHours),
