@@ -2,7 +2,7 @@
   margin-top: 120px;
   padding-top: 0%;
 }
-.ui.segment.content-area{
+body:not(.section-contents, .section-controlpanel, .contenttype-folder.section-edit, .section-manage-translations) .ui.segment.content-area{
   padding-top: 0%;
   margin-top: 0%;
 }
