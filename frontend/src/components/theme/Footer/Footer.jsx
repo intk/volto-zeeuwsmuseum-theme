@@ -9,38 +9,38 @@ import { SocialLinks } from '@package/components';
 import { useSiteDataContent } from '@package/helpers';
 import { Logo } from '@plone/volto/components';
 
-const footertranslations = {
-  bezoekadres: {
-    en: 'ADDRESS',
-    nl: 'BEZOEKADRES',
-    de: 'ADRESSE',
-  },
-  plan_en_bezoek: {
-    en: 'PLAN YOUR VISIT',
-    nl: 'PLAN EEN BEZOEK',
-    de: 'PLANEN SIE IHREN BESUCH',
-  },
-  contact_algemeen: {
-    en: 'CONTACT',
-    nl: 'CONTACT ALGEMEEN',
-    de: 'KONTAKT',
-  },
-  contract: {
-    en: 'CONTACT',
-    nl: 'CONTACT',
-    de: 'KONTAKT',
-  },
-  nieuwsbrief: {
-    en: 'NEWSLETTER',
-    nl: 'NIEUWSBRIEF',
-    de: 'NEWSLETTER',
-  },
-  schrijf: {
-    en: 'Subscribe to our newsletter.',
-    nl: 'Schrijf je in voor onze nieuwsbrief en blijf op de hoogte.',
-    de: 'Abonnieren Sie unseren Newsletter.',
-  },
-};
+// const footertranslations = {
+//   bezoekadres: {
+//     en: 'ADDRESS',
+//     nl: 'BEZOEKADRES',
+//     de: 'ADRESSE',
+//   },
+//   plan_en_bezoek: {
+//     en: 'PLAN YOUR VISIT',
+//     nl: 'PLAN EEN BEZOEK',
+//     de: 'PLANEN SIE IHREN BESUCH',
+//   },
+//   contact_algemeen: {
+//     en: 'CONTACT',
+//     nl: 'CONTACT ALGEMEEN',
+//     de: 'KONTAKT',
+//   },
+//   contract: {
+//     en: 'CONTACT',
+//     nl: 'CONTACT',
+//     de: 'KONTAKT',
+//   },
+//   nieuwsbrief: {
+//     en: 'NEWSLETTER',
+//     nl: 'NIEUWSBRIEF',
+//     de: 'NEWSLETTER',
+//   },
+//   schrijf: {
+//     en: 'Subscribe to our newsletter.',
+//     nl: 'Schrijf je in voor onze nieuwsbrief en blijf op de hoogte.',
+//     de: 'Abonnieren Sie unseren Newsletter.',
+//   },
+// };
 
 export const Address = ({
   addressTitle,
@@ -127,7 +127,7 @@ export function Footer(props) {
   );
 
   const footerData = blocks[siteDataId] || {};
-  const localeLanguage = props.intl.locale;
+  // const localeLanguage = props.intl.locale;
   return (
     <container id="footer">
       <div id="top-footer">
