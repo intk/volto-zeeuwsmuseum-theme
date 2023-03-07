@@ -76,12 +76,12 @@ const SocialLinks = (props) => {
   const siteDataContent = useSiteDataContent();
   const { blocks = {} } = siteDataContent;
   const siteDataId = Object.keys(blocks).find(
-    (id) => blocks[id]?.['@type'] === 'siteData',
+    (id) => blocks[id]?.['@type'] === 'footerData',
   );
 
-  const siteData = blocks[siteDataId] || {};
+  const footerData = blocks[siteDataId] || {};
   // eslint-disable-next-line no-unused-vars
-  const { socialLinks, socialLinksTitle } = siteData;
+  const { socialLinks, socialLinksTitle } = footerData;
 
   return (
     <div className="social-links">

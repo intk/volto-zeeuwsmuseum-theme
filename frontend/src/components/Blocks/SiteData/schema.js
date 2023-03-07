@@ -128,7 +128,7 @@ const SiteDataSchema = ({ intl }) => ({
     {
       id: 'socialLinks',
       title: intl.formatMessage(messages.SocialLinks),
-      fields: ['socialLinksTitle', 'socialLinks'],
+      fields: ['socialLinks'],
     },
   ],
 
