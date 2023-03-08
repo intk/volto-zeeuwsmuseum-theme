@@ -1780,12 +1780,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eeacms/volto-columns-block@npm:^4.0.0":
-  version: 4.5.3
-  resolution: "@eeacms/volto-columns-block@npm:4.5.3"
+"@eeacms/volto-columns-block@npm:^6.0.2":
+  version: 6.0.2
+  resolution: "@eeacms/volto-columns-block@npm:6.0.2"
   dependencies:
     react-color: ~2.19.3
-  checksum: b0deecbde95b67ad24154908a783d79feb7166ce8868e6b730eba7a86a06b231530f1269c90bb3afdceede2a34fdc000f42ef50b44a03927ab6f13ea5e20d1f9
+  checksum: ece6eb353b0932d43a64bcb36042ecf62804824160a04282d5000cc7cbfaab500ebc5a73ae0b8304110a5eedaf2d3b2425542c63e73f816d8c37be26e9a4abc5
   languageName: node
   linkType: hard
 
@@ -12041,7 +12041,7 @@ __metadata:
   dependencies:
     "@eeacms/volto-accordion-block": "*"
     "@eeacms/volto-block-divider": ^2.0.0
-    "@eeacms/volto-columns-block": ^4.0.0
+    "@eeacms/volto-columns-block": ^6.0.2
     "@eeacms/volto-matomo": "*"
     "@eeacms/volto-pdf-block": ^1.0.0
     "@eeacms/volto-tabs-block": 2.2.0

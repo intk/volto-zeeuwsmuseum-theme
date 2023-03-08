@@ -140,7 +140,7 @@
   "dependencies": {
     "@eeacms/volto-accordion-block": "*",
     "@eeacms/volto-block-divider": "^2.0.0",
-    "@eeacms/volto-columns-block": "^4.0.0",
+    "@eeacms/volto-columns-block": "^6.0.2",
     "@eeacms/volto-matomo": "*",
     "@eeacms/volto-pdf-block": "^1.0.0",
     "@eeacms/volto-tabs-block": "2.2.0",
