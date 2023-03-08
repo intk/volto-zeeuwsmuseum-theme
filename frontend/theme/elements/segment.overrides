@@ -1,5 +1,5 @@
 .is-anonymous .ui.segment.content-area{
-  margin-top: 120px;
+  margin-top: 120px !important;
   padding-top: 0%;
 }
 body:not(.section-contents, .section-controlpanel, .contenttype-folder.section-edit, .section-manage-translations) .ui.segment.content-area{
