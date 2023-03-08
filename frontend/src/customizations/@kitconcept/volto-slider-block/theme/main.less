@@ -234,13 +234,9 @@
 
 // Slideshow Content Types View
 // ***********************************************
-.view-viewview.invisible {
+.view-viewview.invisible, .view-editview.invisible {
   #main {
     height: 100% !important;
-  }
-
-  #block-slider {
-    width: 100vw;
   }
 
   #header-wrapper {
@@ -292,19 +288,19 @@
   margin-left: -50vw !important;
 }
 .has-toolbar #block-slider{
-  width: calc(100vw - var(--scrollbarWidth) - 45px);
-  padding-left: 45px;
+  width: calc(100vw - var(--scrollbarWidth) - 40px);
+  padding-left: 40px;
 }
 .has-toolbar-collapsed #block-slider {
-  width: calc(100vw - var(--scrollbarWidth) - 15px);
-  padding-left: 20px;
+  width: calc(100vw - var(--scrollbarWidth) - 10px);
+  padding-left: 10px;
 }
 .view-editview.has-sidebar.has-toolbar #block-slider {
   width: calc(100vw - var(--scrollbarWidth) - 220px);
   padding-left: 230px;
 }
 .view-editview.has-sidebar.has-toolbar-collapsed #block-slider {
-  width: calc(100vw - var(--scrollbarWidth) - 200px);
+  width: calc(100vw - var(--scrollbarWidth) - 195px);
   padding-left: 200px;
 }
 .view-editview.has-sidebar-collapsed.has-toolbar #block-slider {
@@ -316,22 +312,208 @@
   padding-left: 25px;
 }
 
-
-// @media only screen and (min-width: 767px){
-//   .view-viewview.has-toolbar #block-slider {
-//       width: calc(100vw - 40px - var(--scrollbarWidth));
-//     }
+// .view-viewview.invisible #block-slider{
+//   width: 100vw;
 // }
+// .view-viewview.invisible.has-toolbar #block-slider {
+//   width: calc(100vw - var(--scrollbarWidth) - 30px);
+//   padding-left: 40px;
+// }
+
+// .view-viewview.invisible.has-toolbar-collapsed #block-slider {
+//   width: calc(100vw - var(--scrollbarWidth));
+//   padding-left: 10px;
+// }
+
+// .view-editview.invisible.has-sidebar.has-toolbar #block-slider {
+//   width: calc(100vw - var(--scrollbarWidth) - 220px);
+//   padding-left: 220px;
+// }
+
+// .view-editview.invisible.has-sidebar.has-toolbar-collapsed #block-slider {
+//   width: calc(100vw - var(--scrollbarWidth) - 190px);
+//   padding-left: 200px;
+// }
+
+// .view-editview.invisible.has-sidebar-collapsed.has-toolbar #block-slider {
+//   width: calc(100vw - var(--scrollbarWidth) - 40px);
+//   padding-left: 50px;
+// }
+
+// .view-editview.invisible.has-sidebar-collapsed.has-toolbar-collapsed #block-slider {
+//   width: calc(100vw - var(--scrollbarWidth) - 10px);
+//   padding-left: 20px;
+// }
+
 
 
 // The solution for the Broken Edit Page
 #page-add-translation {
+  #block-slider,
+  .grid-teaser-item,
+  img {
+    // display: none !important;
+    position: static;
+    width: calc(40vw - var(--scrollbarWidth));
+    // max-width: 100%;
+    right: unset !important;
+    left: unset !important;
+    margin-right: unset !important;
+    margin-left: unset !important;
+    padding-left: 0%;
+  }
+}
+#page-add-translation.has-sidebar-collapsed.has-toolbar {
 
   #block-slider,
-  .grid-teaser-item {
-    display: none !important;
+  .grid-teaser-item,
+  img {
+    width: calc(35vw - var(--scrollbarWidth));
+  }
+}
+.view-addview.has-sidebar.has-toolbar {
+  #page-add-translation{
+    #block-slider,
+    .grid-teaser-item,
+    img {
+        width: calc(33vw - var(--scrollbarWidth)) !important;
+    }
+  }
+}
+.view-addview.has-sidebar.has-toolbar-collapsed {
+  #page-add-translation {
+
+    #block-slider,
+    .grid-teaser-item,
+    img {
+      width: calc(38vw - var(--scrollbarWidth)) !important;
+    }
+  }
+}
+.view-addview.has-sidebar-collapsed.has-toolbar-collapsed {
+  #page-add-translation {
+
+    #block-slider,
+    .grid-teaser-item,
+    img {
+      width: calc(46vw - var(--scrollbarWidth)) !important;
+    }
   }
 }
 
+@media only screen and (max-width: 1700px){
+#page-add-translation {
+
+    #block-slider,
+    .grid-teaser-item,
+    img {
+      width: calc(44vw - var(--scrollbarWidth));
+    }
+  }
+  .view-addview.has-sidebar-collapsed.has-toolbar{
+    #page-add-translation {
+
+        #block-slider,
+        .grid-teaser-item,
+        img {
+          width: calc(40vw - var(--scrollbarWidth)) !important;
+        }
+      }
+  }
+
+  .view-addview.has-sidebar.has-toolbar {
+    #page-add-translation {
+
+      #block-slider,
+      .grid-teaser-item,
+      img {
+        width: calc(27vw - var(--scrollbarWidth)) !important;
+      }
+    }
+  }
+
+  .view-addview.has-sidebar.has-toolbar-collapsed {
+    #page-add-translation {
+
+      #block-slider,
+      .grid-teaser-item,
+      img {
+        width: calc(28vw - var(--scrollbarWidth)) !important;
+      }
+    }
+  }
+
+  .view-addview.has-sidebar-collapsed.has-toolbar-collapsed {
+    #page-add-translation {
+
+      #block-slider,
+      .grid-teaser-item,
+      img {
+        width: calc(43vw - var(--scrollbarWidth)) !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  #page-add-translation {
+
+    #block-slider,
+    .grid-teaser-item,
+    img {
+      width: calc(44vw - var(--scrollbarWidth));
+    }
+  }
+
+  .view-addview.has-sidebar-collapsed.has-toolbar {
+    #page-add-translation {
+
+      #block-slider,
+      .grid-teaser-item,
+      img {
+        width: calc(36vw - var(--scrollbarWidth)) !important;
+      }
+    }
+  }
+
+  .view-addview.has-sidebar.has-toolbar {
+    #page-add-translation {
+
+      #block-slider,
+      .grid-teaser-item,
+      img {
+        width: calc(20vw - var(--scrollbarWidth)) !important;
+      }
+    }
+  }
+
+  .view-addview.has-sidebar.has-toolbar-collapsed {
+    #page-add-translation {
+
+      #block-slider,
+      .grid-teaser-item,
+      img {
+        width: calc(23vw - var(--scrollbarWidth)) !important;
+      }
+    }
+  }
+
+  .view-addview.has-sidebar-collapsed.has-toolbar-collapsed {
+    #page-add-translation {
+
+      #block-slider,
+      .grid-teaser-item,
+      img {
+        width: calc(38vw - var(--scrollbarWidth)) !important;
+      }
+    }
+  }
+}
 
 // ***********************************************
+
+.view-editview.invisible{
+  img{
+    object-position: unset !important;
+  }
+}
