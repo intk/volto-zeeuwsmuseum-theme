@@ -31,11 +31,8 @@ const ShowTableOfContentEditSchema = ({ intl }) => {
       TOC: {
         title: intl.formatMessage(messages.showtoc),
         description: intl.formatMessage(messages.blockDescription),
-        choices: [
-          ['YES', 'YES'],
-          ['NO', 'NO'],
-        ],
-        default: ['NO'],
+        choices: [['YES', 'YES']],
+        default: ['YES'],
       },
     },
     required: [],

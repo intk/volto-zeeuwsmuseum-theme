@@ -102,6 +102,7 @@ export class BreadcrumbsComponent extends Component {
         role="navigation"
         aria-label={this.props.intl.formatMessage(messages.breadcrumbs)}
         className={this.props.name === 'firstNav' ? 'breadcrumbs' : 'secondNav'}
+        id="breadcrumb-container"
         secondary
         vertical
       >

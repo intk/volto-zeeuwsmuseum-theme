@@ -12,7 +12,7 @@ const InstallShowTableOfContent = (config) => {
     edit: ShowTableOfContentEdit,
     restricted: false,
     mostUsed: false,
-    sidebarTab: 1,
+    // sidebarTab: 1,
     security: {
       addPermission: [],
       view: [],

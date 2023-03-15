@@ -6,7 +6,7 @@ const ShowTableOfContentView = (props) => {
 
   React.useEffect(() => {
     if (!TOC) return;
-    if (TOC === 'YES') {
+    if (TOC) {
       setShowTOC('YES');
     } else {
       setShowTOC('NO');
