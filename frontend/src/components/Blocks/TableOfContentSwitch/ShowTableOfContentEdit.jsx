@@ -1,12 +1,10 @@
 import React from 'react';
-import { BlockDataForm, SidebarPortal, Icon } from '@plone/volto/components';
+import { BlockDataForm, SidebarPortal } from '@plone/volto/components';
 import { getBaseUrl } from '@plone/volto/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 import { Message, Header } from 'semantic-ui-react';
 import ShowTableOfContentView from './ShowTableOfContentView';
 import ShowTableOfContentEditSchema from './schema';
-
-import menuicon from '@plone/volto/icons/menu-alt.svg';
 
 const messages = defineMessages({
   showtableofcontents: {
