@@ -29,7 +29,7 @@ import editingSVG from '@plone/volto/icons/editing.svg';
 import { MultilingualWidget } from 'volto-multilingual-widget';
 import installBlocks from './components/Blocks';
 import installFooter from './footer';
-import installExpressMiddleware from './express-middleware';
+// import installExpressMiddleware from './express-middleware';
 import { getContent } from '@plone/volto/actions';
 
 // All your imports required for the config here BEFORE this line
@@ -37,12 +37,13 @@ import '@plone/volto/config';
 
 export default function applyConfig(config) {
   config.blocks.requiredBlocks = [];
+  config.blocks.groupBlocksOrder.push({ id: 'site', title: 'Site' });
 
   (config.blocks.blocksConfig.socialbottom = {
     id: 'socialbottom',
     title: 'Socialbuttons',
     icon: showSVG,
-    group: 'common',
+    group: 'site',
     view: SocialBottomViewBlock,
     edit: SocialBottomEditBlock,
     restricted: false,
@@ -75,18 +76,12 @@ export default function applyConfig(config) {
       edit: PhotoDescriptionEditBlock,
       restricted: false,
       mostUsed: false,
+      sidebarTab: 1,
       security: {
         addPermission: [],
         view: [],
       },
     }),
-    // config.settings = {
-    //   ...config.settings,
-    //   isMultilingual: true,
-    //   supportedLanguages: ['en', 'nl', 'de'],
-    //   defaultLanguage: 'en',
-    // };
-
     (config.widgets.id.cookie_consent_configuration = MultilingualWidget());
 
   const DEFAULT_LANG = 'nl';
@@ -98,10 +93,6 @@ export default function applyConfig(config) {
     ...config.settings,
     navDepth: 6,
     siteDataPageId: 'footer',
-    // actionBlockIds: [
-    //   ['footerLinks', 'Footer Links'],
-    //   ['siteActions', 'Site Actions'],
-    // ],
   };
 
   config.settings.asyncPropsExtenders = [
@@ -141,5 +132,5 @@ export default function applyConfig(config) {
     },
   ];
 
-  return installExpressMiddleware(installFooter(installBlocks(config)));
+  return installFooter(installBlocks(config));
 }
