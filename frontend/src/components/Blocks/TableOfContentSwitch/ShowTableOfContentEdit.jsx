@@ -30,7 +30,7 @@ const ShowTableOfContentEdit = (props) => {
       <Message icon info>
         <Message.Content>
           <Header as="h6">
-            <Icon name={menuicon} size="15" />
+            <Icon name={menuicon} size="15px" />
             {intl.formatMessage(messages.showtableofcontents)}: {data.TOC}
           </Header>
         </Message.Content>
