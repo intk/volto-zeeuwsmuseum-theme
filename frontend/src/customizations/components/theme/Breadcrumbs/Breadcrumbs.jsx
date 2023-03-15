@@ -144,64 +144,76 @@ export class BreadcrumbsComponent extends Component {
             </Breadcrumb.Section>
           </Breadcrumb>
 
-          {this.props.content.show_table_of_contents !== undefined &&
-          this.props.content.show_table_of_contents === true ? (
-            <Container id="dropdowncontainer">
-              <div id="inhoud">
-                <Dropdown
-                  item
-                  simple
-                  open={this.state.open}
-                  onFocus={this.closeMobileMenu}
-                  onBlur={this.closeMobileMenu}
-                  text={'INHOUD'}
-                  icon={<FaChevronDown color="#808080" />}
-                >
-                  <Dropdown.Menu className="dropdownContentPage">
-                    <Dropdown.Item id="InhoudDropdown">
-                      <NavLink
-                        to={
-                          this.props.items.length != undefined &&
-                          this.props.items.length > 2
-                            ? this.props.menuItems['@type'] == 'Document'
-                              ? this.props.items[this.props.items.length - 2]
-                                  .url
-                              : this.props.items[this.props.items.length - 1]
-                                  .url
-                            : ''
-                        }
-                        key={
-                          this.props.items.length != undefined &&
-                          this.props.items.length > 2
-                            ? this.props.menuItems['@type'] == 'Document'
-                              ? this.props.items[this.props.items.length - 2]
-                                  .url
-                              : this.props.items[this.props.items.length - 1]
-                                  .url
-                            : ''
-                        }
-                        activeClassName="active"
-                      >
-                        Beeldimpressie
-                      </NavLink>
-                    </Dropdown.Item>
+          <Container id="dropdowncontainer">
+            <div id="inhoud">
+              <Dropdown
+                item
+                simple
+                open={this.state.open}
+                onFocus={this.closeMobileMenu}
+                onBlur={this.closeMobileMenu}
+                text={'INHOUD'}
+                icon={<FaChevronDown color="#808080" />}
+              >
+                <Dropdown.Menu className="dropdownContentPage">
+                  <Dropdown.Item id="InhoudDropdown">
+                    <NavLink
+                      to={
+                        this.props.items.length != undefined &&
+                        this.props.items.length > 2
+                          ? this.props.menuItems['@type'] == 'Document'
+                            ? this.props.items[this.props.items.length - 2].url
+                            : this.props.items[this.props.items.length - 1].url
+                          : ''
+                      }
+                      key={
+                        this.props.items.length != undefined &&
+                        this.props.items.length > 2
+                          ? this.props.menuItems['@type'] == 'Document'
+                            ? this.props.items[this.props.items.length - 2].url
+                            : this.props.items[this.props.items.length - 1].url
+                          : ''
+                      }
+                      activeClassName="active"
+                    >
+                      Beeldimpressie
+                    </NavLink>
+                  </Dropdown.Item>
 
-                    {(() => {
-                      if (this.props.menuItems['@type'] === 'Document') {
-                        let steps = this.props.items;
-                        let nav = this.props.navItems;
-                        let depth = 0;
-                        let parentTitle = this.props.menuItems.parent.title;
+                  {(() => {
+                    if (this.props.menuItems['@type'] === 'Document') {
+                      let steps = this.props.items;
+                      let nav = this.props.navItems;
+                      let depth = 0;
+                      let parentTitle = this.props.menuItems.parent.title;
 
-                        for (let item1 of nav) {
-                          if (item1.title == parentTitle) {
-                            menuArray = item1.items;
+                      for (let item1 of nav) {
+                        if (item1.title == parentTitle) {
+                          menuArray = item1.items;
+                          for (let item of menuArray) {
+                            if (
+                              item.title == 'IMAGES' ||
+                              item.title == 'images'
+                            ) {
+                              // console.log(menuArray)
+                              let placeofItem = menuArray.indexOf(item);
+                              if (placeofItem > -1) {
+                                menuArray.splice(placeofItem, 1);
+                              }
+                            }
+                          }
+                          break;
+                        }
+                        for (let item2 of item1.items) {
+                          if (item2.title == parentTitle) {
+                            menuArray = item2.items;
+                            // console.log(menuArray);
+
                             for (let item of menuArray) {
                               if (
                                 item.title == 'IMAGES' ||
                                 item.title == 'images'
                               ) {
-                                // console.log(menuArray)
                                 let placeofItem = menuArray.indexOf(item);
                                 if (placeofItem > -1) {
                                   menuArray.splice(placeofItem, 1);
@@ -210,16 +222,16 @@ export class BreadcrumbsComponent extends Component {
                             }
                             break;
                           }
-                          for (let item2 of item1.items) {
-                            if (item2.title == parentTitle) {
-                              menuArray = item2.items;
+                          for (let item3 of item2.items) {
+                            if (item3.title == parentTitle) {
+                              menuArray = item3.items;
                               // console.log(menuArray);
-
                               for (let item of menuArray) {
                                 if (
                                   item.title == 'IMAGES' ||
                                   item.title == 'images'
                                 ) {
+                                  // console.log(menuArray)
                                   let placeofItem = menuArray.indexOf(item);
                                   if (placeofItem > -1) {
                                     menuArray.splice(placeofItem, 1);
@@ -228,10 +240,9 @@ export class BreadcrumbsComponent extends Component {
                               }
                               break;
                             }
-                            for (let item3 of item2.items) {
-                              if (item3.title == parentTitle) {
-                                menuArray = item3.items;
-                                // console.log(menuArray);
+                            for (let item4 of item3.items) {
+                              if (item4.title == parentTitle) {
+                                menuArray = item4.items;
                                 for (let item of menuArray) {
                                   if (
                                     item.title == 'IMAGES' ||
@@ -246,56 +257,36 @@ export class BreadcrumbsComponent extends Component {
                                 }
                                 break;
                               }
-                              for (let item4 of item3.items) {
-                                if (item4.title == parentTitle) {
-                                  menuArray = item4.items;
-                                  for (let item of menuArray) {
-                                    if (
-                                      item.title == 'IMAGES' ||
-                                      item.title == 'images'
-                                    ) {
-                                      // console.log(menuArray)
-                                      let placeofItem = menuArray.indexOf(item);
-                                      if (placeofItem > -1) {
-                                        menuArray.splice(placeofItem, 1);
-                                      }
-                                    }
-                                  }
-                                  break;
-                                }
-                              }
-                            }
-                          }
-                        }
-                      } else {
-                        menuArray = [];
-                        if (this.props.menuItems.items != undefined) {
-                          for (let item of this.props.menuItems.items) {
-                            if (
-                              menuArray.includes(item) == false &&
-                              item['@type'] == 'Document'
-                            ) {
-                              menuArray.push(item);
                             }
                           }
                         }
                       }
-                    })()}
+                    } else {
+                      menuArray = [];
+                      if (this.props.menuItems.items != undefined) {
+                        for (let item of this.props.menuItems.items) {
+                          if (
+                            menuArray.includes(item) == false &&
+                            item['@type'] == 'Document'
+                          ) {
+                            menuArray.push(item);
+                          }
+                        }
+                      }
+                    }
+                  })()}
 
-                    {[...menuArray].map((x, i) => (
-                      <Dropdown.Item key={i} id="InhoudDropdown">
-                        <NavLink to={x.url} key={x.url} id="InhoudDropdown">
-                          {x.title}
-                        </NavLink>
-                      </Dropdown.Item>
-                    ))}
-                  </Dropdown.Menu>
-                </Dropdown>
-              </div>
-            </Container>
-          ) : (
-            ''
-          )}
+                  {[...menuArray].map((x, i) => (
+                    <Dropdown.Item key={i} id="InhoudDropdown">
+                      <NavLink to={x.url} key={x.url} id="InhoudDropdown">
+                        {x.title}
+                      </NavLink>
+                    </Dropdown.Item>
+                  ))}
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+          </Container>
         </Container>
       </Segment>
     );
