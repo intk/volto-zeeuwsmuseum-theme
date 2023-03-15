@@ -98,9 +98,19 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
+#: components/Blocks/TableOfContentSwitch/ShowTableOfContentEdit
+# defaultMessage: SHOW TABLE OF CONTENTS
+msgid "SHOW TABLE OF CONTENTS"
+msgstr ""
+
 #: components/Blocks/SiteData/schema
 # defaultMessage: Address Section Title
 msgid "Section title"
+msgstr ""
+
+#: components/Blocks/TableOfContentSwitch/schema
+# defaultMessage: Show TOC
+msgid "Show TOC"
 msgstr ""
 
 #: components/Blocks/SiteData/schema
@@ -127,4 +137,14 @@ msgstr ""
 #: components/View/SliderPage
 # defaultMessage: Unknown Block {block}
 msgid "Unknown Block"
+msgstr ""
+
+#: components/Blocks/TableOfContentSwitch/schema
+# defaultMessage: Show Table of Contents?
+msgid "showtableofcontents"
+msgstr ""
+
+#: components/Blocks/TableOfContentSwitch/schema
+# defaultMessage: Do you want Table of Contents to appear?
+msgid "wanttoshowtoc"
 msgstr ""
