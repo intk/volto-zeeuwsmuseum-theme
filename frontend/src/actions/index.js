@@ -10,3 +10,6 @@
  *   searchContent,
  * };
  */
+import { getBlockContent } from './getBlockData/getBlockData';
+
+export { getBlockContent };
