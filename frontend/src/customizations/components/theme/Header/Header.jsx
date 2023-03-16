@@ -18,9 +18,10 @@ import {
   Logo,
   UniversalLink,
 } from '@plone/volto/components';
-import { HeaderItem } from 'components';
 import config from '@plone/volto/registry';
-import { NavLink } from 'react-router-dom';
+import { getBlockContent } from '../../../../actions/index';
+import { useDispatch, useSelector } from 'react-redux';
+import { hasBlocksData, getBaseUrl } from '@plone/volto/helpers';
 
 // This function determines the direction of the page scrolling
 // We then pass the result to the Segments className
@@ -77,6 +78,31 @@ const Header = (props) => {
       defaultMessage: 'Plone Site',
     },
   });
+
+  const [showTOC, setShowTOC] = React.useState('NO');
+  const pathname = props.pathname;
+  const parentPath = pathname.split('/').slice(0, -1).join('/');
+
+  const dispatch = useDispatch();
+  React.useEffect(() => {
+    props.content?.['@type'] === 'Document' &&
+      dispatch(getBlockContent(parentPath)).then((response) => {
+        let data = response;
+        for (const blockKey in data.blocks) {
+          if (
+            data.blocks.hasOwnProperty(blockKey) &&
+            data.blocks[blockKey]['@type'] === 'showTableOfContent'
+          ) {
+            setShowTOC('YES');
+          }
+        }
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  React.useEffect(() => {
+    document.body.setAttribute('show-table-of-content', showTOC);
+  }, [showTOC]);
 
   return (
     <Segment
