@@ -90,19 +90,19 @@ const Header = (props) => {
   }, [changedPath.pathname]);
 
   React.useEffect(() => {
-    showTOC === 'NO' &&
-      dispatch(getBlockContent(parentPath)).then((response) => {
-        let data = response;
-        for (const blockKey in data.blocks) {
-          if (
-            data.blocks.hasOwnProperty(blockKey) &&
-            data.blocks[blockKey]['@type'] === 'showTableOfContent'
-          ) {
-            setShowTOC('YES');
-            setParentPage(false);
-          }
+    // showTOC === 'NO' &&
+    dispatch(getBlockContent(parentPath)).then((response) => {
+      let data = response;
+      for (const blockKey in data.blocks) {
+        if (
+          data.blocks.hasOwnProperty(blockKey) &&
+          data.blocks[blockKey]['@type'] === 'showTableOfContent'
+        ) {
+          setShowTOC('YES');
+          setParentPage(false);
         }
-      });
+      }
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [changedPath.pathname]);
 
