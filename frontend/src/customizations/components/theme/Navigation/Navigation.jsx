@@ -256,7 +256,7 @@ class Navigation extends Component {
                 {this.props.content != undefined ? (
                   this.props.content['@type'] == 'Document' ||
                   this.props.content['@type'] == 'slideshow' ? (
-                    <Segment>
+                    <Segment id="TOCnavigation">
                       <Menu stackable pointing secondary>
                         <Accordion className="item simple">
                           <Accordion.Title
