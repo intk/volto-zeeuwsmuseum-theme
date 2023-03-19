@@ -1,8 +1,10 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 const ShowTableOfContentView = (props) => {
   const { TOC } = props.data;
   const [showTOC, setShowTOC] = React.useState('NO');
+  const changedPath = useLocation();
 
   React.useEffect(() => {
     if (!TOC) return;
@@ -14,8 +16,12 @@ const ShowTableOfContentView = (props) => {
   }, [TOC]);
 
   React.useEffect(() => {
-    document.body.setAttribute('show-table-of-content', showTOC);
-  }, [showTOC]);
+    const updateAttributes = async () => {
+      document.body.setAttribute('show-table-of-content', showTOC);
+    };
+
+    updateAttributes();
+  }, [showTOC, changedPath.pathname]);
 
   return null;
 };
