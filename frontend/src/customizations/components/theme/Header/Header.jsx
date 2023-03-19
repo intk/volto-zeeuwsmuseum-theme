@@ -7,8 +7,8 @@
  * @module components/theme/Header/Header
  */
 
-import React, { Component, useState, useEffect } from 'react';
-import { Container, Segment } from 'semantic-ui-react';
+import React, { useState, useEffect } from 'react';
+import { Segment } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { defineMessages, injectIntl } from 'react-intl';
@@ -20,8 +20,8 @@ import {
 } from '@plone/volto/components';
 import config from '@plone/volto/registry';
 import { getBlockContent } from '../../../../actions/index';
-import { useDispatch, useSelector } from 'react-redux';
-import { hasBlocksData, getBaseUrl } from '@plone/volto/helpers';
+import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 
 // This function determines the direction of the page scrolling
 // We then pass the result to the Segments className
@@ -63,9 +63,7 @@ const Header = (props) => {
    * @method render
    * @returns {string} Markup for the component.
    */
-
   const scrollDirection = useScrollDirection();
-  const menuItems = props.menuItems;
   const { settings } = config;
 
   const messages = defineMessages({
@@ -79,13 +77,20 @@ const Header = (props) => {
     },
   });
 
-  const [showTOC, setShowTOC] = React.useState('NO');
+  const [showTOC, setShowTOC] = useState('NO');
+  const [parentPage, setParentPage] = useState(false);
   const pathname = props.pathname;
   const parentPath = pathname.split('/').slice(0, -1).join('/');
+  const changedPath = useLocation();
 
   const dispatch = useDispatch();
+
   React.useEffect(() => {
-    props.content?.['@type'] === 'Document' &&
+    setParentPage(true);
+  }, [changedPath.pathname]);
+
+  React.useEffect(() => {
+    showTOC === 'NO' &&
       dispatch(getBlockContent(parentPath)).then((response) => {
         let data = response;
         for (const blockKey in data.blocks) {
@@ -94,15 +99,16 @@ const Header = (props) => {
             data.blocks[blockKey]['@type'] === 'showTableOfContent'
           ) {
             setShowTOC('YES');
+            setParentPage(false);
           }
         }
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [changedPath.pathname]);
 
   React.useEffect(() => {
     document.body.setAttribute('show-table-of-content', showTOC);
-  }, [showTOC]);
+  }, [showTOC, changedPath.pathname]);
 
   return (
     <Segment
@@ -127,21 +133,20 @@ const Header = (props) => {
                 </p>
               </UniversalLink>
             </div>
-            <Navigation pathname={props.pathname} menuItems={props.menuItems} />
+            <Navigation
+              pathname={props.pathname}
+              menuItems={props.menuItems}
+              parentPage={parentPage}
+            />
           </div>
         </div>
       </container>
       {/* This section is to render Breadcrumbs conditionally */}
-      {props.content != undefined ? (
-        props.content['@type'] == 'Document' ||
-        props.content['@type'] == 'slideshow' ? (
-          <Breadcrumbs pathname={props.pathname} menuItems={props.menuItems} />
-        ) : (
-          ''
-        )
-      ) : (
-        ''
-      )}
+      <Breadcrumbs
+        pathname={props.pathname}
+        menuItems={props.menuItems}
+        parentPage={parentPage}
+      />
     </Segment>
   );
 };

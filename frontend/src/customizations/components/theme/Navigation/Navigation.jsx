@@ -271,9 +271,7 @@ class Navigation extends Component {
                             onClick={this.closeMobileMenu}
                           >
                             {(() => {
-                              if (
-                                this.props.menuItems['@type'] === 'Document'
-                              ) {
+                              if (this.props.parentPage === false) {
                                 let nav = this.props.navItems;
                                 let parentTitle = this.props.menuItems.parent
                                   .title;
@@ -379,43 +377,6 @@ class Navigation extends Component {
                             })()}
 
                             <ul className="accordionbreadcrumblist">
-                              <li>
-                                <NavLink
-                                  to={
-                                    this.props.breadcrumbItem.length !=
-                                      undefined &&
-                                    this.props.breadcrumbItem.length > 2
-                                      ? this.props.menuItems['@type'] ==
-                                        'Document'
-                                        ? this.props.breadcrumbItem[
-                                            this.props.breadcrumbItem.length - 2
-                                          ].url
-                                        : this.props.breadcrumbItem[
-                                            this.props.breadcrumbItem.length - 1
-                                          ].url
-                                      : ''
-                                  }
-                                  key={
-                                    this.props.breadcrumbItem.length !=
-                                      undefined &&
-                                    this.props.breadcrumbItem.length > 2
-                                      ? this.props.menuItems['@type'] ==
-                                        'Document'
-                                        ? this.props.items[
-                                            this.props.breadcrumbItem.length - 2
-                                          ].title
-                                        : this.props.items[
-                                            this.props.breadcrumbItem.length - 1
-                                          ].title
-                                      : ''
-                                  }
-                                  className="accordion item simple"
-                                  id="InhoudDropdown"
-                                  activeClassName="active"
-                                >
-                                  Beeldimpressie
-                                </NavLink>
-                              </li>
                               {[...menuArray].map((x, i) => (
                                 <li>
                                   <NavItem

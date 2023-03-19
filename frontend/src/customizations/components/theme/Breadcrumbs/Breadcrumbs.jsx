@@ -101,10 +101,11 @@ export class BreadcrumbsComponent extends Component {
       <Segment
         role="navigation"
         aria-label={this.props.intl.formatMessage(messages.breadcrumbs)}
-        className={this.props.name === 'firstNav' ? 'breadcrumbs' : 'secondNav'}
+        className="secondNav"
         id="breadcrumb-container"
         secondary
         vertical
+        key={this.props.parentPage}
       >
         <Container id="crumbcontainer">
           <Breadcrumb id="folderMap">
@@ -157,7 +158,7 @@ export class BreadcrumbsComponent extends Component {
                 icon={<FaChevronDown color="#808080" />}
               >
                 <Dropdown.Menu className="dropdownContentPage">
-                  <Dropdown.Item id="InhoudDropdown">
+                  {/* <Dropdown.Item id="InhoudDropdown">
                     <NavLink
                       to={
                         this.props.items.length != undefined &&
@@ -179,10 +180,10 @@ export class BreadcrumbsComponent extends Component {
                     >
                       Beeldimpressie
                     </NavLink>
-                  </Dropdown.Item>
+                  </Dropdown.Item> */}
 
                   {(() => {
-                    if (this.props.menuItems['@type'] === 'Document') {
+                    if (this.props.parentPage === false) {
                       let steps = this.props.items;
                       let nav = this.props.navItems;
                       let depth = 0;
