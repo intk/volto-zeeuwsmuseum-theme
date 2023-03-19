@@ -22,7 +22,6 @@ import { FaChevronDown } from 'react-icons/fa';
 import NavItem from '@plone/volto/components/theme/Navigation/NavItem';
 // eslint-disable-next-line import/no-unresolved
 import { AccordionLanguageSelector } from 'components';
-import { NavLink } from 'react-router-dom';
 
 const messages = defineMessages({
   closeMobileMenu: {

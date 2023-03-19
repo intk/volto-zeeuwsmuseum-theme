@@ -87,6 +87,7 @@ const Header = (props) => {
 
   React.useEffect(() => {
     setParentPage(true);
+    setShowTOC('NO');
   }, [changedPath.pathname]);
 
   React.useEffect(() => {
@@ -146,6 +147,7 @@ const Header = (props) => {
         pathname={props.pathname}
         menuItems={props.menuItems}
         parentPage={parentPage}
+        showTOC={showTOC}
       />
     </Segment>
   );
