@@ -142,6 +142,7 @@ const Header = (props) => {
               pathname={props.pathname}
               menuItems={props.menuItems}
               parentPage={parentPage}
+              parentData={parentData}
             />
           </div>
         </div>

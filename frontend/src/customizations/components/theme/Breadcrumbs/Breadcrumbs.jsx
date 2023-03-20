@@ -97,6 +97,19 @@ export class BreadcrumbsComponent extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
+    let parentURL = '';
+    let selfURL = '';
+    const parentID = this.props.parentData['@id'];
+    const selfID = this.props.content['@id'];
+    if (parentID !== undefined) {
+      const parts = parentID.split('/');
+      parentURL = '/' + parts.slice(3).join('/');
+    }
+    if (selfID !== undefined) {
+      const parts = selfID.split('/');
+      selfURL = '/' + parts.slice(3).join('/');
+    }
+
     return (
       <Segment
         role="navigation"
@@ -107,182 +120,139 @@ export class BreadcrumbsComponent extends Component {
         vertical
         key={this.props.parentPage}
       >
-        <Container id="crumbcontainer">
-          <Breadcrumb id="folderMap">
-            {this.props.menuItems['@type'] == 'Document' &&
-            this.props.items.length > 2 ? (
-              <Breadcrumb.Section
-                className="crumbcontainer"
-                key="crumbcontainer"
-                active
-              >
-                <NavLink
-                  to={this.props.items[this.props.items.length - 2].url}
-                  key="goToParent"
-                  className="parenttitle"
-                >
-                  {this.props.items[this.props.items.length - 2].title}
-                </NavLink>
-                <Breadcrumb.Divider className="breaddivider">
-                  <BsChevronCompactRight
-                    stroke="white"
-                    fill="currentColor"
-                    strokeWidth="0.5"
-                  />
-                </Breadcrumb.Divider>
-              </Breadcrumb.Section>
-            ) : (
-              ''
-            )}
-
-            <Breadcrumb.Section
-              className="crumbcontainer"
-              key={this.props.menuItems['@url']}
-              active
-            >
-              <div className="breadtitle">
-                <span>{this.props.menuItems.title}</span>
-              </div>
-            </Breadcrumb.Section>
-          </Breadcrumb>
-
-          <Container id="dropdowncontainer">
-            <div id="inhoud">
-              <Dropdown
-                item
-                simple
-                open={this.state.open}
-                onFocus={this.closeMobileMenu}
-                onBlur={this.closeMobileMenu}
-                text={'INHOUD'}
-                icon={<FaChevronDown color="#808080" />}
-              >
-                <Dropdown.Menu className="dropdownContentPage">
-                  {/* <Dropdown.Item id="InhoudDropdown">
+        {this.props.content != undefined ? (
+          this.props.content['@type'] == 'Document' ? (
+            <Container id="crumbcontainer">
+              <Breadcrumb id="folderMap">
+                {this.props.menuItems['@type'] == 'Document' &&
+                this.props.parentPage === false ? (
+                  <Breadcrumb.Section
+                    className="crumbcontainer"
+                    key="crumbcontainer"
+                    active
+                  >
                     <NavLink
-                      to={
-                        this.props.items.length != undefined &&
-                        this.props.items.length > 2
-                          ? this.props.menuItems['@type'] == 'Document'
-                            ? this.props.items[this.props.items.length - 2].url
-                            : this.props.items[this.props.items.length - 1].url
-                          : ''
-                      }
-                      key={
-                        this.props.items.length != undefined &&
-                        this.props.items.length > 2
-                          ? this.props.menuItems['@type'] == 'Document'
-                            ? this.props.items[this.props.items.length - 2].url
-                            : this.props.items[this.props.items.length - 1].url
-                          : ''
-                      }
-                      activeClassName="active"
+                      to={this.props.items[this.props.items.length - 2].url}
+                      key="goToParent"
+                      className="parenttitle"
                     >
-                      Beeldimpressie
+                      {this.props.items[this.props.items.length - 2].title}
                     </NavLink>
-                  </Dropdown.Item> */}
-                  {console.log(this.props.parentData)}
+                    <Breadcrumb.Divider className="breaddivider">
+                      <BsChevronCompactRight
+                        stroke="white"
+                        fill="currentColor"
+                        strokeWidth="0.5"
+                      />
+                    </Breadcrumb.Divider>
+                  </Breadcrumb.Section>
+                ) : (
+                  ''
+                )}
 
-                  {(() => {
-                    if (this.props.parentPage === false) {
-                      let nav = this.props.navItems;
-                      let parentTitle = this.props.menuItems.parent.title;
+                <Breadcrumb.Section
+                  className="crumbcontainer"
+                  key={this.props.menuItems['@url']}
+                  active
+                >
+                  <div className="breadtitle">
+                    <span>{this.props.menuItems.title}</span>
+                  </div>
+                </Breadcrumb.Section>
+              </Breadcrumb>
 
-                      for (let item1 of nav) {
-                        if (item1.title == parentTitle) {
-                          menuArray = item1.items;
-                          for (let item of menuArray) {
-                            if (
-                              item.title == 'IMAGES' ||
-                              item.title == 'images'
-                            ) {
-                              let placeofItem = menuArray.indexOf(item);
-                              if (placeofItem > -1) {
-                                menuArray.splice(placeofItem, 1);
-                              }
-                            }
-                          }
-                          break;
-                        }
-                        for (let item2 of item1.items) {
-                          if (item2.title == parentTitle) {
-                            menuArray = item2.items;
-                            for (let item of menuArray) {
+              <Container id="dropdowncontainer">
+                <div id="inhoud">
+                  <Dropdown
+                    item
+                    simple
+                    open={this.state.open}
+                    onFocus={this.closeMobileMenu}
+                    onBlur={this.closeMobileMenu}
+                    text={'INHOUD'}
+                    icon={<FaChevronDown color="#808080" />}
+                  >
+                    <Dropdown.Menu className="dropdownContentPage">
+                      {/* this section adds either the parent page or the self to the TOC
+                      depending on the position of the page; parent page of child page */}
+                      {this.props.parentPage === false ? (
+                        <Dropdown.Item id="InhoudDropdown">
+                          <NavLink
+                            to={parentURL}
+                            key={'breadcrumb' + parentURL}
+                            activeClassName="active"
+                          >
+                            {this.props.parentData.title}
+                          </NavLink>
+                        </Dropdown.Item>
+                      ) : (
+                        <Dropdown.Item id="InhoudDropdown">
+                          <NavLink
+                            to={selfURL}
+                            key={'breadcrumb' + selfURL}
+                            activeClassName="active"
+                          >
+                            {this.props.content.title}
+                          </NavLink>
+                        </Dropdown.Item>
+                      )}
+
+                      {/* this section adds either the children of the parent page or the
+                      children page of the page itself. depending on the position of the
+                      page; parent page of child page */}
+                      {(() => {
+                        if (this.props.parentPage === false) {
+                          menuArray = [];
+                          if (this.props.parentData.items != undefined) {
+                            for (let item of this.props.parentData.items) {
                               if (
-                                item.title == 'IMAGES' ||
-                                item.title == 'images'
+                                menuArray.includes(item) == false &&
+                                item['@type'] == 'Document'
                               ) {
-                                let placeofItem = menuArray.indexOf(item);
-                                if (placeofItem > -1) {
-                                  menuArray.splice(placeofItem, 1);
+                                let itemID = item['@id'];
+                                if (itemID !== undefined) {
+                                  const parts = itemID.split('/');
+                                  let itemURL = '/' + parts.slice(3).join('/');
+                                  item.url = itemURL;
                                 }
+                                menuArray.push(item);
                               }
                             }
-                            break;
                           }
-                          for (let item3 of item2.items) {
-                            if (item3.title == parentTitle) {
-                              menuArray = item3.items;
-                              for (let item of menuArray) {
-                                if (
-                                  item.title == 'IMAGES' ||
-                                  item.title == 'images'
-                                ) {
-                                  let placeofItem = menuArray.indexOf(item);
-                                  if (placeofItem > -1) {
-                                    menuArray.splice(placeofItem, 1);
-                                  }
-                                }
-                              }
-                              break;
-                            }
-                            for (let item4 of item3.items) {
-                              if (item4.title == parentTitle) {
-                                menuArray = item4.items;
-                                for (let item of menuArray) {
-                                  if (
-                                    item.title == 'IMAGES' ||
-                                    item.title == 'images'
-                                  ) {
-                                    let placeofItem = menuArray.indexOf(item);
-                                    if (placeofItem > -1) {
-                                      menuArray.splice(placeofItem, 1);
-                                    }
-                                  }
-                                }
-                                break;
+                        } else {
+                          menuArray = [];
+                          if (this.props.menuItems.items != undefined) {
+                            for (let item of this.props.menuItems.items) {
+                              if (
+                                menuArray.includes(item) == false &&
+                                item['@type'] == 'Document'
+                              ) {
+                                menuArray.push(item);
                               }
                             }
                           }
                         }
-                      }
-                    } else {
-                      menuArray = [];
-                      if (this.props.menuItems.items != undefined) {
-                        for (let item of this.props.menuItems.items) {
-                          if (
-                            menuArray.includes(item) == false &&
-                            item['@type'] == 'Document'
-                          ) {
-                            menuArray.push(item);
-                          }
-                        }
-                      }
-                    }
-                  })()}
+                      })()}
 
-                  {[...menuArray].map((x, i) => (
-                    <Dropdown.Item key={i} id="InhoudDropdown">
-                      <NavLink to={x.url} key={x.url} id="InhoudDropdown">
-                        {x.title}
-                      </NavLink>
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-            </div>
-          </Container>
-        </Container>
+                      {/* Adding the menu items from the menuArray to the Dropdown itself */}
+                      {[...menuArray].map((x, i) => (
+                        <Dropdown.Item key={i} id="InhoudDropdown">
+                          <NavLink to={x.url} key={x.url} id="InhoudDropdown">
+                            {x.title}
+                          </NavLink>
+                        </Dropdown.Item>
+                      ))}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                </div>
+              </Container>
+            </Container>
+          ) : (
+            ''
+          )
+        ) : (
+          ''
+        )}
       </Segment>
     );
   }

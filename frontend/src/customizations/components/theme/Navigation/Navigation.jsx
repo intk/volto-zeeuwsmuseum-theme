@@ -150,6 +150,18 @@ class Navigation extends Component {
 
   render() {
     const { activeIndex } = this.state;
+    let parentURL = '';
+    let selfURL = '';
+    const parentID = this.props.parentData['@id'];
+    const selfID = this.props.content['@id'];
+    if (parentID !== undefined) {
+      const parts = parentID.split('/');
+      parentURL = '/' + parts.slice(3).join('/');
+    }
+    if (selfID !== undefined) {
+      const parts = selfID.split('/');
+      selfURL = '/' + parts.slice(3).join('/');
+    }
 
     return (
       <nav className="navigation" id="navigation" aria-label="navigation">
@@ -269,94 +281,44 @@ class Navigation extends Component {
                             active={activeIndex === 0}
                             onClick={this.closeMobileMenu}
                           >
+                            {/* {this.props.parentPage === false ? (
+                              <li>
+                                <NavItem
+                                  item={parentURL}
+                                  key={'navigation' + parentURL}
+                                  id="gfas"
+                                  lang={this.lang}
+                                />
+                              </li>
+                            ) : (
+                              <li>
+                                <NavItem
+                                  item={selfURL}
+                                  key={'navigation' + selfURL}
+                                  id="sadf"
+                                  lang={this.lang}
+                                />
+                              </li>
+                            )} */}
+
                             {(() => {
                               if (this.props.parentPage === false) {
-                                let nav = this.props.navItems;
-                                let parentTitle = this.props.menuItems.parent
-                                  .title;
-
-                                for (let item1 of nav) {
-                                  if (item1.title == parentTitle) {
-                                    menuArray = item1.items;
-                                    for (let item of menuArray) {
-                                      if (
-                                        item.title == 'IMAGES' ||
-                                        item.title == 'images'
-                                      ) {
-                                        // console.log(menuArray)
-                                        let placeofItem = menuArray.indexOf(
-                                          item,
-                                        );
-                                        if (placeofItem > -1) {
-                                          menuArray.splice(placeofItem, 1);
-                                        }
+                                menuArray = [];
+                                if (this.props.parentData.items != undefined) {
+                                  for (let item of this.props.parentData
+                                    .items) {
+                                    if (
+                                      menuArray.includes(item) == false &&
+                                      item['@type'] == 'Document'
+                                    ) {
+                                      let itemID = item['@id'];
+                                      if (itemID !== undefined) {
+                                        const parts = itemID.split('/');
+                                        let itemURL =
+                                          '/' + parts.slice(3).join('/');
+                                        item.url = itemURL;
                                       }
-                                    }
-                                    break;
-                                  }
-                                  for (let item2 of item1.items) {
-                                    if (item2.title == parentTitle) {
-                                      menuArray = item2.items;
-                                      // console.log(menuArray);
-
-                                      for (let item of menuArray) {
-                                        if (
-                                          item.title == 'IMAGES' ||
-                                          item.title == 'images'
-                                        ) {
-                                          let placeofItem = menuArray.indexOf(
-                                            item,
-                                          );
-                                          if (placeofItem > -1) {
-                                            menuArray.splice(placeofItem, 1);
-                                          }
-                                        }
-                                      }
-                                      break;
-                                    }
-                                    for (let item3 of item2.items) {
-                                      if (item3.title == parentTitle) {
-                                        menuArray = item3.items;
-                                        // console.log(menuArray);
-                                        for (let item of menuArray) {
-                                          if (
-                                            item.title == 'IMAGES' ||
-                                            item.title == 'images'
-                                          ) {
-                                            // console.log(menuArray)
-                                            let placeofItem = menuArray.indexOf(
-                                              item,
-                                            );
-                                            if (placeofItem > -1) {
-                                              menuArray.splice(placeofItem, 1);
-                                            }
-                                          }
-                                        }
-                                        break;
-                                      }
-                                      for (let item4 of item3.items) {
-                                        if (item4.title == parentTitle) {
-                                          menuArray = item4.items;
-                                          for (let item of menuArray) {
-                                            if (
-                                              item.title == 'IMAGES' ||
-                                              item.title == 'images'
-                                            ) {
-                                              // console.log(menuArray)
-                                              let placeofItem = menuArray.indexOf(
-                                                item,
-                                              );
-                                              if (placeofItem > -1) {
-                                                menuArray.splice(
-                                                  placeofItem,
-                                                  1,
-                                                );
-                                              }
-                                            }
-                                          }
-                                          break;
-                                        }
-                                      }
+                                      menuArray.push(item);
                                     }
                                   }
                                 }
@@ -374,8 +336,27 @@ class Navigation extends Component {
                                 }
                               }
                             })()}
-
                             <ul className="accordionbreadcrumblist">
+                              {/* {this.props.parentPage === false ? (
+                                <li>
+                                  <NavItem
+                                    item={this.props.parentData}
+                                    url={parentURL}
+                                    key={'navigation' + parentURL}
+                                    id="gfas"
+                                    lang={this.lang}
+                                  />
+                                </li>
+                              ) : (
+                                <li>
+                                  <NavItem
+                                    item={selfURL}
+                                    key={'navigation' + selfURL}
+                                    id="sadf"
+                                    lang={this.lang}
+                                  />
+                                </li>
+                              )} */}
                               {[...menuArray].map((x, i) => (
                                 <li>
                                   <NavItem
