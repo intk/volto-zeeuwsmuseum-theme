@@ -181,12 +181,11 @@ export class BreadcrumbsComponent extends Component {
                       Beeldimpressie
                     </NavLink>
                   </Dropdown.Item> */}
+                  {console.log(this.props.parentData)}
 
                   {(() => {
                     if (this.props.parentPage === false) {
-                      let steps = this.props.items;
                       let nav = this.props.navItems;
-                      let depth = 0;
                       let parentTitle = this.props.menuItems.parent.title;
 
                       for (let item1 of nav) {
@@ -197,7 +196,6 @@ export class BreadcrumbsComponent extends Component {
                               item.title == 'IMAGES' ||
                               item.title == 'images'
                             ) {
-                              // console.log(menuArray)
                               let placeofItem = menuArray.indexOf(item);
                               if (placeofItem > -1) {
                                 menuArray.splice(placeofItem, 1);
@@ -209,8 +207,6 @@ export class BreadcrumbsComponent extends Component {
                         for (let item2 of item1.items) {
                           if (item2.title == parentTitle) {
                             menuArray = item2.items;
-                            // console.log(menuArray);
-
                             for (let item of menuArray) {
                               if (
                                 item.title == 'IMAGES' ||
@@ -227,13 +223,11 @@ export class BreadcrumbsComponent extends Component {
                           for (let item3 of item2.items) {
                             if (item3.title == parentTitle) {
                               menuArray = item3.items;
-                              // console.log(menuArray);
                               for (let item of menuArray) {
                                 if (
                                   item.title == 'IMAGES' ||
                                   item.title == 'images'
                                 ) {
-                                  // console.log(menuArray)
                                   let placeofItem = menuArray.indexOf(item);
                                   if (placeofItem > -1) {
                                     menuArray.splice(placeofItem, 1);
@@ -250,7 +244,6 @@ export class BreadcrumbsComponent extends Component {
                                     item.title == 'IMAGES' ||
                                     item.title == 'images'
                                   ) {
-                                    // console.log(menuArray)
                                     let placeofItem = menuArray.indexOf(item);
                                     if (placeofItem > -1) {
                                       menuArray.splice(placeofItem, 1);
