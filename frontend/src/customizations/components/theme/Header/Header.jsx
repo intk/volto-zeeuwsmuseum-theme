@@ -82,18 +82,20 @@ const Header = (props) => {
   const pathname = props.pathname;
   const parentPath = pathname.split('/').slice(0, -1).join('/');
   const changedPath = useLocation();
+  const [parentData, setParentData] = useState('');
 
   const dispatch = useDispatch();
 
   React.useEffect(() => {
     setParentPage(true);
-    setShowTOC('NO');
+    // setShowTOC('NO');
   }, [changedPath.pathname]);
 
   React.useEffect(() => {
     // showTOC === 'NO' &&
     dispatch(getBlockContent(parentPath)).then((response) => {
       let data = response;
+      setParentData(response);
       for (const blockKey in data.blocks) {
         if (
           data.blocks.hasOwnProperty(blockKey) &&
@@ -106,6 +108,8 @@ const Header = (props) => {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [changedPath.pathname]);
+
+  // console.log(parentData)
 
   React.useEffect(() => {
     document.body.setAttribute('show-table-of-content', showTOC);
@@ -148,6 +152,7 @@ const Header = (props) => {
         menuItems={props.menuItems}
         parentPage={parentPage}
         showTOC={showTOC}
+        parentData={parentData}
       />
     </Segment>
   );
