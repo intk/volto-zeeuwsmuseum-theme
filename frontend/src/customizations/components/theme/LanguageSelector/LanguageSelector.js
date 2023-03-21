@@ -40,11 +40,11 @@ const LanguageSelector = (props) => {
       <Dropdown
         text={currentLang}
         className="item simple language-selector"
-        key={''}
+        key="language-selector-dropdown"
         icon={<FaChevronDown color="#808080" />}
       >
         <Dropdown.Menu
-          key={''}
+          key="language-selector-dropdownMenu"
           className="language-selector_dropdown"
           id="language-selector_dropdown"
         >
