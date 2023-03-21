@@ -158,7 +158,7 @@ class App extends Component {
         {/* section is a customization
         it given a class name to the body tag when
         the content type is slideshow */}
-        <BodyClass
+        {/* <BodyClass
           className={
             this.props.content != null
               ? this.props.content['@type'] == 'slideshow'
@@ -166,7 +166,7 @@ class App extends Component {
                 : ''
               : ''
           }
-        />
+        /> */}
         {/* End of the customization */}
         <SkipLinks />
         <Header pathname={path} menuItems={menuItems} />
@@ -204,7 +204,7 @@ class App extends Component {
         it is rendered if the content type is not slideshow
         To return back to the original state, delete the conditional
         and write only the following component: <Footer /> */}
-        {this.props.content != undefined ? (
+        {/* {this.props.content != undefined ? (
           this.props.content['@type'] == 'slideshow' ? (
             ''
           ) : (
@@ -212,7 +212,7 @@ class App extends Component {
           )
         ) : (
           <Footer />
-        )}
+        )} */}
         {/* End of conditional */}
         <LockingToastsFactory
           content={this.props.content}
