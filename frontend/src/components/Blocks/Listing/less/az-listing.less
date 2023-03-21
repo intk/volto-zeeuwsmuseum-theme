@@ -1,0 +1,79 @@
+@type: 'extra';
+@element: 'custom';
+
+@import (multiple, reference, optional) '../../theme.config';
+
+.az-listing {
+  .az-listing-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 1em 0;
+    gap: 1.5em;
+    text-transform: uppercase;
+
+    a {
+      font-size: @extraFontSize;
+    }
+
+    @media only screen and (max-width: @largestTabletScreen) {
+      gap: 2em;
+
+      a {
+        font-size: @largeFontSize;
+      }
+    }
+  }
+
+  .az-listing-content {
+    max-width: 900px;
+    margin-top: 5em;
+
+    .letter {
+      text-transform: uppercase;
+    }
+
+    .az-list {
+      padding: 0;
+      margin: 0;
+      margin-bottom: var(--space-xl);
+
+      li {
+        padding: 5px 0;
+        line-height: normal;
+        list-style-type: none;
+      }
+
+      &.multi-column {
+        column-count: 3;
+        column-gap: 1em;
+
+        li {
+          break-inside: avoid-column;
+        }
+
+        @media only screen and (max-width: @largestTabletScreen) {
+          column-count: 2;
+        }
+
+        @media only screen and (max-width: @largestMobileScreen) {
+          column-count: 1;
+        }
+      }
+
+      &.single-column {
+        li {
+          width: calc(100% / 3);
+
+          @media only screen and (max-width: @largestTabletScreen) {
+            width: calc(100% / 2);
+          }
+
+          @media only screen and (max-width: @largestMobileScreen) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

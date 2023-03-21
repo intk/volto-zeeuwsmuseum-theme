@@ -1,0 +1,65 @@
+/*******************************
+      Slider Listing
+*******************************/
+
+@type: 'extra';
+@element: 'custom';
+
+@import (multiple, reference, optional) '../../theme.config';
+
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+.slider-listing {
+  .slick-slide.slick-active:last-child {
+    margin-right: 0em;
+  }
+}
+
+.block.listing.slider_listing {
+  .pagination-wrapper {
+    display: none;
+  }
+}
+
+.block.listing {
+  .headline {
+    display: none; // we use custom heading, see ListingBlockHeader
+  }
+
+  .link-more {
+    // margin: 1em 0;
+    text-align: right;
+  }
+}
+
+.slider-listing {
+  .slick-list {
+    margin: 0 -10px !important;
+  }
+
+  .slick-slide {
+    padding: 10px !important;
+  }
+
+  .slick-dots {
+    li {
+      width: 16px;
+      height: 16px;
+    }
+
+    li button:before {
+      color: var(--text-color);
+      font-size: @mediumFontSize;
+    }
+
+    li.slick-active button:before {
+      color: var(--text-color);
+      opacity: 1;
+    }
+  }
+}
+
+.slider-carousel-container {
+  margin: 3em 0;
+}
