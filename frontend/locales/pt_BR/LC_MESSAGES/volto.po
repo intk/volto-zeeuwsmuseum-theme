@@ -37,13 +37,11 @@ msgstr ""
 msgid "Breadcrumbs"
 msgstr ""
 
-#: components/Blocks/Listing/index
 #: components/Blocks/SiteData/schema
 # defaultMessage: Button call to action
 msgid "Button call to action"
 msgstr ""
 
-#: components/Blocks/Listing/index
 #: components/Blocks/SiteData/schema
 # defaultMessage: Button title
 msgid "Button title"
@@ -109,34 +107,9 @@ msgstr ""
 msgid "Section title"
 msgstr ""
 
-#: components/Blocks/Listing/index
-# defaultMessage: Show Content Type
-msgid "Show Content Type"
-msgstr ""
-
-#: components/Blocks/Listing/index
-# defaultMessage: Show Count
-msgid "Show Count"
-msgstr ""
-
-#: components/Blocks/Listing/index
-# defaultMessage: Show Date
-msgid "Show Date"
-msgstr ""
-
-#: components/Blocks/Listing/index
-# defaultMessage: Show Not Found
-msgid "Show Not Found"
-msgstr ""
-
 #: components/Blocks/TableOfContentSwitch/schema
 # defaultMessage: Show TOC
 msgid "Show TOC"
-msgstr ""
-
-#: components/Blocks/Listing/index
-# defaultMessage: Show Tag
-msgid "Show Tag"
 msgstr ""
 
 #: components/Blocks/SiteData/schema

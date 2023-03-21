@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ConditionalLink, UniversalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import { Container } from 'semantic-ui-react';
 import { PreviewImage } from '@plone/volto/components';
 
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
