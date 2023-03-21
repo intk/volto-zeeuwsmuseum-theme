@@ -200,20 +200,7 @@ class App extends Component {
             </main>
           </Segment>
         </MultilingualRedirector>
-        {/* This section is a condition for the Footer
-        it is rendered if the content type is not slideshow
-        To return back to the original state, delete the conditional
-        and write only the following component: <Footer /> */}
-        {/* {this.props.content != undefined ? (
-          this.props.content['@type'] == 'slideshow' ? (
-            ''
-          ) : (
-            <Footer />
-          )
-        ) : (
-          <Footer />
-        )} */}
-        {/* End of conditional */}
+        <Footer />
         <LockingToastsFactory
           content={this.props.content}
           user={this.props.userId}
