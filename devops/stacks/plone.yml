@@ -7,8 +7,6 @@ services:
     ports:
       - 80:80
       - 443:443
-      - 8080:8080
-      - 3000:3000
 
     deploy:
       labels:
@@ -90,8 +88,10 @@ services:
     volumes:
       - site-data:/data
     networks:
-    - traefik-public
-    - backend
+      - traefik-public
+      - backend
+    ports:
+      - 8080:8080
     deploy:
       labels:
         - traefik.enable=true
