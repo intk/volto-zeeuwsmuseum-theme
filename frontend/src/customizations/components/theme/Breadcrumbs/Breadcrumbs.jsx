@@ -124,19 +124,18 @@ export class BreadcrumbsComponent extends Component {
           this.props.content['@type'] == 'Document' ? (
             <Container id="crumbcontainer">
               <Breadcrumb id="folderMap">
-                {this.props.menuItems['@type'] == 'Document' &&
-                this.props.parentPage === false ? (
+                {this.props.parentPage === false ? (
                   <Breadcrumb.Section
                     className="crumbcontainer"
                     key="crumbcontainer"
                     active
                   >
                     <NavLink
-                      to={this.props.items[this.props.items.length - 2].url}
+                      to={parentURL}
                       key="goToParent"
                       className="parenttitle"
                     >
-                      {this.props.items[this.props.items.length - 2].title}
+                      {this.props.parentData.title}
                     </NavLink>
                     <Breadcrumb.Divider className="breaddivider">
                       <BsChevronCompactRight
@@ -152,7 +151,7 @@ export class BreadcrumbsComponent extends Component {
 
                 <Breadcrumb.Section
                   className="crumbcontainer"
-                  key={this.props.menuItems['@url']}
+                  key={this.props.content.title}
                   active
                 >
                   <div className="breadtitle">
@@ -209,13 +208,16 @@ export class BreadcrumbsComponent extends Component {
                                 menuArray.includes(item) == false &&
                                 item['@type'] == 'Document'
                               ) {
-                                let itemID = item['@id'];
-                                if (itemID !== undefined) {
-                                  const parts = itemID.split('/');
-                                  let itemURL = '/' + parts.slice(3).join('/');
-                                  item.url = itemURL;
+                                if (item['@id'] != null) {
+                                  let itemID = item['@id'];
+                                  if (itemID !== undefined) {
+                                    const parts = itemID.split('/');
+                                    let itemURL =
+                                      '/' + parts.slice(3).join('/');
+                                    item.url = itemURL;
+                                  }
+                                  menuArray.push(item);
                                 }
-                                menuArray.push(item);
                               }
                             }
                           }
