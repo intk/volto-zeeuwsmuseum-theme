@@ -435,7 +435,7 @@
 // ********************************
 #page-listing {
   position: relative;
-  width: calc(95vw - var(--scrollbarWidth));
+  width: calc(100vw - var(--scrollbarWidth));
   right: 50%;
   left: 50%;
   margin-right: -50vw !important;
