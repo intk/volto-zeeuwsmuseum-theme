@@ -431,8 +431,95 @@
 
 
 
-// For the Folder Content Type
+// For the Listing Block Type
 // ********************************
+#page-listing {
+  position: relative;
+  width: calc(95vw - var(--scrollbarWidth));
+  right: 50%;
+  left: 50%;
+  margin-right: -50vw !important;
+  margin-left: -50vw !important;
+  padding: 100px 50px 50px 50px;
+  #list-title h1 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    margin-top: 0% !important;
+    text-transform: uppercase;
+  }
+
+  a {
+    font-family: 'UniversLightCn';
+    font-size: 1.375rem;
+    letter-spacing: 0.075rem;
+    text-decoration: none !important;
+  }
+
+  #content-core {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    .listing-items {
+      width: 33.3% !important;
+
+      flex-direction: column;
+      flex-grow: 0 !important;
+      flex-shrink: 0 !important;
+      justify-content: flex-end;
+      padding-top: 0px !important;
+      padding-right: 15px !important;
+      padding-bottom: 80px !important;
+      padding-left: 15px !important;
+      border: none !important;
+      margin-top: 0%;
+      margin-bottom: 0%;
+      box-shadow: none;
+
+      img {
+        margin: 0% !important;
+      }
+
+      div {
+        padding-top: 30px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .listing-items {
+    a {
+      color: #000000;
+      font-family: 'UniversLightCn';
+      font-size: 22px;
+      text-decoration: none !important;
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    #content-core .listing-items {
+      width: 50% !important;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    #content-core .listing-items {
+      width: 100% !important;
+    }
+  }
+}
+// End the Listing Block Type
+
+// ********************************
+// For the Folder Content Type
+
 .contenttype-folder #page-home {
   #list-title h1 {
     text-align: center;
@@ -508,11 +595,6 @@
     }
   }
 }
-
-// ********************************
-// For the Folder Content Type
-
-
 
 
 /* ***************************************
