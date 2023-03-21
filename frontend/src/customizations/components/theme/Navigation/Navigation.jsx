@@ -265,8 +265,7 @@ class Navigation extends Component {
 
                 {/* This section is to render Breadcrumbs conditionally */}
                 {this.props.content != undefined ? (
-                  this.props.content['@type'] == 'Document' ||
-                  this.props.content['@type'] == 'slideshow' ? (
+                  this.props.content['@type'] == 'Document' ? (
                     <Segment id="TOCnavigation">
                       <Menu stackable pointing secondary>
                         <Accordion className="item simple">
