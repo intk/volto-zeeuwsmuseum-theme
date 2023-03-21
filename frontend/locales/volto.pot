@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plone\n"
-"POT-Creation-Date: 2023-03-15T11:04:50.472Z\n"
+"POT-Creation-Date: 2023-03-21T13:04:09.423Z\n"
 "Last-Translator: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "Language-Team: Plone i18n <plone-i18n@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -33,11 +33,13 @@ msgstr ""
 msgid "Breadcrumbs"
 msgstr ""
 
+#: components/Blocks/Listing/index
 #: components/Blocks/SiteData/schema
 # defaultMessage: Button call to action
 msgid "Button call to action"
 msgstr ""
 
+#: components/Blocks/Listing/index
 #: components/Blocks/SiteData/schema
 # defaultMessage: Button title
 msgid "Button title"
@@ -103,9 +105,34 @@ msgstr ""
 msgid "Section title"
 msgstr ""
 
+#: components/Blocks/Listing/index
+# defaultMessage: Show Content Type
+msgid "Show Content Type"
+msgstr ""
+
+#: components/Blocks/Listing/index
+# defaultMessage: Show Count
+msgid "Show Count"
+msgstr ""
+
+#: components/Blocks/Listing/index
+# defaultMessage: Show Date
+msgid "Show Date"
+msgstr ""
+
+#: components/Blocks/Listing/index
+# defaultMessage: Show Not Found
+msgid "Show Not Found"
+msgstr ""
+
 #: components/Blocks/TableOfContentSwitch/schema
 # defaultMessage: Show TOC
 msgid "Show TOC"
+msgstr ""
+
+#: components/Blocks/Listing/index
+# defaultMessage: Show Tag
+msgid "Show Tag"
 msgstr ""
 
 #: components/Blocks/SiteData/schema
