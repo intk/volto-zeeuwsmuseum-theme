@@ -99,15 +99,17 @@ export class BreadcrumbsComponent extends Component {
   render() {
     let parentURL = '';
     let selfURL = '';
-    const parentID = this.props.parentData['@id'];
-    const selfID = this.props.content['@id'];
-    if (parentID !== undefined) {
-      const parts = parentID.split('/');
-      parentURL = '/' + parts.slice(3).join('/');
-    }
-    if (selfID !== undefined) {
-      const parts = selfID.split('/');
-      selfURL = '/' + parts.slice(3).join('/');
+    if (this.props.content != undefined) {
+      const parentID = this.props.parentData['@id'];
+      const selfID = this.props.content['@id'];
+      if (parentID !== undefined) {
+        const parts = parentID.split('/');
+        parentURL = '/' + parts.slice(3).join('/');
+      }
+      if (selfID !== undefined) {
+        const parts = selfID.split('/');
+        selfURL = '/' + parts.slice(3).join('/');
+      }
     }
 
     return (
