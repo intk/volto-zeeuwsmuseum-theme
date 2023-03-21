@@ -156,7 +156,7 @@ export class BreadcrumbsComponent extends Component {
                   active
                 >
                   <div className="breadtitle">
-                    <span>{this.props.menuItems.title}</span>
+                    <span>{this.props.content.title}</span>
                   </div>
                 </Breadcrumb.Section>
               </Breadcrumb>
