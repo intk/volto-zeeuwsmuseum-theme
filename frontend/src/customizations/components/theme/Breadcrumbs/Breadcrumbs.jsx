@@ -13,7 +13,11 @@ import { compose } from 'redux';
 import { Breadcrumb, Container, Segment } from 'semantic-ui-react';
 import { defineMessages, injectIntl } from 'react-intl';
 import { getBreadcrumbs } from '@plone/volto/actions';
-import { getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
+import {
+  getBaseUrl,
+  hasApiExpander,
+  flattenToAppURL,
+} from '@plone/volto/helpers';
 import { BsChevronCompactRight } from 'react-icons/bs';
 import { Dropdown, Menu, Accordion, Form } from 'semantic-ui-react';
 import { FaChevronDown, FaRegHandScissors } from 'react-icons/fa';
@@ -103,12 +107,10 @@ export class BreadcrumbsComponent extends Component {
       const parentID = this.props.parentData['@id'];
       const selfID = this.props.content['@id'];
       if (parentID !== undefined) {
-        const parts = parentID.split('/');
-        parentURL = '/' + parts.slice(3).join('/');
+        parentURL = flattenToAppURL(this?.props?.parentData['@id']);
       }
       if (selfID !== undefined) {
-        const parts = selfID.split('/');
-        selfURL = '/' + parts.slice(3).join('/');
+        selfURL = flattenToAppURL(this?.props?.content['@id']);
       }
     }
 
@@ -211,13 +213,7 @@ export class BreadcrumbsComponent extends Component {
                                 item['@type'] == 'Document'
                               ) {
                                 if (item['@id'] != null) {
-                                  let itemID = item['@id'];
-                                  if (itemID !== undefined) {
-                                    const parts = itemID.split('/');
-                                    let itemURL =
-                                      '/' + parts.slice(3).join('/');
-                                    item.url = itemURL;
-                                  }
+                                  item.url = flattenToAppURL(item['@id']);
                                   menuArray.push(item);
                                 }
                               }
