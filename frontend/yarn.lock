@@ -1770,6 +1770,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eeacms/volto-block-image-cards@npm:0.6.3":
+  version: 0.6.3
+  resolution: "@eeacms/volto-block-image-cards@npm:0.6.3"
+  dependencies:
+    "@eeacms/volto-block-style": "*"
+    "@eeacms/volto-object-widget": "*"
+    react-lazy-load-image-component: ^1.4.0
+    react-resize-detector: 6.7.6
+    react-slick: ^0.24.0
+    slick-carousel: ^1.8.1
+    volto-slate: "*"
+  peerDependencies:
+    classnames: 2.2.6
+    react-loadable: 5.5.0
+    uuid: 8.3.1
+  checksum: e697747886edac6145bb8b2cca7363b296b5e168a0052df06a1ae016ea9bb75b7130f01402b36678500a3b659008480c4b83054b2c0a425865e4bf29a0c28f6c
+  languageName: node
+  linkType: hard
+
 "@eeacms/volto-block-style@npm:*":
   version: 4.1.2
   resolution: "@eeacms/volto-block-style@npm:4.1.2"
@@ -12041,6 +12060,7 @@ __metadata:
   dependencies:
     "@eeacms/volto-accordion-block": "*"
     "@eeacms/volto-block-divider": ^2.0.0
+    "@eeacms/volto-block-image-cards": 0.6.3
     "@eeacms/volto-columns-block": ^6.0.2
     "@eeacms/volto-matomo": "*"
     "@eeacms/volto-pdf-block": ^1.0.0
@@ -20059,6 +20079,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-lazy-load-image-component@npm:^1.4.0":
+  version: 1.5.6
+  resolution: "react-lazy-load-image-component@npm:1.5.6"
+  dependencies:
+    lodash.debounce: ^4.0.8
+    lodash.throttle: ^4.1.1
+  peerDependencies:
+    react: ^15.x.x || ^16.x.x || ^17.x.x || ^18.x.x
+    react-dom: ^15.x.x || ^16.x.x || ^17.x.x || ^18.x.x
+  checksum: 2db8dd56e5926c4831e58b05650e310fd8eabc24607716ad7ffda3e0f6b325434edb098ad27068ea8db7f42fec37bc17eaffbaf562a322e6f1ace16dcc3d5422
+  languageName: node
+  linkType: hard
+
 "react-lifecycles-compat@npm:^3.0.2, react-lifecycles-compat@npm:^3.0.4":
   version: 3.0.4
   resolution: "react-lifecycles-compat@npm:3.0.4"
@@ -20208,6 +20241,21 @@ __metadata:
   version: 0.9.0
   resolution: "react-refresh@npm:0.9.0"
   checksum: 6440146176f19402ffb7d66f317e40b1c42c88579b4d439b49021e38be6307c642da3e8732a72e6997b6bb1127db0da92f4aa433da4313ce8ebad0c1efa2ed4a
+  languageName: node
+  linkType: hard
+
+"react-resize-detector@npm:6.7.6":
+  version: 6.7.6
+  resolution: "react-resize-detector@npm:6.7.6"
+  dependencies:
+    "@types/resize-observer-browser": ^0.1.6
+    lodash.debounce: ^4.0.8
+    lodash.throttle: ^4.1.1
+    resize-observer-polyfill: ^1.5.1
+  peerDependencies:
+    react: ^16.0.0 || ^17.0.0
+    react-dom: ^16.0.0 || ^17.0.0
+  checksum: f2a7b0fbd43fb872f9f283fa9a5ea796c33daeb254ea368a46082a44c0c51e2492e8e67e88df9ca098072e541dc2d1ff5653edc26ed95d7a2da138cd8975a6a1
   languageName: node
   linkType: hard
 

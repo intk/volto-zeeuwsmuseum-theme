@@ -35,7 +35,8 @@
     "@eeacms/volto-block-divider",
     "@kitconcept/volto-text-with-background-color-block",
     "volto-slate:asDefault",
-    "volto-multilingual-widget"
+    "volto-multilingual-widget",
+    "@eeacms/volto-block-image-cards"
   ],
   "jest": {
     "modulePathIgnorePatterns": [
@@ -140,6 +141,7 @@
   "dependencies": {
     "@eeacms/volto-accordion-block": "*",
     "@eeacms/volto-block-divider": "^2.0.0",
+    "@eeacms/volto-block-image-cards": "0.6.3",
     "@eeacms/volto-columns-block": "^6.0.2",
     "@eeacms/volto-matomo": "*",
     "@eeacms/volto-pdf-block": "^1.0.0",
