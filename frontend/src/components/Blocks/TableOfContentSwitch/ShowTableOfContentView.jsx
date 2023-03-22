@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const ShowTableOfContentView = (props) => {
@@ -13,15 +13,11 @@ const ShowTableOfContentView = (props) => {
     } else {
       setShowTOC('NO');
     }
-  }, [TOC]);
+  }, [TOC, changedPath.pathname]);
 
-  React.useEffect(() => {
-    const updateAttributes = async () => {
-      document.body.setAttribute('show-table-of-content', showTOC);
-    };
-
-    updateAttributes();
-  }, [showTOC, changedPath.pathname]);
+  useLayoutEffect(() => {
+    document.body.setAttribute('show-table-of-content', showTOC);
+  }, [showTOC]);
 
   return null;
 };
