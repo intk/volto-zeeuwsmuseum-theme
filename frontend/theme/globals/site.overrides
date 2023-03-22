@@ -10,6 +10,7 @@
 .view-editview .content-area {
   .documentFirstHeading {
     border: none !important;
+    // margin-top: 55px;
   }
 
   .documentFirstHeading::before {
@@ -440,7 +441,7 @@
   left: 50%;
   margin-right: -50vw !important;
   margin-left: -50vw !important;
-  padding: 100px 50px 50px 50px;
+  padding: 0px 50px 50px 50px;
   #list-title h1 {
     text-align: center;
     margin-bottom: 50px;
@@ -898,3 +899,12 @@
 
 /* ********END OF FOOTER SECTION***********
 -------------------------------------- */
+
+
+body[page-type="listingPage"] {
+  .documentFirstHeading{
+    padding-top: 42px;
+    padding-bottom: 62px;
+    text-align: center;
+  }
+}

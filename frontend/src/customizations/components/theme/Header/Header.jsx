@@ -87,13 +87,7 @@ const Header = (props) => {
 
   const dispatch = useDispatch();
 
-  // React.useEffect(() => {
-  //   setParentPage(true);
-  //   // setShowTOC('NO');
-  // }, [changedPath.pathname]);
-
   React.useEffect(() => {
-    // showTOC === 'NO' &&
     dispatch(getBlockContent(parentPath)).then((response) => {
       let data = response;
       setParentData(response);
@@ -110,16 +104,13 @@ const Header = (props) => {
   }, [changedPath.pathname]);
 
   useLayoutEffect(() => {
-    for (let x in props.content.blocks) {
-      if (props.content.blocks[x]['@type'] === 'listing') {
-        setShowTOC('NO');
-      }
-    }
-  });
-  useLayoutEffect(() => {
-    for (let x in props.content.blocks) {
-      if (props.content.blocks[x]['@type'] === 'showTableOfContent') {
+    document.body.setAttribute('page-type', '');
+    for (let block in props.content.blocks) {
+      if (props.content.blocks[block]['@type'] === 'showTableOfContent') {
         setParentPage(true);
+      } else if (props.content.blocks[block]['@type'] === 'listing') {
+        setShowTOC('NO');
+        document.body.setAttribute('page-type', 'listingPage');
       }
     }
   });
