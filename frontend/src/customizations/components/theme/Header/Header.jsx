@@ -105,8 +105,8 @@ const Header = (props) => {
 
   useLayoutEffect(() => {
     document.body.setAttribute('page-type', '');
-    for (let block in props.content.blocks) {
-      if (props.content.blocks[block]['@type'] === 'showTableOfContent') {
+    for (let block in props.content?.blocks) {
+      if (props.content?.blocks[block]['@type'] === 'showTableOfContent') {
         setParentPage(true);
       } else if (props.content.blocks[block]['@type'] === 'listing') {
         setShowTOC('NO');
