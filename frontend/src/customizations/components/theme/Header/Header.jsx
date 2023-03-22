@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-unused-vars */
 /* eslint-disable eqeqeq */
@@ -7,7 +8,7 @@
  * @module components/theme/Header/Header
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { Segment } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -86,10 +87,10 @@ const Header = (props) => {
 
   const dispatch = useDispatch();
 
-  React.useEffect(() => {
-    setParentPage(true);
-    // setShowTOC('NO');
-  }, [changedPath.pathname]);
+  // React.useEffect(() => {
+  //   setParentPage(true);
+  //   // setShowTOC('NO');
+  // }, [changedPath.pathname]);
 
   React.useEffect(() => {
     // showTOC === 'NO' &&
@@ -106,10 +107,22 @@ const Header = (props) => {
         }
       }
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [changedPath.pathname]);
 
-  // console.log(parentData)
+  useLayoutEffect(() => {
+    for (let x in props.content.blocks) {
+      if (props.content.blocks[x]['@type'] === 'listing') {
+        setShowTOC('NO');
+      }
+    }
+  });
+  useLayoutEffect(() => {
+    for (let x in props.content.blocks) {
+      if (props.content.blocks[x]['@type'] === 'showTableOfContent') {
+        setParentPage(true);
+      }
+    }
+  });
 
   React.useEffect(() => {
     document.body.setAttribute('show-table-of-content', showTOC);
