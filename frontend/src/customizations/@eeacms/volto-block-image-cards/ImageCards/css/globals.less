@@ -1,0 +1,76 @@
+@type: 'extra';
+@element: 'custom';
+
+@import (multiple, reference, optional) '../../theme.config';
+
+/* Enables customization of addons */
+.loadAddonOverrides() {
+  @import (optional)
+    '@{siteFolder}/../addons/@{addon}/@{addontype}s/@{addonelement}.overrides';
+}
+
+/* Helper to load variables */
+.loadAddonVariables() {
+  @import (optional) '@{addonelement}.variables';
+  @import (optional)
+    '@{siteFolder}/../addons/@{addon}/@{addontype}s/@{addonelement}.variables';
+}
+
+#sidebar {
+  .image-wrapper {
+    position: relative;
+    height: 100px;
+    margin-top: 1em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 6px;
+
+    .ui.button.remove-image {
+      position: absolute;
+      top: 7px;
+      right: 7px;
+      margin: 0;
+      box-shadow: none;
+
+      &:hover {
+        background-color: transparent !important;
+      }
+
+      svg {
+        padding: 2px;
+        border: 1px solid #e4e8ec;
+        margin: 0;
+        background: #f3f5f7;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 8px;
+        opacity: 1;
+      }
+    }
+  }
+
+  .align-widget {
+    .eight.wide.column > div {
+      display: flex !important;
+      align-items: center;
+    }
+
+    .ui.icon.button {
+      padding: 4px !important;
+      margin-left: 4px !important;
+      border-radius: 1px !important;
+
+      &:hover {
+        background-color: #edf1f2 !important;
+      }
+    }
+
+    .ui.buttons:first-child .ui.icon.button {
+      margin-left: 0;
+    }
+
+    .ui.active.basic.icon.button {
+      border: 1px solid #2996da;
+      background: transparent !important;
+    }
+  }
+}

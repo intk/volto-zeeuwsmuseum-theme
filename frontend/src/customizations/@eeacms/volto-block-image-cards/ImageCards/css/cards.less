@@ -1,0 +1,21 @@
+@import 'globals.less';
+
+@addon: 'volto-addons';
+@addontype: 'imagecard';
+@addonelement: 'cards';
+
+.loadAddonVariables();
+
+@media only screen and (max-width: @tabletBreakpoint) {
+  .ui.cards {
+    &.two,
+    &.three,
+    &.four {
+      .card {
+        width: calc(100% - 2rem) !important;
+      }
+    }
+  }
+}
+
+.loadAddonOverrides();

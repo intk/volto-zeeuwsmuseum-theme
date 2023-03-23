@@ -1,0 +1,22 @@
+@roundTiledMarginBottom: 1rem !important;
+@roundTiledTextAlign: center;
+
+@roundTiledTitleMarginTop: 2rem;
+@roundTiledTitleMarginBottom: 1rem;
+@roundTiledTitleFontSize: 44px;
+
+@cardsWidth: 100%;
+
+@cardMarginBottom: 3rem;
+
+@cardImageWidth: 10rem;
+@cardImageHeight: 10rem;
+@cardImageMargin: 0 auto;
+@cardImageBorderRadius: 50%;
+
+@cardTitleMarginTop: 2rem;
+@cardTitleColor: #333;
+@cardTitleFontFamily: @pageFont;
+@cardTitleFontSize: 22px;
+@cardTitleFontWeight: normal;
+@cardTitleDecoration: underline;

@@ -1,0 +1,49 @@
+@sliderWrapperHeight: 600px;
+@sliderWrapperMobileHeight: 450px;
+
+@slideOverlayBackground: #000;
+@slideOverlayOpacity: 0.4;
+@slideOverlayMobileBackground: #000;
+
+@slideImgHeight: @sliderWrapperHeight;
+
+@slideTitleFontFamily: @headerFont;
+@slideTitleFontSize: 40px;
+@slideTitleMobileFontSize: 30px;
+@slideTitleFontWeight: bold;
+@slideTitleLineHeight: 1.2;
+@slideTitleMarginBottom: 1rem;
+@slideTitleMarginMobileBottom: 2rem;
+
+@slideBodyBottomPosition: 36%;
+@slideBodyBottomMobilePosition: 50%;
+@slideBodyColor: #fff;
+
+@slideDescriptionMaxWidth: 750px;
+@slideDescriptionFontSize: 24px;
+@slideDescriptionMobileFontSize: 24px;
+@slideDescriptionFontWeight: 400;
+@slideDescriptionLineHeight: 1.2;
+@slideDescriptionLinkColor: #fff;
+
+@slideCopyrightBottomMargin: 0 !important;
+@slideCopyrightBottomPosition: 0;
+@slideCopyrightMobileBottomPosition: 25%;
+@slideCopyrightColor: #fff;
+@slideCopyrightFontSize: 11px;
+@slideCopyrightFontStyle: italic;
+@slideCopyrightOpacity: 0.8;
+@slideCopyrightTextShadow: 1px 1px 1px #000;
+
+@imageGalleryNavBottomPosition: -2.5rem;
+@imageGalleryNavMobileBottomPosition: 100px !important;
+@imageGalleryNavSmallMobileBottomPosition: 140px !important;
+@imageGalleryButtonsColor: #fff;
+
+@sliderArrowBottomPosition: 23%;
+@sliderArrowMobileBottomPosition: 16%;
+@sliderArrowColor: #fff;
+
+@sliderArrowLeftArrowPosition: -20px;
+@sliderArrowRightArrowPosition: -30px;
+

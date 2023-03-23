@@ -1,0 +1,194 @@
+@import 'globals.less';
+
+@addon: 'volto-addons';
+@addontype: 'imagecard';
+@addonelement: 'carousel';
+
+.loadAddonVariables();
+
+& {
+  .slide-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // background: @slideOverlayBackground;
+    // opacity: @slideOverlayOpacity;
+
+    @media (max-width: 600px) {
+      background: @slideOverlayMobileBackground;
+    }
+  }
+
+  .slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 0;
+    min-width: 100%;
+    // max-width: 100%;
+    // width: 100%;
+    height: @sliderWrapperHeight;
+
+    @media (max-width: 600px) {
+      height: @sliderWrapperMobileHeight;
+    }
+
+    .slider-slide {
+      .slide-img {
+        height: @slideImgHeight;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .slider-caption {
+        position: absolute;
+        right: @slideBodyRightPosition;
+        bottom: @slideBodyBottomPosition;
+        left: @slideBodyLeftPosition;
+
+        @media (max-width: 600px) {
+          bottom: @slideBodyBottomMobilePosition;
+        }
+      }
+
+      .slide-body {
+        color: @slideBodyColor;
+        text-align: left;
+
+        .slide-title {
+          margin-bottom: @slideTitleMarginBottom;
+          font-family: @slideTitleFontFamily;
+          font-size: @slideTitleFontSize;
+          font-weight: @slideTitleFontWeight;
+          line-height: @slideTitleLineHeight;
+
+          @media (max-width: 768px) {
+            margin-bottom: @slideTitleMarginMobileBottom;
+            font-size: @slideTitleMobileFontSize;
+          }
+        }
+
+        .slide-description,
+        .slide-description > p {
+          max-width: @slideDescriptionMaxWidth;
+          font-size: @slideDescriptionFontSize;
+          font-weight: @slideDescriptionFontWeight;
+          line-height: @slideDescriptionLineHeight;
+
+          @media (max-width: 768px) {
+            font-size: @slideDescriptionMobileFontSize;
+          }
+        }
+
+        > a {
+          color: @slideDescriptionLinkColor;
+        }
+      }
+
+      .slide-copyright {
+        position: absolute;
+        right: @slideCopyrightRightPosition;
+        bottom: @slideCopyrightBottomPosition;
+        left: @slideCopyrightLeftPosition;
+        margin-bottom: @slideCopyrightBottomMargin;
+        color: @slideCopyrightColor;
+        font-size: @slideCopyrightFontSize !important;
+        font-style: @slideCopyrightFontStyle;
+        opacity: @slideCopyrightOpacity;
+        text-shadow: @slideCopyrightTextShadow;
+
+        a {
+          color: @slideCopyrightColor;
+        }
+
+        @media (max-width: 600px) {
+          bottom: @slideCopyrightMobileBottomPosition;
+        }
+      }
+    }
+  }
+
+  .image-gallery-slide-wrapper {
+    position: relative;
+  }
+
+  .image-gallery-custom-left-nav,
+  .image-gallery-custom-right-nav {
+    top: unset;
+    bottom: @imageGalleryNavBottomPosition;
+
+    @media screen and (max-width: 600px) {
+      bottom: @imageGalleryNavMobileBottomPosition;
+    }
+
+    @media screen and (max-width: 480px) {
+      bottom: @imageGalleryNavSmallMobileBottomPosition;
+    }
+  }
+
+  .image-gallery-fullscreen-button:hover::before,
+  .image-gallery-custom-left-nav:hover::before,
+  .image-gallery-play-button:hover::before,
+  .image-gallery-custom-right-nav:hover::before {
+    color: @imageGalleryButtonsColor;
+  }
+
+  .image-gallery-slides {
+    white-space: normal !important;
+  }
+}
+
+.slider-slide {
+  position: relative;
+}
+
+.slider-arrow {
+  position: absolute;
+  right: 0;
+  bottom: @sliderArrowBottomPosition;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+
+  .left-arrow,
+  .right-arrow {
+    position: relative;
+    border: 0;
+    margin-bottom: 0;
+    appearance: none;
+    background-color: transparent;
+    color: @sliderArrowColor;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .left-arrow {
+    left: @sliderArrowLeftArrowPosition;
+  }
+
+  .right-arrow {
+    left: @sliderArrowRightArrowPosition;
+  }
+
+  @media (max-width: 600px) {
+    bottom: @sliderArrowMobileBottomPosition;
+  }
+}
+
+.full-width {
+  position: relative;
+  right: 50%;
+  left: 50%;
+  width: 100vw !important;
+  max-width: initial !important;
+  margin-right: -50vw !important;
+  margin-left: -50vw !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #ccc;
+}
+
+.loadAddonOverrides();
