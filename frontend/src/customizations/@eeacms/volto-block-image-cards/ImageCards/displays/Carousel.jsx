@@ -135,10 +135,10 @@ const Carousel = (props) => {
                         {serializeNodes(card.text)}
                       </div>
                     )}
+                    <div className="slide-copyright">
+                      {serializeNodes(card.copyright)}
+                    </div>
                   </div>
-                </div>
-                <div className="slide-copyright ui container">
-                  {serializeNodes(card.copyright)}
                 </div>
               </div>
             ))}
