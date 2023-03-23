@@ -17,7 +17,7 @@
     // opacity: @slideOverlayOpacity;
 
     @media (max-width: 600px) {
-      background: @slideOverlayMobileBackground;
+      // background: @slideOverlayMobileBackground;
     }
   }
 
@@ -42,13 +42,23 @@
       }
 
       .slider-caption {
+        // position: absolute;
+        // right: @slideBodyRightPosition;
+        // bottom: @slideBodyBottomPosition;
+        // left: @slideBodyLeftPosition;
         position: absolute;
-        right: @slideBodyRightPosition;
-        bottom: @slideBodyBottomPosition;
-        left: @slideBodyLeftPosition;
+        bottom: 0px;
+        width: 100%;
+        height: 70px;
+        box-sizing: border-box;
+        padding-left: 40px;
+        background-color: #00000099;
+        word-wrap: break-word;
+        display: flex;
+        align-items: center;
 
         @media (max-width: 600px) {
-          bottom: @slideBodyBottomMobilePosition;
+          // bottom: @slideBodyBottomMobilePosition;
         }
       }
 
@@ -57,27 +67,38 @@
         text-align: left;
 
         .slide-title {
-          margin-bottom: @slideTitleMarginBottom;
-          font-family: @slideTitleFontFamily;
-          font-size: @slideTitleFontSize;
-          font-weight: @slideTitleFontWeight;
-          line-height: @slideTitleLineHeight;
+          color: #ffffff99;
+          font-family: 'UniversCn', Arial, sans-serif;
+          font-size: 19.008px;
+          letter-spacing: 0.9504px;
+          line-height: 25px;
+          text-transform: none;
+          margin-top: unset !important;
+          margin-bottom: unset !important;
 
           @media (max-width: 768px) {
-            margin-bottom: @slideTitleMarginMobileBottom;
-            font-size: @slideTitleMobileFontSize;
+              // padding-left: 20px !important;
+              font-size: 1rem !important;
+              letter-spacing: 0.05em !important;
+              line-height: 1rem !important;
           }
         }
 
         .slide-description,
         .slide-description > p {
-          max-width: @slideDescriptionMaxWidth;
-          font-size: @slideDescriptionFontSize;
-          font-weight: @slideDescriptionFontWeight;
-          line-height: @slideDescriptionLineHeight;
-
+            color: #ffffff99;
+            font-family: 'UniversCn', Arial, sans-serif;
+            font-size: 1rem;
+            letter-spacing: 0.9504px;
+            line-height: 25px;
+            text-transform: none;
+            margin-top: unset !important;
+            margin-bottom: unset !important;
           @media (max-width: 768px) {
-            font-size: @slideDescriptionMobileFontSize;
+            // padding-left: 10px !important;
+            font-size: 0.8rem !important;
+            letter-spacing: 0.05em !important;
+            line-height: 1rem !important;
           }
         }
 
