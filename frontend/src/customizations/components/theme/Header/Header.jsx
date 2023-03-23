@@ -23,6 +23,7 @@ import config from '@plone/volto/registry';
 import { getBlockContent } from '../../../../actions/index';
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
 // This function determines the direction of the page scrolling
 // We then pass the result to the Segments className
@@ -78,7 +79,7 @@ const Header = (props) => {
     },
   });
 
-  const [showTOC, setShowTOC] = useState('NO');
+  const [showTOC, setShowTOC] = useState(false);
   const [parentPage, setParentPage] = useState(false);
   const pathname = props.pathname;
   const parentPath = pathname.split('/').slice(0, -1).join('/');
@@ -87,37 +88,37 @@ const Header = (props) => {
 
   const dispatch = useDispatch();
 
-  React.useEffect(() => {
+  useLayoutEffect(() => {
     dispatch(getBlockContent(parentPath)).then((response) => {
-      let data = response;
       setParentData(response);
-      for (const blockKey in data.blocks) {
-        if (
-          data.blocks.hasOwnProperty(blockKey) &&
-          data.blocks[blockKey]['@type'] === 'showTableOfContent'
-        ) {
-          setShowTOC('YES');
-          setParentPage(false);
-        }
-      }
     });
   }, [changedPath.pathname]);
 
-  useLayoutEffect(() => {
-    document.body.setAttribute('page-type', '');
-    for (let block in props.content?.blocks) {
-      if (props.content?.blocks[block]['@type'] === 'showTableOfContent') {
-        setParentPage(true);
-      } else if (props.content.blocks[block]['@type'] === 'listing') {
-        setShowTOC('NO');
-        document.body.setAttribute('page-type', 'listingPage');
+  useEffect(() => {
+    let TOCswitch = false;
+    let data = parentData;
+
+    for (const blockKey in data.blocks) {
+      if (
+        data.blocks.hasOwnProperty(blockKey) &&
+        data.blocks[blockKey]['@type'] === 'showTableOfContent'
+      ) {
+        TOCswitch = true;
+        document.body.setAttribute('show-table-of-content', TOCswitch);
+        setParentPage(false);
       }
     }
-  });
-
-  React.useEffect(() => {
-    document.body.setAttribute('show-table-of-content', showTOC);
-  }, [showTOC, changedPath.pathname]);
+    if (TOCswitch === false) {
+      for (let block in props.content?.blocks) {
+        if (props.content?.blocks[block]['@type'] === 'showTableOfContent') {
+          setParentPage(true);
+          TOCswitch = true;
+          document.body.setAttribute('show-table-of-content', TOCswitch);
+        }
+      }
+    }
+    setShowTOC(TOCswitch);
+  }, [parentData, props.content?.blocks]);
 
   return (
     <Segment
@@ -152,13 +153,15 @@ const Header = (props) => {
         </div>
       </container>
       {/* This section is to render Breadcrumbs conditionally */}
-      <Breadcrumbs
-        pathname={props.pathname}
-        menuItems={props.menuItems}
-        parentPage={parentPage}
-        showTOC={showTOC}
-        parentData={parentData}
-      />
+      {showTOC && (
+        <Breadcrumbs
+          pathname={props.pathname}
+          menuItems={props.menuItems}
+          parentPage={parentPage}
+          showTOC={showTOC}
+          parentData={parentData}
+        />
+      )}
     </Segment>
   );
 };

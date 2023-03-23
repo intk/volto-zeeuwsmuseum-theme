@@ -309,15 +309,3 @@
     border: unset !important;
   }
 }
-
-#breadcrumb-container.ui.secondary.vertical.segment, #TOCnavigation{
-  display: none !important
-}
-body[show-table-of-content="YES"]{
-  #breadcrumb-container.ui.secondary.vertical.segment{
-    display: flex !important;
-  }
-  #TOCnavigation{
-    display: block !important;
-  }
-}
