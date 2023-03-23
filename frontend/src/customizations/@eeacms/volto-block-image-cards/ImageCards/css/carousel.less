@@ -28,15 +28,15 @@
     min-width: 100%;
     // max-width: 100%;
     // width: 100%;
-    height: @sliderWrapperHeight;
+    height: 56.26vw !important;
 
     @media (max-width: 600px) {
-      height: @sliderWrapperMobileHeight;
+      // height: 56.26vw !important;
     }
 
     .slider-slide {
       .slide-img {
-        height: @slideImgHeight;
+        height: 56.26vw !important;
         background-position: center;
         background-size: cover;
       }
@@ -250,6 +250,75 @@
 .slick-next:before {
   color: #ccc;
 }
+.slick-slider{
+  position: static !important;
+}
 
 .loadAddonOverrides();
 
+// .slider-wrapper,.slider-slide .slide-img
+
+// The solution for the Broken Edit Page
+// #page-add-translation {
+
+//   .slider-wrapper,
+//     .slider-slide .slide-img {
+//     // display: none !important;
+//     position: static;
+//     width: calc(40vw - var(--scrollbarWidth));
+//     // max-width: 100%;
+//     right: unset !important;
+//     left: unset !important;
+//     margin-right: unset !important;
+//     margin-left: unset !important;
+//     padding-left: 0%;
+//   }
+// }
+
+/* Hack for escape the blocks container in blocks full width */
+// ***********************************************
+// .slider-wrapper,
+// .slider-slide .slide-img{
+//   position: relative;
+//   width: calc(100vw - var(--scrollbarWidth));
+//   right: 50%;
+//   left: 50%;
+//   margin-right: -50vw !important;
+//   margin-left: -50vw !important;
+// }
+
+.has-toolbar .slider-wrapper,.has-toolbar .slider-slide .slide-img {
+  width: calc(100vw - var(--scrollbarWidth) - 40px) !important;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.has-toolbar-collapsed .slider-wrapper, .has-toolbar-collapsed .slider-slide .slide-img {
+  width: calc(100vw - var(--scrollbarWidth) - 10px) !important;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.view-editview.has-sidebar.has-toolbar .slider-wrapper ,.view-editview.has-sidebar.has-toolbar .slider-slide .slide-img{
+  width: calc(100vw - var(--scrollbarWidth) - 220px) !important;
+  padding-left: 230px;
+  padding-right: 220px;
+}
+
+.view-editview.has-sidebar.has-toolbar-collapsed .slider-wrapper, .view-editview.has-sidebar.has-toolbar-collapsed .slider-slide .slide-img {
+  width: calc(100vw - var(--scrollbarWidth) - 195px) !important;
+  padding-left: 200px;
+  padding-right: 195px;
+}
+
+.view-editview.has-sidebar-collapsed.has-toolbar .slider-wrapper, .view-editview.has-sidebar-collapsed.has-toolbar .slider-slide .slide-img {
+  width: calc(100vw - var(--scrollbarWidth) - 50px) !important;
+  padding-left: 55px;
+  padding-right: 50px;
+}
+
+.view-editview.has-sidebar-collapsed.has-toolbar-collapsed .slider-wrapper, .view-editview.has-sidebar-collapsed.has-toolbar-collapsed .slider-slide .slide-img {
+  width: calc(100vw - var(--scrollbarWidth) - 20px) !important;
+  padding-left: 25px;
+  padding-right: 25px;
+}
