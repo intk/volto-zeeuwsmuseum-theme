@@ -92,6 +92,7 @@ div.ui.pointing.secondary.stackable {
 
 span.hamburger-box {
   height: 45px;
+  width: 50px;
 }
 
 .hamburger-inner::before {
@@ -359,15 +360,74 @@ span.hamburger-box {
   }
 }
 
-// Adjusting the width according to the toolbar
-@media only screen and (min-width: 767px) {
-  .has-toolbar #navigation .mobile-menu {
-    padding-left: 70px !important;
+.has-mobile-menu-open #header-wrapper {
+  .hamburger-wrapper.mobile {
+    position: static !important;
   }
 
-  .has-toolbar-collapsed #navigation .mobile-menu {
-    padding-left: 20px !important;
+  #navigation .mobile-menu {
+    position: static !important;
+  }
+
+  #navigation .mobile-menu-nav {
+    position: static !important;
+  }
+
+  .mobile-menu-nav .ui.pointing.secondary.stackable.menu {
+    position: static !important;
+  }
+
+  .logo-nav-wrapper {
+    display: block !important;
+  }
+
+  .hamburger-wrapper.mobile {
+    width: 50px;
+    position: absolute !important;
+    right: 0%;
+    top: 0%;
+  }
+  .logo {
+    background-color: @white;
+    width: 50%;
+    position: relative;
+    z-index: 99;
+  }
+
+}
+
+&.has-toolbar-menu-open,
+&.has-mobile-menu-open {
+
+  // The body scroll locker when the toolbar or the mobile menu are active in mobile.
+  @media only screen and (max-width: @largestMobileScreen) {
+    overflow:auto !important;
   }
 }
 
-//****************************************
+
+
+// .mobile-menu-enter {
+//   transform: translate(0%, -100%);
+// }
+
+// .mobile-menu-enter.mobile-menu-enter-active {
+// }
+
+// .mobile-menu-enter-done {
+//   transform: translate(0%, 0%);
+//   transition: transform 0.5s ease-in-out;
+// }
+
+// .mobile-menu-exit {
+//   transform: translate(0%, 0%);
+//   transition: transform 0.8s ease-in-out;
+//   // transition-delay: 2s;
+// }
+
+// .mobile-menu-exit.mobile-menu-exit-active {
+//   transform: translate(0%, -100%);
+//   transition: transform 0.8s ease-in-out;
+// }
+
+

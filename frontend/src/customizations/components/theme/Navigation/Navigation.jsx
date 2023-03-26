@@ -40,8 +40,6 @@ const messages = defineMessages({
  * @extends Component
  */
 
-let menuArray = [];
-
 class Navigation extends Component {
   state = { activeIndex: 0 };
 
@@ -150,18 +148,6 @@ class Navigation extends Component {
 
   render() {
     const { activeIndex } = this.state;
-    // let parentURL = '';
-    // let selfURL = '';
-    // const parentID = this.props.parentData['@id'];
-    // const selfID = this.props.content['@id'];
-    // if (parentID !== undefined) {
-    //   const parts = parentID.split('/');
-    //   parentURL = '/' + parts.slice(3).join('/');
-    // }
-    // if (selfID !== undefined) {
-    //   const parts = selfID.split('/');
-    //   selfURL = '/' + parts.slice(3).join('/');
-    // }
 
     return (
       <nav className="navigation" id="navigation" aria-label="navigation">
@@ -196,6 +182,7 @@ class Navigation extends Component {
             </span>
           </button>
         </div>
+
         <Menu
           stackable
           pointing
@@ -211,9 +198,10 @@ class Navigation extends Component {
             </div>
           </div>
         </Menu>
+
         <CSSTransition
           in={this.state.isMobileMenuOpen}
-          timeout={500}
+          // timeout={500}
           classNames="mobile-menu"
           unmountOnExit
         >
@@ -261,121 +249,6 @@ class Navigation extends Component {
                   ) : (
                     <NavItem item={item} lang={this.lang} key={item.id} />
                   ),
-                )}
-
-                {/* This section is to render Breadcrumbs conditionally */}
-                {this.props.content != undefined ? (
-                  this.props.content['@type'] == 'Document' ? (
-                    <Segment id="TOCnavigation">
-                      <Menu stackable pointing secondary>
-                        <Accordion className="item simple">
-                          <Accordion.Title
-                            active={activeIndex === 0}
-                            index={0}
-                            onClick={this.handleClick}
-                          >
-                            INHOUD <FaChevronDown />
-                          </Accordion.Title>
-                          <Accordion.Content
-                            active={activeIndex === 0}
-                            onClick={this.closeMobileMenu}
-                          >
-                            {/* {this.props.parentPage === false ? (
-                              <li>
-                                <NavItem
-                                  item={parentURL}
-                                  key={'navigation' + parentURL}
-                                  id="gfas"
-                                  lang={this.lang}
-                                />
-                              </li>
-                            ) : (
-                              <li>
-                                <NavItem
-                                  item={selfURL}
-                                  key={'navigation' + selfURL}
-                                  id="sadf"
-                                  lang={this.lang}
-                                />
-                              </li>
-                            )} */}
-
-                            {(() => {
-                              if (this.props.parentPage === false) {
-                                menuArray = [];
-                                if (this.props.parentData.items != undefined) {
-                                  for (let item of this.props.parentData
-                                    .items) {
-                                    if (
-                                      menuArray.includes(item) == false &&
-                                      item['@type'] == 'Document'
-                                    ) {
-                                      let itemID = item['@id'];
-                                      if (itemID !== undefined) {
-                                        const parts = itemID.split('/');
-                                        let itemURL =
-                                          '/' + parts.slice(3).join('/');
-                                        item.url = itemURL;
-                                      }
-                                      menuArray.push(item);
-                                    }
-                                  }
-                                }
-                              } else {
-                                menuArray = [];
-                                if (this.props.menuItems.items != undefined) {
-                                  for (let item of this.props.menuItems.items) {
-                                    if (
-                                      menuArray.includes(item) == false &&
-                                      item['@type'] == 'Document'
-                                    ) {
-                                      menuArray.push(item);
-                                    }
-                                  }
-                                }
-                              }
-                            })()}
-                            <ul className="accordionbreadcrumblist">
-                              {/* {this.props.parentPage === false ? (
-                                <li>
-                                  <NavItem
-                                    item={this.props.parentData}
-                                    url={parentURL}
-                                    key={'navigation' + parentURL}
-                                    id="gfas"
-                                    lang={this.lang}
-                                  />
-                                </li>
-                              ) : (
-                                <li>
-                                  <NavItem
-                                    item={selfURL}
-                                    key={'navigation' + selfURL}
-                                    id="sadf"
-                                    lang={this.lang}
-                                  />
-                                </li>
-                              )} */}
-                              {[...menuArray].map((x, i) => (
-                                <li>
-                                  <NavItem
-                                    item={x}
-                                    lang={this.lang}
-                                    key={x.title}
-                                    id="x"
-                                  />
-                                </li>
-                              ))}
-                            </ul>
-                          </Accordion.Content>
-                        </Accordion>
-                      </Menu>
-                    </Segment>
-                  ) : (
-                    ''
-                  )
-                ) : (
-                  ''
                 )}
               </Menu>
             </div>
