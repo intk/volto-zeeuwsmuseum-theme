@@ -14,7 +14,7 @@
   }
 
   .documentFirstHeading::before {
-    position: unset !important;
+    display: none !important;
   }
 
   box-sizing: border-box;
