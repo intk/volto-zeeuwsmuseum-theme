@@ -434,6 +434,17 @@
 
 // For the Listing Block Type
 // ********************************
+
+.has-toolbar-collapsed{
+  #page-listing{
+    padding-left: 46px !important;
+  }
+}
+.has-toolbar{
+  #page-listing {
+    padding-left: 86px !important;
+  }
+}
 #page-listing {
   position: relative;
   width: calc(100vw - var(--scrollbarWidth));
