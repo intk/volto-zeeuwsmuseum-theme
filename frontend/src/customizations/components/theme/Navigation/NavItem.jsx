@@ -11,7 +11,7 @@ const NavItem = ({ item, lang, id }) => {
     return (
       <NavLink
         to={item.url === '' ? '/' : item.url}
-        key={item.url}
+        key={'navlink' + item.url}
         className="accordion item simple"
         id={id}
         activeClassName="active"
@@ -26,7 +26,7 @@ const NavItem = ({ item, lang, id }) => {
     return (
       <a
         href={item.url}
-        key={item.url}
+        key={'navlinkk' + item.url}
         className="item simple"
         rel="noopener noreferrer"
         id={id}

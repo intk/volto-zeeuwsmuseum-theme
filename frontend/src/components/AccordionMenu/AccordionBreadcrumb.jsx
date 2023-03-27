@@ -238,7 +238,12 @@ export class AccordionBreadcrumb extends Component {
                 </li>
                 {[...menuArray].map((x, i) => (
                   <li>
-                    <NavItem item={x} lang={this.lang} key={x.url} id="x" />
+                    <NavItem
+                      item={x}
+                      lang={this.lang}
+                      key={'accordionnavitem' + x.url}
+                      id="x"
+                    />
                   </li>
                 ))}
               </ul>
