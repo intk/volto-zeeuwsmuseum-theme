@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { defineMessages, injectIntl } from 'react-intl';
-import { Menu, Accordion, Segment } from 'semantic-ui-react';
+import { Menu, Accordion } from 'semantic-ui-react';
 import cx from 'classnames';
 import { BodyClass, getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
