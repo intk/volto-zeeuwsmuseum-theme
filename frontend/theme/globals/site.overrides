@@ -442,7 +442,8 @@
 }
 .has-toolbar{
   #page-listing {
-    padding-left: 86px !important;
+    padding-left: 76px !important;
+    width: calc(96vw - var(--scrollbarWidth)) !important;
   }
 }
 #page-listing {
