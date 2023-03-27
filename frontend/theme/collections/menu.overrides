@@ -353,12 +353,7 @@ span.hamburger-box {
 
 }
 
-// The mobile menu disappears when the screen is wide
-@media only screen and (min-width: 1145px) {
-  .mobile-menu{
-    display: none !important;
-  }
-}
+
 
 .has-mobile-menu-open #header-wrapper {
   .hamburger-wrapper.mobile {
@@ -378,7 +373,7 @@ span.hamburger-box {
   }
 
   .logo-nav-wrapper {
-    display: block !important;
+    display: block;
   }
 
   .hamburger-wrapper.mobile {
@@ -394,6 +389,19 @@ span.hamburger-box {
     z-index: 99;
   }
 
+}
+
+// The mobile menu disappears when the screen is wide
+@media only screen and (min-width: 1145px) {
+  .mobile-menu {
+    display: none !important;
+  }
+  .has-mobile-menu-open #header-wrapper .logo-nav-wrapper {
+    display: flex !important;
+  }
+  .logo{
+    width: auto !important;
+  }
 }
 
 &.has-toolbar-menu-open,
