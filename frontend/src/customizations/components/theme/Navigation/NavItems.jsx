@@ -26,15 +26,15 @@ const NavItems = ({ items, lang }) => {
             open={open}
             onFocus={closeMobileMenu}
             onBlur={closeMobileMenu}
-            key={item.url}
+            key={'navItemDropdown' + item.url}
             icon={<FaChevronDown color="#808080" />}
           >
-            <Dropdown.Menu key={item.url}>
+            <Dropdown.Menu key={'navitemsdropdownmenu' + item.url}>
               {item.items.map((dropdownitem) => (
                 <NavItem
                   item={dropdownitem}
                   lang={lang}
-                  key={dropdownitem.url}
+                  key={'navitemdropdown' + dropdownitem.url}
                   id="dropdownItemA"
                 />
               ))}

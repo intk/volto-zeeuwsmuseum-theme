@@ -201,7 +201,7 @@ class Navigation extends Component {
 
         <CSSTransition
           in={this.state.isMobileMenuOpen}
-          // timeout={500}
+          timeout={0}
           classNames="mobile-menu"
           unmountOnExit
         >
@@ -219,26 +219,32 @@ class Navigation extends Component {
                 <AccordionLanguageSelector />
                 {this.props.items.map((item) =>
                   item && item.items && item.items.length > 0 ? (
-                    <Accordion active className="item simple">
+                    <Accordion
+                      // active
+                      className="item simple"
+                      key={'accordion' + item.title}
+                    >
                       <Accordion.Title
                         active={activeIndex === item.title}
                         index={item.title}
                         onClick={this.handleClick}
-                        activeClassName="active"
+                        // activeClassName="active"
                         className={this.activeClassName ? 'active' : ''}
+                        key={'accordiontitlekey' + item.title}
                       >
                         {item.title} <FaChevronDown />
                       </Accordion.Title>
                       <Accordion.Content
                         active={activeIndex === item.title}
                         onClick={this.closeMobileMenu}
-                        onClosing={this.handleClick}
+                        // onClosing={this.handleClick}
+                        key={'accordioncontentkey' + item.title}
                       >
                         {item.items.map((dropdownitem) => (
                           <NavItem
                             item={dropdownitem}
                             lang={this.lang}
-                            key={dropdownitem.id}
+                            key={'navItem' + dropdownitem.url}
                             id="dropdownItemA"
                           />
                         ))}
@@ -247,7 +253,11 @@ class Navigation extends Component {
                   ) : item.title === 'Home' ? (
                     ''
                   ) : (
-                    <NavItem item={item} lang={this.lang} key={item.id} />
+                    <NavItem
+                      item={item}
+                      lang={this.lang}
+                      key={'homeNavItem' + item.url}
+                    />
                   ),
                 )}
               </Menu>
