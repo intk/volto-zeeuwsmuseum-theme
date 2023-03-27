@@ -117,6 +117,7 @@ const Header = (props) => {
         }
       }
     }
+    document.body.setAttribute('show-table-of-content', TOCswitch);
     setShowTOC(TOCswitch);
   }, [parentData, props.content?.blocks]);
 
