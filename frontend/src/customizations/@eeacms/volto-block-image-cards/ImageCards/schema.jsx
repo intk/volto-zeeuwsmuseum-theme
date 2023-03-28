@@ -43,7 +43,6 @@ const ImageCards = (props) => {
     template,
     display_types_obj[template].title || template,
   ]);
-  console.log(display_types);
   const selected_renderer = props && props.data.display;
   const schema =
     (selected_renderer && display_types_obj[selected_renderer].schema) ||
