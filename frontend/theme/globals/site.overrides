@@ -443,7 +443,7 @@
 .has-toolbar{
   #page-listing {
     padding-left: 76px !important;
-    width: calc(96vw - var(--scrollbarWidth)) !important;
+    width: calc(98vw - var(--scrollbarWidth)) !important;
   }
 }
 #page-listing {
