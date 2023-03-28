@@ -5,7 +5,7 @@ import { Icon, UniversalLink } from '@plone/volto/components';
 import { BodyClass } from '@plone/volto/helpers';
 import { serializeNodes } from 'volto-slate/editor/render';
 import { getScaleUrl, getPath } from '../utils';
-import { CommonCarouselschemaExtender } from './../CommonAssets/schema';
+import { CommonCarouselschemaExtender } from '../CommonAssets/schema';
 import cx from 'classnames';
 
 import leftSVG from '@plone/volto/icons/left-key.svg';
@@ -49,7 +49,7 @@ const Arrows = (props) => {
   );
 };
 
-const Carousel = (props) => {
+const RoundTiled = (props) => {
   const { data, editable } = props;
   const {
     cards,
@@ -89,6 +89,7 @@ const Carousel = (props) => {
       )}
     >
       <BodyClass className="has-carousel" />
+      <BodyClass className="has-fullscreenSlideshow" />
       <div
         className={cx({
           'full-width': data.align === 'full',
@@ -152,9 +153,9 @@ const Carousel = (props) => {
   );
 };
 
-export default Carousel;
+export default RoundTiled;
 
-Carousel.schemaExtender = (schema, data, intl) => {
+RoundTiled.schemaExtender = (schema, data, intl) => {
   const Common = CommonCarouselschemaExtender({ data, schema, intl });
 
   return {

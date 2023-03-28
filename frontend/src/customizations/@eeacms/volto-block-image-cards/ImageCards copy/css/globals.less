@@ -74,3 +74,54 @@
     }
   }
 }
+
+// Slideshow Content Types View
+// ***********************************************
+.view-viewview.has-fullscreenSlideshow,
+.view-editview.has-fullscreenSlideshow {
+
+  .documentFirstHeading,
+  #footer,
+  p {
+    display: none !important;
+  }
+
+  #main {
+    height: 100% !important;
+  }
+
+  #header-wrapper {
+    position: relative !important;
+    display: block !important;
+    height: 110px !important;
+  }
+
+  .imagecards-block,
+  .slider-wrapper,
+  .slider-slide .slide-img {
+    height: calc(100vh - 115px) !important;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+
+    img {
+      height: calc(100vh - 115px) !important;
+    }
+  }
+
+  .ui.basic.segment.content-area {
+    height: calc(100vh - 120px) !important;
+    padding-bottom: 0px;
+    margin-top: 5px !important;
+    margin-bottom: 0px;
+  }
+
+  .teaser-item-title {
+    bottom: 0px;
+  }
+
+  .ui.secondary.vertical.segment.breadcrumbs {
+    border-bottom: none;
+  }
+}
+
+// ***********************************************
