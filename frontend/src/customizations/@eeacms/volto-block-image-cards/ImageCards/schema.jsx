@@ -43,6 +43,8 @@ const ImageCards = (props) => {
     template,
     display_types_obj[template].title || template,
   ]);
+  display_types[0][1] = 'Fullscreen Slideshow';
+  display_types[1][1] = 'Slideshow';
   const selected_renderer = props && props.data.display;
   const schema =
     (selected_renderer && display_types_obj[selected_renderer].schema) ||
