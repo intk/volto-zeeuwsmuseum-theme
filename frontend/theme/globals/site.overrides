@@ -921,7 +921,7 @@
 /* ********END OF FOOTER SECTION***********
 -------------------------------------- */
 
-/* ********* Fix for the pdf reader block's width problem
+/* ********* Fix for the pdf reader block's width problem*/
 #page-document .pdf canvas{
   width: 100% !important;
 }
