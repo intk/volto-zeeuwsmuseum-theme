@@ -315,6 +315,11 @@
     transform: translateX(-50%);
   }
 }
+.view-viewview .columns-view .block.image.align.center{
+  img{
+    max-width: 100% !important;
+  }
+}
 
 .view-viewview .content-area{
   .slate-table-block {
