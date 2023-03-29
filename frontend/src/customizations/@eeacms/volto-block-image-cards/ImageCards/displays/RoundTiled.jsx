@@ -106,7 +106,7 @@ const RoundTiled = (props) => {
                       ? {
                           backgroundImage: `url(${getScaleUrl(
                             getPath(card.attachedimage),
-                            image_scale || 'large',
+                            image_scale || 'great',
                           )})`,
                           height: `${height}px`,
                         }

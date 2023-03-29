@@ -36,7 +36,7 @@ const Card = ({ card = {}, height, image_scale, mode = 'view' }) => {
             className="bg-image"
             src={getScaleUrl(
               getPath(card.attachedimage),
-              image_scale || 'large',
+              image_scale || 'great',
             )}
           />
         </LinkWrapper>
