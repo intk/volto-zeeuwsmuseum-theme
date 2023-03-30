@@ -275,13 +275,13 @@
 //   }
 // }
 
-.has-toolbar .slider-wrapper,.has-toolbar .slider-slide .slide-img {
+.has-toolbar:not(.has-fullscreenSlideshow.has-mobile-menu-open) .slider-wrapper,.has-toolbar:not(.has-fullscreenSlideshow.has-mobile-menu-open)  .slider-slide .slide-img {
   width: calc(100vw - var(--scrollbarWidth) - 40px) !important;
   padding-left: 40px;
   padding-right: 40px;
 }
 
-.has-toolbar-collapsed .slider-wrapper, .has-toolbar-collapsed .slider-slide .slide-img {
+.has-toolbar-collapsed:not(.has-fullscreenSlideshow.has-mobile-menu-open) .slider-wrapper, .has-toolbar-collapsed .slider-slide .slide-img {
   width: calc(100vw - var(--scrollbarWidth) - 10px) !important;
   padding-left: 10px;
   padding-right: 10px;

@@ -24,25 +24,38 @@
 }
 
 // Here is for the hiding action
-.is-anonymous {
-  .ui.basic.segment.header-wrapper {
-    position: fixed !important;
-    width: 100%;
-    top: 0;
-    transition-duration: 300ms;
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
-  .ui.container.header-container {
-    z-index: 99999 !important;
-    background-color: @white;
-  }
-  }
-  .ui.basic.segment.header-wrapper.hide {
-    top: -560px;
-  }
-  .content-are{
-    margin-top: 60px;
-  }
+.ui.basic.segment.header-wrapper {
+  position: fixed !important;
+  width: 100%;
+  top: 0;
+  transition-duration: 300ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+.ui.container.header-container {
+  z-index: 99999 !important;
+  background-color: @white;
 }
+}
+.ui.basic.segment.header-wrapper.hide {
+  top: -560px;
+}
+.content-are{
+  margin-top: 60px;
+}
+
+.has-toolbar:not(.has-fullscreenSlideshow) #header-wrapper {
+  width: calc(100% - 80px) !important;
+}
+.has-toolbar-collapsed:not(.has-fullscreenSlideshow) #header-wrapper {
+  width: calc(100% - 20px) !important;
+}
+.has-toolbar.has-mobile-menu-open.has-fullscreenSlideshow .ui.basic.segment.header-wrapper span.hamburger-box{
+  right: 80px !important;
+}
+.has-toolbar-collapsed.has-mobile-menu-open.has-fullscreenSlideshow .ui.basic.segment.header-wrapper span.hamburger-box{
+  right: 20px !important;
+}
+
 // End of hiding action

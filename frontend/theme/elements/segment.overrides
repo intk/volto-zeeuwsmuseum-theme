@@ -1,13 +1,13 @@
-body.is-anonymous {
+body{
   .ui.segment.content-area {
     margin-top: 60px !important;
     padding-top: 0%;
   }
 }
 
-body.is-anonymous[show-table-of-content = 'true']{
+body[show-table-of-content = 'true']{
   .ui.segment.content-area{
-    margin-top: 120px !important;
+    margin-top: 115px !important;
     padding-top: 0%;
   }
 }
