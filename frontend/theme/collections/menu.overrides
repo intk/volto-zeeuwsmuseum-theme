@@ -34,7 +34,7 @@ div.ui.pointing.secondary.stackable {
   color: @black !important;
 
   :hover {
-    color: @blue !important;
+    color: @primary-color !important;
     background: @white !important;
   }
 }
@@ -259,7 +259,7 @@ span.hamburger-box {
 
 #navigation .mobile-menu-nav .ui.pointing.secondary {
   .active.title {
-    color: @blue !important;
+    color: @primary-color !important;
   }
 
   .ui.segment {

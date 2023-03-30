@@ -12,7 +12,8 @@
 @grey-dark : #929292;
 @grey : #c3c3c3;
 @grey-light : #ececec;
-@blue : #7bb0e7;
+// @primary-color : #7bb0e7;
+@primary-color : #5f9953;
 @white : #ffffff;
 @black : #000000;
 

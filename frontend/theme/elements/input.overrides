@@ -55,7 +55,7 @@
     min-width: 87px !important;
     right: -15px;
     left: -24px;
-    border-top: 1px solid @blue;
+    border-top: 1px solid @primary-color;
   }
 
   .ui.form .searchbox.field{

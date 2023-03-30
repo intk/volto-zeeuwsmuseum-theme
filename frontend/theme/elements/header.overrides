@@ -16,6 +16,7 @@
 #logo-written {
   font-size: 30px;
   padding: 11px 0 6px 25px ;
+  color: @primary-color;
 }
 
 #navigation .ui.secondary.pointing.menu{

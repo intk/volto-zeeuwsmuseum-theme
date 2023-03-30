@@ -35,7 +35,7 @@
 
     :hover {
       svg {
-        fill: @blue !important;
+        fill: @primary-color !important;
       }
     }
 
@@ -80,7 +80,7 @@
     letter-spacing: 0.1em;
 
     .parenttitle:hover {
-      color: @blue !important;
+      color: @primary-color !important;
     }
 
     .divider {
@@ -146,7 +146,7 @@
 
     a:hover {
       background-color: @white !important;
-      color: @blue;
+      color: @primary-color;
     }
   }
 
@@ -294,7 +294,7 @@
   }
 
   div.menu.transition {
-    border-top: 1px solid @blue !important;
+    border-top: 1px solid @primary-color !important;
   }
 
 
