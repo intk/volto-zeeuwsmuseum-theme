@@ -393,10 +393,10 @@ span.hamburger-box {
 }
 
 // The mobile menu disappears when the screen is wide
-@media only screen and (min-width: 1165px) {
-  // .mobile-menu {
-  //   display: none !important;
-  // }
+@media only screen and (min-width: @computerBreakpoint) {
+  .mobile-menu {
+    display: none !important;
+  }
   .has-mobile-menu-open #header-wrapper .logo-nav-wrapper {
     display: flex !important;
   }

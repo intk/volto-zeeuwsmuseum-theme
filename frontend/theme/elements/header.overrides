@@ -1,7 +1,6 @@
 #header-wrapper{
   padding: 0%;
   z-index: 9 !important;
-
   max-width: 100vw;
 }
 
@@ -45,17 +44,29 @@
   margin-top: 60px;
 }
 
-.has-toolbar:not(.has-fullscreenSlideshow) #header-wrapper {
-  width: calc(100% - 80px) !important;
+@media only screen and (min-width: @tabletBreakpoint) {
+  .has-toolbar #header-wrapper {
+    width: calc(100% - 80px) !important;
+  }
+
+  .has-toolbar-collapsed #header-wrapper {
+    width: calc(100% - 20px) !important;
+  }
 }
-.has-toolbar-collapsed:not(.has-fullscreenSlideshow) #header-wrapper {
-  width: calc(100% - 20px) !important;
+
+@media only screen and (max-width: @tabletBreakpoint){
+  .has-toolbar .ui.basic.segment.header-wrapper {
+    top: 100px !important;
+  }
+  .has-toolbar-collapsed .ui.basic.segment.header-wrapper {
+    top: 20px !important;
+  }
 }
-.has-toolbar.has-mobile-menu-open.has-fullscreenSlideshow .ui.basic.segment.header-wrapper span.hamburger-box{
-  right: 80px !important;
-}
-.has-toolbar-collapsed.has-mobile-menu-open.has-fullscreenSlideshow .ui.basic.segment.header-wrapper span.hamburger-box{
-  right: 20px !important;
-}
+// .has-toolbar.has-mobile-menu-open.has-fullscreenSlideshow .ui.basic.segment.header-wrapper span.hamburger-box{
+//   right: 80px !important;
+// }
+// .has-toolbar-collapsed.has-mobile-menu-open.has-fullscreenSlideshow .ui.basic.segment.header-wrapper span.hamburger-box{
+//   right: 20px !important;
+// }
 
 // End of hiding action

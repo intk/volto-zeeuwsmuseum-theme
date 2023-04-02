@@ -1,6 +1,12 @@
 @type: 'extra';
 @element: 'custom';
 
+@mobileBreakpoint : 320px;
+@tabletBreakpoint : 768px;
+@computerBreakpoint : 1145px;
+@largeMonitorBreakpoint : 1200px;
+@widescreenMonitorBreakpoint : 1920px;
+
 @import (multiple, reference, optional) '../../theme.config';
 
 /* Enables customization of addons */
@@ -79,8 +85,17 @@
 // ***********************************************
 .view-viewview.has-fullscreenSlideshow,
 .view-editview.has-fullscreenSlideshow {
+  .slider-wrapper {
+    padding-top: 120px !important;
+  }
+  .ui.segment.content-area {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+  }
   .slider-arrow{
-  .left-arrow {
+    bottom: 67%;
+    .left-arrow {
       left: 0px !important;
     }
 
@@ -99,40 +114,32 @@
     height: 100% !important;
   }
 
-  #header-wrapper {
-    position: relative !important;
-    display: block !important;
-    height: 110px !important;
-  }
-
   .imagecards-block,
   .slider-wrapper,
   .slider-slide .slide-img {
-    height: calc(100vh - 115px) !important;
+    height: calc(100vh) !important;
     padding-bottom: 0px !important;
     margin-bottom: 0px !important;
-    background-size: cover;
-    background-repeat: no-repeat;
 
-    img {
-      height: calc(100vh - 115px) !important;
-    }
+    // img {
+    //   height: calc(100vh) !important;
+    // }
   }
 
-  .ui.basic.segment.content-area {
-    height: calc(100vh - 120px) !important;
-    padding-bottom: 0px;
-    margin-top: 5px !important;
-    margin-bottom: 0px;
-  }
+  // .ui.basic.segment.content-area {
+  //   height: calc(100vh - 120px) !important;
+  //   padding-bottom: 0px;
+  //   margin-top: 5px !important;
+  //   margin-bottom: 0px;
+  // }
 
-  .teaser-item-title {
-    bottom: 0px;
-  }
+  // .teaser-item-title {
+  //   bottom: 0px;
+  // }
 
-  .ui.secondary.vertical.segment.breadcrumbs {
-    border-bottom: none;
-  }
+  // .ui.secondary.vertical.segment.breadcrumbs {
+  //   border-bottom: none;
+  // }
 }
 
 // ***********************************************
