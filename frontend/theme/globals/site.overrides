@@ -489,7 +489,7 @@
       margin-bottom: 10px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
       // flex-grow: 1 !important;
       // max-width: 60vw;
       flex-shrink: 0 !important;
