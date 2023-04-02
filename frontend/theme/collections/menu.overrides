@@ -137,6 +137,8 @@ span.hamburger-box {
 #navigation .mobile-menu-nav{
   height: auto !important;
   position: relative !important;
+  border-bottom: 0px !important;
+  border-left: 0px !important;
 }
 
 

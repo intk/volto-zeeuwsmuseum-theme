@@ -479,14 +479,17 @@
 
   #content-core {
     display: flex;
-    flex-direction: row !important;
+    // flex-direction: row !important;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
+    // align-items: stretch;
 
     .listing-items {
-      width: 33.3% !important;
-
+      width: calc(33.33% - 10px);
+      margin-bottom: 10px;
+      display: flex;
       flex-direction: column;
+      justify-content: space-between;
       flex-grow: 0 !important;
       flex-shrink: 0 !important;
       justify-content: flex-end;
@@ -499,6 +502,16 @@
       margin-bottom: 0%;
       box-shadow: none;
 
+      #jaarverslag-title{
+        height: 40px;
+        padding-top: 15px;
+        p{
+          margin-top: 5px;
+          margin-bottom: 5px;
+          line-height: 1rem;
+        }
+      }
+
       img {
         margin: 0% !important;
       }
@@ -510,8 +523,8 @@
       img {
         width: 100%;
         object-fit: cover;
-        height: 80%;
-        max-height: 350px;
+        height: auto;
+        aspect-ratio: 3 / 2;
       }
     }
   }
