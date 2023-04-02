@@ -48,9 +48,15 @@
   .has-toolbar #header-wrapper {
     width: calc(100% - 80px) !important;
   }
+  .has-toolbar.has-sidebar #header-wrapper {
+    width: calc(100% - 455px) !important;
+  }
 
   .has-toolbar-collapsed #header-wrapper {
     width: calc(100% - 20px) !important;
+  }
+  .has-toolbar-collapsed.has-sidebar #header-wrapper {
+    width: calc(100% - 395px) !important;
   }
 }
 
