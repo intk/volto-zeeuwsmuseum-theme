@@ -490,8 +490,8 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      flex-grow: 1 !important;
-      max-width: 60vw;
+      // flex-grow: 1 !important;
+      // max-width: 60vw;
       flex-shrink: 0 !important;
       justify-content: flex-end;
       padding-top: 0px !important;
