@@ -481,7 +481,6 @@
     display: flex;
     // flex-direction: row !important;
     flex-wrap: wrap;
-    justify-content: space-between;
     // align-items: stretch;
 
     .listing-items {
@@ -489,7 +488,7 @@
       margin-bottom: 10px;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      // justify-content: flex-start;
       // flex-grow: 1 !important;
       // max-width: 60vw;
       flex-shrink: 0 !important;
