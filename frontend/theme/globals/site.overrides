@@ -488,7 +488,6 @@
       margin-bottom: 10px;
       display: flex;
       flex-direction: column;
-      // justify-content: flex-start;
       // flex-grow: 1 !important;
       // max-width: 60vw;
       flex-shrink: 0 !important;
@@ -503,12 +502,18 @@
       box-shadow: none;
 
       #jaarverslag-title{
-        height: 40px;
+        height: 100px;
         padding-top: 15px;
+        h2{
+          margin-bottom: 5px !important;
+        }
+        a{
+          line-height: 1rem !important;
+        }
         p{
           margin-top: 5px;
           margin-bottom: 5px;
-          line-height: 1rem;
+          line-height: 1.5rem;
         }
       }
 
