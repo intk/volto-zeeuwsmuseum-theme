@@ -159,7 +159,7 @@
     "@kitconcept/volto-text-with-background-color-block": "*",
     "@mui/material": "5.11.6",
     "@mui/system": "5.10.12",
-    "@plone/volto": "16.6.0",
+    "@plone/volto": "16.18.0",
     "bootstrap": "5.2.2",
     "react-dropdown": "1.11.0",
     "react-icons": "4.4.0",
