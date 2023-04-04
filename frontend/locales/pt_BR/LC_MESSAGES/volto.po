@@ -97,7 +97,7 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
-#: components/Blocks/TableOfContentSwitch/ShowTableOfContentEdit
+#: components/Blocks/TableOfContentSwitch/TableOfContentEdit
 # defaultMessage: SHOW TABLE OF CONTENTS
 msgid "SHOW TABLE OF CONTENTS"
 msgstr ""
@@ -140,7 +140,7 @@ msgstr ""
 
 #: components/Blocks/TableOfContentSwitch/schema
 # defaultMessage: Show Table of Contents?
-msgid "showtableofcontents"
+msgid "tableofcontents"
 msgstr ""
 
 #: components/Blocks/TableOfContentSwitch/schema
