@@ -101,7 +101,7 @@ const Header = (props) => {
     for (const blockKey in data.blocks) {
       if (
         data.blocks.hasOwnProperty(blockKey) &&
-        data.blocks[blockKey]['@type'] === 'showTableOfContent'
+        data.blocks[blockKey]['@type'] === 'tableOfContent'
       ) {
         TOCswitch = true;
         document.body.setAttribute('show-table-of-content', TOCswitch);
@@ -110,7 +110,7 @@ const Header = (props) => {
     }
     if (TOCswitch === false) {
       for (let block in props.content?.blocks) {
-        if (props.content?.blocks[block]['@type'] === 'showTableOfContent') {
+        if (props.content?.blocks[block]['@type'] === 'tableOfContent') {
           setParentPage(true);
           TOCswitch = true;
           document.body.setAttribute('show-table-of-content', TOCswitch);
