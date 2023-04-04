@@ -1,3 +1,25 @@
+::-moz-selection {
+  color: white;
+  text-shadow: none;
+  background: @primary-color;
+}
+
+::selection {
+  color: white;
+  text-shadow: none;
+  background: @primary-color;
+}
+
+img::selection {
+  color: white;
+  background: transparent;
+}
+
+img::-moz-selection {
+  color: white;
+  background: transparent;
+}
+
 #toolbar .toolbar-content {
   z-index: 10;
 }
