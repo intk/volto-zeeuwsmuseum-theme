@@ -3,24 +3,24 @@ import { BlockDataForm, SidebarPortal } from '@plone/volto/components';
 import { getBaseUrl } from '@plone/volto/helpers';
 import { defineMessages, useIntl } from 'react-intl';
 import { Message, Header } from 'semantic-ui-react';
-import ShowTableOfContentView from './ShowTableOfContentView';
-import ShowTableOfContentEditSchema from './schema';
+import TableOfContentView from './TableOfContentView';
+import TableOfContentEditSchema from './schema';
 
 const messages = defineMessages({
-  showtableofcontents: {
+  tableofcontents: {
     id: 'SHOW TABLE OF CONTENTS',
     defaultMessage: 'SHOW TABLE OF CONTENTS',
   },
 });
 
-const ShowTableOfContentEdit = (props) => {
+const TableOfContentEdit = (props) => {
   const intl = useIntl();
   const { block, onChangeBlock, data = {}, selected } = props;
-  const schema = ShowTableOfContentEditSchema(props);
+  const schema = TableOfContentEditSchema(props);
 
   return (
     <>
-      <ShowTableOfContentView
+      <TableOfContentView
         {...props}
         path={getBaseUrl(props.pathname)}
         mode="edit"
@@ -29,7 +29,7 @@ const ShowTableOfContentEdit = (props) => {
         <Message.Content>
           <Header as="h6">
             {/* <Icon name={menuicon} size="15px" /> */}
-            {intl.formatMessage(messages.showtableofcontents)}
+            {intl.formatMessage(messages.tableofcontents)}
           </Header>
         </Message.Content>
       </Message>
@@ -50,4 +50,4 @@ const ShowTableOfContentEdit = (props) => {
     </>
   );
 };
-export default ShowTableOfContentEdit;
+export default TableOfContentEdit;

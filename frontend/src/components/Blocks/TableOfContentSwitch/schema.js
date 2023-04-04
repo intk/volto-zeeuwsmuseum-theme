@@ -3,7 +3,7 @@ import { defineMessages } from 'react-intl';
 
 const messages = defineMessages({
   showtoc: {
-    id: 'showtableofcontents',
+    id: 'tableofcontents',
     defaultMessage: 'Show Table of Contents?',
   },
   blockDescription: {
@@ -16,7 +16,7 @@ const messages = defineMessages({
   },
 });
 
-const ShowTableOfContentEditSchema = ({ intl }) => {
+const TableOfContentEditSchema = ({ intl }) => {
   return {
     title: intl.formatMessage(messages.showBlock),
     fieldsets: [
@@ -39,4 +39,4 @@ const ShowTableOfContentEditSchema = ({ intl }) => {
   };
 };
 
-export default ShowTableOfContentEditSchema;
+export default TableOfContentEditSchema;

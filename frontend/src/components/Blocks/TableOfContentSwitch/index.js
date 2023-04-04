@@ -1,15 +1,15 @@
-import ShowTableOfContentView from './ShowTableOfContentView';
-import ShowTableOfContentEdit from './ShowTableOfContentEdit';
+import TableOfContentView from './TableOfContentView';
+import TableOfContentEdit from './TableOfContentEdit';
 import themeSVG from '@plone/volto/icons/theme.svg';
 
-const InstallShowTableOfContent = (config) => {
-  config.blocks.blocksConfig.showTableOfContent = {
-    id: 'showTableOfContent',
-    title: 'Show Table of Content',
+const InstallTableOfContent = (config) => {
+  config.blocks.blocksConfig.tableOfContent = {
+    id: 'tableOfContent',
+    title: 'Table of Content',
     icon: themeSVG,
     group: 'site',
-    view: ShowTableOfContentView,
-    edit: ShowTableOfContentEdit,
+    view: TableOfContentView,
+    edit: TableOfContentEdit,
     restricted: false,
     mostUsed: false,
     // sidebarTab: 1,
@@ -22,4 +22,4 @@ const InstallShowTableOfContent = (config) => {
   return config;
 };
 
-export default InstallShowTableOfContent;
+export default InstallTableOfContent;
