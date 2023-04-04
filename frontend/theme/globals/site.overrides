@@ -694,14 +694,17 @@
         margin-top: 8px;
         margin-right: 2%;
         margin-bottom: 8px;
+        .titleWrapper{
+          margin-bottom: 15px;
+        }
 
         p#address {
-          padding-bottom: 17px;
+          padding-bottom: 7px;
         }
 
         p#phoneNumber {
           padding-bottom: 0%;
-          margin-bottom: 7px;
+          margin-bottom: 0px;
         }
 
         a#mailadress {
@@ -719,8 +722,13 @@
         margin-right: 0px;
         margin-top: 15px !important;
 
+        #footerTitle3{
+          padding-bottom: 10px;
+          line-height: 25px;
+        }
+
         .titleWrapper {
-          margin-bottom: 8px !important;
+          // margin-bottom: 8px !important;
           p{
             text-transform: uppercase;
           }
@@ -767,6 +775,8 @@
             flex-grow: 1;
             padding-left: 20px;
             border: 1px solid;
+            /* width: 80%; */
+            /* flex: 1 1 700px; */
           }
 
           button.submit-button {
@@ -832,7 +842,7 @@
   height: 30px !important;
   padding-bottom: 0% !important;
   border-bottom: 1px solid @primary-color;
-  margin-bottom: 20px !important;
+  margin-bottom: 7px !important;
 }
 
 #mailadress:hover {
