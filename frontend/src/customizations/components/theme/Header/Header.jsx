@@ -135,7 +135,13 @@ const Header = (props) => {
           <div className="logo-nav-wrapper">
             <div className="logo">
               <UniversalLink
-                href={settings.isMultilingual ? `/${props.lang}` : '/'}
+                // normally the link is /${props.lang}
+                href={
+                  settings.isMultilingual
+                    ? `https://www.zeeuwsmuseum.nl/${props.lang}`
+                    : '/'
+                }
+                target="_self"
                 title={props.intl.formatMessage(messages.site)}
                 key="homelinklogo"
               >

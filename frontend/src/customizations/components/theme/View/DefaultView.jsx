@@ -39,17 +39,17 @@ const DefaultView = ({ content, intl, location }) => {
   // if (content['@type'] === 'LRF' && typeof window !== undefined) {
   //   window.location.href = 'https://www.zeeuwsmuseum.nl';
   // }
-  // useEffect(() => {
-  //   const redirection = (event) => {
-  //     const languageToken = content.language?.token
-  //       ? content.language.token
-  //       : '';
-  //     if (content['@type'] === 'LRF') {
-  //       window.location.href = `https://www.zeeuwsmuseum.nl/${languageToken}`;
-  //     }
-  //   };
-  //   redirection();
-  // }, [content]);
+  useEffect(() => {
+    const redirection = (event) => {
+      const languageToken = content.language?.token
+        ? content.language.token
+        : '';
+      if (content['@type'] === 'LRF') {
+        window.location.href = `https://www.zeeuwsmuseum.nl/${languageToken}`;
+      }
+    };
+    redirection();
+  }, [content]);
 
   return hasBlocksData(content) ? (
     <div id="page-document" className="ui container">
