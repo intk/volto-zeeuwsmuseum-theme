@@ -10,7 +10,16 @@
 .view-editview .content-area {
   .documentFirstHeading {
     border: none !important;
-    padding-top: 42px;
+    padding-top: 45px;
+    margin-top: 30px !important;
+    font-size: 60px !important;
+  }
+  @media only screen and (max-width: 768px) {
+    .documentFirstHeading {
+      padding-top: 25px;
+      margin-top: 20px !important;
+      font-size: 35px !important;
+    }
   }
 
   .documentFirstHeading::before {
