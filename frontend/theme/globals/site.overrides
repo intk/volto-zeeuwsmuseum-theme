@@ -161,7 +161,30 @@
     line-height: 23px !important;
     text-align: center;
   }
+  #photo-credit.left{
+    text-align: left !important;
+  }
+  #photo-credit.right{
+    text-align: right !important;
+  }
 }
+
+.view-viewview {
+  #photo-credit.left {
+      width: 130% !important;
+      margin-right: auto;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #photo-credit.right {
+      width: 130% !important;
+      margin-right: auto;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+}
+
 .view-viewview .content-area{
   span {
       font-family: 'UniversLightCn', Arial, sans-serif;

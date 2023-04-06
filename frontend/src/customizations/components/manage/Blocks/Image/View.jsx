@@ -80,11 +80,25 @@ export const View = ({ data, detached }) => {
               return (
                 <>
                   {image}
-                  <p id="photo-credit">
-                    <br />
-                    {data.alt} <br />
-                    {data.copyright}
-                  </p>
+                  {data.textalign === 'left' ? (
+                    <p id="photo-credit" className="left">
+                      <br />
+                      {data.alt} <br />
+                      {data.copyright}
+                    </p>
+                  ) : data.textalign === 'right' ? (
+                    <p id="photo-credit" className="right">
+                      <br />
+                      {data.alt} <br />
+                      {data.copyright}
+                    </p>
+                  ) : (
+                    <p id="photo-credit">
+                      <br />
+                      {data.alt} <br />
+                      {data.copyright}
+                    </p>
+                  )}
                 </>
               );
             }

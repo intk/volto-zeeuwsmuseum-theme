@@ -25,6 +25,10 @@ const messages = defineMessages({
     id: 'Image size',
     defaultMessage: 'Image size',
   },
+  Textalign: {
+    id: 'Textalignment',
+    defaultMessage: 'Text Alignment',
+  },
   LinkTo: {
     id: 'Link to',
     defaultMessage: 'Link to',
@@ -50,7 +54,9 @@ export function ImageSchema({ formData, intl }) {
         id: 'default',
         title: 'Default',
         fields: [
-          ...(formData.url ? ['url', 'alt', 'copyright', 'align', 'size'] : []),
+          ...(formData.url
+            ? ['url', 'alt', 'copyright', 'align', 'size', 'textalign']
+            : []),
         ],
       },
       ...(formData.url
@@ -95,6 +101,10 @@ export function ImageSchema({ formData, intl }) {
       size: {
         title: intl.formatMessage(messages.size),
         widget: 'image_size',
+      },
+      textalign: {
+        title: intl.formatMessage(messages.Textalign),
+        widget: 'align',
       },
       href: {
         title: intl.formatMessage(messages.LinkTo),
