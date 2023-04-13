@@ -155,7 +155,14 @@ class Edit extends Component {
         )}
       >
         {data.url ? (
-          <Body data={this.props.data} isEditMode={true} />
+          <>
+            <Body data={this.props.data} isEditMode={true} />
+            <p id="photo-credit">
+              <br />
+              {data.alt} <br />
+              {data.copyright}
+            </p>
+          </>
         ) : (
           <Message>
             <center>
