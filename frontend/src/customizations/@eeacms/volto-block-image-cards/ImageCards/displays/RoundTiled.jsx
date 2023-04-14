@@ -114,33 +114,35 @@ const RoundTiled = (props) => {
                   }
                 />
                 <div className="slide-overlay"></div>
-                <div className="slider-caption">
-                  <div className="slide-body">
-                    {card.link ? (
-                      <UniversalLink href={card.link}>
+                {(card.title || card.text || card.copyright) && (
+                  <div className="slider-caption">
+                    <div className="slide-body">
+                      {card.link ? (
+                        <UniversalLink href={card.link}>
+                          <div className="slide-title">{card.title || ''}</div>
+                        </UniversalLink>
+                      ) : (
                         <div className="slide-title">{card.title || ''}</div>
-                      </UniversalLink>
-                    ) : (
-                      <div className="slide-title">{card.title || ''}</div>
-                    )}
-                    {/* Incomplete backward-compatibility: */}
-                    {card.text?.data ? (
-                      <div
-                        className="slide-description"
-                        dangerouslySetInnerHTML={{
-                          __html: card.text?.data || '',
-                        }}
-                      />
-                    ) : (
-                      <div className="slide-description">
-                        {serializeNodes(card.text)}
+                      )}
+
+                      {card.text?.data ? (
+                        <div
+                          className="slide-description"
+                          dangerouslySetInnerHTML={{
+                            __html: card.text?.data || '',
+                          }}
+                        />
+                      ) : (
+                        <div className="slide-description">
+                          {serializeNodes(card.text)}
+                        </div>
+                      )}
+                      <div className="slide-copyright">
+                        {serializeNodes(card.copyright)}
                       </div>
-                    )}
-                    <div className="slide-copyright">
-                      {serializeNodes(card.copyright)}
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             ))}
           </Slider>
