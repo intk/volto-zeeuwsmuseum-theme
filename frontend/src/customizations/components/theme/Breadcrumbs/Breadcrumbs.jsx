@@ -201,8 +201,7 @@ export class BreadcrumbsComponent extends Component {
                       )}
 
                       {/* this section adds either the children of the parent page or the
-                      children page of the page itself. depending on the position of the
-                      page; parent page of child page */}
+                      children page of the page itself. depending if the page is a parent page or not */}
                       {(() => {
                         if (this.props.parentPage === false) {
                           menuArray = [];

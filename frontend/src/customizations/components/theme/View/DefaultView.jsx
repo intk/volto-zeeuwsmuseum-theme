@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import { Container, Image } from 'semantic-ui-react';
 import { map } from 'lodash';
 import config from '@plone/volto/registry';
+import { NextPrevButtons } from '@package/components';
 
 import {
   getBlocksFieldname,
@@ -74,6 +75,7 @@ const DefaultView = ({ content, intl, location }) => {
           </div>
         );
       })}
+      <NextPrevButtons content={content} />
     </div>
   ) : (
     <Container id="page-document">

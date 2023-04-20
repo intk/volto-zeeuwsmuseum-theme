@@ -23,6 +23,7 @@ import AccordionLanguageSelector from './AccordionMenu/AccordionLanguageSelector
 // import installSiteDataEditBlock from './Blocks/SiteData/SiteDataEdit';
 import installBlocks from './Blocks';
 import SocialLinks from './theme/SocialLinks/SocialLinks';
+import NextPrevButtons from './theme/NextPrevButtons/NextPrevButtons';
 // import installListingBlock from './Blocks/Listing';
 export {
   EmptylineViewBlock,
@@ -36,5 +37,6 @@ export {
   AccordionLanguageSelector,
   installBlocks,
   SocialLinks,
+  NextPrevButtons,
   // installListingBlock,
 };
