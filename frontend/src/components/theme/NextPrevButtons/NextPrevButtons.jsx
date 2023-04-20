@@ -15,7 +15,6 @@ import { flattenToAppURL } from '@plone/volto/helpers';
 const NextPrevButtons = (props) => {
   const history = useHistory();
   const [showButtons, setShowButtons] = useState('false');
-  console.log(props)
 
   const handleScroll = () => {
     const breakpoint = window.innerWidth * 0.4;
