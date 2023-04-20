@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { Icon } from '@plone/volto/components';
 import leftSVG from '@plone/volto/icons/left-key.svg';
@@ -60,7 +62,12 @@ const NextPrevButtons = (props) => {
                 >
                   <Icon name={leftSVG} size="55px" />
                 </button>
-                <div className="extention-left">
+                <div
+                  className="extention-left"
+                  onClick={() =>
+                    handleButtonClick(props.content.previous_item['@id'])
+                  }
+                >
                   <h3>{props.content.previous_item.title}</h3>
                 </div>
               </>
@@ -80,7 +87,12 @@ const NextPrevButtons = (props) => {
                 >
                   <Icon name={rightSVG} size="55px" />
                 </button>
-                <div className="extention-right">
+                <div
+                  className="extention-right"
+                  onClick={() =>
+                    handleButtonClick(props.content.next_item['@id'])
+                  }
+                >
                   <h3>{props.content.next_item.title}</h3>
                 </div>
               </>
