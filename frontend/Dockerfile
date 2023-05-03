@@ -1,23 +1,17 @@
-# syntax=docker/dockerfile:1
 FROM node:16-slim as base
 FROM base as builder
 
-RUN <<EOF
-    apt-get update
-    buildDeps="python3 build-essential git ca-certificates"
-    apt-get install -y --no-install-recommends $buildDeps
-    rm -rf /var/lib/apt/lists/*
-EOF
+RUN apt-get update \
+    && buildDeps="python3 build-essential git ca-certificates" \
+    && apt-get install -y --no-install-recommends $buildDeps \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY --chown=node . /build/
 RUN corepack enable
 
 USER node
 WORKDIR /build
-RUN <<EOF
-    make install
-    yarn build
-EOF
+RUN make install && yarn build
 
 FROM base
 
@@ -26,14 +20,11 @@ LABEL maintainer="INTK <cihan@itsnotthatkind.org>" \
     org.label-schema.description="ZeeuwsMuseumProject frontend image." \
     org.label-schema.vendor="INTK"
 
-RUN <<EOF
-    apt-get update
-    buildDeps="busybox"
-    apt-get install -y --no-install-recommends $buildDeps
-    busybox --install -s
-    rm -rf /var/lib/apt/lists/*
-EOF
-
+RUN apt-get update \
+    && buildDeps="busybox" \
+    && apt-get install -y --no-install-recommends $buildDeps \
+    && busybox --install -s \
+    && rm -rf /var/lib/apt/lists/*
 
 USER node
 COPY --from=builder /build/ /app/
