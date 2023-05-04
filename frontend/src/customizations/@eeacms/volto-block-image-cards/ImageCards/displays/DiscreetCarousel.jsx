@@ -1,140 +1,146 @@
 import React from 'react';
-import { Popup, Image, Message } from 'semantic-ui-react';
-import ResponsiveContainer from '../ResponsiveContainer';
-
 import loadable from '@loadable/component';
-import { CommonCarouselschemaExtender } from './../CommonAssets/schema';
+import { Message } from 'semantic-ui-react';
+import { Icon, UniversalLink } from '@plone/volto/components';
+import { BodyClass } from '@plone/volto/helpers';
+import { serializeNodes } from 'volto-slate/editor/render';
+import { getScaleUrl, getPath } from '../utils';
+import { CommonCarouselschemaExtender } from '../CommonAssets/schema';
+import cx from 'classnames';
 
+import leftSVG from '@plone/volto/icons/left-key.svg';
+import rightSVG from '@plone/volto/icons/right-key.svg';
 import 'slick-carousel/slick/slick.css';
 import '../css/discreetcarousel.less';
-// import 'slick-carousel/slick/slick-theme.css';
-
-import { getScaleUrl, getPath } from '../utils';
 
 const Slider = loadable(() => import('react-slick'));
 
-const Card = ({ card = {}, height, image_scale, mode = 'view' }) => {
-  const { link, title } = card;
-
-  const LinkWrapper =
-    link && mode === 'view'
-      ? ({ children }) => (
-          <a href={link} target="_blank" rel="noreferrer" title={title}>
-            {children}
-          </a>
-        )
-      : ({ children }) => children;
-  const PopupWrapper = title
-    ? ({ children }) => <Popup content={title} trigger={children} on="hover" />
-    : ({ children }) => children;
+const Arrows = (props) => {
+  const { slider = {} } = props;
 
   return (
-    <div className="discreet-slide-img" style={{ height }}>
-      <PopupWrapper>
-        <LinkWrapper>
-          <Image
-            className="bg-image"
-            src={getScaleUrl(
-              getPath(card.attachedimage),
-              image_scale || 'great',
-            )}
-          />
-        </LinkWrapper>
-      </PopupWrapper>
+    <div className="slider-arrow">
+      <div className="ui container">
+        <button
+          className="left-arrow"
+          aria-label="Prev Slide"
+          onClick={() => {
+            if (slider.current) {
+              slider.current.slickPrev();
+            }
+          }}
+        >
+          <Icon name={leftSVG} size="55px" />
+        </button>
+
+        <button
+          className="right-arrow"
+          aria-label="Prev Slide"
+          onClick={() => {
+            if (slider.current) {
+              slider.current.slickNext();
+            }
+          }}
+        >
+          <Icon name={rightSVG} size="55px" />
+        </button>
+      </div>
     </div>
   );
 };
 
 const DiscreetCarousel = (props) => {
-  const { data = {}, editable = false } = props;
-  const [isClient, setIsClient] = React.useState(false);
+  const { data, editable } = props;
+  const { cards, image_scale, height = '600', fade = true, infinite = true, autoplay = true, hideArrows = false, pauseOnHover = true, autoplaySpeed = 10000, hideNavigationDots = true } = data;
+  const slider = React.useRef(null);
 
-  React.useEffect(() => setIsClient(true), []);
-  const {
-    cards = [],
-    fade,
-    image_scale,
-    pauseOnHover,
-    height = '100px',
-    itemsPerRow = 4,
-    autoplay = false,
-    infinite = false,
-    hideArrows = true,
-    autoplaySpeed = 3000,
-    hideNavigationDots = false,
-  } = data;
-
-  const carouselSettings = {
-    // speed: 800,
+  var settings = {
     fade: fade,
     infinite: infinite,
-    slidesToShow: Math.min(cards.length, itemsPerRow),
-    slidesToScroll: itemsPerRow,
-    dots: itemsPerRow > 1 && !hideNavigationDots,
-    autoplay: itemsPerRow > 1 && autoplay && !editable,
-    autoplaySpeed,
-    arrows: !hideArrows,
+    autoplay: autoplay && !editable,
     pauseOnHover: pauseOnHover,
-    useTransform: false,
+    autoplaySpeed: parseInt(autoplaySpeed),
+    dots: !hideNavigationDots,
+    slidesToShow: 1,
+    arrows: false, // we use custom arrows
+    slidesToScroll: 1,
     lazyLoad: 'ondemand',
-
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
   };
 
-  return !cards.length ? (
-    editable ? (
-      <Message>No cards</Message>
-    ) : (
-      ''
-    )
-  ) : (
-    <div className="discreet-carousel-spotlight">
-      <ResponsiveContainer>
-        {({ parentWidth }) => {
-          return parentWidth && isClient ? (
-            <div style={{ width: `${parentWidth - 100}px`, margin: '0 auto' }}>
-              <Slider {...carouselSettings}>
-                {cards.map((card) => (
-                  <Card
-                    mode={editable ? 'edit' : 'view'}
-                    card={card}
-                    height={height}
-                    image_scale={image_scale}
-                  />
-                ))}
-              </Slider>
-            </div>
-          ) : (
-            ''
-          );
-        }}
-      </ResponsiveContainer>
+  return cards && cards.length > 0 ? (
+    <div
+      className={cx(
+        'block align imagecards-block',
+        {
+          center: !Boolean(data.align),
+        },
+        data.align,
+      )}
+    >
+      <BodyClass className="has-carousel" />
+      <div
+        className={cx({
+          'full-width': data.align === 'full',
+        })}
+      >
+        <div className="slider-wrapper" style={{ height: `${height}px` }}>
+          <Slider {...settings} ref={slider}>
+            {(cards || []).map((card, index) => (
+              <div className="slider-slide" key={index}>
+                <div
+                  className="slide-img"
+                  style={
+                    card.attachedimage
+                      ? {
+                          backgroundImage: `url(${getScaleUrl(getPath(card.attachedimage), image_scale || 'great')})`,
+                          height: `${height}px`,
+                        }
+                      : {}
+                  }
+                />
+                <div className="slide-overlay"></div>
+                {(card.title || card.text || card.copyright) && (
+                  <div className="slider-caption">
+                    <div className="slide-body">
+                      {card.link ? (
+                        <UniversalLink href={card.link}>
+                          <div className="slide-title">{card.title || ''}</div>
+                        </UniversalLink>
+                      ) : (
+                        <div className="slide-title">{card.title || ''}</div>
+                      )}
+
+                      {card.text?.data ? (
+                        <div
+                          className="slide-description"
+                          dangerouslySetInnerHTML={{
+                            __html: card.text?.data || '',
+                          }}
+                        />
+                      ) : (
+                        <div className="slide-description">{serializeNodes(card.text)}</div>
+                      )}
+                      <div className="slide-copyright">{serializeNodes(card.copyright)}</div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </Slider>
+          <div className="slider-buttons">
+            <button className="button button1" href="#">
+              Boek je bezoek
+            </button>
+            <button className="button button2" href="#">
+              Ontdek het museum
+            </button>
+          </div>
+          {!hideArrows && cards.length > 1 && <Arrows slider={slider} />}
+        </div>
+      </div>
     </div>
+  ) : (
+    <>{editable ? <Message>No image cards</Message> : ''}</>
   );
 };
 
@@ -142,15 +148,6 @@ export default DiscreetCarousel;
 
 DiscreetCarousel.schemaExtender = (schema, data, intl) => {
   const Common = CommonCarouselschemaExtender({ data, schema, intl });
-
-  Common.properties.itemsPerRow = {
-    type: 'number',
-    title: 'Slides to show',
-    description: 'How many slides to show in one frame',
-    defaultValue: 4,
-  };
-
-  Common.fieldsets[0].fields.push('itemsPerRow');
 
   return {
     ...schema,

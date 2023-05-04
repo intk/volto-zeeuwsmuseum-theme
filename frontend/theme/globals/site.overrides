@@ -1015,3 +1015,10 @@
   letter-spacing: 0.05em !important;
   font-family: 'UniversRomans', Arial, sans-serif;
 }
+
+
+//Teaser Block
+.block.__grid .grid-teaser-item,
+.block.teaserGrid .grid-teaser-item {
+  flex-direction: row;
+}
