@@ -43,13 +43,13 @@
   font-style: normal;
 }
 
-// @font-face {
-//   font-family: 'UniversRoman';
-//   src: url('../assets/fonts/UniversLtstd.woff2') format('woff2'),
-//     url('../assets/fonts/UniversLtstd.woff') format('woff');
-//   font-weight: normal;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'UniversRomans';
+  src: url('../assets/fonts/UniversLtstd.woff2') format('woff2'),
+    url('../assets/fonts/UniversLtstd.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 /* END OF FONTS */

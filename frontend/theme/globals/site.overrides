@@ -1013,5 +1013,5 @@
   margin-bottom: 10px !important;
   padding-bottom: 15px !important;
   letter-spacing: 0.05em !important;
-  // font-family: 'UniversRoman', Arial, sans-serif;
+  font-family: 'UniversRomans', Arial, sans-serif;
 }
