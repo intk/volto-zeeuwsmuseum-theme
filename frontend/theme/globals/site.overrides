@@ -1006,12 +1006,12 @@
 }
 
 // event page
-#page-document p.event-when span{
+#page-document p.event-when, #page-document p.event-when span{
   font-size: 17px !important;
   line-height: 35px;
   color: #666666;
   margin-bottom: 10px !important;
   padding-bottom: 15px !important;
   letter-spacing: 0.05em !important;
-  font-family: 'UniversRoman', Arial, sans-serif !important;
+  // font-family: 'UniversRoman', Arial, sans-serif;
 }
