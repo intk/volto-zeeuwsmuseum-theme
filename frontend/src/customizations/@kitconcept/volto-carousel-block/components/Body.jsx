@@ -77,24 +77,40 @@ const CarouselBody = ({
                   <Icon name={navTreeSVG} size="24px" />
                 </Button>
               </Button.Group>
-              <Input placeholder={`${intl.formatMessage(messages.source)}...`} onClick={handleClick} onFocus={(e) => e.target.blur()} />
+              <Input
+                placeholder={`${intl.formatMessage(messages.source)}...`}
+                onClick={handleClick}
+                onFocus={(e) => e.target.blur()}
+              />
             </div>
           </div>
         </Message>
       )}
       {href && (
         <div className="grid-teaser-item top">
-          <MaybeWrap condition={!isEditMode} as={UniversalLink} href={href['@id']} target={data.openLinkInNewTab ? '_blank' : null} tabIndex={-1}>
+          <MaybeWrap
+            condition={!isEditMode}
+            as={UniversalLink}
+            href={href['@id']}
+            target={data.openLinkInNewTab ? '_blank' : null}
+            tabIndex={-1}
+          >
             <>
               {(href.hasPreviewImage || //Although we do not get this attribute any longer from the schema, we still keep it to ensure old content with that attribute still works
                 image ||
                 imageType === 'image' ||
                 imageType === 'preview_image') && (
                 <div className="grid-image-wrapper">
-                  <img src={flattenToAppURL(getTeaserImageURL(href, image, imageType))} alt="" loading="lazy" />
+                  <img
+                    src={flattenToAppURL(
+                      getTeaserImageURL(href, image, imageType),
+                    )}
+                    alt=""
+                    loading="lazy"
+                  />
                 </div>
               )}
-              <div className='title-wrapper'>
+              <div className="title-wrapper">
                 <h3>{data?.title}</h3>
                 {!dataBlock.hide_description && <p>{data?.description}</p>}
               </div>
