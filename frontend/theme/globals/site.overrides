@@ -1016,9 +1016,6 @@
   font-family: 'UniversRomans', Arial, sans-serif;
 }
 
-
-//Teaser Block
-.block.__grid .grid-teaser-item,
-.block.teaserGrid .grid-teaser-item {
+.block.__grid .grid-teaser-item, .block.teaserGrid .grid-teaser-item {
   flex-direction: row;
 }
