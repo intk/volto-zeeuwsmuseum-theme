@@ -62,7 +62,7 @@ const TeaserDefaultTemplate = (props) => {
 
                 <h2>{data?.title}</h2>
                 {!data.hide_description && <p>{data?.description}</p>}
-                <button className="content-button">{buttonMessage['button'][lang]}</button>
+                <button className={`content-button ${props.data.href[0]['@type']}`}>{buttonMessage['button'][lang]}</button>
               </div>
             </div>
           </MaybeWrap>

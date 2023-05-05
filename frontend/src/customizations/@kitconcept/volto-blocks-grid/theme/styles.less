@@ -1,0 +1,276 @@
+@blueArctic: #e2f1fd;
+@greySnow: #f3f5f7;
+@greySmoke: #e4e8ec;
+@grid-images-aspect-ratio: var(--grid-images-aspect-ratio, 16/9);
+@grid-images-object-position: var(--grid-images-object-position, top left);
+
+@import 'teaser';
+
+.block-editor-__grid {
+  position: relative;
+  // Removed because it broke the z-index of the blockChooser, making it fall behind
+  // z-index: 10;
+}
+
+.renderer-wrapper {
+  position: relative;
+  height: 100%;
+  border-radius: 6px;
+
+  &.empty {
+    background: @blueArctic;
+  }
+
+  &.selected::before {
+    position: absolute;
+    // otherwise, this layer is above the object, then it does not allow clicking inside
+    z-index: -1;
+    top: -5px;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    border: 1px solid rgba(120, 192, 215, 0.5);
+    border-radius: 3px;
+    content: '';
+  }
+
+  .block {
+    margin: 0;
+  }
+
+  .ui.basic.button.remove-block-button {
+    position: absolute;
+    z-index: 2;
+    top: 6px;
+    right: 2px;
+
+    .icon {
+      height: 18px !important;
+    }
+
+    .circled {
+      padding: 8px;
+      border: 1px solid @greySmoke;
+      background: @greySnow;
+
+      &:hover {
+        background-color: @greySmoke;
+      }
+    }
+
+    &:hover {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.uber-grid-default-item {
+  position: relative;
+  display: flex;
+  height: 100%;
+  min-height: 200px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .ui.basic.button.add-block-button {
+    .icon {
+      height: 32px !important;
+    }
+
+    .circled {
+      padding: 10px;
+      border: none;
+      background: @greySnow;
+
+      &:hover {
+        background-color: @greySmoke;
+      }
+    }
+
+    &:hover {
+      background-color: transparent !important;
+    }
+  }
+
+  .blocks-chooser:not(.new-add-block) {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+.block .block.detached:hover::before {
+  border: none;
+}
+
+// Transfer upstream
+.block [data-rbd-draggable-context-id] {
+  margin-bottom: 0;
+}
+
+// Required to overcome the droppable from b-d&d at the bottom
+// !! Required for ALL blocks that have b-d&d and a grid
+.block.__grid,
+[class$='Grid'].block {
+  .ui.grid {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .column {
+    // Removed because it broke the z-index of the blockChooser, making it fall behind
+    // z-index: 2;
+  }
+}
+
+// This is required to overcome the inline-flex imposed from semantic grids
+// https://github.com/kitconcept/volto-blocks-grid/pull/36
+// Reverted in https://github.com/kitconcept/volto-blocks-grid/pull/51
+// Apparently, this fix was breaking what it was intending to fix?
+// Maybe, some other change was introduced in the stack that fixed default behavior
+// for SemanticUI Grids that fixed it already, and this on the top it was interferring
+// .block.__grid,
+// [class$='Grid'].block {
+//   .ui.stretched.grid > .column.grid-block-slate {
+//     display: block !important;
+//   }
+// }
+
+.block-editor-__grid .block .toolbar,
+[class$='Grid'] .block .toolbar {
+  top: -49px;
+  left: -10px;
+  border-radius: 6px;
+  box-shadow: 0px 9px 18px rgba(2, 19, 34, 0.18),
+    0px 6px 12px rgba(2, 19, 34, 0.06);
+  transform: initial;
+}
+
+[class$='Grid'] .block,
+.block.__grid {
+  h2,
+  h3 {
+    &:not(.headline) {
+      margin: 0 !important;
+    }
+  }
+
+  .grid-teaser-item {
+    h2,
+    h3 {
+      margin-bottom: 1rem !important;
+    }
+  }
+
+  .grid-image-wrapper {
+    display: flex;
+    // This one is because Safari has a bug with flexed items, the default is
+    // align-items `stretched`, so it's required to reset it.
+    align-items: flex-start;
+  }
+
+  .ui.message {
+    margin: 0;
+    border-radius: 6px;
+  }
+
+  // Override for grid image hover
+  .block.image:hover::before {
+    display: none;
+  }
+
+  .block.listing:hover::before {
+    display: none;
+  }
+}
+
+.block.__grid .grid-teaser-item,
+.block.teaserGrid .grid-teaser-item {
+  flex-direction: column;
+
+  &.default .grid-image-wrapper {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+}
+
+.grid-teaser-item {
+  display: flex;
+  color: rgba(0, 0, 0, 0.87);
+
+  &.placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      max-width: 300px;
+      height: auto;
+      align-self: center;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  &.default .grid-image-wrapper {
+    margin-right: 25px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.ui.button.template-chooser-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px 0 20px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+
+  .template-chooser-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+}
+
+[data-rbd-draggable-context-id].grid-block-slate {
+  cursor: text;
+
+  .renderer-wrapper {
+    min-height: 50px;
+  }
+}
+
+// Aspect ratio on all images
+.grid-image-wrapper img {
+  width: 100%;
+  aspect-ratio: @grid-images-aspect-ratio;
+  object-fit: cover;
+  object-position: @grid-images-object-position;
+}
+
+// Full width to the text content area (teaser stand alone)
+.grid-teaser-item.default {
+  .content {
+    width: 100%;
+  }
+}
+
+// Disable hover blue border on inner blocks
+.block.__grid [class^='column grid-block-'],
+[class$='Grid'].block [class^='column grid-block-'] {
+  .block:not(.inner)::before {
+    content: unset;
+  }
+}
