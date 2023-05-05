@@ -36,7 +36,9 @@
     "@kitconcept/volto-text-with-background-color-block",
     "volto-slate:asDefault",
     "volto-multilingual-widget",
-    "@eeacms/volto-block-image-cards"
+    "@eeacms/volto-block-image-cards",
+    "@kitconcept/volto-carousel-block",
+    "@codesyntax/volto-featured-block"
   ],
   "jest": {
     "modulePathIgnorePatterns": [
@@ -139,6 +141,7 @@
     "node": "^14 || ^16"
   },
   "dependencies": {
+    "@codesyntax/volto-featured-block": "0.7.0",
     "@eeacms/volto-accordion-block": "*",
     "@eeacms/volto-block-divider": "^2.0.0",
     "@eeacms/volto-block-image-cards": "0.6.3",
@@ -154,6 +157,7 @@
     "@fortawesome/react-fontawesome": "0.2.0",
     "@kitconcept/volto-blocks-grid": "*",
     "@kitconcept/volto-button-block": "*",
+    "@kitconcept/volto-carousel-block": "*",
     "@kitconcept/volto-heading-block": "2.1.2",
     "@kitconcept/volto-slider-block": "*",
     "@kitconcept/volto-text-with-background-color-block": "*",

@@ -83,7 +83,7 @@
 
   a {
     color: @black;
-    text-decoration: underline !important;
+    text-decoration: underline;
     text-decoration-color: @primary-color !important;
   }
 
@@ -1016,6 +1016,111 @@
   font-family: 'UniversRomans', Arial, sans-serif;
 }
 
-.block.__grid .grid-teaser-item, .block.teaserGrid .grid-teaser-item {
-  flex-direction: row;
+// Grid teaser item
+.styled-teaser{
+  margin-top: 80px;
+  float: none !important;
+  position: relative;
+  right: 50%;
+  left: 50%;
+  width: 100vw !important;
+  max-width: initial !important;
+  margin-right: -50vw;
+  margin-left: -50vw;
+
+  .grid-teaser-item {
+    display: flex;
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+
+  .grid-image-wrapper{
+    width: 55% !important;
+    padding: 15px;
+
+  }
+  .content{
+    width: 40% !important;
+    margin: 2rem;
+
+    h2, p, a {
+      text-decoration: none white !important;
+      margin-top: 20px;
+    }
+    button{
+      text-transform: uppercase !important;
+    }
+
+    h2{
+      font-size: 22px;
+      font-family: 'UniversLightCn', Arial, sans-serif;
+    }
+
+    p {
+      font-family: 'UniversLight', Arial, sans-serif;
+      font-size: 1.188em;
+      letter-spacing: 0.05em;
+      line-height: 2.3125rem;
+      margin-top: 1.25rem;
+      margin-bottom: 2.1875rem;
+    }
+  }
+  .content-button {
+    border: @primary-color solid 1px;
+    width: 145px;
+    color: @primary-color;
+    background-color: transparent;
+    box-shadow: none;
+    height: 55px;
+    padding: 17px 28px 12px 28px;
+    font-size: 17px;
+    font-family: 'UniversCn', Arial, sans-serif;
+  }
+  .content-button:hover {
+    background-color: @primary-color;
+    color: white;
+  }
+}
+.view-editview .styled-teaser{
+  width: calc(100vw - 600px) !important;
+}
+
+@media screen and (min-width: 967px) {
+  .styled-teaser.left.align {
+    .grid-teaser-item {
+      flex-direction: row;
+    }
+  }
+
+  .styled-teaser.right.align {
+    .grid-teaser-item {
+      flex-direction: row-reverse;
+    }
+  }
+  .styled-teaser.center.align {
+    .grid-teaser-item {
+      flex-direction: column;
+      align-items: center;
+      .content,
+        .grid-image-wrapper {
+          width: 80% !important;
+          padding: 0px !important;
+          margin: 0px !important;
+        }
+    }
+  }
+}
+@media screen and (max-width: 966px) {
+  .styled-teaser.left.align, .styled-teaser.right.align, .styled-teaser.center.align {
+      .grid-teaser-item{
+        flex-direction: column !important;
+        align-items: center !important;
+
+        .content, .grid-image-wrapper{
+          width: 100% !important;
+          padding: 0px !important;
+          margin: 0px !important;
+        }
+      }
+  }
 }
