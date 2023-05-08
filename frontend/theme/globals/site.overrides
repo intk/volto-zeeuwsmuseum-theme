@@ -483,7 +483,7 @@
     width: calc(98vw - var(--scrollbarWidth)) !important;
   }
 }
-#page-listing {
+.block.listing.default #page-listing {
   position: relative;
   width: calc(100vw - var(--scrollbarWidth));
   right: 50%;
@@ -589,6 +589,150 @@
     }
   }
 }
+
+.block.listing.summary .listing-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  width: calc(100vw - var(--scrollbarWidth));
+  right: 50%;
+  left: 50%;
+  margin-top: 50px;
+  margin-right: -50vw !important;
+  margin-left: -50vw !important;
+  padding: 0px 26px 50px 26px;
+
+  .buttomline{
+    width: 20%;
+    p.content-button{
+      text-decoration: underline;
+    }
+    p:hover{
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+
+    h2{
+      font-family: 'UniversCn', Arial, sans-serif;
+      font-size: 40px;
+      line-height: 40px;
+      margin: 19px 0px 10px 0px ;
+      text-align: left;
+      cursor: pointer;
+    }
+    h2:hover{
+      color: @primary-color;
+    }
+  }
+ }
+
+.block.listing.summary #page-listing {
+  width: 80%;
+
+  #list-title h1 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    margin-top: 0% !important;
+    text-transform: uppercase;
+  }
+
+  a {
+    font-family: 'UniversLightCn';
+    font-size: 1.375rem;
+    letter-spacing: 0.075rem;
+    text-decoration: none !important;
+  }
+
+  #content-core {
+    display: flex;
+    // flex-direction: row !important;
+    flex-wrap: wrap;
+    // align-items: stretch;
+
+    .listing-items {
+      width: calc(33% - 10px);
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      // flex-grow: 1 !important;
+      // max-width: 60vw;
+      align-items: flex-start;
+      flex-shrink: 0 !important;
+      justify-content: flex-start;
+      padding-top: 0px !important;
+      padding-right: 15px !important;
+      padding-bottom: 75px !important;
+      padding-left: 15px !important;
+      border: none !important;
+      margin-top: 0%;
+      margin-bottom: 0%;
+      box-shadow: none;
+
+      #jaarverslag-title {
+        // height: 100px;
+        padding-top: 18px;
+
+        h2 {
+          margin-bottom: 5px !important;
+        }
+
+        a {
+          line-height: 1rem !important;
+        }
+
+        p {
+          margin-top: 5px;
+          margin-bottom: 5px;
+          line-height: 1.5rem;
+        }
+      }
+
+      img {
+        margin: 0% !important;
+      }
+
+      div {
+        padding-top: 30px;
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: auto;
+        aspect-ratio: 3 / 2;
+      }
+    }
+  }
+
+  .listing-items {
+    a {
+      color: #000000;
+      font-family: 'UniversLightCn';
+      font-size: 22px;
+      text-decoration: none !important;
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    #content-core .listing-items {
+      width: 50% !important;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    #content-core .listing-items {
+      width: 100% !important;
+      padding-bottom: 85px !important;
+    }
+  }
+}
+
+
 
 .view-addview, .view-editview{
   #page-listing {
