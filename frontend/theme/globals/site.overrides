@@ -471,6 +471,9 @@
 
 // For the Listing Block Type
 // ********************************
+.buttomline{
+  display: none;
+}
 
 .has-toolbar-collapsed{
   #page-listing{
@@ -604,6 +607,7 @@
   padding: 0px 26px 50px 26px;
 
   .buttomline{
+    display: block;
     width: 20%;
     p.content-button{
       text-decoration: underline;
