@@ -52,7 +52,12 @@ const SummaryTemplate = ({ items, linkTitle, linkHref, isEditMode }) => {
 
               {item.image_field && (
                 <UniversalLink item={item}>
-                  <PreviewImage item={item} size="large" alt={item.image_caption ? item.image_caption : item.title} className="ui image" />
+                  <PreviewImage
+                    item={item}
+                    size="large"
+                    alt={item.image_caption ? item.image_caption : item.title}
+                    className="ui image"
+                  />
                 </UniversalLink>
               )}
               <div id="jaarverslag-title">
