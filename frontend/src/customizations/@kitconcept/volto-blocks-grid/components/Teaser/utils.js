@@ -5,10 +5,7 @@ export function getTeaserImageURL({ href, image, align }) {
   // The default scale used in teasers is the 'teaser' scale
   // except if it's customized otherwise in the teaser block settings
   // or if the teaser is center (top)
-  const imageScale =
-    align === 'center'
-      ? 'great'
-      : config.blocks.blocksConfig['great'].imageScale || 'great';
+  const imageScale = 'great';
 
   if (image) {
     // If the image is overriden locally in the teaser block
