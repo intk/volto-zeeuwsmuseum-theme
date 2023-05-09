@@ -43,17 +43,17 @@ const DefaultView = ({ content, intl, location }) => {
 
   //This section is for the redirection of the LRF page
   //uncomment for the activation of the redirection
-  // useEffect(() => {
-  //   const redirection = (event) => {
-  //     const languageToken = content.language?.token
-  //       ? content.language.token
-  //       : '';
-  //     if (content['@type'] === 'LRF') {
-  //       window.location.href = `https://www.zeeuwsmuseum.nl/${languageToken}`;
-  //     }
-  //   };
-  //   redirection();
-  // }, [content]);
+  useEffect(() => {
+    const redirection = (event) => {
+      const languageToken = content.language?.token
+        ? content.language.token
+        : '';
+      if (content['@type'] === 'LRF') {
+        window.location.href = `https://www.zeeuwsmuseum.nl/${languageToken}`;
+      }
+    };
+    redirection();
+  }, [content]);
 
   return hasBlocksData(content) ? (
     <div id="page-document" className="ui container">
