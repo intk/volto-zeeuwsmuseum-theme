@@ -8,7 +8,7 @@ export function getTeaserImageURL({ href, image, align }) {
   const imageScale =
     align === 'center'
       ? 'great'
-      : config.blocks.blocksConfig['teaser'].imageScale || 'teaser';
+      : config.blocks.blocksConfig['great'].imageScale || 'great';
 
   if (image) {
     // If the image is overriden locally in the teaser block
