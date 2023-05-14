@@ -10,6 +10,8 @@ import { UniversalLink } from '@plone/volto/components';
 import cx from 'classnames';
 import config from '@plone/volto/registry';
 import { useSelector } from 'react-redux';
+import { EventDetails } from '@plone/volto/components';
+import { getContent } from '@plone/volto/actions';
 
 const messages = defineMessages({
   PleaseChooseContent: {
@@ -39,6 +41,7 @@ const TeaserDefaultTemplate = (props) => {
   const Image = config.getComponent('Image').component || DefaultImage;
   const lang = useSelector((state) => state.intl.locale);
 
+  const contents = getContent(flattenToAppURL(href[`@id`]));
   return (
     <div className={cx('block teaser', className)}>
       <>
@@ -70,12 +73,11 @@ const TeaserDefaultTemplate = (props) => {
                 </div>
               )}
               <div className="content">
-                {data?.head_title && (
-                  <div className="headline">{data.head_title}</div>
+                {href[`@type`] === 'Event' && (
+                  <EventDetails content={contents} />
                 )}
-
-                <h2>{data?.title}</h2>
-                {!data.hide_description && <p>{data?.description}</p>}
+                <h2>{href.Title}</h2>
+                {!data.hide_description && <p>{href.Description}</p>}
                 <button
                   className={`content-button ${props.data.href[0]['@type']}`}
                 >
