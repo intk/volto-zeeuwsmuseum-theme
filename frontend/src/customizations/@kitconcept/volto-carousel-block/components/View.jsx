@@ -3,13 +3,12 @@ import { Container, Message } from 'semantic-ui-react';
 import Slider from 'react-slick';
 import teaserHeroTopTemplate from '../icons/teaser-template.svg';
 import { defineMessages, useIntl } from 'react-intl';
-import { Icon } from '@plone/volto/components';
 
 import cx from 'classnames';
 
 import Body from './Body';
-import rightArrowSVG from '@plone/volto/icons/right-key.svg';
-import leftArrowSVG from '@plone/volto/icons/left-key.svg';
+import { BsArrowRight } from 'react-icons/bs';
+import { BsArrowLeft } from 'react-icons/bs';
 
 const messages = defineMessages({
   PleaseChooseContent: {
@@ -20,27 +19,23 @@ const messages = defineMessages({
 });
 
 const PrevArrow = ({ className, style, onClick }) => (
-  <button
+  <BsArrowLeft
     icon
     className={className}
     style={{ ...style, display: 'block' }}
     onClick={onClick}
     aria-label="left arrow"
-  >
-    <Icon name={leftArrowSVG} size="48px" />
-  </button>
+  ></BsArrowLeft>
 );
 
 const NextArrow = ({ className, style, onClick }) => (
-  <button
+  <BsArrowRight
     icon
     className={className}
     style={{ ...style, display: 'block' }}
     onClick={onClick}
     aria-label="right arrow"
-  >
-    <Icon name={rightArrowSVG} size="48px" />
-  </button>
+  ></BsArrowRight>
 );
 
 const CarouselView = (props) => {

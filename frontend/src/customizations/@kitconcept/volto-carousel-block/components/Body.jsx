@@ -107,13 +107,13 @@ const CarouselBody = ({
                     )}
                     alt=""
                     loading="lazy"
-                  />
+                  ></img>
+                  <div className="title-wrapper">
+                    <h3>{data?.title}</h3>
+                    {!dataBlock.hide_description && <p>{data?.description}</p>}
+                  </div>
                 </div>
               )}
-              <div className="title-wrapper">
-                <h3>{data?.title}</h3>
-                {!dataBlock.hide_description && <p>{data?.description}</p>}
-              </div>
             </>
           </MaybeWrap>
         </div>
