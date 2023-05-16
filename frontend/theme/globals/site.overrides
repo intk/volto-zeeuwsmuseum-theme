@@ -1165,6 +1165,11 @@
 }
 
 // Teaser Block
+
+.styled.right, .styled.left{
+  float: none !important;
+}
+
 .styled-teaser.left.align{
   .content{
     padding: 70px 75px 30px 50px;
@@ -1272,6 +1277,7 @@
 }
 .view-editview .styled-teaser{
   width: calc(100vw - 600px) !important;
+  position: static !important;
 }
 
 @media screen and (min-width: 967px) {

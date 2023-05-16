@@ -12,6 +12,7 @@ import config from '@plone/volto/registry';
 import { useSelector } from 'react-redux';
 import { EventDetails } from '@plone/volto/components';
 import { getContent } from '@plone/volto/actions';
+import { useEffect, useState } from 'react';
 
 const messages = defineMessages({
   PleaseChooseContent: {
@@ -40,8 +41,8 @@ const TeaserDefaultTemplate = (props) => {
 
   const Image = config.getComponent('Image').component || DefaultImage;
   const lang = useSelector((state) => state.intl.locale);
+  let contents;
 
-  const contents = getContent(flattenToAppURL(href[`@id`]));
   return (
     <div className={cx('block teaser', className)}>
       <>
@@ -73,8 +74,13 @@ const TeaserDefaultTemplate = (props) => {
                 </div>
               )}
               <div className="content">
-                {href[`@type`] === 'Event' && (
+                {/* {href[`@type`] === 'Event' && (
                   <EventDetails content={contents} />
+                )} */}
+                {href[`@type`] === 'Event' && href['@id'] !== undefined && (
+                  <EventDetails
+                    content={getContent(flattenToAppURL(href['@id']))}
+                  />
                 )}
                 <h2>{href.Title}</h2>
                 {!data.hide_description && <p>{href.Description}</p>}
