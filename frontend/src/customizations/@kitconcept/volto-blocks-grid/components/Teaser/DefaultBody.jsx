@@ -16,7 +16,8 @@ import { getContent } from '@plone/volto/actions';
 const messages = defineMessages({
   PleaseChooseContent: {
     id: 'Please choose an existing content as source for this element',
-    defaultMessage: 'Please choose an existing content as source for this element',
+    defaultMessage:
+      'Please choose an existing content as source for this element',
   },
 });
 
@@ -52,11 +53,22 @@ const TeaserDefaultTemplate = (props) => {
           </Message>
         )}
         {href && (
-          <MaybeWrap condition={!isEditMode} as={UniversalLink} href={href['@id']} target={data.openLinkInNewTab ? '_blank' : null}>
+          <MaybeWrap
+            condition={!isEditMode}
+            as={UniversalLink}
+            href={href['@id']}
+            target={data.openLinkInNewTab ? '_blank' : null}
+          >
             <div className="grid-teaser-item default">
               {(href.hasPreviewImage || href.image_field || image) && (
                 <div className="grid-image-wrapper">
-                  <Image src={flattenToAppURL(getTeaserImageURL({ href, image, align }))} alt="" loading="lazy" />
+                  <Image
+                    src={flattenToAppURL(
+                      getTeaserImageURL({ href, image, align }),
+                    )}
+                    alt=""
+                    loading="lazy"
+                  />
                 </div>
               )}
               <div className="content">
@@ -64,10 +76,18 @@ const TeaserDefaultTemplate = (props) => {
                   <EventDetails content={contents} />
                 )} */}
                 {console.log(href['@id'])}
-                {href[`@type`] === 'Event' && href['@id'] !== undefined && <EventDetails content={getContent(flattenToAppURL(href['@id']))} />}
+                {href[`@type`] === 'Event' && href['@id'] !== undefined && (
+                  <EventDetails
+                    content={getContent(flattenToAppURL(href['@id']))}
+                  />
+                )}
                 <h2>{href.Title}</h2>
                 {!data.hide_description && <p>{href.Description}</p>}
-                <button className={`content-button ${props.data.href[0]['@type']}`}>{buttonMessage['button'][lang]}</button>
+                <button
+                  className={`content-button ${props.data.href[0]['@type']}`}
+                >
+                  {buttonMessage['button'][lang]}
+                </button>
               </div>
             </div>
           </MaybeWrap>
