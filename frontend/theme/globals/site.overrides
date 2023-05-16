@@ -1391,12 +1391,16 @@
   }
 }
 
+//To make sure two of them can fit in one line.
 @media screen and (min-width: 768px) and (max-width:966px) {
   #page-document .styled-teaser .grid-teaser-item {
     max-width: 50vw !important;
   }
   #page-document .styled-teaser.left .grid-teaser-item {
     float: left !important;
+  }
+  #page-document .styled-teaser.right .grid-teaser-item {
+    float: right !important;
   }
 
 }
