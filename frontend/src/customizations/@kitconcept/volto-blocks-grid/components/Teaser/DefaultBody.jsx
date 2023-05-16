@@ -75,7 +75,6 @@ const TeaserDefaultTemplate = (props) => {
                 {/* {href[`@type`] === 'Event' && (
                   <EventDetails content={contents} />
                 )} */}
-                {console.log(href['@id'])}
                 {href[`@type`] === 'Event' && href['@id'] !== undefined && (
                   <EventDetails
                     content={getContent(flattenToAppURL(href['@id']))}
