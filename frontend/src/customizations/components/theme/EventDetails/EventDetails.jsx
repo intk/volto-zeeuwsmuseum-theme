@@ -65,7 +65,7 @@ const EventDetails = ({ content, display_as = 'aside' }) => {
         open_end={content.open_end}
       />
     </>
-    // <Segment
+    // <Segment 
     //   as={display_as}
     //   {...(display_as === 'aside' ? { floated: 'right' } : {})}
     // >

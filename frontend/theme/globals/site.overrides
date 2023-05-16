@@ -735,6 +735,53 @@
     }
   }
 }
+@media only screen and (max-width: 991px){
+  .block.listing.summary .listing-wrapper {
+      position: relative;
+      padding-top: 100px;
+      #page-listing{
+        width: 100%;
+        // padding: 0% !important;
+      }
+      .buttomline {
+        width: auto !important;
+        h2{
+          position: absolute !important;
+          top: 0%;
+          left: calc((100vw - 150px) / 2);
+        }
+        p.content-button {
+          display: inline-block;
+          box-sizing: border-box;
+          text-transform: uppercase !important;
+          border: #5f9953 solid 1px;
+          width: 145px;
+          color: #5f9953;
+          background-color: transparent;
+          box-shadow: none;
+          height: 55px;
+          padding: 17px 28px 12px 28px;
+          font-size: 17px;
+          font-family: 'UniversCn', Arial, sans-serif;
+          text-decoration: none;
+          padding: 21px 28px 12px 28px;
+          margin: 0%;
+          letter-spacing: normal;
+          line-height: 16.55px;
+
+          position: absolute;
+          bottom: 50px;
+          left: calc((100vw - 150px) / 2);
+        }
+
+        p.content-button:hover {
+          background-color: @primary-color;
+          color: white;
+        }
+      }
+    }
+
+}
 
 
 
