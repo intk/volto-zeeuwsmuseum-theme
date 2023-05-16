@@ -1276,7 +1276,7 @@
   }
 }
 .view-editview .styled-teaser{
-  width: calc(100vw - 600px) !important;
+  // width: calc(100vw - 900px) !important;
   position: static !important;
 }
 
