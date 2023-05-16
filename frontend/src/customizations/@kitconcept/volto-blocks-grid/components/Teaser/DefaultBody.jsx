@@ -12,7 +12,6 @@ import config from '@plone/volto/registry';
 import { useSelector } from 'react-redux';
 import { EventDetails } from '@plone/volto/components';
 import { getContent } from '@plone/volto/actions';
-import { useEffect, useState } from 'react';
 
 const messages = defineMessages({
   PleaseChooseContent: {
@@ -41,7 +40,6 @@ const TeaserDefaultTemplate = (props) => {
 
   const Image = config.getComponent('Image').component || DefaultImage;
   const lang = useSelector((state) => state.intl.locale);
-  let contents;
 
   return (
     <div className={cx('block teaser', className)}>
