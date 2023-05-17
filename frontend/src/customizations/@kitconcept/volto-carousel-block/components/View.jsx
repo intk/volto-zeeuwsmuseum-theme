@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Message } from 'semantic-ui-react';
 import Slider from 'react-slick';
 import teaserHeroTopTemplate from '../icons/teaser-template.svg';
@@ -40,39 +40,36 @@ const NextArrow = ({ className, style, onClick }) => (
 
 const CarouselView = (props) => {
   const { block, data, isEditMode, openObjectBrowser, onChangeBlock } = props;
-  const [mobileSize, setmobileSize] = useState(false);
   const intl = useIntl();
-  let noOfSlide = data.items_to_show ?? 4;
-  if (data.items_to_show) {
-    if (data.items_to_show <= 0) {
-      noOfSlide = 1;
-    } else if (data.items_to_show > 5) {
-      noOfSlide = 5;
-    } else {
-      noOfSlide = data.items_to_show;
-    }
+  let initialNoOfSlides;
+  if (window.innerWidth < 767) {
+    initialNoOfSlides = 1;
+  } else if (window.innerWidth > 768 && window.innerWidth < 992) {
+    initialNoOfSlides = 2;
+  } else {
+    initialNoOfSlides = 3;
   }
 
-  if (__CLIENT__ && (window.innerWidth < 767 || mobileSize)) {
-    noOfSlide = 1;
-  }
-
-  const updateNoOfSlide = useCallback(() => {
-    if (window.innerWidth < 520) {
-      setmobileSize(true);
-    } else {
-      setmobileSize(false);
-    }
-  }, []);
+  const [noOfSlide, setNoOfSlide] = useState(initialNoOfSlides);
 
   useEffect(() => {
-    window.addEventListener('resize', updateNoOfSlide);
-    return () => window.removeEventListener('resize', updateNoOfSlide);
-  }, [updateNoOfSlide]);
+    const handleResize = () => {
+      if (window.innerWidth < 767) {
+        setNoOfSlide(1);
+      } else if (window.innerWidth > 768 && window.innerWidth < 992) {
+        setNoOfSlide(2);
+      } else {
+        setNoOfSlide(data.items_to_show);
+      }
+    };
 
-  useEffect(() => {
-    updateNoOfSlide();
-  }, [updateNoOfSlide]);
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [data.items_to_show, noOfSlide]);
 
   return (
     <Container>
