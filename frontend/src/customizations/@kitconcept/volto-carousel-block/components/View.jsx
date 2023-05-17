@@ -13,61 +13,46 @@ import { BsArrowLeft } from 'react-icons/bs';
 const messages = defineMessages({
   PleaseChooseContent: {
     id: 'Please choose an existing content as source for this element',
-    defaultMessage:
-      'Please choose an existing content as source for this element',
+    defaultMessage: 'Please choose an existing content as source for this element',
   },
 });
 
-const PrevArrow = ({ className, style, onClick }) => (
-  <BsArrowLeft
-    icon
-    className={className}
-    style={{ ...style, display: 'block' }}
-    onClick={onClick}
-    aria-label="left arrow"
-  ></BsArrowLeft>
-);
+const PrevArrow = ({ className, style, onClick }) => <BsArrowLeft icon className={className} style={{ ...style, display: 'block' }} onClick={onClick} aria-label="left arrow"></BsArrowLeft>;
 
-const NextArrow = ({ className, style, onClick }) => (
-  <BsArrowRight
-    icon
-    className={className}
-    style={{ ...style, display: 'block' }}
-    onClick={onClick}
-    aria-label="right arrow"
-  ></BsArrowRight>
-);
+const NextArrow = ({ className, style, onClick }) => <BsArrowRight icon className={className} style={{ ...style, display: 'block' }} onClick={onClick} aria-label="right arrow"></BsArrowRight>;
 
 const CarouselView = (props) => {
   const { block, data, isEditMode, openObjectBrowser, onChangeBlock } = props;
   const intl = useIntl();
   let initialNoOfSlides;
-  if (window.innerWidth < 767) {
-    initialNoOfSlides = 1;
-  } else if (window.innerWidth > 768 && window.innerWidth < 992) {
-    initialNoOfSlides = 2;
-  } else {
-    initialNoOfSlides = 3;
+  if (typeof window !== 'undefined') {
+    if (window.innerWidth < 767) {
+      initialNoOfSlides = 1;
+    } else if (window.innerWidth > 768 && window.innerWidth < 992) {
+      initialNoOfSlides = 2;
+    } else {
+      initialNoOfSlides = 3;
+    }
   }
 
   const [noOfSlide, setNoOfSlide] = useState(initialNoOfSlides);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 767) {
+      if (window?.innerWidth < 767) {
         setNoOfSlide(1);
-      } else if (window.innerWidth > 768 && window.innerWidth < 992) {
+      } else if (window?.innerWidth > 768 && window?.innerWidth < 992) {
         setNoOfSlide(2);
       } else {
         setNoOfSlide(data.items_to_show);
       }
     };
 
-    window.addEventListener('resize', handleResize);
+    window?.addEventListener('resize', handleResize);
 
     // Cleanup function
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window?.removeEventListener('resize', handleResize);
     };
   }, [data.items_to_show, noOfSlide]);
 
@@ -87,32 +72,10 @@ const CarouselView = (props) => {
           </Message>
         )}
         {data.columns?.length > 0 && (
-          <div
-            className={cx({ 'full-width': data.useLargeContainer })}
-            style={{ backgroundColor: props.data.bg_color }}
-          >
+          <div className={cx({ 'full-width': data.useLargeContainer })} style={{ backgroundColor: props.data.bg_color }}>
             {data.headline && <h2 className="headline">{data.headline}</h2>}
-            <Slider
-              infinite={false}
-              speed={500}
-              slidesToShow={+noOfSlide}
-              slidesToScroll={+noOfSlide}
-              nextArrow={<NextArrow />}
-              prevArrow={<PrevArrow />}
-            >
-              {data.columns &&
-                data.columns.map((item, index) => (
-                  <Body
-                    key={item['@id']}
-                    data={item}
-                    isEditMode={isEditMode}
-                    dataBlock={data}
-                    index={index}
-                    block={block}
-                    openObjectBrowser={openObjectBrowser}
-                    onChangeBlock={onChangeBlock}
-                  />
-                ))}
+            <Slider infinite={false} speed={500} slidesToShow={+noOfSlide} slidesToScroll={+noOfSlide} nextArrow={<NextArrow />} prevArrow={<PrevArrow />}>
+              {data.columns && data.columns.map((item, index) => <Body key={item['@id']} data={item} isEditMode={isEditMode} dataBlock={data} index={index} block={block} openObjectBrowser={openObjectBrowser} onChangeBlock={onChangeBlock} />)}
             </Slider>
           </div>
         )}
