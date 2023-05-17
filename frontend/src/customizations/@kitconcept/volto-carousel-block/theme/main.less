@@ -83,8 +83,6 @@
     img {
       object-fit: scale-down ;
       width: 100%;
-      // height: 70%;
-      // vertical-align: middle !important;
       aspect-ratio: initial;
     }
   }
@@ -120,5 +118,14 @@
 
   .toolbar-inner input {
     max-width: 80px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  #page-document{
+    .grid-teaser-item.top,
+      .slick-slider.slick-initialized {
+        height: 900px !important;
+      }
   }
 }

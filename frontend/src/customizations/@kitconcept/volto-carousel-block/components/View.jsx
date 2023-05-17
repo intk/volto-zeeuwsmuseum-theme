@@ -53,7 +53,7 @@ const CarouselView = (props) => {
     }
   }
 
-  if (__CLIENT__ && (window.innerWidth < 520 || mobileSize)) {
+  if (__CLIENT__ && (window.innerWidth < 767 || mobileSize)) {
     noOfSlide = 1;
   }
 
