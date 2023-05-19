@@ -1,6 +1,7 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useLayoutEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Message } from 'semantic-ui-react';
+import { HeaderContent, Message } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
 import { flattenToAppURL } from '@plone/volto/helpers';
@@ -11,8 +12,8 @@ import cx from 'classnames';
 import config from '@plone/volto/registry';
 import { useSelector } from 'react-redux';
 import { EventDetails } from '@plone/volto/components';
-import { getContent } from '@plone/volto/actions';
-
+import { useDispatch } from 'react-redux';
+import { getBlockContent } from '../../../../../actions/index';
 const messages = defineMessages({
   PleaseChooseContent: {
     id: 'Please choose an existing content as source for this element',
@@ -40,6 +41,17 @@ const TeaserDefaultTemplate = (props) => {
 
   const Image = config.getComponent('Image').component || DefaultImage;
   const lang = useSelector((state) => state.intl.locale);
+  const content = flattenToAppURL(href['@id']);
+
+  const dispatch = useDispatch();
+  const [contentDate, setContentDate] = useState('');
+
+  useLayoutEffect(() => {
+    dispatch(getBlockContent(content)).then((response) => {
+      setContentDate(response);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [content]);
 
   return (
     <div className={cx('block teaser', className)}>
@@ -76,9 +88,7 @@ const TeaserDefaultTemplate = (props) => {
                   <EventDetails content={contents} />
                 )} */}
                 {href[`@type`] === 'Event' && href['@id'] !== undefined && (
-                  <EventDetails
-                    content={getContent(flattenToAppURL(href['@id']))}
-                  />
+                  <EventDetails content={contentDate} />
                 )}
                 <h2>{href.Title}</h2>
                 {!data.hide_description && <p>{href.Description}</p>}
