@@ -633,7 +633,7 @@
  }
 
 .block.listing.summary #page-listing {
-  width: 80%;
+  width: 90%;
 
   #list-title h1 {
     text-align: center;
@@ -1239,7 +1239,7 @@
 }
 #page-document .styled-teaser{
   margin-top: 80px;
-  float: none !important;
+  // float: none !important;
   position: relative;
   right: 50%;
   left: 50%;
@@ -1389,6 +1389,56 @@
     }
   }
 }
+
+@media  screen and ( max-width: 661px ) {
+  #page-document .columns-view#homepage {
+    .column.grid.column-grid {
+      // display: block !important;
+      flex-direction: column;
+
+      .six.wide.computer {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #page-document .columns-view#homepage {
+    .column.grid.column-grid {
+      // display: block !important;
+      flex-direction: column;
+
+      .six.wide.computer {
+        width: 100% !important;
+      }
+    }
+  }
+
+}
+@media screen and (min-width: 661px) and (max-width: 992px) {
+  #page-document .columns-view#homepage .styled-teaser.align.styled{
+    max-width: 100% !important;
+    position: relative !important;
+    right: auto !important;
+    left: auto !important;
+    // width: 40vw !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding: 0px !important;
+
+    .grid-teaser-item{
+      padding: 0% !important;
+    }
+  }
+}
+
+.view-editview{
+  #page-edit .styled-teaser .grid-teaser-item.default{
+    flex-direction: column !important;
+  }
+}
+
 
 //Teaser Grid Block
 .teaserGrid{

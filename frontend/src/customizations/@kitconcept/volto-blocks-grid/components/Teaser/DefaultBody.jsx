@@ -41,15 +41,19 @@ const TeaserDefaultTemplate = (props) => {
 
   const Image = config.getComponent('Image').component || DefaultImage;
   const lang = useSelector((state) => state.intl.locale);
-  const content = flattenToAppURL(href['@id']);
+  let content = ' ';
 
   const dispatch = useDispatch();
-  const [contentDate, setContentDate] = useState('');
+  const [contentDate, setContentDate] = useState(' ');
 
   useLayoutEffect(() => {
-    dispatch(getBlockContent(content)).then((response) => {
-      setContentDate(response);
-    });
+    if (href !== undefined) {
+      let content = flattenToAppURL(href['@id']);
+      dispatch(getBlockContent(content)).then((response) => {
+        setContentDate(response);
+      });
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [content]);
 
@@ -87,9 +91,9 @@ const TeaserDefaultTemplate = (props) => {
                 {/* {href[`@type`] === 'Event' && (
                   <EventDetails content={contents} />
                 )} */}
-                {href[`@type`] === 'Event' && href['@id'] !== undefined && (
-                  <EventDetails content={contentDate} />
-                )}
+                {href[`@type`] === 'Event' &&
+                  contentDate !== ' ' &&
+                  href !== undefined && <EventDetails content={contentDate} />}
                 <h2>{href.Title}</h2>
                 {!data.hide_description && <p>{href.Description}</p>}
                 <button
