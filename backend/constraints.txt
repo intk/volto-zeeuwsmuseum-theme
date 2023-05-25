@@ -404,3 +404,4 @@ zope.testing==5.0.1
 zope.testrunner==5.6
 zope.traversing==4.4.1
 zope.viewlet==4.3
+collective.exportimport==1.9
