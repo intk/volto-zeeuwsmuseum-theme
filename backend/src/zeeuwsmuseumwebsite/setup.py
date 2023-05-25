@@ -56,6 +56,7 @@ setup(
             "plone.app.testing[robot]>=7.0.0a3",
             "plone.restapi[test]",
             "collective.MockMailHost",
+            "collective.exportimport"
         ],
     },
     entry_points="""
