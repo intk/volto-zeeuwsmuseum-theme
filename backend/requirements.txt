@@ -2,7 +2,7 @@
 -e src/zeeuwsmuseumwebsite[test]
 
 zope.testrunner
-
+# collective.exportimport
 # Add required add-ons
 # (Ideally add them in setup.py for zeeuwsmuseumwebsite)
 # collective.easyform
