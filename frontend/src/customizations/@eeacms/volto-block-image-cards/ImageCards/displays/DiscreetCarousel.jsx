@@ -146,12 +146,16 @@ const DiscreetCarousel = (props) => {
             ))}
           </Slider>
           <div className="slider-buttons">
-            <button className="button button1" href="#">
-              Boek je bezoek
-            </button>
-            <button className="button button2" href="#">
-              Ontdek het museum
-            </button>
+            {data.button1 && (
+              <button className="button button1" href={data.button1link}>
+                {data.button1}
+              </button>
+            )}
+            {data.button2 && (
+              <button className="button button2" href={data.button2link}>
+                {data.button2}
+              </button>
+            )}
           </div>
           {!hideArrows && cards.length > 1 && <Arrows slider={slider} />}
         </div>

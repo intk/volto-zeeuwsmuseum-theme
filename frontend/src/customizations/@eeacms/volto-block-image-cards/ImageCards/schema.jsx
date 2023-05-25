@@ -58,7 +58,18 @@ const ImageCards = (props) => {
       {
         id: 'default',
         title: 'Default',
-        fields: ['title', 'text', 'display', 'align', 'image_scale', 'cards'],
+        fields: [
+          'title',
+          'text',
+          'display',
+          'align',
+          'image_scale',
+          'cards',
+          'button1',
+          'button1link',
+          'button2',
+          'button2link',
+        ],
       },
     ],
 
@@ -92,6 +103,22 @@ const ImageCards = (props) => {
         widget: 'align',
         type: 'string',
         default: 'full',
+      },
+      button1: {
+        type: 'sting',
+        title: 'Button 1',
+      },
+      button1link: {
+        type: 'sting',
+        title: 'Button 1 Link',
+      },
+      button2: {
+        type: 'sting',
+        title: 'Button 2',
+      },
+      button2link: {
+        type: 'sting',
+        title: 'Button 2 Link',
       },
     },
 
