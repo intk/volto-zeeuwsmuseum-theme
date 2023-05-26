@@ -594,6 +594,7 @@
 }
 
 .block.listing.summary .listing-wrapper {
+  background-color: #fcfcf4;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -604,7 +605,7 @@
   margin-top: 50px;
   margin-right: -50vw !important;
   margin-left: -50vw !important;
-  padding: 0px 26px 50px 26px;
+  padding: 100px 26px 10px 26px;
 
   .buttomline{
     display: block;
@@ -617,10 +618,9 @@
       cursor: pointer;
     }
 
-
     h2{
       font-family: 'UniversCn', Arial, sans-serif;
-      font-size: 40px;
+      font-size: 2.5vw;
       line-height: 40px;
       margin: 19px 0px 10px 0px ;
       text-align: left;
@@ -630,7 +630,10 @@
       color: @primary-color;
     }
   }
- }
+}
+
+
+
 
 .block.listing.summary #page-listing {
   width: 90%;
@@ -692,7 +695,7 @@
         p {
           margin-top: 5px;
           margin-bottom: 5px;
-          line-height: 1.5rem;
+          line-height: 30px;
         }
       }
 
@@ -735,6 +738,19 @@
     }
   }
 }
+
+@media only screen and (min-width: 991px) {
+  .block.listing.summary #jaarverslag-title p {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .block.listing.summary .listing-wrapper .buttomline h2 {
+    font-size: 40px !important;
+  }
+}
+
 @media only screen and (max-width: 991px){
   .block.listing.summary .listing-wrapper {
       position: relative;
@@ -1220,7 +1236,7 @@
 
 .styled-teaser.left.align{
   .content{
-    padding: 70px 0px 30px 50px;
+    padding: 40px 0px 30px 50px;
   }
   .grid-image-wrapper {
     padding-left: 55px;
@@ -1260,21 +1276,21 @@
 
   .grid-image-wrapper{
     width: 65% !important;
-    padding: 15px;
-    padding-left: 55px;
-
-
-
+    padding: 12px;
+    padding-left: 30px;
+    margin-right: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
   }
   .content{
     width: auto !important;
     max-width: 35% !important;
     // margin: 2rem;
-    p.event-when, p.event-when span{
+    p.event-when, p.event-when span, p{
       margin-bottom: 0px !important;
       padding-bottom: 0px !important;
       font-size: 17px !important;
-      line-height: 35px;
+      line-height: 30px !important;
       color: #666666;
       letter-spacing: 0.05em !important;
       font-family: 'UniversLight', Arial, sans-serif !important;
@@ -1315,6 +1331,7 @@
     box-shadow: none;
     height: 55px;
     padding: 17px 28px 12px 28px;
+    margin-top: 25px;
     font-size: 17px;
     font-family: 'UniversCn', Arial, sans-serif;
   }
