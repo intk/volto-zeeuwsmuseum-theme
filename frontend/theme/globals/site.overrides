@@ -1364,7 +1364,7 @@
     padding-right: 0px;
   }
 }
-@media screen and (max-width: 966px) {
+@media screen and (max-width: 992px) {
   #page-document .styled-teaser.left.align,#page-document .styled-teaser.right.align, #page-document .styled-teaser.center.align {
     .grid-teaser-item{
       flex-direction: column !important;
