@@ -12,8 +12,8 @@
   margin-right: -50vw !important;
   margin-left: -50vw !important;
   margin-top: 30px;
-  padding-top: 90px !important;
-  padding-bottom: 90px !important;
+  padding-top: 70px !important;
+  padding-bottom: 100px !important;
   margin-bottom: 30px;
 }
 
@@ -62,10 +62,12 @@
 
   .slick-prev {
     left: 3%;
+    top: 51%;
   }
 
   .slick-next {
     right: 3%;
+    top: 51%;
   }
 
   .slick-prev:before,
@@ -87,7 +89,7 @@
     width: 100%;
 
     img {
-      object-fit: scale-down ;
+      object-fit: cover ;
       width: 100%;
       aspect-ratio: initial;
     }
@@ -129,11 +131,14 @@
 
 
 @media screen and (max-width: 991px) {
+  .view-viewview .block.carousel {
+    padding-top: 60px !important;
+    padding-bottom: 100px !important;
+  }
   .view-viewview .block.carousel .slick-slider.slick-initialized, .block.carousel .grid-teaser-item.top {
       height: 79vw !important;
   }
   .block.carousel .grid-teaser-item .title-wrapper{
-    // position: static !important;
     display: block !important;
     padding-left: 10px;
     bottom: -145px;
@@ -152,6 +157,33 @@
 @media screen and (max-width: 767px) {
   .view-viewview .block.carousel .slick-slider.slick-initialized, .block.carousel .grid-teaser-item.top {
       height: 135vw !important;
+  }
+  .view-viewview .block.carousel {
+    padding-top: 50px !important;
+    padding-bottom: 90px !important;
+  }
+  .block.carousel .headline {
+    font-size: 45px;
+    max-width: 70%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .block.carousel {
+    .slick-prev {
+      top: 53%;
+    }
+
+    .slick-next {
+      top: 53%;
+    }
+  }
+  .block.carousel .grid-teaser-item .title-wrapper {
+    h3,
+    p {
+      margin-top: 65px !important;
+    }
   }
 }
 
