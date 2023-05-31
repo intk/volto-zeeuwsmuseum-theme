@@ -1276,7 +1276,7 @@
   }
 
   .grid-image-wrapper{
-    width: 65% !important;
+    width: 55% !important;
     padding: 12px;
     padding-left: 30px;
     margin-right: 0px;
@@ -1340,6 +1340,14 @@
     background-color: @primary-color;
     color: white;
   }
+}
+.section-homepage #page-document h2, .contenttype-lrf #page-document h2{
+  font-family: 'UniversCn' !important;
+  font-size: 40px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  margin-bottom: 0%;
 }
 .view-editview .styled-teaser{
   // width: calc(100vw - 900px) !important;
