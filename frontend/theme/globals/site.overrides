@@ -1341,7 +1341,7 @@
     color: white;
   }
 }
-.section-homepage #page-document h2, .contenttype-lrf #page-document h2{
+.section-homepage #page-document h2.styled-slate, .contenttype-lrf #page-document h2.styled-slate{
   font-family: 'UniversCn' !important;
   font-size: 40px;
   margin-left: auto !important;
