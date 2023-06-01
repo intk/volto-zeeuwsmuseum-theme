@@ -1128,7 +1128,7 @@
   }
 }
 
-@media only screen and (max-width: 1032px){
+@media only screen and (max-width: 1013px){
   div#top-wrap.top-wrapper {
 
       div#footermail {
@@ -1136,9 +1136,9 @@
         border: none !important;
       }
     }
-  #footermail{
-    padding-top: 100px !important;
-  }
+  // #footermail{
+  //   padding-top: 100px !important;
+  // }
 }
 
 @media only screen and (max-width: 993px) {
