@@ -42,64 +42,37 @@ import { Logo } from '@plone/volto/components';
 //   },
 // };
 
-export const Address = ({
-  addressTitle,
-  address,
-  addressSecond,
-  addressButton,
-  contactTitle,
-  phone,
-  email,
-  contactButton,
-  newsletterTitle,
-  newsletterText,
-}) => (
+export const Address = ({ addressTitle, address, addressSecond, addressButton, contactTitle, phone, email, contactButton, newsletterTitle, newsletterText }) => (
   <div className="footerInfoBox">
     <div className="titleWrapper">{addressTitle}</div>
     <div>{!!address && <p id="address">{address}</p>}</div>
     <div>{!!addressSecond && <p id="address">{addressSecond}</p>}</div>
-    <a
-      href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/praktische-info"
-      className="text-button"
-    >
-      {addressButton}
-    </a>
+    <div className="buttonWrapper">
+      <a href="https://www.zeeuwsmuseum.nl/nl/plan-je-bezoek/praktische-info" className="text-button">
+        {addressButton}
+      </a>
+    </div>
   </div>
 );
 
-export const Contact = ({
-  addressTitle,
-  address,
-  addressSecond,
-  addressButton,
-  contactTitle,
-  phone,
-  email,
-  contactButton,
-  newsletterTitle,
-  newsletterText,
-}) => (
+export const Contact = ({ addressTitle, address, addressSecond, addressButton, contactTitle, phone, email, contactButton, newsletterTitle, newsletterText }) => (
   <div className="footerInfoBox">
     <div className="titleWrapper">
       <a href="https://www.zeeuwsmuseum.nl/nl/contact">{contactTitle}</a>
     </div>
     {!!phone && <p id="phoneNumber">{phone}</p>}
     {!!email && (
-      <a
-        id="mailadress"
-        data-linktype="email"
-        href={`mailto:${email}`}
-        data-val="info@zeeuwsmuseum.nl"
-        data-subject="Contact via Zeeuws Museum website"
-      >
+      <a id="mailadress" data-linktype="email" href={`mailto:${email}`} data-val="info@zeeuwsmuseum.nl" data-subject="Contact via Zeeuws Museum website">
         {email}
       </a>
     )}
-
-    <a href="https://www.zeeuwsmuseum.nl/nl/contact" className="text-button">
-      {contactButton}
-    </a>
     <SocialLinks />
+
+    <div className="buttonWrapper">
+      <a href="https://www.zeeuwsmuseum.nl/nl/contact" className="text-button">
+        {contactButton}
+      </a>
+    </div>
   </div>
 );
 
@@ -122,9 +95,7 @@ export const Contact = ({
 export function Footer(props) {
   const siteDataContent = useSiteDataContent();
   const { blocks = {} } = siteDataContent;
-  const siteDataId = Object.keys(blocks).find(
-    (id) => blocks[id]?.['@type'] === 'footerData',
-  );
+  const siteDataId = Object.keys(blocks).find((id) => blocks[id]?.['@type'] === 'footerData');
 
   const footerData = blocks[siteDataId] || {};
   // const localeLanguage = props.intl.locale;
@@ -139,46 +110,27 @@ export function Footer(props) {
               <p id="footerTitle3">{footerData.newsletterTitle}</p>
             </div>
             <p>{footerData.newsletterText}</p>
+            <div className="buttonWrapper">
+              <dd className="portletItem odd">
+                <form id="newsletter-subscriber-form" method="get" action="https://zeeuwsmuseum.us13.list-manage.com/subscribe/post-json?c=?">
+                  <div className="input-group">
+                    <input type="text" className="text-widget required form-control input-lg textline-field" placeholder="Email" id="form-widgets-email" name="EMAIL" aria-label="mailchimp-email" />
+                    <input type="hidden" value="88e39abc49bff280b2ff566d0" name="u" />
+                    <input type="hidden" value="5978f9fd67" name="id" />
 
-            <dd className="portletItem odd">
-              <form
-                id="newsletter-subscriber-form"
-                method="get"
-                action="https://zeeuwsmuseum.us13.list-manage.com/subscribe/post-json?c=?"
-              >
-                <div className="input-group">
-                  <input
-                    type="text"
-                    className="text-widget required form-control input-lg textline-field"
-                    placeholder="Email"
-                    id="form-widgets-email"
-                    name="EMAIL"
-                    aria-label="mailchimp-email"
-                  />
-                  <input
-                    type="hidden"
-                    value="88e39abc49bff280b2ff566d0"
-                    name="u"
-                  />
-                  <input type="hidden" value="5978f9fd67" name="id" />
-
-                  <span className="input-group-btn">
-                    <button
-                      className="submit-button"
-                      name="form.buttons.subscribe"
-                      type="submit"
-                      aria-label="mailchimp-submit"
-                    >
-                      <FaChevronRight />
-                    </button>
-                  </span>
-                </div>
-                {/* <div id="subscribe-result" >
+                    <span className="input-group-btn">
+                      <button className="submit-button" name="form.buttons.subscribe" type="submit" aria-label="mailchimp-submit">
+                        <FaChevronRight />
+                      </button>
+                    </span>
+                  </div>
+                  {/* <div id="subscribe-result" >
                 <p className="error-msg" >Aanmelden op nieuwsbrief mislukt.</p>
                 <p className="success-msg">Bedankt voor uw aanmelding. U ontvangt een e-mail waarin uw inschrijving wordt bevestigd.</p>
               </div> */}
-              </form>
-            </dd>
+                </form>
+              </dd>
+            </div>
           </div>
         </div>
         {/* <div className="footerInfoBox">

@@ -901,7 +901,7 @@
 #footer {
   height: 400px;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 30px;
   border-top: 0.3px solid #c3c3c3;
   background-color: white;
   font-family: 'UniversLight', 'Helvetica Neue', Helvetica, sans-serif;
@@ -940,6 +940,11 @@
         margin-top: 8px;
         margin-right: 2%;
         margin-bottom: 8px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-bottom: 55px;
+
         .titleWrapper{
           margin-bottom: 15px;
         }
@@ -987,7 +992,7 @@
 
         dd.portletItem.odd {
           display: flex;
-          padding-top: 10px !important;
+          // padding-top: 10px !important;
           margin-left: 0;
           justify-items: center;
 
@@ -1015,7 +1020,7 @@
         div.input-group {
           display: flex;
           align-items: center;
-          padding-top: 10px;
+          // padding-top: 10px;
 
           input {
             flex-grow: 1;
@@ -1049,11 +1054,23 @@
     border-top: 0.3px solid #c3c3c3;
   }
 
+  .buttonWrapper{
+    margin-top: auto;
+    padding-top: 15px;
+  }
+
+  .social-links{
+    position: absolute;
+    bottom: 0px;
+    left: -10px;
+  }
+
+
   a.text-button {
     display: block;
-    width: auto;
+    width: 100%;
     height: 55px;
-    padding-top: 5px;
+    padding-top: 7px;
     border: 0.5px solid @primary-color;
     margin: 0 auto;
     background-color: transparent;
@@ -1067,6 +1084,7 @@
     text-align: center;
     text-shadow: 0px 0px 0px #ffffff;
     text-transform: uppercase;
+    margin-top: auto;
   }
 
   input,
@@ -1100,6 +1118,19 @@
 @media only screen and (max-width: 500px) {
   div.footerInfoBox {
     min-width: 100px !important;
+  }
+}
+
+@media only screen and (max-width: 1032px){
+  div#top-wrap.top-wrapper {
+
+      div#footermail {
+        padding-left: 0% !important;
+        border: none !important;
+      }
+    }
+  #footermail{
+    padding-top: 100px !important;
   }
 }
 
