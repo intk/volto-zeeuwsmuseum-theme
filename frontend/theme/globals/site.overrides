@@ -1251,6 +1251,7 @@
   }
   .grid-image-wrapper {
     padding-right: 55px;
+    width: 60% !important;
   }
 }
 #page-document .styled-teaser{
@@ -1277,7 +1278,7 @@
   }
 
   .grid-image-wrapper{
-    width: 55% !important;
+    width: 55%;
     padding: 12px;
     padding-left: 30px;
     margin-right: 0px;
@@ -1358,6 +1359,15 @@
   margin-right: auto !important;
   text-align: center !important;
   margin-bottom: 0%;
+}
+
+@media screen and (min-width: 1270px) {
+  #page-document .styled-teaser {
+    .content {
+      width: 500px !important;
+      max-width: 45% !important;
+    }
+  }
 }
 
 @media screen and (max-width: 967px) and (min-width: 766px){
