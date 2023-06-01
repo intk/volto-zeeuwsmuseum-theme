@@ -632,9 +632,6 @@
   }
 }
 
-
-
-
 .block.listing.summary #page-listing {
   width: 90%;
 
@@ -673,7 +670,7 @@
       justify-content: flex-start;
       padding-top: 0px !important;
       padding-right: 15px !important;
-      padding-bottom: 75px !important;
+      padding-bottom: 40px !important;
       padding-left: 15px !important;
       border: none !important;
       margin-top: 0%;
@@ -752,9 +749,15 @@
 }
 
 @media only screen and (max-width: 991px){
+  .block.listing.summary{
+    .listing-items .jaarverslag-title p{
+      font-size: 17px !important;
+    }
+  }
   .block.listing.summary .listing-wrapper {
       position: relative;
-      padding-top: 100px;
+      padding-top: 150px;
+      padding-bottom: 50px;
       #page-listing{
         width: 100%;
         padding-bottom: 50px;
@@ -764,7 +767,7 @@
         width: auto !important;
         h2{
           position: absolute !important;
-          top: 0%;
+          top: 45px;
           left: calc((100vw - 150px) / 2);
         }
         p.content-button {
@@ -787,7 +790,7 @@
           line-height: 16.55px;
 
           position: absolute;
-          bottom: 50px;
+          bottom: 60px;
           left: calc((100vw - 150px) / 2);
         }
 
@@ -799,7 +802,11 @@
     }
 
 }
-
+@media only screen and (max-width: 767px) {
+  .block.listing.summary .listing-wrapper #page-listing #content-core .listing-items{
+    padding-bottom: 50px !important;
+  }
+}
 
 
 .view-addview, .view-editview{
