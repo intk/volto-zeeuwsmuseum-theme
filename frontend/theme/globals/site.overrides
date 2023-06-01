@@ -1216,11 +1216,11 @@
   }
 }
 
-@media only screen and (max-width: 754px) {
-  #top-wrapper .footerInfoBox {
-    flex-basis: 100% !important;
-    padding: 0% !important;
-    margin: 0% !important;
+@media only screen and (max-width: 757px) {
+  #top-footer .footerInfoBox {
+  //   flex-basis: 100% !important;
+    padding-right: 0% !important;
+    // margin: 0% !important;
   }
 }
 
