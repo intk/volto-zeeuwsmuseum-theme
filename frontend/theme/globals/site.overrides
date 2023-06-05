@@ -606,6 +606,197 @@
   }
 }
 
+
+//*************************************************
+#page-edit .block.listing.nutezien .listing-wrapper,
+#page-edit .block.listing.nutezien .listing-wrapper #page-listing {
+  width: 90vw;
+  padding-left: 200px;
+}
+
+.block.listing.nutezien .listing-wrapper {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  width: calc(100vw - var(--scrollbarWidth));
+  right: 50%;
+  left: 50%;
+  margin-top: 50px;
+  margin-right: -50vw !important;
+  margin-left: -50vw !important;
+  padding: 130px 26px 65px 26px;
+
+  .buttomline {
+      display: block;
+      width: auto !important;
+
+      h2 {
+        position: absolute !important;
+        top: 5px;
+        left: calc((100vw - 150px) / 2);
+        font-size: 25px;
+        color: #000000;
+        font-family: 'UniversLightCn', Arial, sans-serif;
+        text-align: center;
+        margin-top: 45px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      p.content-button {
+        display: none;
+      }
+    }
+}
+
+.block.listing.nutezien #page-listing {
+
+  #list-title h1 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    margin-top: 0% !important;
+    text-transform: uppercase;
+  }
+
+  a {
+    font-family: 'UniversLightCn';
+    font-size: 1.375rem;
+    letter-spacing: 0.075rem;
+    text-decoration: none !important;
+  }
+
+  #content-core {
+    display: flex;
+    // flex-direction: row !important;
+    flex-wrap: wrap;
+    // align-items: stretch;
+
+    .listing-items {
+      width: calc(33.3%);
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      // flex-grow: 1 !important;
+      // max-width: 60vw;
+      // align-items: flex-start;
+      flex-shrink: 0 !important;
+      justify-content: flex-start;
+      padding-top: 0px !important;
+      padding-right: 15px !important;
+      padding-bottom: 40px !important;
+      padding-left: 15px !important;
+      border: none !important;
+      margin-top: 0%;
+      margin-bottom: 0%;
+      box-shadow: none;
+
+      #jaarverslag-title {
+        // height: 100px;
+        padding-top: 18px;
+
+        h2 {
+          margin-bottom: 5px !important;
+          padding-bottom: 15px !important;
+        }
+
+        a {
+          line-height: 1rem !important;
+        }
+
+        p {
+          display: block !important;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          line-height: 30px;
+          font-size: 17px;
+        }
+      }
+
+      img {
+        margin: 0% !important;
+      }
+
+      div {
+        padding-top: 30px;
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: auto;
+        aspect-ratio: 3 / 2;
+      }
+    }
+  }
+
+  .listing-items {
+    a {
+      color: #000000;
+      font-family: 'UniversLightCn';
+      font-size: 22px;
+      text-decoration: none !important;
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+    #content-core .listing-items {
+      width: 50% !important;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    #content-core .listing-items {
+      width: 100% !important;
+      padding-bottom: 85px !important;
+    }
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  .block.listing.nutezien #jaarverslag-title p {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .block.listing.nutezien {
+    .listing-items .jaarverslag-title p {
+      font-size: 17px !important;
+    }
+  }
+
+  .block.listing.nutezien .listing-wrapper {
+    position: relative;
+    padding-top: 150px;
+    padding-bottom: 50px;
+
+    #page-listing {
+      width: 100%;
+      padding-bottom: 50px;
+      // padding: 0% !important;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+  .block.listing.nutezien .listing-wrapper #page-listing #content-core .listing-items {
+    padding-bottom: 50px !important;
+  }
+  .block.listing.nutezien .listing-wrapper{
+    padding-top: 140px;
+  }
+}
+
+
+
+
+//**************************************************
 #page-edit .block.listing.summary .listing-wrapper,
 #page-edit .block.listing.summary .listing-wrapper #page-listing {
   width: 90vw;
