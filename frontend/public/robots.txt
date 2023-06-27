@@ -4,80 +4,14 @@ Sitemap: https://new.zeeuwsmuseum.nl/sitemap.xml.gz
 # http://www.robotstxt.org/wc/norobots.html
 
 
-
 # By default we allow robots to access all areas of our site
 # already accessible to anonymous users
 
 User-agent: *
-Disallow: /*search?*
-Disallow: /*search
-Disallow: /*search_rss$
-Disallow: /*search*
-Disallow: /*zoeken*
-Disallow: /*zoeken
-Disallow: /*faceted
+Disallow:
 
-User-agent: LamarkBot
-Disallow: /
-Crawl-Delay: 10
 
-User-agent: DotBot
-Disallow: /
 
-User-agent: Amazonbot
-Disallow: /
-
-User-agent: coccocbot-web
-Disallow: /
-
-User-agent: Pinterestbot
-Disallow: /
-
-User-agent: PetalBot
-Disallow: /
-
-User-agent: MJ12bot/v1.4.8
-Disallow: /
-Crawl-Delay: 10
-
-User-agent: SemrushBot/6~bl
-Disallow: /
-Crawl-Delay: 10
-
-User-agent: MJ12bot
-Disallow: /
-Crawl-Delay: 10
-
-User-agent: bingbot
-Disallow: /
-Crawl-Delay: 10
-
-User-agent: Cookiebot
-Disallow: /
-Crawl-Delay: 10
-
-User-agent: Cookiebot/1.0
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-Crawl-Delay: 10
-
-User-agent: Seekport Crawler
-Disallow: /
-Crawl-Delay: 10
-
-User-agent: SeznamBot
-Disallow: /
-Crawl-Delay: 10
-
-User-agent: BLEXBot
-Disallow: /
-Crawl-Delay: 10
-
-User-agent: AhrefsBot
-Disallow: /
-Crawl-Delay: 10
 # Add Googlebot-specific syntax extension to exclude forms
 # that are repeated for each piece of content in the site
 # the wildcard is only supported by Googlebot
@@ -90,12 +24,9 @@ Disallow: /*folder_factories$
 Disallow: /*folder_summary_view$
 Disallow: /*login_form$
 Disallow: /*mail_password_form$
-Disallow: /*search
-Disallow: /*zoeken*
-Disallow: /*zoeken
+Disallow: /@@search
 Disallow: /*search_rss$
 Disallow: /*sendto_form$
 Disallow: /*summary_view$
 Disallow: /*thumbnail_view$
 Disallow: /*view$
-
