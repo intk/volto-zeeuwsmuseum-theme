@@ -98,6 +98,7 @@
     p {
       margin: 0%;
       font-size: 1.063rem;
+      line-height: 1.5rem;
     }
 
     thead {
@@ -111,6 +112,70 @@
     td.center.aligned.middle.aligned {
       height: 3rem;
       padding: 0%;
+    }
+
+    @media only screen and (max-width: 500px) {
+      .center.aligned.middle.aligned,
+      #view .ui.table:not(.unstackable) tr>td {
+        padding: 0.25em 0.2em !important;
+      }
+    }
+
+    @media screen and (max-width: 400px) {
+      p {
+        margin: 0% !important;
+        font-size: 9px !important;
+        line-height: 1rem !important;
+        overflow-wrap: break-word !important;
+      }
+
+      thead {
+        p {
+          font-size: 0.5rem;
+        }
+      }
+    }
+
+    @media screen and (max-width: 450px) and (min-width: 400px) {
+      p {
+          margin: 0% !important;
+          font-size: 0.65rem !important;
+
+          line-height: 1rem !important;
+        }
+      thead {
+          p {
+            font-size: 0.65rem !important;
+          }
+        }
+    }
+    @media screen and (max-width: 550px) and (min-width: 450px) {
+      p {
+        margin: 0% !important;
+        font-size: 0.75rem !important;
+        line-height: 1rem !important;
+        overflow-wrap: break-word !important;
+      }
+
+      thead {
+        p {
+          font-size: 0.75rem !important;
+        }
+      }
+    }
+    @media screen and (max-width: 700px) and (min-width: 550px) {
+      p {
+        margin: 0% !important;
+        font-size: 0.85rem !important;
+        line-height: 1rem !important;
+        // overflow-wrap: break-word !important;
+      }
+
+      thead {
+        p {
+          font-size: 0.85rem !important;
+        }
+      }
     }
   }
 
@@ -360,10 +425,12 @@
 }
 
 .view-viewview .content-area {
-  .slate-table-block {
-    width: 930px !important;
-    margin-left: 50% !important;
-    transform: translateX(-50%);
+  @media only screen and (min-width: 992px) {
+    .slate-table-block {
+      width: 930px !important;
+      margin-left: 50% !important;
+      transform: translateX(-50%);
+    }
   }
 }
 
@@ -1283,6 +1350,10 @@
 .ui.table td.center.aligned.middle.aligned p {
   margin-right: 0.78em !important;
   margin-left: 0.78em !important;
+  @media screen and (max-width: 450px) {
+      margin-left: 0% !important;
+      margin-right: 0% !important;
+    }
 }
 
 .ui.table .center.aligned.middle.aligned:first-child {
@@ -1292,6 +1363,10 @@
 .ui.table td.center.aligned.middle.aligned:first-child p {
   margin-left: 0.78em !important;
   margin-right: 0.78em !important;
+  @media screen and (max-width: 450px){
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+  }
 }
 
 // event page
