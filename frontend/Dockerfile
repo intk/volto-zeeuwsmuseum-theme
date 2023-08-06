@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM node:16.20.0-slim as base
+FROM node:16-slim as base
 FROM base as builder
 
 RUN <<EOF
