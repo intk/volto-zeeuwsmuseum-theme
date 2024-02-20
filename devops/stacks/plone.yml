@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 
 services:
   traefik:
@@ -7,7 +7,6 @@ services:
     ports:
       - 80:80
       - 443:443
-      - 3000:3000
 
     deploy:
       labels:
@@ -58,14 +57,16 @@ services:
       - traefik-public
 
   frontend:
-    image: intkbv/zeeuwsmuseumwebsite-frontend:latest
+    image: intkbv/zeeuwsmuseumwebsite-frontend:sha-22cef11
     environment:
       RAZZLE_INTERNAL_API_PATH: http://backend:8080/Plone
     depends_on:
       - backend
     networks:
-    - traefik-public
-    - backend
+      - traefik-public
+      - backend
+    ports:
+      - 3000:3000
     deploy:
       replicas: 2
       labels:
@@ -122,7 +123,6 @@ services:
         - "traefik.http.middlewares.backend-classic.replacepathregex.regex=^/ClassicUI($$|/.*)"
         - "traefik.http.middlewares.backend-classic.replacepathregex.replacement=/VirtualHostBase/https/${FQDN?Unset}/Plone/VirtualHostRoot/_vh_ClassicUI/$$1"
         - traefik.http.routers.backend-classic.middlewares=gzip,backend-auth,backend-classic
-
 
   # db:
   #   image: postgres:14.2
