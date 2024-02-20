@@ -8,9 +8,11 @@ import {
   FaLinkedin,
   FaTiktok,
   FaTwitch,
+  FaInstagram,
 } from 'react-icons/fa';
-import { IoLogoTwitter } from 'react-icons/io';
-import { ImInstagram } from 'react-icons/im';
+// import { IoLogoTwitter } from 'react-icons/io';
+// import { ImInstagram } from 'react-icons/im';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const SocialLink = ({ href = '', title = '' }) => {
   const icon = title.toLowerCase();
@@ -24,13 +26,13 @@ const SocialLink = ({ href = '', title = '' }) => {
     case 'twitter':
       return (
         <a href={href}>
-          <IoLogoTwitter className="social" />
+          <FaXTwitter className="social" />
         </a>
       );
     case 'instagram':
       return (
         <a href={href}>
-          <ImInstagram className="social" />
+          <FaInstagram className="social" />
         </a>
       );
     case 'linkedin':
