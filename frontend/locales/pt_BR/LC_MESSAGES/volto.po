@@ -123,6 +123,11 @@ msgstr ""
 msgid "Social links"
 msgstr ""
 
+#: components/theme/Footer/NewsletterSubscribe
+# defaultMessage: Subscribe
+msgid "Subscribe"
+msgstr ""
+
 #: components/AccordionMenu/AccordionLanguageSelector
 # defaultMessage: Switch to
 msgid "Switch to"
@@ -136,6 +141,16 @@ msgstr ""
 #: components/View/SliderPage
 # defaultMessage: Unknown Block {block}
 msgid "Unknown Block"
+msgstr ""
+
+#: components/theme/Footer/Footer
+# defaultMessage: Aanmelden op nieuwsbrief mislukt.
+msgid "newslettererror"
+msgstr ""
+
+#: components/theme/Footer/Footer
+# defaultMessage: Bedankt voor uw aanmelding. U ontvangt een e-mail waarin uw inschrijving wordt bevestigd.
+msgid "newslettersuccess"
 msgstr ""
 
 #: components/Blocks/TableOfContentSwitch/schema

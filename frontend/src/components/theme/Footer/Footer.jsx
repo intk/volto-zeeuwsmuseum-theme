@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaChevronRight } from 'react-icons/fa';
-import { injectIntl } from 'react-intl';
+import { defineMessages, injectIntl, useIntl } from 'react-intl';
 // import { Link } from 'react-router-dom';
 // import { useSelector } from 'react-redux';
 // import { Container, List } from 'semantic-ui-react';
@@ -8,6 +8,7 @@ import { injectIntl } from 'react-intl';
 import { SocialLinks } from '@package/components';
 import { useSiteDataContent } from '@package/helpers';
 import { Logo } from '@plone/volto/components';
+import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
 // const footertranslations = {
 //   bezoekadres: {
@@ -41,6 +42,18 @@ import { Logo } from '@plone/volto/components';
 //     de: 'Abonnieren Sie unseren Newsletter.',
 //   },
 // };
+
+const messages = defineMessages({
+  newsletterErrorMessage: {
+    id: 'newslettererror',
+    defaultMessage: 'Aanmelden op nieuwsbrief mislukt.',
+  },
+  newsletterSuccessMessage: {
+    id: 'newslettersuccess',
+    defaultMessage:
+      'Bedankt voor uw aanmelding. U ontvangt een e-mail waarin uw inschrijving wordt bevestigd.',
+  },
+});
 
 export const Address = ({
   addressTitle,
@@ -123,12 +136,56 @@ export const Contact = ({
 //   return <RenderBlocks content={properties} />;
 // };
 
+const MailChimpForm = ({ status, message, onValidated }) => {
+  // let intl = useIntl();
+  let email;
+  const submit = () =>
+    email &&
+    email.value.indexOf('@') > -1 &&
+    onValidated({
+      EMAIL: email.value,
+    });
+
+  return (
+    <>
+      <div id="newsletter-subscriber-form">
+        <div className="input-group">
+          <input
+            className="text-widget required form-control input-lg textline-field"
+            id="form-widgets-email"
+            ref={(node) => (email = node)}
+            type="email"
+            // placeholder={intl.formatMessage(messages.Mailaddress)}
+            placeholder="Email"
+          />
+          <br />
+          <span className="input-group-btn">
+            <button
+              className="submit-button"
+              name="form.buttons.subscribe"
+              type="submit"
+              aria-label="mailchimp-submit"
+              onClick={submit}
+            >
+              <FaChevronRight />
+            </button>
+          </span>
+        </div>
+      </div>
+    </>
+  );
+};
+
 export function Footer(props) {
+  let intl = useIntl();
   const siteDataContent = useSiteDataContent();
   const { blocks = {} } = siteDataContent;
   const siteDataId = Object.keys(blocks).find(
     (id) => blocks[id]?.['@type'] === 'footerData',
   );
+  const mailchimp_url =
+    'https://zeeuwsmuseum.us13.list-manage.com/subscribe/post-json?&u=88e39abc49bff280b2ff566d0&id=5978f9fd67';
+  const [status, setStatus] = useState(undefined);
 
   const footerData = blocks[siteDataId] || {};
   // const localeLanguage = props.intl.locale;
@@ -145,44 +202,51 @@ export function Footer(props) {
             <p>{footerData.newsletterText}</p>
             <div className="buttonWrapper">
               <dd className="portletItem odd">
-                <form
-                  id="newsletter-subscriber-form"
-                  method="get"
-                  action="https://zeeuwsmuseum.us13.list-manage.com/subscribe/post-json?c=?"
-                >
-                  <div className="input-group">
-                    <input
-                      type="text"
-                      className="text-widget required form-control input-lg textline-field"
-                      placeholder="Email"
-                      id="form-widgets-email"
-                      name="EMAIL"
-                      aria-label="mailchimp-email"
-                    />
-                    <input
-                      type="hidden"
-                      value="88e39abc49bff280b2ff566d0"
-                      name="u"
-                    />
-                    <input type="hidden" value="5978f9fd67" name="id" />
-
-                    <span className="input-group-btn">
-                      <button
-                        className="submit-button"
-                        name="form.buttons.subscribe"
-                        type="submit"
-                        aria-label="mailchimp-submit"
-                      >
-                        <FaChevronRight />
-                      </button>
-                    </span>
-                  </div>
-                  {/* <div id="subscribe-result" >
-                <p className="error-msg" >Aanmelden op nieuwsbrief mislukt.</p>
-                <p className="success-msg">Bedankt voor uw aanmelding. U ontvangt een e-mail waarin uw inschrijving wordt bevestigd.</p>
-              </div> */}
-                </form>
+                <MailchimpSubscribe
+                  url={mailchimp_url}
+                  render={({ subscribe, status, message }) => (
+                    <>
+                      {setStatus(status)}
+                      <MailChimpForm
+                        status={status}
+                        message={message}
+                        onValidated={(formData) => subscribe(formData)}
+                      />
+                    </>
+                  )}
+                />
               </dd>
+              <div className="message-wrapper">
+                <div className="message">
+                  {status === 'sending' && (
+                    <div style={{ color: 'blue' }}>...</div>
+                  )}
+                  {status === 'error' && (
+                    <div
+                      style={{ color: 'red' }}
+                      // dangerouslySetInnerHTML={{ __html: message }}
+                    >
+                      <p>
+                        {' '}
+                        {intl.formatMessage(messages.newsletterErrorMessage)}
+                        error
+                      </p>
+                    </div>
+                  )}
+                  {status === 'success' && (
+                    <div
+                      className="success-msg"
+                      style={{ color: 'blue' }}
+                      // dangerouslySetInnerHTML={{ __html: message }}
+                    >
+                      <p>
+                        {' '}
+                        {intl.formatMessage(messages.newsletterSuccessMessage)}
+                      </p>{' '}
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>
