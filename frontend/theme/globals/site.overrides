@@ -1171,6 +1171,9 @@
     margin-top: auto;
     padding-top: 15px;
   }
+  #newsletter-subscriber-form{
+    width: 100%;
+  }    
 
   .social-links {
     position: absolute;
